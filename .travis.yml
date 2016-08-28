@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '5.11'
+addons:
+  ssh_known_hosts: v2.seabs.ac.id
+before_install:
+- bash _travis/install.sh
+script:
+- bash _travis/build.sh
+after_success:
+- bash _travis/deploy.sh
+notifications:
+  webhooks: https://hooks.zapier.com/hooks/catch/1625825/4vjg0k/
