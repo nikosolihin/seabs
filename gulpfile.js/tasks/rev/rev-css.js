@@ -6,8 +6,13 @@ var revNapkin = require('gulp-rev-napkin')
 
 // 4) Rev and compress CSS and JS files (this is done after assets, so that if a
 //    referenced asset hash changes, the parent hash will change as well
+
+// Don't rev Wordpress style.css and screenshot.png
+var ignoreWP = '!' + path.join(config.root.dest,'style.css')
+var ignoreScreenshot = '!' + path.join(config.root.dest,'screenshot.png')
+
 gulp.task('rev-css', function(){
-  return gulp.src(path.join(config.root.dest,'/**/*.css'))
+  return gulp.src([path.join(config.root.dest,'/**/*.css'), ignoreWP, ignoreScreenshot])
     .pipe(rev())
     .pipe(gulp.dest(config.root.dest))
     .pipe(revNapkin({verbose: false}))

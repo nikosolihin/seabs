@@ -6,7 +6,7 @@ var path       = require('path')
 // 5) Update asset references in HTML
 gulp.task('update-html', function(){
   var manifest = gulp.src(path.join(config.root.dest, "/rev-manifest.json"))
-  return gulp.src(path.join(config.root.dest, config.tasks.html.dest, '/**/*.html'))
-    .pipe(revReplace({manifest: manifest}))
+  return gulp.src(path.join(config.root.dest, config.tasks.php.dest, '/**/*.php'))
+    .pipe(revReplace({replaceInExtensions: ['.php'], manifest: manifest}))
     .pipe(gulp.dest(path.join(config.root.dest, config.tasks.html.dest)))
 })
