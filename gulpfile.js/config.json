@@ -74,7 +74,8 @@
 
     "svgSprite": {
       "src": "icons",
-      "dest": "images",
+      "dest": "utility",
+      "injectTo": "svg.twig",
       "extensions": ["svg"]
     },
 
