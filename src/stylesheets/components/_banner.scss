@@ -3,14 +3,15 @@
   @include white;
   box: vertical middle center;
   position: relative;
-  margin-bottom: $spacer-single*4;
 
-  &-overlay {
+  &::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     size: 100%;
     background-image: linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.30));
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.50));
   }
 
   .container {
@@ -19,13 +20,16 @@
   }
 
   &--small { height: $banner-small-height; }
-  &--medium { height: $banner-big-height; }
+  &--medium { height: $banner-medium-height; }
+  &--large { height: $banner-large-height; }
+
   &--top {
     background-position: top center;
   }
   &--bottom {
     background-position: bottom center;
   }
+
   &--textbottom {
     justify-content: flex-end;
     padding-bottom: $spacer-single*1.5;

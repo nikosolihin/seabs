@@ -49,6 +49,61 @@
                 "description",
                 "o_dims"
             ]
+        },
+        {
+            "key": "field_57740634e1728",
+            "label": "Vertical Alignment",
+            "name": "alignment",
+            "type": "radio",
+            "instructions": "Banner images will automatically try to span the current user's browser width. However, sometimes this process causes images to misalign vertically. Use this to correct that.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top": "Top",
+                "middle": "Middle",
+                "bottom": "Bottom",
+                "custom": "Custom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "middle",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_577408789163a",
+            "label": "Custom Value",
+            "name": "custom_alignment",
+            "type": "number",
+            "instructions": "Enter a custom percentage value. 0% being the topmost and 100% bottom of the y-axis.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57740634e1728",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "min": 1,
+            "max": 100,
+            "step": 1
         }
     ],
     "location": [
@@ -68,6 +123,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Background",
-    "local": "php",
-    "modified": 1472543149
+    "modified": 1472578202
 }

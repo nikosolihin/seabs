@@ -98,7 +98,7 @@ $headings-color:               $gray-darker !default;
 // Sans Serif /////////////////////////////////
 $font-family-sans:             "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:            Georgia, "Times New Roman", Times, serif;
-$font-size-h1:                 2.074rem !default;
+$font-size-h1:                 3.074rem !default;
 $font-size-h2:                 1.728rem !default;
 $font-size-h3:                 1.44rem !default;
 $font-size-h4:                 1.2rem !default;
@@ -157,7 +157,8 @@ $loader-color:                 lighten($brand-secondary, 10%) !default;
 
 // Banner ///////////////////////////////////
 $banner-small-height:          220px !default;
-$banner-big-height:            350px !default;
+$banner-medium-height:         400px !default;
+$banner-large-height:          600px !default;
 $banner-margin-bottom:         $spacer-single*3 !default;
 $banner-fallback:               repeating-linear-gradient(115deg,rgba(155,155,155,.15),rgba(155,155,155,0) 3px,rgba(155,155,155,0) 3px,rgba(155,155,155,0) 5px) !default;
 
