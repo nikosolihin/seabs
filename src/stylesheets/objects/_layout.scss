@@ -1,8 +1,9 @@
 .wrapper {
-  max-width: $wrapper-width; //1600
+  max-width: $wrapper-width; //1600px
   margin: 0 auto;
-  @at-root main#{&} {
-    position: relative;
+  position: relative;
+  &--narrow {
+    max-width: $wrapper-narrow-width; // 1440px
   }
 }
 
