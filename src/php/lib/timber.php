@@ -45,30 +45,30 @@ class StarterSite extends TimberSite {
 		//=============================================
 		// Layout Modules
 		//=============================================
-		// // Menu Items
-		// $primary_menu = get_field('primary_menu', 'option');
-		// $secondary_menu = get_field('secondary_menu', 'option');
-		// if ($primary_menu) {
-		// 	$context['primary_menu'] = array();
-		// 	foreach ($primary_menu as $item) {
-		// 		$post = Timber::get_post($item);
-		// 		array_push($context['primary_menu'], array(
-		// 			'title' => $post->title,
-		// 			'url' => $post->link
-		// 		));
-		// 	}
-		// }
-		// if ($secondary_menu) {
-		// 	$context['secondary_menu'] = array();
-		// 	foreach ($secondary_menu as $item) {
-		// 		$post = Timber::get_post($item);
-		// 		array_push($context['secondary_menu'], array(
-		// 			'title' => $post->title,
-		// 			'url' => $post->link
-		// 		));
-		// 	}
-		// }
-		//
+		// Menu Items
+		$primary_menu = get_field('primary_menu', 'option');
+		$secondary_menu = get_field('secondary_menu', 'option');
+		if ($primary_menu) {
+			$context['primary_menu'] = array();
+			foreach ($primary_menu as $item) {
+				$post = Timber::get_post($item);
+				array_push($context['primary_menu'], array(
+					'title' => $post->title,
+					'url' => $post->link
+				));
+			}
+		}
+		if ($secondary_menu) {
+			$context['secondary_menu'] = array();
+			foreach ($secondary_menu as $item) {
+				$post = Timber::get_post($item);
+				array_push($context['secondary_menu'], array(
+					'title' => $post->title,
+					'url' => $post->link
+				));
+			}
+		}
+
 		// // Social Links
 		// $context['social'] = array(
 		// 	'facebook' => get_field('facebook', 'option'),

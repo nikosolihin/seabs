@@ -42,7 +42,7 @@
 // (wrapper, container) go here too.
 // =====================================================
 @import "objects/layout";
-// @import "objects/header";
+@import "objects/header";
 // @import "objects/sidebar";
 // @import "objects/footer";
 // @import "objects/front-page";
@@ -57,6 +57,7 @@
 // UI components are composed of objects and components.
 // =====================================================
 @import "components/typography";
+@import "components/list";
 // @import "components/loader";
 // @import "components/newsletter";
 // @import "components/button";
@@ -75,7 +76,6 @@
 // @import "components/block";
 // @import "components/feed";
 // @import "components/table";
-// @import "components/list";
 // @import "components/embed";
 // @import "components/theater";
 // @import "components/map";

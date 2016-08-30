@@ -13,7 +13,7 @@ $gray:                         lighten($black, 33.5%) !default;
 $gray-light:                   lighten($black, 46.7%) !default;
 $gray-lighter:                 lighten($black, 93.5%) !default;
 $gray-lightest:                lighten($black, 96.5%) !default;
-$brand-primary:                #535765 !default;
+$brand-primary:                #B51812 !default;
 $brand-secondary:              #97979D !default;
 
 
@@ -85,25 +85,26 @@ $svg-margin:                    $spacer-half !default;
 //=============================================
 // Typography
 //=============================================
-$font-size-root:               17px !default;
+$font-size-root:               16px !default;
+$font-size-small:              14px !default;
 $font-size:                    1rem !default;
 
 // Common properties //////////////////////////
 $font-weight-light:            300 !default;
-$font-weight-normal:           300 !default;
+$font-weight-normal:           400 !default;
 $font-weight-bold:             600 !default;
 $headings-color:               $gray-darker !default;
 
 // Sans Serif /////////////////////////////////
-$font-family:                  "Source Sans Pro";
-$font-family-fallback:         "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+$font-family-sans:             "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:            Georgia, "Times New Roman", Times, serif;
 $font-size-h1:                 2.074rem !default;
 $font-size-h2:                 1.728rem !default;
 $font-size-h3:                 1.44rem !default;
 $font-size-h4:                 1.2rem !default;
 $font-size-h5:                 1rem !default;
 $font-size-h6:                 .833rem !default;
-$line-height:                  1.625 !default;
+$line-height:                  1.55 !default;
 $headings-line-height:         1.25 !default;
 
 // Lead //////////////////////////////////////

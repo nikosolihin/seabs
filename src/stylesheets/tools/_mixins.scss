@@ -55,7 +55,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-@mixin hover($before: inherit, $after: inherit) {
+@mixin hover($before: inherit, $after: $before) {
   transition: all .125s ease-in-out;
   color: $before;
   text-decoration: none;
