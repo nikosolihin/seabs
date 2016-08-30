@@ -1,52 +1,19 @@
-<header class="Header wrapper" data-component="header">
-  <div class="Header-logo">
-    <a href="{{site.url}}" class="Heading">
-      <img src="{{site.home}}/wp-content/themes/gcf/images/logo.png" alt="Global Christian Forum">
-    </a>
-  </div>
-  <div class="Header-nav">
-    <nav class="Header-secondaryNav" role="navigation">
-      <ul class="List List--inline">
-        {% for item in secondary_menu %}
-          <li><a href="{{item.url}}">{{item.title}}</a></li>
-        {% endfor %}
-      </ul>
-      <div class="Header-language">
-        {% set site_id = site.id-1 %}
-        {{languages[site_id]['name']}}
-        <svg aria-hidden="true" role="presentation" title="Select Language">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
-        </svg>
-        <div class="Header-languageDropdown">
-          {% for language in languages %}
-            <a href="{{language.url}}">{{language.name|title}}</a>
-          {% endfor %}
-        </div>
-      </div>
-      <a href="{{donation}}" class="Button Button--small">Donate</a>
-    </nav>
-    <nav class="Header-primaryNav" role="navigation">
-      <ul class="List List--inline">
-        {% for item in primary_menu %}
-          <li><a href="{{item.url}}">{{item.title}}</a></li>
-        {% endfor %}
-      </ul>
-      <a class="Header-search" href="">
-        <svg aria-hidden="true" role="presentation" title="Search Our Website">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
-        </svg>
-      </a>
-    </nav>
-  </div>
-  <div class="Searchbar">
-    <div class="container container--max">
-      <form class="Searchbar-form" role="form" action="{{site.url}}/research/search" accept-charset="UTF-8" method="get">
-        <svg class="Searchbar-icon" aria-hidden="true" role="presentation" title="Search Our Website">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
-        </svg>
-        <input class="Searchbar-input" type="text" name="q">
-      </form>
-      <span class="Searchbar-label">Search resources, pages or keywords</span>
-    </div>
-  </div>
+<header class="Header wrapper">
+
+  <nav class="Header-secondaryNav" role="navigation">
+    <ul class="List List--inline">
+      {% for item in secondary_menu %}
+        <li><a href="{{item.url}}">{{item.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <nav class="Header-primaryNav" role="navigation">
+    <ul class="List List--inline">
+      {% for item in primary_menu %}
+        <li><a href="{{item.url}}">{{item.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
 </header>

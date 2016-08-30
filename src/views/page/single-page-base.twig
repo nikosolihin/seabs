@@ -2,16 +2,16 @@
 
 {% block content %}
   <div class="wrapper">
-    {% include 'components/banner.twig' %}
+    <!-- {% include 'components/banner.twig' %} -->
     <div class="SinglePage container">
-      <div class="SinglePage-content container-text container-text--left container-text--nopadding {% if not sidebar %}container-text--nosidebar{% endif %}">
+      <div class="SinglePage-content container--text container--left container--nopadding {% if not sidebar %}container-text--nosidebar{% endif %}">
         {% if acf.teaser %}
           <div class="Lead Lead--intro">{{acf.teaser}}</div>
         {% endif %}
         {% include 'layout/base.twig' %}
       </div>
 
-      <div class="SinglePage-sidebar Sidebar">
+      <!-- <div class="SinglePage-sidebar Sidebar">
         {% if hierarchy %}
           <div class="Callout">
             <h4 class="Sidebar-heading"><a href="{{breadcrumb|first.link}}">{{breadcrumb|first.title}}</a></h4>
@@ -19,7 +19,7 @@
           </div>
         {% endif %}
         {% include 'layout/sidebar-base.twig' %}
-      </div>
+      </div> -->
     </div>
   </div>
 {% endblock %}

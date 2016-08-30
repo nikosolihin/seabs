@@ -5,13 +5,12 @@
 	{% include 'utility/svg.twig' %}
 	{% include 'modules/header.twig' %}
 
-	{% block before_content %}{% endblock %}
 	<main class="wrapper">
     {% include 'components/announcement.twig' %}
 		{% block content %}{% endblock %}
 	</main>
 
-	{% include 'modules/footer.twig' %}
+	<!-- {% include 'modules/footer.twig' %} -->
 	{% include 'modules/html-footer.twig' %}
 </body>
 </html>

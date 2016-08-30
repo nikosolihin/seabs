@@ -6,13 +6,11 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
+$context['sections'] = $context['acf']['sections'];
 
-var_dump($context['acf']);
-
-// $context['sections'] = $context['acf']['sections'];
-// $context['inherit'] = ($context['acf']['inherit'] === 'true');
 //
 // // Get Sidebar
+// $context['inherit'] = ($context['acf']['inherit'] === 'true');
 // if ($context['inherit']) {
 // 	$parent = $post->get_parent();
 // 	$context['sidebar_sections'] = $parent->get_field('sidebar_sections');
@@ -46,4 +44,4 @@ var_dump($context['acf']);
 // }
 // $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-// Timber::render( 'page/single-page-base.twig' , $context );
+Timber::render( 'page/single-page-base.twig' , $context );
