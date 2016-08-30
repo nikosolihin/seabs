@@ -1,0 +1,13 @@
+<ul class="Accordion">
+  {% for item in data.items %}
+    <li class="Accordion-item">
+      <input class="Accordion-checkbox" id="accordion-item-{{loop.index}}" type="checkbox">
+      <label class="Accordion-head" for="accordion-item-{{loop.index}}">
+        {{item.head}}
+      </label>
+      <div class="Accordion-body" role="toggle">
+        {{item.body}}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

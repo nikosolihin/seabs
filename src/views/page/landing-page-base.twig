@@ -1,0 +1,63 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section class="Banner Banner--{{acf.banner_size}}" style="background-image:url({{acf.image|first.url_l}})">
+    <h1 class="Heading--dropshadow">{{post.title|title}}</h1>
+  </section>
+
+  {% if acf.teaser %}
+    <div class="container-text">
+      <div class="Lead Lead--landing Lead--center">{{acf.teaser}}</div>
+    </div>
+  {% endif %}
+
+  {% if acf.position == "before" %}
+    <div class="container">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
+
+  <section class="wrapper landing-page-listing">
+    <div class="container">
+      {% if acf.type %}
+        {# Extensive. Fetch all children and grand children #}
+        {% for child in children %}
+          <div class="Duet Duet--narrow Duet--border">
+            <h4 class="Duet-heading">{{child.title}}</h4>
+            <div class="Duet-body">
+              <div class="Duet-panel">
+                <div class="Lead Lead--intro">{{child.teaser}}</div>
+                <a href="{{child.link}}" class="Button Button--small Button--outline">Read More</a>
+              </div>
+              <div class="Duet-panel Duet-list">
+                {% for column in child.children|batch(2) %}
+                  <ul class="List">
+                  {% for grandchild in column %}
+                    <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
+                  {% endfor %}
+                  </ul>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        {# Limited. Only direct children #}
+        <div class="Row Row--of-3">
+          {% for child in children %}
+            <div class="Column">
+              {% include 'components/card.twig' with { 'options' : ['vertical'], 'data' : child } %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if acf.position == "after" %}
+    <div class="container">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
+
+{% endblock %}

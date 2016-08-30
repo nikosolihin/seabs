@@ -1,0 +1,43 @@
+{
+    "key": "group_574dcc3bb7c20",
+    "title": "Text Editor",
+    "fields": [
+        {
+            "key": "field_574dcc566c5f8",
+            "label": "",
+            "name": "editor",
+            "type": "wysiwyg",
+            "instructions": "<strong>TIP:<\/strong> To create a single line break use Shift+RETURN. By default, RETURN creates a new paragraph.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Text Editor",
+    "local": "php",
+    "modified": 1472539654
+}

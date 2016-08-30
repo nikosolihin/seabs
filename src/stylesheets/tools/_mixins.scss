@@ -1,0 +1,114 @@
+//========================================================
+// Functions
+//========================================================
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+
+//========================================================
+// Mixins
+//========================================================
+@mixin white {
+  color: $white;
+  * { color: $white; }
+}
+@mixin cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@mixin no-outline {
+  outline: none !important;
+}
+@mixin tab-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+@mixin normalist {
+  list-style: none;
+  padding-left: 0;
+}
+@mixin square($height: 100%) {
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $height;
+  }
+}
+@mixin noselect {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin hover($before: inherit, $after: inherit) {
+  transition: all .125s ease-in-out;
+  color: $before;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $after;
+    text-decoration: none;
+  }
+}
+@mixin gutter($multiplier: 1) {
+  > *:first-of-type {
+    padding-right: $multiplier*$spacer-single;
+  }
+  > *:last-of-type {
+    padding-left: $multiplier*$spacer-single;
+  }
+  > *:not(:first-of-type):not(:last-of-type) {
+    padding: 0 $multiplier*$spacer-single;
+  }
+}
+
+// BREAKPOINTS ////////////////////////////////////////////////
+@mixin from($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin to($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin at($name, $breakpoints: $grid-breakpoints) {
+  @include media-breakpoint-up($name, $breakpoints) {
+    @include media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+@mixin between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  @include media-breakpoint-up($lower, $breakpoints) {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}

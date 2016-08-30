@@ -1,0 +1,85 @@
+{
+    "key": "group_576048fbe7bc8",
+    "title": "Maps",
+    "fields": [
+        {
+            "key": "field_576048fbed8e9",
+            "label": "",
+            "name": "map",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        },
+        {
+            "key": "field_5761764a3565e",
+            "label": "",
+            "name": "with_info",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show an info bubble for the pinned location?",
+            "default_value": 0
+        },
+        {
+            "key": "field_576176af3565f",
+            "label": "Bubble Content",
+            "name": "info",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5761764a3565e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "full",
+            "media_upload": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Maps",
+    "local": "php",
+    "modified": 1472539654
+}

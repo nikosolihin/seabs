@@ -1,0 +1,53 @@
+.Block {
+  @include cover;
+  position: relative;
+  box: vertical middle;
+  min-height: $card-height*1.4;
+  padding: $spacer-single*1.25 $spacer-single*1.75;
+
+  &-link {
+    position: absolute 0 auto auto 0;
+    size: 100%;
+  }
+  &-head {
+    @include cover;
+    min-height: $card-height*.9;
+  }
+  &-body {
+    @include white;
+    position: relative;
+    box: vertical;
+    size: 100%;
+    text-align: center;
+    @at-root .Block--left #{&} {
+      text-align: left;
+    }
+    @at-root .Block--card #{&} {
+      background-color: $callout-bg;
+      padding: $spacer-single*1.25 $spacer-single*1.75;
+      p {
+        color: $body-color;
+      }
+    }
+  }
+  &-heading {
+    font-weight: $font-weight-normal;
+    margin-bottom: $spacer-half;
+    @at-root .Block--card #{&} {
+      color: $headings-color;
+    }
+  }
+  &--card {
+    padding: 0;
+  }
+  &--bookmark {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+  }
+  &--tinted {
+    .Block-link {
+      background: linear-gradient( rgba(0,0,0,.30), rgba(0,0,0,.60) );
+    }
+  }
+}

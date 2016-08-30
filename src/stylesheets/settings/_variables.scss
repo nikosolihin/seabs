@@ -1,0 +1,195 @@
+//=============================================
+// Colors
+//=============================================
+$black:                        #000000 !default;
+$white:                        #ffffff !default;
+// $blue:                         #24aed7 !default;
+$blue:                         #5ab5dd !default;
+$sky:                          #628b9d !default;
+$red:                          #D65B2D !default;
+$gray-darker:                  lighten($black, 13.5%) !default;
+$gray-dark:                    lighten($black, 25%) !default;
+$gray:                         lighten($black, 33.5%) !default;
+$gray-light:                   lighten($black, 46.7%) !default;
+$gray-lighter:                 lighten($black, 93.5%) !default;
+$gray-lightest:                lighten($black, 96.5%) !default;
+$brand-primary:                #535765 !default;
+$brand-secondary:              #97979D !default;
+
+
+//=============================================
+// Spacer
+//=============================================
+$spacer-quarter:               .25rem !default;
+$spacer-half:                  .5rem !default;
+$spacer-threefourth:           .75rem !default;
+$spacer-single:                1rem !default;
+
+
+//=============================================
+// Layout
+//=============================================
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+$wrapper-width:                   1600px !default;
+$container-width:                 1200px !default;
+$container-text-width:            725px !default;
+$container-text-nosidebar-width:  925px !default;
+
+
+//=============================================
+// Elements
+//=============================================
+
+// Body ///////////////////////////////////////
+$body-color:                    $gray-dark !default;
+
+// Links //////////////////////////////////////
+$link-color:                    $blue !default;
+$link-decoration:               none !default;
+$link-hover-color:              lighten($link-color, 5%) !default;
+$link-hover-decoration:         none !default;
+
+// List ///////////////////////////////////////
+$list-style-type-ul-first:      square !default;
+$list-style-type-ul-second:     disc !default;
+$list-style-type-ul-third:      circle !default;
+$list-style-type-ol-first:      decimal !default;
+$list-style-type-ol-second:     lower-alpha !default;
+$list-style-type-ol-third:      lower-roman !default;
+$list-padding-left:             $spacer-single*2 !default;
+
+// HR ////////////////////////////////////////
+$hr-padding:                    $spacer-single*1.25 !default;
+$hr-color:                      #ccc !default;
+
+// SVG //////////////////////////////////////
+$svg-fill:                      currentColor !default;
+$svg-size:                      $spacer-single !default;
+$svg-margin:                    $spacer-half !default;
+
+// Tables /////////////////////////////////////
+// $table-cell-padding:            $three-quarter !default;
+// $table-bg:                      transparent !default;
+// $table-border-width:            1px !default;
+// $table-border-color:            $dimmed !default;
+// $table-bg-accent:               $muted !default;
+
+
+//=============================================
+// Typography
+//=============================================
+$font-size-root:               17px !default;
+$font-size:                    1rem !default;
+
+// Common properties //////////////////////////
+$font-weight-light:            300 !default;
+$font-weight-normal:           300 !default;
+$font-weight-bold:             600 !default;
+$headings-color:               $gray-darker !default;
+
+// Sans Serif /////////////////////////////////
+$font-family:                  "Source Sans Pro";
+$font-family-fallback:         "Helvetica Neue", Helvetica, Calibri, Arial, sans-serif;
+$font-size-h1:                 2.074rem !default;
+$font-size-h2:                 1.728rem !default;
+$font-size-h3:                 1.44rem !default;
+$font-size-h4:                 1.2rem !default;
+$font-size-h5:                 1rem !default;
+$font-size-h6:                 .833rem !default;
+$line-height:                  1.625 !default;
+$headings-line-height:         1.25 !default;
+
+// Lead //////////////////////////////////////
+$lead-font-size:               $font-size-h4 !default;
+$lead-font-weight:             $font-weight-light !default;
+$lead-font-color:              $gray !default;
+$lead-line-height:             1.45 !default;
+$lead-margin:                  $lead-font-size*1.25;
+
+// All Caps Heading ///////////////////////////
+$caps-heading-color:                $gray !default;
+$caps-heading-font-size:            .925rem !default;
+$caps-heading-letter-spacing:       1px !default;
+
+
+//=============================================
+// Miscellaneous
+//=============================================
+
+// Z-Index ///////////////////////////////////
+$zindex-header:                  1100 !default;
+$zindex-searchbar:               1000 !default;
+$zindex-announcement:            1200 !default;
+
+//=============================================
+// Components
+//=============================================
+
+// Sidebar ////////////////////////////////////
+$sidebar-font-size:             .925rem !default;
+$sidebar-color:                 lighten($body-color, 10%) !default;
+$sidebar-heading-color:         $body-color !default;
+$sidebar-border-top:            8px solid #ddd;
+
+// Callout ///////////////////////////////////
+$callout-bg:                    $gray-lightest !default;
+$callout-section-bg:            #fafafa !default;
+$callout-padding:               $spacer-single*1.75 !default;
+
+// Buttons ///////////////////////////////////
+$button-bg:                     $brand-primary !default;
+$button-padding:                $spacer-single $spacer-single*1.25 !default;
+$button-small-padding:          $spacer-half .625rem !default;
+$button-xs-padding:             .35rem .625rem !default;
+$button-medium-padding:         $spacer-threefourth $spacer-single*1.125 !default;
+
+// Loader //////////////////////////////////////
+$loader-size:                  $spacer-single*2 !default;
+$loader-color:                 lighten($brand-secondary, 10%) !default;
+
+// Banner ///////////////////////////////////
+$banner-small-height:          220px !default;
+$banner-big-height:            350px !default;
+$banner-margin-bottom:         $spacer-single*3 !default;
+$banner-fallback:               repeating-linear-gradient(115deg,rgba(155,155,155,.15),rgba(155,155,155,0) 3px,rgba(155,155,155,0) 3px,rgba(155,155,155,0) 5px) !default;
+
+// Gallery //////////////////////////////////
+$gallery-color:                 #ccc !default;
+$gallery-bg-color:              #181818 !default;
+$gallery-thumbnail-size:        60px !default;
+$gallery-selected-border:       3px solid $white !default;
+
+// Figures //////////////////////////////////
+$figure-caption-font-size:      90% !default;
+$figure-caption-line-height:    1.4 !default;
+$figure-caption-color:          #ababab !default;
+
+// Footer ////////////////////////////////
+$footer-bg-color:               #333 !default;
+$footer-menu-color:             $white !default;
+$footer-submenu-color:          $white !default;
+
+// Pills ///////////////////////////////////
+$pill-color:                   #777 !default;
+$pill-bg:                      #EBEBEB !default;
+$pill-font-weight:             $font-weight-bold !default;
+$pill-line-height:             1.45 !default;
+$pill-font-size:               .8rem !default;
+$pill-letter-spacing:          .25px !default;
+$pill-padding:                 $spacer-quarter $spacer-threefourth !default;
+$pill-padding-small:           .15rem $spacer-half !default;
+$pill-padding-outline:         ($spacer-quarter - .105rem) ($spacer-threefourth - .105rem) !default;
+
+// Cards ///////////////////////////////////
+$card-height:               $spacer-single*10.5 !default;
+
+//=============================================
+// Pages
+//=============================================

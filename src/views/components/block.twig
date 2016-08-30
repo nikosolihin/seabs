@@ -1,0 +1,50 @@
+{% set post = TimberPost(data.block) %}
+{% set style = post.get_field('style') %}
+{% set image = post.get_field('image') %}
+{% set description = post.get_field('description') %}
+{% set alignment = post.get_field('alignment') %}
+{% set link_type = post.get_field('type') %}
+{% set notitle = post.get_field('notitle') %}
+{% set tinted = notitle ? '' : 'tinted' %}
+
+{% if link_type == "single" %}
+  {% set url = post.get_field('single_url') %}
+{% elseif link_type == "external" %}
+  {% set url = post.get_field('external_url') %}
+{% else %}
+  {% set url = post.get_field('search_url') %}
+{% endif %}
+
+{% if style == "bookmark" %}
+  <div class="{{'Block'|modifiers('bookmark')}}" style="width:{{image.originalwidth}}px; height:{{image.originalheight}}px;">
+    <a href="{{url}}">
+      <img class="lazyload" data-src="{{image[original]}}" alt="{{image.title}}">
+    </a>
+  </div>
+
+{% elseif style == "card" %}
+  <div class="{{'Block'|modifiers("card, #{alignment}")}}">
+    <a href="{{url}}" class="Block-link"></a>
+    <div class="Block-head lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x"></div>
+    <div class="Block-body">
+      <h4 class="h3 Block-heading">{{post.title|title}}</h4>
+      {% if description|trim is not empty %}
+        <p>{{description|trim}}</p>
+      {% endif %}
+    </div>
+  </div>
+
+{% else %}
+  <div class="{{'Block'|modifiers("panel, #{alignment}, #{tinted}")}} lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x">
+    <a href="{{url}}" class="Block-link"></a>
+    {% if not notitle %}
+      <div class="Block-body">
+        <h4 class="h3 Block-heading">{{post.title|title}}</h4>
+        {% if description|trim is not empty %}
+          <p>{{description|trim}}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+{% endif %}

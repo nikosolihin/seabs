@@ -1,0 +1,125 @@
+html {
+  font-family: $font-family-fallback;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  font-size: $font-size-root;
+  @include from(md) {
+    font-size: 18px;
+  }
+  @include from(xl) {
+    font-size: 19px;
+  }
+}
+
+body {
+  text: $body-color $font-weight-normal left none $font-size $line-height normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: $font-weight-bold;
+  color: $headings-color;
+  line-height: $headings-line-height;
+}
+
+h1, h2 {
+  font-weight: $font-weight-normal !important;
+  line-height: 1.2;
+  letter-spacing: -.005em;
+}
+
+h1, .h1 {
+  font-size: $font-size-h1;
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+ul,
+ol {
+  padding-left: $list-padding-left;
+}
+
+ul {
+  list-style-type: $list-style-type-ul-first;
+  ul {
+    list-style-type: $list-style-type-ul-second;
+    ul {
+      list-style-type: $list-style-type-ul-third;
+    }
+  }
+}
+
+ol {
+  list-style-type: $list-style-type-ol-first;
+  ol {
+    list-style-type: $list-style-type-ol-second;
+    ol {
+      list-style-type: $list-style-type-ol-third;
+    }
+  }
+}
+
+// All Links
+a, a[href] {
+  text-decoration: $link-decoration;
+  &:focus,
+  &:hover {
+    text-decoration: $link-hover-decoration;
+  }
+  &:focus {
+    @include tab-focus;
+  }
+}
+
+// Default Links
+// a[href]:not([class]) {
+//   color: $link-color;
+//   &:focus,
+//   &:hover {
+//     color: $link-hover-color;
+//   }
+// }
+
+// No margin for only-child paragraph
+p:only-child {
+  margin-bottom: 0;
+}
+
+hr {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $hr-color 50%);
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 100% $hr-padding / 20;
+  border: 0;
+  margin: 0;
+  padding-top: $hr-padding;
+  padding-bottom: $hr-padding;
+}
+
+blockquote {
+  text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
+  margin: 0;
+}

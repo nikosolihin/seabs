@@ -1,0 +1,25 @@
+.Breadcrumb {
+  @include normalist;
+  margin-bottom: $spacer-quarter;
+  &-item {
+    position: relative;
+    display: inline-block;
+    padding-right: $spacer-single;
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &::after {
+      content: '/';
+      position: relative 0 -8px auto auto;
+    }
+  }
+  &-home {
+    position: relative 4px auto auto auto;
+    svg {
+      margin: 0;
+    }
+  }
+  &-link {
+    text: $white $font-weight-bold left normal .9rem 1 normal;
+  }
+}

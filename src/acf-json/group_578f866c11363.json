@@ -1,0 +1,133 @@
+{
+    "key": "group_578f866c11363",
+    "title": "Header & Footer Settings",
+    "fields": [
+        {
+            "key": "field_57906ab00a905",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57723132992e2",
+            "label": "Primary Menu",
+            "name": "primary_menu",
+            "type": "relationship",
+            "instructions": "Pick <strong><em>pages<\/em><\/strong> to set as menu items. You may choose up to 7 pages to display in the menu bar. The logo links back to the home page. After selecting, drag the menu items up or down to change the order they appear.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": 7,
+            "return_format": "id"
+        },
+        {
+            "key": "field_578f4be7a0066",
+            "label": "Secondary Menu",
+            "name": "secondary_menu",
+            "type": "relationship",
+            "instructions": "The secondary menu appears under the primary menu and provides shortcuts to important pages of the website. Unlike the primary menu, you may also choose resource <strong><em>posts<\/em><\/strong> here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "resource"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": 7,
+            "return_format": "id"
+        },
+        {
+            "key": "field_57906abc0a906",
+            "label": "Footer",
+            "name": "footer",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_579065c46ad69",
+            "label": "Footer",
+            "name": "footer",
+            "type": "relationship",
+            "instructions": "Pick parent pages to show in footers. Children of these pages will automatically be listed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 1,
+            "max": 7,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "header-footer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Header & Footer",
+    "local": "php",
+    "modified": 1472540011
+}

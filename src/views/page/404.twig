@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section class="Banner Banner--small wrapper" style="background-image:url({{error.image|first.url_c}})">
+    <h1 class="Heading--dropshadow">{{error.title|title}}</h1>
+  </section>
+  <div class="container-text">
+    <div class="Lead Lead--landing Lead--center">{{error.description}}</div>
+  </div>
+{% endblock %}

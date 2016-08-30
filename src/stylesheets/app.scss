@@ -1,0 +1,95 @@
+// =====================================================
+// TODO: DELETE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// =====================================================
+.xdebug-var-dump {
+  font-size: 14px;
+  margin-left: 300px;
+}
+
+// =====================================================
+// SETTINGS
+// Preprocessor vars
+// =====================================================
+@import "settings/variables";
+
+// =====================================================
+// TOOLS
+// Mixins and functions
+// =====================================================
+@import "tools/mixins";
+
+// =====================================================
+// GENERIC
+// This includes all the third-party CSS used throughout the site.
+// Reset/normalize, first layer which gnerates actual CSS.
+// =====================================================
+@import "normalize";
+// @import "generic/flickity";
+
+// =====================================================
+// ELEMENTS
+// Styling for bare HTML elements. These are element styles,  
+// not classes or IDs. Base typography styles go here,
+// as well as anything needed to style raw elements.
+// =====================================================
+@import "elements/reboot";
+@import "elements/typography";
+
+// =====================================================
+// OBJECTS
+// UI objects. Structural, not cosmetic, and mostly layout-driven.
+// Most css will be here. Layout-driven modules
+// (wrapper, container) go here too.
+// =====================================================
+@import "objects/layout";
+// @import "objects/header";
+// @import "objects/sidebar";
+// @import "objects/footer";
+// @import "objects/front-page";
+// @import "objects/landing-page";
+// @import "objects/single-page";
+// @import "objects/single-resource";
+// @import "objects/search-resource";
+
+// =====================================================
+// COMPONENTS
+// UI components. Skin/Cosmetics, not structural.
+// UI components are composed of objects and components.
+// =====================================================
+@import "components/typography";
+// @import "components/loader";
+// @import "components/newsletter";
+// @import "components/button";
+// @import "components/spacer";
+// @import "components/donate";
+// @import "components/duet";
+// @import "components/banner";
+// @import "components/callout";
+// @import "components/card";
+// @import "components/breadcrumb";
+// @import "components/accordion";
+// @import "components/carousel";
+// @import "components/pill";
+// @import "components/tabs";
+// @import "components/hero";
+// @import "components/block";
+// @import "components/feed";
+// @import "components/table";
+// @import "components/list";
+// @import "components/embed";
+// @import "components/theater";
+// @import "components/map";
+// @import "components/figure";
+// @import "components/gallery";
+// @import "components/media";
+// @import "components/pagination";
+// @import "components/searchbar";
+// @import "components/announcement";
+// @import "components/share";
+
+// =====================================================
+// TRUMPS
+// Utilities and helper classes that can
+// override with !important
+// =====================================================
+@import "trumps/trumps"

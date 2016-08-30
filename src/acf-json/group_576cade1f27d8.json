@@ -1,0 +1,105 @@
+{
+    "key": "group_576cade1f27d8",
+    "title": "Landing Page Options",
+    "fields": [
+        {
+            "key": "field_576e526bbdf7f",
+            "label": "Landing Page Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "Should this landing page only fetch children (limited) or children and grand children (extensive)? Different layout will be used for each option.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "Limited",
+                "Extensive"
+            ],
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_5770d0dfa3649",
+            "label": "Banner Size",
+            "name": "banner_size",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "medium",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_577206d248af1",
+            "label": "Content Position",
+            "name": "position",
+            "type": "radio",
+            "instructions": "Should this page's content appear before or after the list of its children pages?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "before": "Before",
+                "after": "After"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "landing-page.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : Landing Page",
+    "modified": 1472543968
+}

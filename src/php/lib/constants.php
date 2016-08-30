@@ -1,3 +1,3 @@
 <?php
-define( 'FLICKR_FIELD_USER_ID', '' );
-define( 'FLICKR_FIELD_API_KEY', '' );
+define( 'FLICKR_BROWSER_API_KEY', '9da43faf5cac30eeea61ebdc4c7501ae' );
+define( 'FLICKR_BROWSER_USER_ID', '144646525@N03' );

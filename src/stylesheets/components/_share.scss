@@ -1,0 +1,11 @@
+.Share {
+  &-item {
+    @include hover($body-color);
+    padding: $spacer-half $spacer-single;
+  }
+  svg {
+    size: $spacer-threefourth;
+  }
+}
+
+// TODO: File block, Feed w/ popularity, get up to speed with rev, caching, and deployment, clone project, figure out home stream.

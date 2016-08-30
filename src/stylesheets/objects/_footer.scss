@@ -1,0 +1,119 @@
+.Footer {
+  @include white;
+  box: horizontal wrap;
+  padding-top: $spacer-single*3.5;
+  padding-bottom: $spacer-single*3.5;
+  font-size: $font-size-h5 1.25;
+  @include from(lg) {
+    font-size: $font-size-h6 1.25;
+  }
+
+  &-wrapper {
+    background-color: $footer-bg-color;
+    margin-top: $spacer-single*5;
+  }
+  &-top {
+    width: 100%;
+    flex: 0 0 auto;
+    box: horizontal space-between;
+    border-bottom: 2px solid #444;
+    padding-bottom: $spacer-single*2;
+    margin-bottom: $spacer-single*2;
+  }
+  &-left {
+    width: 80%;
+  }
+  &-right {
+    width: 20%;
+  }
+
+  &-address {
+    line-height: 1.4;
+    margin-bottom: $spacer-single*1.5;
+  }
+  &-socialIcon {
+    padding: $spacer-threefourth;
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+    svg {
+      transition: all .12s ease-in-out;
+      margin: 0;
+      height: 20px;
+    }
+    &:hover svg {
+      fill: #d35c37;
+    }
+  }
+
+  &-logo {
+    width: 22%;
+    flex: 0 0 auto;
+    box: vertical center;
+    svg {
+      fill: #ccc;
+      width: 80%;
+      height: 43px;
+      margin: $spacer-single 0;
+    }
+  }
+  &-about {
+    padding: 0 4.5%;
+    p {
+      font-size: .925rem 1.5;
+    }
+  }
+  &-cta {
+    width: 17%;
+    // padding-right: 4%;
+    flex: 0 0 auto;
+    .Button {
+      background-color: $red;
+      margin: 0;
+      padding: .9rem $spacer-single;
+      &:first-of-type {
+        background-color: $sky;
+      }
+      &:last-of-type {
+        margin-top: $spacer-threefourth;
+      }
+    }
+  }
+
+  @at-root {
+    .legal {
+      @include white;
+      padding: $spacer-single 0;
+      background-color: #181818;
+      font-size: $font-size-h5 1.25;
+      @include from(lg) {
+        font-size: $font-size-h6 1.25;
+      }
+      a {
+        @include hover($white, #d35c37);
+      }
+      .container {
+        box: horizontal space-between;
+      }
+      &-languages, &-copy {
+        color: #888;
+      }
+      &-copy {
+        margin-right: $spacer-half;
+        padding-right: $spacer-half;
+        border-right: 1px solid #383838;
+      }
+      &-language {
+        padding: 0 .65rem;
+        border-right: 1px solid #383838;
+        font-weight: $font-weight-bold;
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+  }
+}

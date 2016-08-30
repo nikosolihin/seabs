@@ -1,0 +1,95 @@
+{
+    "key": "group_57b09f51392b7",
+    "title": "Split Sidebars Template",
+    "fields": [
+        {
+            "key": "field_57b09f514586f",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This template splits the sidebar into two parts, primary and secondary, located in the left and right side of the page's main content. The primary sidebar will be larger than the secondary.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57b09f514592b",
+            "label": "Primary Sidebar Position",
+            "name": "sidebar_position",
+            "type": "radio",
+            "instructions": "The secondary sidebar will be positioned opposite of the primary.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "right",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57b09f51459db",
+            "label": "Banner Size",
+            "name": "banner_size",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "medium",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "split-sidebars.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : Split Sidebars",
+    "modified": 1472543997
+}

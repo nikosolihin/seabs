@@ -1,0 +1,66 @@
+.Sidebar {
+  width: 27%;
+  flex: 0 0 auto;
+  color: $sidebar-color;
+  font-size: $sidebar-font-size;
+  margin-left: $spacer-single*3;
+
+  // Default Links
+  a[href]:not([class]) {
+    color: darken($blue, 15%);
+    &:focus,
+    &:hover {
+      color: darken($blue, 30%);
+    }
+  }
+
+  .Callout {
+    background-color: #f9f9f9;
+  }
+  .is-Active {
+    > .List {
+      display: block;
+    }
+    > a {
+      padding-left: 10px;
+      color: $brand-primary;
+      font-weight: $font-weight-bold;
+      border-left: 4px solid $brand-secondary;
+    }
+    .is-Active a {
+      border-left: none;
+      padding-left: 14px;
+    }
+  }
+  .Block {
+    border: none;
+    min-height: $card-height*1.2;
+    +.Block {
+      margin-top: $spacer-single;
+    }
+  }
+
+  &-heading {
+    color: $sidebar-heading-color;
+    font-size: $sidebar-font-size;
+    margin: $spacer-half 0 $spacer-quarter;
+    > a {
+      @include hover($sidebar-heading-color, $sidebar-heading-color);
+    }
+  }
+  &-section {
+    overflow: hidden;
+    margin-bottom: $spacer-single*2.5;
+    p { margin-bottom: $spacer-half; }
+  }
+  &-sectionHeading {
+    @extend .h4;
+    color: $gray-dark;
+    font-weight: $font-weight-normal;
+  }
+
+  &--borderless {
+    border-top: none;
+  }
+
+}

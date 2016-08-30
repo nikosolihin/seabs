@@ -1,0 +1,41 @@
+{
+    "key": "group_576233ecd0b59",
+    "title": "Form",
+    "fields": [
+        {
+            "key": "field_576233ecd60f2",
+            "label": "Choose a form",
+            "name": "form",
+            "type": "gravity_forms_field",
+            "instructions": "Click <a href=\"admin.php?page=gf_new_form\">here<\/a> to create a new form, or the <strong>Form<\/strong> button in the left sidebar.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "allow_null": 0,
+            "allow_multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Form",
+    "local": "php",
+    "modified": 1472539654
+}

@@ -1,0 +1,9 @@
+.SinglePage {
+  box: horizontal;
+  
+  &-content {
+    > .container {
+      padding: 0;
+    }
+  }
+}

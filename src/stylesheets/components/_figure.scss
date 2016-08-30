@@ -1,0 +1,36 @@
+.Figure {
+  display: inline-block;
+  margin: $spacer-single -25px;
+  &-caption {
+    font-size: $font-size-h6;
+    color: $figure-caption-color;
+    line-height: $figure-caption-line-height;
+    padding: 12px 25px 0;
+    @at-root .Sidebar-section #{&} {
+      padding: 0 $spacer-quarter;
+    }
+  }
+  &--left {
+    @include from(md) {
+      float: left;
+      margin: $spacer-half $spacer-single * 1.75 $spacer-half -25px;
+      max-width: 50%;
+    }
+  }
+  &--right {
+    @include from(md) {
+      float: right;
+      margin: $spacer-half -25px $spacer-half $spacer-single * 1.75;
+      max-width: 50%;
+    }
+  }
+  @at-root .Sidebar-section #{&} {
+    margin: $spacer-threefourth 0;
+  }
+  @at-root .Row--of-2 #{&} {
+    margin: $spacer-single 0;
+  }
+  @at-root .Row--of-3 #{&} {
+    margin: $spacer-single 0;
+  }
+}

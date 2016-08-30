@@ -1,0 +1,42 @@
+.Searchbar {
+  @include white;
+  box: vertical;
+  position: absolute;
+  top: 151px;
+  z-index: $zindex-searchbar;
+  width: 100%;
+  max-width: $wrapper-width;
+  padding: $spacer-single*2 0;
+  background-color: #222;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, -5%, 0);
+  transition: all .105s ease-in-out;
+  &.is-Visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &-form {
+    box: horizontal middle;
+  }
+  &-icon {
+    size: $spacer-single*1.5;
+    fill: #666;
+    margin-right: $spacer-threefourth;
+    margin-top: $spacer-half;
+  }
+  &-input {
+    padding: 0;
+    border: none;
+    font-size: $font-size-h1;
+  }
+  &-label {
+    display: block;
+    color: #bbb;
+    border-top: 1px solid #333;
+    margin-top: $spacer-half;
+    padding-top: .125rem;
+  }
+}

@@ -1,0 +1,60 @@
+.Feed {
+  @include normalist;
+  margin-bottom: 0;
+
+  &-item {
+    padding: $spacer-threefourth 0;
+    border-bottom: 1px solid $gray-lighter;
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    @at-root .Feed--object-list #{&} {
+      box: horizontal;
+    }
+    @at-root .Feed--card #{&} {
+      box: vertical;
+    }
+  }
+  &-left {
+    flex: 0 0 auto;
+  }
+  &-top {
+    @include cover;
+    margin-bottom: $spacer-threefourth;
+    height: $card-height/1.75;
+    position: relative;
+    .Feed-link {
+      display: block;
+      size: 100%;
+    }
+    .Pill {
+      position: absolute $spacer-threefourth auto auto $spacer-threefourth;
+    }
+  }
+  &-right {
+    .Pill {
+      margin-bottom: $spacer-quarter;
+    }
+    .h5, .meta {
+      margin-bottom: .125rem;
+    }
+    .meta {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    p {
+      margin-bottom: .125rem !important;
+    }
+    @at-root .Feed--object-list #{&} {
+      padding-left: $spacer-single;
+    }
+  }
+
+  &-image {
+    size: $spacer-single*4;
+    &--circular {
+      border-radius: 50%;
+    }
+  }
+}

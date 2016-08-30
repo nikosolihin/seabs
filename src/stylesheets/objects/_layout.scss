@@ -1,0 +1,76 @@
+.wrapper {
+  max-width: $wrapper-width; //1600
+  margin: 0 auto;
+  @at-root main#{&} {
+    position: relative;
+  }
+}
+
+.container {
+  max-width: $container-width;  // 1200px
+  margin: 0 auto;
+  padding: 0 $spacer-single;
+
+  &--max {
+    min-width: $container-width;
+  }
+  &--nopadding {
+    padding: 0;
+  }
+
+  //=== Text Containers ===
+  &--text {
+    max-width: $container-text-width;
+  }
+  &--text-nosidebar {
+    max-width: $container-text-nosidebar-width;
+  }
+
+  //=== Container Alignment ===
+  &--left {
+    margin: 0 auto 0 0;
+  }
+  &--right {
+    margin: 0 0 0 auto;
+  }
+}
+
+.row {
+  display: block;
+  + .row { margin-top: $spacer-single*1.5; }
+  @include from(md) {
+    // Flex on tablet up
+    box: horizontal wrap;
+  }
+  > * {
+    width: 100%;
+  }
+  &--of-2 {
+    @include from(md) {
+      > * { width: 50%; }
+    }
+    .column:nth-child(odd) {
+      padding-right: $spacer-single*1.75;
+    }
+    .column:nth-child(even) {
+      padding-left: $spacer-single*1.75;
+    }
+  }
+  &--of-3 {
+    @include from(md) {
+      > * { width: 50%; }
+    }
+    @include from(lg) {
+      > * { width: 33.33333%; }
+    }
+  }
+  &--of-4 {
+    > * {
+      width: 25%;
+    }
+  }
+}
+
+.column {
+  // The column divs act as a flex child wrapper.
+}

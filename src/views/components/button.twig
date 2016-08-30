@@ -1,0 +1,11 @@
+{% if data.type == "single" %}
+  {% set url = data.single_url %}
+{% elseif data.type == "external" %}
+  {% set url = data.external_url %}
+{% else %}
+  {% set url = data.search_url %}
+{% endif %}
+
+<a href="{{url}}" class="Button Button--{{data.display}}">
+  {{data.label}}
+</a>

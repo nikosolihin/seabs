@@ -1,0 +1,37 @@
+.Callout {
+  background-color: $callout-bg;
+  padding: $callout-padding;
+  margin-bottom: $spacer-single*1.75;
+  &--landing {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin: $callout-padding*1.25 -50vw;
+    padding: $callout-padding*1.75 0;
+    background-color: $callout-section-bg;
+    + .Callout--landing {
+      margin-top: -$callout-padding*1.5;
+      padding-top: 0;
+    }
+  }
+  &--column {
+    margin-right: -$spacer-single*1.25;
+  }
+  &--single {
+    > * {
+      margin: 0;
+    }
+  }
+  &--light {
+    background: $callout-section-bg;
+  }
+  &--sidebar {
+    > .Sidebar-section {
+      margin-bottom: 0;
+    }
+    &:first-of-type {
+      border-top: 6px solid #eee;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{% set postlink = post.link|url_encode %}
+{% set posttitle = post.title|url_encode %}
+{% set twitter = 'https://twitter.com/intent/tweet?text='~posttitle~'&amp;url='~postlink %}
+{% set facebook = 'https://facebook.com/sharer/sharer.php?u='~postlink %}
+{% set google = 'https://plus.google.com/share?url='~postlink %}
+{% set whatsapp = 'whatsapp://send?text='~posttitle~' '~postlink %}
+{% set email = 'mailto:?subject='~posttitle~'&body='~postlink %}
+
+<div class="Share">
+
+	<a href="{{facebook}}" class="Share-item" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+		</svg>Facebook
+	</a>
+	<a href="{{twitter}}" class="Share-item" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+		</svg>Twitter
+	</a>
+	<a href="{{whatsapp}}" class="Share-item" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#whatsapp"></use>
+		</svg>Whatsapp
+	</a>
+	<a href="{{email}}" class="Share-item" target="_blank">
+		<svg aria-hidden="true" role="presentation" title="">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#email"></use>
+		</svg>Email
+	</a>
+	<a href="" class="Share-toggle">
+		<svg aria-hidden="true" role="presentation" title="Share this resource">
+	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use>
+		</svg>Share
+	</a>
+
+</div>

@@ -1,0 +1,607 @@
+{
+    "key": "group_5770ee0827d1e",
+    "title": "General Settings",
+    "fields": [
+        {
+            "key": "field_57723306c8aca",
+            "label": "Organization Info",
+            "name": "organiz_info",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5797979ee6efa",
+            "label": "Who?",
+            "name": "org_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_579797cee6efb",
+            "label": "What?",
+            "name": "org_description",
+            "type": "textarea",
+            "instructions": "In a few words, explain what this organization is about.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_579796aae6ef9",
+            "label": "Where?",
+            "name": "org_address",
+            "type": "textarea",
+            "instructions": "The Main office of Global Christian Forum.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5798519708fb4",
+            "label": "Languages",
+            "name": "_copy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_579851a908fb5",
+            "label": "",
+            "name": "languages",
+            "type": "repeater",
+            "instructions": "Add \/ Remove languages here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 4,
+            "layout": "row",
+            "button_label": "Add Language",
+            "sub_fields": [
+                {
+                    "key": "field_5798520e08fb7",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_579851cf08fb6",
+                    "label": "Abbreviation",
+                    "name": "code",
+                    "type": "text",
+                    "instructions": "The <a href=\"https:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\" target=\"_blank\">ISO code<\/a> for this language.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5798521908fb8",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5770eec28907f",
+            "label": "Images",
+            "name": "_copy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5770ee9c8907e",
+            "label": "Quality of Banner Images",
+            "name": "image_quality",
+            "type": "radio",
+            "instructions": "Normally, page banners, hero items and photo galleries will use the \"Large 1024\" Flickr size. The highest setting will use the original size of every image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "normal": "Normal",
+                "highest": "Highest"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5770f14f3446d",
+            "label": "Placeholder Image",
+            "name": "placeholder_image",
+            "type": "flickr_browser",
+            "instructions": "This image will be used fill in missing banner and teaser images.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_m",
+                "url_l"
+            ],
+            "flickr_extras": ""
+        },
+        {
+            "key": "field_5770ee878907d",
+            "label": "Error Page",
+            "name": "error_page",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57710d4a28e13",
+            "label": "Title",
+            "name": "error_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57710d9428e14",
+            "label": "Description",
+            "name": "error_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_57710e1228e15",
+            "label": "Image",
+            "name": "error_image",
+            "type": "flickr_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_c"
+            ],
+            "flickr_extras": ""
+        },
+        {
+            "key": "field_57710b3c28e11",
+            "label": "Social Links",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_578fa6c0fc5ef",
+            "label": "Facebook",
+            "name": "facebook",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/ or https:\/\/"
+        },
+        {
+            "key": "field_578fa72ce28eb",
+            "label": "Twitter",
+            "name": "twitter",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/ or https:\/\/"
+        },
+        {
+            "key": "field_578fa718e28ea",
+            "label": "Youtube",
+            "name": "youtube",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/ or https:\/\/"
+        },
+        {
+            "key": "field_578fa745e28ec",
+            "label": "Instagram",
+            "name": "instagram",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/ or https:\/\/"
+        },
+        {
+            "key": "field_57998e2ed8c48",
+            "label": "Newsletter",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57998f3b1a7f9",
+            "label": "Mailchimp signup form",
+            "name": "newsletter",
+            "type": "url",
+            "instructions": "Used for sign-up buttons throughout the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57998e40d8c49",
+            "label": "Donation",
+            "name": "_copy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57998e79ac46d",
+            "label": "Where is the donation page located?",
+            "name": "donation",
+            "type": "page_link",
+            "instructions": "Used for the donate buttons throughout the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "allow_archives": 1
+        },
+        {
+            "key": "field_57999aabced1c",
+            "label": "Privacy Policy",
+            "name": "privacy_policy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57999abdced1d",
+            "label": "Privacy policy page",
+            "name": "policy",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "allow_archives": 1
+        },
+        {
+            "key": "field_5770f37ab882a",
+            "label": "Services",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5770f389b882b",
+            "label": "Important Services & Server Details",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p class=\"essentials-description\">This is a list of ongoing services and subscriptions associated with the Global Christian Forum website. Note: passwords shown are default passwords. If you decide to change them, we recommend the use of <a href=\"https:\/\/strongpasswordgenerator.com\/\" target=\"_blank\">strong password generator<\/a>.<\/p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5770fe3c3c908",
+            "label": "Flickr",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Image Hosting<\/td>\r\n      <td>Free storage up to 1 TB<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/www.flickr.com\/signin\">https:\/\/www.flickr.com\/signin<\/a>\r\n        <br>\r\n        Username: <em>globalchristianforum<\/em>\r\n        <br>\r\n        Password: <em>nEt0pak0O@<\/em>\r\n      <\/td>\r\n      <td>n\/a<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5770fe523c909",
+            "label": "GoDaddy",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Hosting<\/td>\r\n      <td>Customer #: <em>125647920<\/em><br>PIN: <em>2016<\/em><\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/sso.godaddy.com\/\">https:\/\/sso.godaddy.com\/<\/a>\r\n        <br>\r\n        Username: <em>globalchristianforum<\/em>\r\n        <br>\r\n        Password: <em>nEt0pak0O@<\/em>\r\n      <\/td>\r\n      <td>Mar 27, 2019<\/td>\r\n    <\/tr>\r\n    <tr>\r\n      <td>cPanel<\/td>\r\n      <td>Hosting control panel<\/td>\r\n      <td>Link: <a href=\"https:\/\/cpanel.test.org\/\">test<\/a>\r\n      <br>\r\n      Username: <em>test<\/em>\r\n      <br>\r\n      Password: <em>nEt0pak0O@<\/em><\/td>\r\n      <td>Jan 25, 2019<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5771022e5c3ad",
+            "label": "Mailchimp",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<table class=\"essentials\">\r\n  <thead>\r\n    <tr>\r\n      <th>Service<\/th>\r\n      <th>Details<\/th>\r\n      <th>Login<\/th>\r\n      <th>Expires<\/th>\r\n    <\/tr>\r\n  <\/thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Email Newsletter<\/td>\r\n      <td>Used for GCF News<\/td>\r\n      <td>\r\n        Link: <a href=\"https:\/\/login.mailchimp.com\">https:\/\/login.mailchimp.com<\/a>\r\n        <br>\r\n        Username: <em>globalchristianforum<\/em>\r\n        <br>\r\n        Password: <em>nEt0pak0O@<\/em>\r\n      <\/td>\r\n      <td>n\/a<\/td>\r\n    <\/tr>\r\n  <\/tbody>\r\n<\/table>",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Site Settings",
+    "local": "php",
+    "modified": 1472539784
+}

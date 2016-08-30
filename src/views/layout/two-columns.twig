@@ -1,0 +1,22 @@
+{% if landingCallout %}
+<div class="Callout--landing">
+  <div class="container">
+{% endif %}
+
+    <div class="Row Row--of-2">
+      <div class="Column">
+        {% if leftCallout %}<div class="Callout Callout--column">{% endif %}
+          {% block left %}{% endblock %}
+        {% if leftCallout %}</div>{% endif %}
+      </div>
+      <div class="Column">
+        {% if rightCallout %}<div class="Callout Callout--column">{% endif %}
+          {% block right %}{% endblock %}
+        {% if rightCallout %}</div>{% endif %}
+      </div>
+    </div>
+
+{% if landingCallout %}
+  </div>
+</div>
+{% endif %}

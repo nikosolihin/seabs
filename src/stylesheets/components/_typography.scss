@@ -1,0 +1,41 @@
+.Lead {
+  text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
+  margin: $lead-margin 0;
+  &--intro {
+    margin-top: 0;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--landing {
+    font-size: $lead-font-size*1.25;
+    margin-bottom: $lead-margin*2;
+  }
+  @at-root .Callout--column #{&}:first-child {
+    margin-top: 0;
+  }
+}
+.meta {
+  text: #999 $font-weight-normal left normal .9rem 1.3 normal;
+  margin-bottom: 0;
+  &--caps {
+    text-transform: uppercase;
+    font-size: 90%;
+    letter-spacing: $caps-heading-letter-spacing/4;
+  }
+}
+.Heading {
+  text: $caps-heading-color $font-weight-bold left uppercase $caps-heading-font-size $headings-line-height $caps-heading-letter-spacing;
+  &--section {
+    margin-bottom: $spacer-single*1.25;
+  }
+  &--subtitle {
+    margin-bottom: $spacer-half;
+  }
+  &--dropshadow {
+    text-shadow: #262626 2px 1px 6px;
+  }
+}
+.no-hover {
+  @include hover();
+}

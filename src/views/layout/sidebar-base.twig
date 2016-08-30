@@ -1,0 +1,11 @@
+{% for section in sidebar_sections %}
+<div class="Sidebar-section">
+  {% if section.title %}
+    <h3 class="Sidebar-sectionHeading">{{section.title}}</h3>
+  {% endif %}
+  {% if section.description %}<p>{{section.description}}</p>{% endif %}
+  {% for component in section.sidebar_components %}
+    {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}
+  {% endfor %}
+</div>
+{% endfor %}

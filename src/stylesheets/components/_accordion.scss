@@ -1,0 +1,25 @@
+// TODO: Style accordion
+.Accordion {
+  @include normalist;
+  &-checkbox {
+    display: none;
+    &:not(checked) ~ .Accordion-body {
+      display: none;
+    }
+    &:checked {
+      ~ .Accordion-body {
+        display: block;
+      }
+      ~ .Accordion-head::before {
+        content: "-";
+      }
+    }
+  }
+  &-head {
+    cursor: pointer;
+    display: block;
+    &::before {
+      content: "+";
+    }
+  }
+}

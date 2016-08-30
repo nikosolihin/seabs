@@ -1,0 +1,282 @@
+{
+    "key": "group_577157bc77924",
+    "title": "Block Builder",
+    "fields": [
+        {
+            "key": "field_57716a06db7c4",
+            "label": "Style",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57bc86a8ab7df",
+            "label": "Block Style",
+            "name": "style",
+            "type": "radio",
+            "instructions": "Blocks are essentially larger Call-to-Action buttons with a background image and a simple action verb encouraging visitors to visit the target link.<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-image-select",
+                "id": ""
+            },
+            "choices": {
+                "panel": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
+                "bookmark": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
+                "card": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/card.png\"><p>Card<\/p>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57bd238bccce9",
+            "label": "Bookmark Notice",
+            "name": "bookmark_notice",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "bookmark"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "acf-instruction",
+                "id": ""
+            },
+            "message": "Unlike the other block types, bookmarks will not stretch to fit the parent container, such as sidebar or layout columns. The background image will be displayed in its original dimensions. Since there can be a variety of widths\/heights, the copy and CTA need to be part of the image itself. We recommend a width of <strong>300 px<\/strong> and height of <strong>550 to 650 px<\/strong> with a generous amount of side padding.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_577159bad2d3a",
+            "label": "Label",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "panel"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57b6ddd06300a",
+            "label": "Block Title",
+            "name": "notitle",
+            "type": "true_false",
+            "instructions": "Check this if the image you selected already has a text on it. Otherwise, the title of this block will be used as a label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Don't label this block",
+            "default_value": 0
+        },
+        {
+            "key": "field_57715bb61788a",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Will appear below the block title. Leave blank for a title-only block.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b6ddd06300a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 65,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57bd9f8c2cbe5",
+            "label": "Text Alignment",
+            "name": "alignment",
+            "type": "radio",
+            "instructions": "By default, texts on blocks are centered.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57b6ddd06300a",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "center": "Center",
+                "left": "Left"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "center",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_577158aa1d1ba",
+            "label": "Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57bd73723e3c9",
+            "label": "Image",
+            "name": "image",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_57bd72b2e0e2c",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        },
+        {
+            "key": "field_577158f21d1bb",
+            "label": "Link",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57a4cc8707b94",
+            "label": "Link",
+            "name": "link",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_5773382ac6cac",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Block Builder",
+    "local": "php",
+    "modified": 1472541908
+}

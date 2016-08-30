@@ -1,0 +1,62 @@
+.List {
+  @include normalist;
+  margin-bottom: 0;
+  .List {
+    @include normalist;
+    margin-left: $spacer-threefourth;
+  }
+
+  &--sidebar {
+    margin-top: $spacer-threefourth;
+    a { padding-left: 14px; }
+    .List {
+      display: none;
+    }
+    li {
+      margin-top: $spacer-half;
+    }
+  }
+
+  &--inline {
+    box: vertical;
+    text-align: center;
+    @include from(lg) {
+      box: horizontal;
+      text-align: left;
+    }
+  }
+
+  &--inlineLeft {
+    justify-content: flex-start;
+  }
+  &--inlineRight {
+    justify-content: flex-end;
+  }
+
+  &--footer {
+    box: horizontal;
+    > li {
+      margin-right: $spacer-single*2.5;
+      > a {
+        display: block;
+        margin-bottom: $spacer-half;
+        color: $footer-menu-color;
+        font-weight: $font-weight-bold;
+      }
+    }
+    .List-sublist {
+      @include normalist;
+      display: none;
+      @include from(lg) {
+        display: block;
+      }
+      li {
+        margin-bottom: $spacer-half;
+      }
+      a {
+        color: $footer-submenu-color;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+}

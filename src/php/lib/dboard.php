@@ -1,13 +1,36 @@
 <?php
 /*=============================================*/
-/* Prevent TinyMCE from including unnecessary headings
+/* Prevent TinyMCE format dropdown
+/* from including unnecessary headings
 /*=============================================*/
-function my_format_TinyMCE( $in ) {
+function custom_format_TinyMCE( $in ) {
   $in['block_formats'] = "Heading=h3; Sub-Heading=h5; Paragraph=p;";
 	return $in;
 }
-add_filter( 'tiny_mce_before_init', 'my_format_TinyMCE' );
+add_filter( 'tiny_mce_before_init', 'custom_format_TinyMCE' );
 
+/*=============================================*/
+/* Activate TinyMCE style dropdown
+/* and add text styles to it
+/*=============================================*/
+function custom_style_TinyMCE($buttons) {
+  array_unshift($buttons, 'styleselect');
+  return $buttons;
+}
+add_filter('mce_buttons_2', 'custom_style_TinyMCE');
+
+function custom_style_def_TinyMCE( $init_array ) {
+	$style_formats = array(
+		array(
+			'title' => 'Lead Paragraph',
+			'block' => 'p',
+			'classes' => 'Lead',
+		),
+	);
+	$init_array['style_formats'] = json_encode( $style_formats );
+	return $init_array;
+}
+add_filter( 'tiny_mce_before_init', 'custom_style_def_TinyMCE' );
 
 /*=============================================*/
 /* Hide admin bar on the front-end for all users
@@ -16,16 +39,6 @@ add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
   show_admin_bar(false);
 }
-
-/*=============================================*/
-/* Load custom CSS for WP dashboard
-/*=============================================*/
-function load_custom_wp_admin_style() {
-  wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/dashboard/custom-style.css', false, '1.0.0' );
-  wp_enqueue_style( 'custom_wp_admin_css' );
-}
-add_action( 'login_head', 'load_custom_wp_admin_style' );
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 /*=============================================*/
 /* Change the login logo URL.
@@ -39,7 +52,7 @@ function my_login_logo_url() {
 // Alt attribute
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 function my_login_logo_url_title() {
-  return 'Karawaci Presbyterian Church';
+  return 'Seminari Alkitab Asia Tenggara';
 }
 
 /*=============================================*/
@@ -63,7 +76,28 @@ function rememberme_checked() {
 }
 
 /*=============================================*/
-/* Remove Gravity Form wysiwyg button
-/* and rely on ACF plugin
+/* Disable Wordpress Update Notification
 /*=============================================*/
-add_filter( 'gform_display_add_form_button', '__return_false');
+add_action('after_setup_theme','remove_core_updates');
+function remove_core_updates() {
+  if(! current_user_can('update_core')){return;}
+  add_action('init', create_function('$a',"remove_action( 'init', 'wp_version_check' );"),2);
+  add_filter('pre_option_update_core','__return_null');
+  add_filter('pre_site_transient_update_core','__return_null');
+}
+
+/*=============================================*/
+/* Disable Plugin Update Notifications
+/*=============================================*/
+remove_action('load-update-core.php','wp_update_plugins');
+add_filter('pre_site_transient_update_plugins','__return_null');
+
+/*=============================================*/
+/* Disable Other Misc Notifications
+/*=============================================*/
+function remove_other_updates(){
+  global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_core','remove_other_updates');
+add_filter('pre_site_transient_update_plugins','remove_other_updates');
+add_filter('pre_site_transient_update_themes','remove_other_updates');

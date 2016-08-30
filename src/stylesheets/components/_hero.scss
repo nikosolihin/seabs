@@ -1,0 +1,14 @@
+.Hero {
+  box: horizontal wrap;
+  border-bottom: 3px solid $white;
+  &-grid {
+    width: 100%;
+    @include from(md) {
+      width: 33.33%;
+      border-right: 3px solid white;
+    }
+  }
+  .Pill {
+    margin-bottom: $spacer-half;
+  }
+}

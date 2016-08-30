@@ -1,0 +1,24 @@
+{% if callout %}
+<div class="Callout--landing">
+  <div class="container">
+{% endif %}
+    <div class="container">
+      <div class="Row Row--of-4">
+        <div class="Column">
+          {% block left %}{% endblock %}
+        </div>
+        <div class="Column">
+          {% block mid_left %}{% endblock %}
+        </div>
+        <div class="Column">
+          {% block mid_right %}{% endblock %}
+        </div>
+        <div class="Column">
+          {% block right %}{% endblock %}
+        </div>
+      </div>
+    </div>
+{% if callout %}
+  </div>
+</div>
+{% endif %}

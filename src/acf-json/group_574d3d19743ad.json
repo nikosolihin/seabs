@@ -1,0 +1,85 @@
+{
+    "key": "group_574d3d19743ad",
+    "title": "Accordion",
+    "fields": [
+        {
+            "key": "field_574d3dbcb8e6d",
+            "label": "",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_574d3e59b8e6e",
+            "min": 1,
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Accordion Item",
+            "sub_fields": [
+                {
+                    "key": "field_574d3e59b8e6e",
+                    "label": "Head",
+                    "name": "head",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_574d3e71b8e6f",
+                    "label": "Body",
+                    "name": "body",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "full",
+                    "media_upload": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Accordion",
+    "local": "php",
+    "modified": 1472539654
+}

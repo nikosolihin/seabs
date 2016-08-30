@@ -1,0 +1,35 @@
+.Pagination {
+  box: horizontal;
+  &-label {
+    margin-right: $spacer-half;
+    font-weight: $font-weight-bold;
+  }
+  &-pages {
+    li {
+      position: relative;
+      margin: 0 $spacer-threefourth;
+    }
+    a {
+      @include hover($gray-dark, $gray-dark);
+      font-size: $font-size-h6;
+    }
+  }
+  &--current {
+    a {
+      font-weight: $font-weight-bold;
+    }
+    &::after {
+      content: '';
+      background: #ddd;
+      height: $spacer-quarter;
+      width: $spacer-single;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translatex(-50%);
+    }
+  }
+  &--hidden {
+    display: none;
+  }
+}

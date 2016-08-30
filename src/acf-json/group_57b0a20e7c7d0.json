@@ -1,0 +1,71 @@
+{
+    "key": "group_57b0a20e7c7d0",
+    "title": "No Sidebar Template",
+    "fields": [
+        {
+            "key": "field_57b0a20e884ac",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This template removes the sidebar, leaving a little more room for the main content.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57b0a20e88622",
+            "label": "Banner Size",
+            "name": "banner_size",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "medium",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "sans-sidebar.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : Without Sidebar",
+    "modified": 1472543977
+}
