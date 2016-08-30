@@ -3,12 +3,12 @@
   border-radius: 2px;
   display: inline-block;
   padding: $button-padding;
-  margin-top: $spacer-single;
-  margin-bottom: $spacer-single*1.25;
-  margin-right: $spacer-threefourth;
+  // margin-top: $spacer-single;
+  // margin-bottom: $spacer-single*1.25;
+  // margin-right: $spacer-threefourth;
   background-color: $button-bg;
   border: 0;
-  text: $white $font-weight-bold left uppercase $font-size-h6 $headings-line-height 1px;
+  text: $white $font-weight-bold left none $font-size-h6 $headings-line-height 1px;
   &--small {
     padding: $button-small-padding;
   }

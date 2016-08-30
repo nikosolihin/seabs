@@ -8,13 +8,13 @@ $blue:                         #5ab5dd !default;
 $sky:                          #628b9d !default;
 $red:                          #D65B2D !default;
 $gray-darker:                  lighten($black, 13.5%) !default;
-$gray-dark:                    lighten($black, 25%) !default;
+$gray-dark:                    lighten($black, 20%) !default;
 $gray:                         lighten($black, 33.5%) !default;
 $gray-light:                   lighten($black, 46.7%) !default;
 $gray-lighter:                 lighten($black, 93.5%) !default;
 $gray-lightest:                lighten($black, 96.5%) !default;
 $brand-primary:                #B51812 !default;
-$brand-secondary:              #97979D !default;
+$brand-secondary:              darken($brand-primary, 3.75%) !default;
 
 
 //=============================================
@@ -38,7 +38,8 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 $wrapper-width:                   1600px !default;
-$container-width:                 1200px !default;
+$wrapper-narrow-width:            1440px !default;  
+$container-width:                 1270px !default;
 $container-text-width:            725px !default;
 $container-text-nosidebar-width:  925px !default;
 
@@ -71,7 +72,7 @@ $hr-color:                      #ccc !default;
 
 // SVG //////////////////////////////////////
 $svg-fill:                      currentColor !default;
-$svg-size:                      $spacer-single !default;
+$svg-size:                      $spacer-single*1.5 !default;
 $svg-margin:                    $spacer-half !default;
 
 // Tables /////////////////////////////////////
@@ -85,7 +86,7 @@ $svg-margin:                    $spacer-half !default;
 //=============================================
 // Typography
 //=============================================
-$font-size-root:               16px !default;
+$font-size-root:               17px !default;
 $font-size-small:              14px !default;
 $font-size:                    1rem !default;
 
@@ -103,7 +104,7 @@ $font-size-h2:                 1.728rem !default;
 $font-size-h3:                 1.44rem !default;
 $font-size-h4:                 1.2rem !default;
 $font-size-h5:                 1rem !default;
-$font-size-h6:                 .833rem !default;
+$font-size-h6:                 .882rem !default;
 $line-height:                  1.55 !default;
 $headings-line-height:         1.25 !default;
 
@@ -145,7 +146,7 @@ $callout-section-bg:            #fafafa !default;
 $callout-padding:               $spacer-single*1.75 !default;
 
 // Buttons ///////////////////////////////////
-$button-bg:                     $brand-primary !default;
+$button-bg:                     $brand-secondary !default;
 $button-padding:                $spacer-single $spacer-single*1.25 !default;
 $button-small-padding:          $spacer-half .625rem !default;
 $button-xs-padding:             .35rem .625rem !default;
