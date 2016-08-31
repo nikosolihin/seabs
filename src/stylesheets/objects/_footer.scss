@@ -88,7 +88,7 @@
     .legal {
       @include white;
       padding: $spacer-threefourth 0;
-      background-color: $brand-secondary;
+      background-color: $footer-legal-bg;
       font-size: $font-size-h5;
       @include from(lg) {
         font-size: $font-size-h7;
