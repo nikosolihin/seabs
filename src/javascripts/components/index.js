@@ -1,31 +1,12 @@
 /*
-  Automatically instantiates modules based on data-attrubiutes
-  specifying module file-names.
+  Automatically instantiates modules based on data-comoonent attributes.
 */
 
-const moduleElements = document.querySelectorAll('[data-module]')
+const moduleElements = document.querySelectorAll('[data-component]')
 
 for (var i = 0; i < moduleElements.length; i++) {
   const el = moduleElements[i]
-  const name = el.getAttribute('data-module')
+  const name = el.getAttribute('data-component')
   const Module = require(`./${name}`).default
   new Module(el)
 }
-
-/*
-  Usage:
-  ======
-
-  html
-  ----
-  <button data-module="disappear">disappear!</button>
-
-  js
-  --
-  // modules/disappear.js
-  export default class Disappear {
-    constructor(el) {
-      el.style.display = none
-    }
-  }
-*/

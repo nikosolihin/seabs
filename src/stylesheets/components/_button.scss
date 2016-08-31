@@ -3,9 +3,6 @@
   border-radius: 2px;
   display: inline-block;
   padding: $button-padding;
-  // margin-top: $spacer-single;
-  // margin-bottom: $spacer-single*1.25;
-  // margin-right: $spacer-threefourth;
   background-color: $button-bg;
   border: 0;
   text: $white $font-weight-bold left none $font-size-h6 $headings-line-height 1px;
@@ -24,12 +21,6 @@
     color: $button-bg;
     border: 2px solid $button-bg;
     background-color: transparent;
-  }
-  &--announcement {
-    background-color: $brand-secondary;
-    margin: 0;
-    text-transform: capitalize;
-    padding: $button-xs-padding;
   }
   &:last-of-type {
     margin-bottom: 0;

@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "The announcement bar is used to notify an important message to site visitors. The message will be displayed on any page a visitor visits as long as the close button has not been clicked. Closing the message will prevent it from being shown for that particular visitor for 7 days unless the announcement is turned off. If after a week the announcement status is still on, the message will be shown again.\r\n<br><br>\r\n<strong>TIP:<\/strong> Keep the sentence very short. For example: <em>Please note that we will be performing scheduled maintenance on Monday, Jan 1, 2016.<\/em>",
+            "message": "The announcement bar is used to notify an important message to site visitors. The message will be displayed on any page a visitor visits as long as it has never been closed previously. Closing the message will prevent it from being shown for that particular visitor for 7 days unless the announcement is turned off. If after a week the announcement status is still on, the message will be shown again.\r\n<br><br>\r\n<strong>TIP:<\/strong> Keep the sentence very short. For example: <em>Please note that we will be performing scheduled maintenance on Monday, Jan 1, 2016.<\/em>",
             "new_lines": "",
             "esc_html": 0
         },
@@ -208,6 +208,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "local": "php",
-    "modified": 1472539784
+    "modified": 1472639676
 }

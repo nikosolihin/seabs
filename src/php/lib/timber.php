@@ -133,25 +133,25 @@ class StarterSite extends TimberSite {
 			}
 		}
 
-		// // Site Announcement
-		// if ( get_field('announcement_status', 'option') == 'on' ) {
-		// 	$link_type = get_field('announcement_link_type', 'option');
-		// 	if ($link_type == "single") {
-		// 		$url = get_field('announcement_link_single_url', 'option');
-		// 	} elseif ($link_type == "external") {
-		// 		$url = get_field('announcement_link_external_url', 'option');
-		// 	} else {
-		// 		$url = get_field('announcement_link_search_url', 'option');
-		// 	}
-		// 	$context['announcement'] = array(
-		// 		'dte' => get_field('announcement_dte', 'option'),
-		// 		'position' => get_field('announcement_position', 'option'),
-		// 		'message' => get_field('announcement_message', 'option'),
-		// 		'button' => get_field('announcement_button', 'option'),
-		// 		'link_type' => $link_type,
-		// 		'url' => $url,
-		// 	);
-		// }
+		// Site Announcement
+		if ( get_field('announcement_status', 'option') == 'on' ) {
+			$link_type = get_field('announcement_link_type', 'option');
+			if ($link_type == "single") {
+				$url = get_field('announcement_link_single_url', 'option');
+			} elseif ($link_type == "external") {
+				$url = get_field('announcement_link_external_url', 'option');
+			} else {
+				$url = get_field('announcement_link_search_url', 'option');
+			}
+			$context['announcement'] = array(
+				'dte' => get_field('announcement_dte', 'option'),
+				'position' => get_field('announcement_position', 'option'),
+				'message' => get_field('announcement_message', 'option'),
+				'button' => get_field('announcement_button', 'option'),
+				'link_type' => $link_type,
+				'url' => $url,
+			);
+		}
 
 		// Site default
 		$context['site'] = $this;

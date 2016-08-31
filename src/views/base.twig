@@ -1,15 +1,14 @@
 {% include 'modules/html-header.twig' %}
 
 <body class="{{body_class}}">
-
 	{% include 'utility/svg.twig' %}
+	{% include 'components/announcement.twig' %}
 	{% include 'modules/header.twig' %}
 
 	<main class="wrapper">
-    {% include 'components/announcement.twig' %}
 		{% block content %}{% endblock %}
 	</main>
-
+	
 	{% include 'modules/footer.twig' %}
 	{% include 'modules/html-footer.twig' %}
 </body>

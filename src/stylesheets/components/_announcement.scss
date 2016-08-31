@@ -1,12 +1,12 @@
 .Announcement {
   @include white;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: $zindex-announcement;
   min-width: 100%;
-  background-color: $brand-primary;
-  padding: $spacer-single 0;
+  background-color: $brand-highlight;
+  padding: .63rem 0;
   opacity: 1;
   visibility: visible;
   transition: all .1s ease-out;
@@ -27,6 +27,10 @@
   }
   &-button {
     flex: 0 0 auto;
+    margin: 0;
+    background-color: $brand-secondary;
+    font-size: $font-size-h7;
+    text-transform: capitalize;
   }
   &-close {
     box-item: top;
@@ -38,7 +42,6 @@
   }
 
   &--bottom {
-    position: fixed;
     top: 100vh;
     left: 0;
     transform: translate3d(0,-100%,0);
