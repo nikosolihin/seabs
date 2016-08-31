@@ -6,17 +6,6 @@
     margin-left: $spacer-threefourth;
   }
 
-  &--sidebar {
-    margin-top: $spacer-threefourth;
-    a { padding-left: 14px; }
-    .List {
-      display: none;
-    }
-    li {
-      margin-top: $spacer-half;
-    }
-  }
-
   &--inline {
     box: vertical;
     text-align: center;

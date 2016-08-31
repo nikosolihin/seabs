@@ -43,11 +43,11 @@
 // =====================================================
 @import "objects/layout";
 @import "objects/header";
-// @import "objects/sidebar";
+@import "objects/sidebar";
 // @import "objects/footer";
+@import "objects/single-page";
 // @import "objects/front-page";
 // @import "objects/landing-page";
-// @import "objects/single-page";
 // @import "objects/single-resource";
 // @import "objects/search-resource";
 
@@ -60,6 +60,7 @@
 @import "components/list";
 @import "components/button";
 @import "components/banner";
+@import "components/breadcrumb";
 // @import "components/loader";
 // @import "components/newsletter";
 // @import "components/spacer";
@@ -67,7 +68,6 @@
 // @import "components/duet";
 // @import "components/callout";
 // @import "components/card";
-// @import "components/breadcrumb";
 // @import "components/accordion";
 // @import "components/carousel";
 // @import "components/pill";

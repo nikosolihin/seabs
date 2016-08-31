@@ -3,8 +3,7 @@
 //=============================================
 $black:                        #000000 !default;
 $white:                        #ffffff !default;
-// $blue:                         #24aed7 !default;
-$blue:                         #5ab5dd !default;
+$blue:                         #286dc0 !default;
 $sky:                          #628b9d !default;
 $red:                          #D65B2D !default;
 $gray-darker:                  lighten($black, 13.5%) !default;
@@ -15,6 +14,7 @@ $gray-lighter:                 lighten($black, 93.5%) !default;
 $gray-lightest:                lighten($black, 96.5%) !default;
 $brand-primary:                #B51812 !default;
 $brand-secondary:              darken($brand-primary, 3.75%) !default;
+$brand-highlight:              #b57900 !default;
 
 
 //=============================================
@@ -38,7 +38,7 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 $wrapper-width:                   1600px !default;
-$wrapper-narrow-width:            1440px !default;  
+$wrapper-narrow-width:            1440px !default;
 $container-width:                 1270px !default;
 $container-text-width:            725px !default;
 $container-text-nosidebar-width:  925px !default;
@@ -72,7 +72,7 @@ $hr-color:                      #ccc !default;
 
 // SVG //////////////////////////////////////
 $svg-fill:                      currentColor !default;
-$svg-size:                      $spacer-single*1.5 !default;
+$svg-size:                      $spacer-single*1.25 !default;
 $svg-margin:                    $spacer-half !default;
 
 // Tables /////////////////////////////////////
@@ -142,7 +142,7 @@ $sidebar-border-top:            8px solid #ddd;
 
 // Callout ///////////////////////////////////
 $callout-bg:                    $gray-lightest !default;
-$callout-section-bg:            #fafafa !default;
+$callout-bg-light:              lighten($black, 97.5%) !default;
 $callout-padding:               $spacer-single*1.75 !default;
 
 // Buttons ///////////////////////////////////

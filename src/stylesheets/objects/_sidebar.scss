@@ -1,66 +1,67 @@
 .Sidebar {
-  width: 27%;
+  width: 23%;
   flex: 0 0 auto;
-  color: $sidebar-color;
-  font-size: $sidebar-font-size;
-  margin-left: $spacer-single*3;
 
   // Default Links
-  a[href]:not([class]) {
-    color: darken($blue, 15%);
-    &:focus,
-    &:hover {
-      color: darken($blue, 30%);
+  a {
+    @include hover($gray-dark, $blue);
+    display: block;
+    padding: $spacer-single $spacer-single*1.5;
+  }
+
+  > .List {
+    > li > a {
+      border-bottom: 1px solid #eee;
+    }
+    .List {
+      // If not active, hide sub list
+      display: none;
     }
   }
 
-  .Callout {
-    background-color: #f9f9f9;
-  }
   .is-Active {
-    > .List {
-      display: block;
-    }
     > a {
-      padding-left: 10px;
-      color: $brand-primary;
-      font-weight: $font-weight-bold;
-      border-left: 4px solid $brand-secondary;
+      @include white;
+      background-color: $brand-secondary;
+    }
+    > .List {
+      // If active, show sub list
+      display: block;
+      margin-left: 0;
+      background-color: $callout-bg-light;
+      a {
+        font-weight: $font-weight-light;
+        font-size: .92rem;
+      }
     }
     .is-Active a {
-      border-left: none;
-      padding-left: 14px;
-    }
-  }
-  .Block {
-    border: none;
-    min-height: $card-height*1.2;
-    +.Block {
-      margin-top: $spacer-single;
+      @include hover($brand-highlight);
+      background-color: transparent;
+      font-weight: $font-weight-bold;
     }
   }
 
-  &-heading {
-    color: $sidebar-heading-color;
-    font-size: $sidebar-font-size;
-    margin: $spacer-half 0 $spacer-quarter;
-    > a {
-      @include hover($sidebar-heading-color, $sidebar-heading-color);
-    }
-  }
-  &-section {
-    overflow: hidden;
-    margin-bottom: $spacer-single*2.5;
-    p { margin-bottom: $spacer-half; }
-  }
-  &-sectionHeading {
-    @extend .h4;
-    color: $gray-dark;
-    font-weight: $font-weight-normal;
-  }
+  // .Block {
+  //   border: none;
+  //   min-height: $card-height*1.2;
+  //   +.Block {
+  //     margin-top: $spacer-single;
+  //   }
+  // }
 
-  &--borderless {
-    border-top: none;
-  }
+  // &-section {
+  //   overflow: hidden;
+  //   margin-bottom: $spacer-single*2.5;
+  //   p { margin-bottom: $spacer-half; }
+  // }
+  // &-sectionHeading {
+  //   @extend .h4;
+  //   color: $gray-dark;
+  //   font-weight: $font-weight-normal;
+  // }
+  //
+  // &--borderless {
+  //   border-top: none;
+  // }
 
 }
