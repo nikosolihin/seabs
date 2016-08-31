@@ -1,6 +1,16 @@
 {% set image = acf.image %}
+{% set alignment = acf.value %}
+{% if alignment == "single" %}
+  {% set url = post.get_field('single_url') %}
+{% elseif link_type == "external" %}
+  {% set url = post.get_field('external_url') %}
+{% else %}
+  {% set url = post.get_field('search_url') %}
+{% endif %}
 
-<section class="{{'Banner'|modifiers('large, textbottom, {{acf.alignment}}')}} wrapper--narrow lazyload"
+<div class="{{'Block'|modifiers("panel, #{alignment}, #{tinted}")}}">
+
+<section class="{{'Banner'|modifiers('medium, textbottom, {{acf.alignment}}')}} wrapper wrapper--narrow lazyload"
 data-bgset="
   {{image[xxlarge]}} [(min-width: {{xxl}})] |
   {{image[xlarge]}} [(min-width: {{lg}})] |

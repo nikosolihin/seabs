@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <div class="wrapper">
     {% include 'components/banner.twig' %}
     <div class="SinglePage container">
       <div class="SinglePage-content container--text container--left container--nopadding {% if not sidebar %}container-text--nosidebar{% endif %}">
@@ -21,5 +20,5 @@
         {% include 'layout/sidebar-base.twig' %}
       </div> -->
     </div>
-  </div>
+
 {% endblock %}
