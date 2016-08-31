@@ -75,3 +75,8 @@
 .column {
   // The column divs act as a flex child wrapper.
 }
+
+.four-o-four {
+  // Dont know where else to put this
+  margin: $spacer-single*4 auto;
+}

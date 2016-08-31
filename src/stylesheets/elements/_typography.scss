@@ -20,8 +20,8 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
 }
 
-h1, h2 {
-  font-weight: $font-weight-normal !important;
+h1 {
+  font-weight: 500 !important;
   line-height: 1.2;
   letter-spacing: -.005em;
 }
