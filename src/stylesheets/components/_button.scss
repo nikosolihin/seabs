@@ -1,17 +1,17 @@
 .Button {
-  transition: all .175s ease-in-out;
+  border: 0;
   border-radius: 2px;
   display: inline-block;
-  padding: $button-padding;
+  padding: .82rem $spacer-single*1.5;
   background-color: $button-bg;
-  border: 0;
-  text: $white $font-weight-bold left none $font-size-h6 $headings-line-height 1px;
-  &--small {
-    padding: $button-small-padding;
+  text-transform: capitalize;
+  transition: all .1s ease-in-out;
+  text: $white $font-weight-bold left none $font-size-h6 1;
+  &:hover {
+    background-color: darken($button-bg, 3%);
   }
-  &--medium {
-    padding: $button-medium-padding;
-  }
+
+  // Style
   &--block {
     width: 100%;
     text-align: center;
@@ -22,7 +22,12 @@
     border: 2px solid $button-bg;
     background-color: transparent;
   }
-  &:last-of-type {
-    margin-bottom: 0;
+
+  // Sizes
+  &--small {
+    padding: .65rem $spacer-single*1.1;
+  }
+  &--large {
+    padding: $spacer-single $spacer-single*1.75;
   }
 }
