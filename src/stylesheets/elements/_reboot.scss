@@ -36,6 +36,11 @@ address {
   line-height: inherit;
 }
 
+abbr[title] {
+  text-decoration: initial;
+  border-bottom: 1px dotted #999;
+}
+
 ol,
 ul,
 dl {

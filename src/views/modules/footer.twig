@@ -1,24 +1,13 @@
-<footer class="Footer-wrapper wrapper">
+<footer class="Footer-wrapper wrapper lazyload" data-bgset="
+  {{footer_bg[xlarge]}} [(min-width: {{lg}})] |
+  {{footer_bg[medium]}}">
+
   <div class="Footer container">
     <div class="Footer-top">
-      <div class="Footer-logo">
-        <svg aria-hidden="true" role="presentation" title="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-footer"></use>
-        </svg>
-      </div>
-      <div class="Footer-about">
-        <p>{{org.description}}</p>
-      </div>
-      <div class="Footer-cta">
-        <a href="{{newsletter}}" class="Button Button--block">Stay Informed</a>
-        <a href="{{donation}}" class="Button Button--block">Donate</a>
-      </div>
-    </div>
-    <div class="Footer-left">
-      <ul class="List List--footer List--inline">
+      <ul class="List List--inline">
         {% for parent in footer.parents %}
           <li>
-            <a href="{{parent.link}}">{{parent.title}}</a>
+            <a href="{{parent.link}}" class="Footer-heading">{{parent.title}}</a>
             <ul class="List-sublist">
               {% for child in parent.children %}
                 <li><a href="{{child.link}}">{{child.title}}</a></li>
@@ -33,31 +22,37 @@
         </li>
       </ul>
     </div>
-    <div class="Footer-right">
-      <p class="Footer-address">{{org.address}}</p>
-      {% for site, link in social %}
-        {% if link %}
-          <a class="Footer-socialIcon" href="{{link}}">
-            <svg aria-hidden="true" role="presentation" title="">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{site}}"></use>
-            </svg>
-          </a>
-        {% endif %}
+    <div class="Footer-bottom">
+      <div class="Footer-logo">
+        <!-- <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-footer"></use>
+        </svg> -->
+      </div>
+
+      {% for contact in org.contacts %}
+        <address class="Footer-contact">
+          <h5 class="Footer-heading">{{contact.name}}</h5>
+          <p>{{contact.details}}</p>
+        </address>
       {% endfor %}
+
     </div>
   </div>
+
   <div class="legal">
     <div class="container">
       <div>
         <span class="legal-copy">© {{"now"|date('Y')}} {{org.name}}</span>
+        <span>●</span>
         <a href="{{policy}}">Privacy Policy</a>
       </div>
-      <div class="legal-languages">
+      <!-- <div class="legal-languages">
         Languages:
         {% for language in languages %}
           <a href="{{language.url}}" class="legal-language">{{language.code|upper}}</a>
         {% endfor %}
-      </div>
+      </div> -->
     </div>
   </div>
+
 </footer>

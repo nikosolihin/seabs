@@ -105,6 +105,7 @@ $font-size-h3:                 1.44rem !default;
 $font-size-h4:                 1.2rem !default;
 $font-size-h5:                 1rem !default;
 $font-size-h6:                 .882rem !default;
+$font-size-h7:                 .795rem !default;
 $line-height:                  1.55 !default;
 $headings-line-height:         1.25 !default;
 
@@ -175,9 +176,9 @@ $figure-caption-line-height:    1.4 !default;
 $figure-caption-color:          #ababab !default;
 
 // Footer ////////////////////////////////
-$footer-bg-color:               #333 !default;
-$footer-menu-color:             $white !default;
-$footer-submenu-color:          $white !default;
+$footer-bg-color:               #f7f7f7 !default;
+$footer-parent-color:           $brand-primary !default;
+$footer-children-color:         $gray-light !default;
 
 // Pills ///////////////////////////////////
 $pill-color:                   #777 !default;

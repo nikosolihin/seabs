@@ -72,7 +72,7 @@
         {
             "key": "field_57906abc0a906",
             "label": "Footer",
-            "name": "footer",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -109,6 +109,28 @@
             "min": 1,
             "max": 7,
             "return_format": "id"
+        },
+        {
+            "key": "field_57c67cbc1a8b2",
+            "label": "Background",
+            "name": "footer_bg",
+            "type": "flickr_browser",
+            "instructions": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_z",
+                "url_l"
+            ],
+            "flickr_extras": ""
         }
     ],
     "location": [
@@ -128,6 +150,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "local": "php",
-    "modified": 1472540011
+    "modified": 1472625979
 }

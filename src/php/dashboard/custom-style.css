@@ -306,3 +306,6 @@ p#backtoblog {
 .acf-instruction .acf-label {
 	display: none;
 }
+.acf-field-flickr-browser--showlabel .acf-label {
+	display: block;
+}

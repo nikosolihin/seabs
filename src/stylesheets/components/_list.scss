@@ -21,31 +21,4 @@
   &--inlineRight {
     justify-content: flex-end;
   }
-
-  &--footer {
-    box: horizontal;
-    > li {
-      margin-right: $spacer-single*2.5;
-      > a {
-        display: block;
-        margin-bottom: $spacer-half;
-        color: $footer-menu-color;
-        font-weight: $font-weight-bold;
-      }
-    }
-    .List-sublist {
-      @include normalist;
-      display: none;
-      @include from(lg) {
-        display: block;
-      }
-      li {
-        margin-bottom: $spacer-half;
-      }
-      a {
-        color: $footer-submenu-color;
-        font-weight: $font-weight-normal;
-      }
-    }
-  }
 }

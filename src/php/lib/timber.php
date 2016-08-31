@@ -76,21 +76,21 @@ class StarterSite extends TimberSite {
 		// 	'youtube' => get_field('youtube', 'option'),
 		// 	'instagram' => get_field('instagram', 'option')
 		// );
-		//
-		// // 404 stuff
-		// $context['error'] = array(
-		// 	'image' => get_field('error_image', 'option'),
-		// 	'title' => get_field('error_title', 'option'),
-		// 	'description' => get_field('error_description', 'option')
-		// );
-		//
-		// // Org Info
-		// $context['org'] = array(
-		// 	'name' => get_field('org_name', 'option'),
-		// 	'address' => get_field('org_address', 'option'),
-		// 	'description' => get_field('org_description', 'option')
-		// );
-		//
+
+		// 404 stuff
+		$context['error'] = array(
+			'title' => get_field('error_title', 'option'),
+			'description' => get_field('error_description', 'option')
+		);
+
+		// Org Info
+		$context['org'] = array(
+			'name' => get_field('org_name', 'option'),
+			'address' => get_field('org_address', 'option'),
+			'description' => get_field('org_description', 'option'),
+			'contacts' => get_field('org_contacts', 'option')
+		);
+
 		// // Languages
 		// $context['languages'] = get_field('languages', 'option');
 		//
@@ -102,36 +102,37 @@ class StarterSite extends TimberSite {
 		//
 		// // Policy Page
 		// $context['policy'] = get_field('policy', 'option');
-		//
-		// // Footer items
-		// $footer_items = Timber::get_posts(get_field('footer', 'option'));
-		// $context['footer']['singles'] = array();
-		// $context['footer']['parents'] = array();
-		// foreach ($footer_items as $item) {
-		// 	if ( empty($item->get_children()) ) {
-		// 		array_push($context['footer']['singles'], array(
-		//       'id' => $item->id,
-		//       'title' => $item->title,
-		//       'link' => $item->link
-		//     ));
-		// 	} else {
-		// 		$children = array();
-		// 		foreach ($item->get_children() as $child) {
-		// 			array_push($children, array(
-		// 				'id' => $child->id,
-		// 	      'title' => $child->title,
-		// 	      'link' => $child->link
-		// 			));
-		// 		}
-		// 		array_push($context['footer']['parents'], array(
-		// 			'id' => $item->id,
-		// 			'title' => $item->title,
-		// 			'link' => $item->link,
-		// 			'children' => $children
-		// 		));
-		// 	}
-		// }
-		//
+
+		// Footer items
+		$context['footer_bg'] = get_field('footer_bg', 'option');
+		$footer_items = Timber::get_posts(get_field('footer', 'option'));
+		$context['footer']['singles'] = array();
+		$context['footer']['parents'] = array();
+		foreach ($footer_items as $item) {
+			if ( empty($item->get_children()) ) {
+				array_push($context['footer']['singles'], array(
+		      'id' => $item->id,
+		      'title' => $item->title,
+		      'link' => $item->link
+		    ));
+			} else {
+				$children = array();
+				foreach ($item->get_children() as $child) {
+					array_push($children, array(
+						'id' => $child->id,
+			      'title' => $child->title,
+			      'link' => $child->link
+					));
+				}
+				array_push($context['footer']['parents'], array(
+					'id' => $item->id,
+					'title' => $item->title,
+					'link' => $item->link,
+					'children' => $children
+				));
+			}
+		}
+
 		// // Site Announcement
 		// if ( get_field('announcement_status', 'option') == 'on' ) {
 		// 	$link_type = get_field('announcement_link_type', 'option');

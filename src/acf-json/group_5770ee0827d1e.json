@@ -5,7 +5,7 @@
         {
             "key": "field_57723306c8aca",
             "label": "Organization Info",
-            "name": "organiz_info",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -65,7 +65,7 @@
             "label": "Where?",
             "name": "org_address",
             "type": "textarea",
-            "instructions": "The Main office of Global Christian Forum.",
+            "instructions": "What's the address of your main office?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -77,14 +77,71 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 4,
-            "new_lines": "br",
-            "readonly": 0,
-            "disabled": 0
+            "new_lines": "br"
+        },
+        {
+            "key": "field_57c6893c3041d",
+            "label": "Additional Contacts",
+            "name": "org_contacts",
+            "type": "repeater",
+            "instructions": "Any additional contact info such as office branches?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_57c689813041e",
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Contact",
+            "sub_fields": [
+                {
+                    "key": "field_57c689813041e",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_57c6898d3041f",
+                    "label": "Details",
+                    "name": "details",
+                    "type": "textarea",
+                    "instructions": "<strong>TIP:<\/strong> You may insert HTML tags here. For example, insert a link using <em>&lt;a href=\"http:\/\/example.com\">My Link&lt;\/a><\/em>. Other available tags include &lt;strong>, &lt;em> and &lt;br>.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 5,
+                    "new_lines": ""
+                }
+            ]
         },
         {
             "key": "field_5798519708fb4",
             "label": "Languages",
-            "name": "_copy",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -179,7 +236,7 @@
         {
             "key": "field_5770eec28907f",
             "label": "Images",
-            "name": "_copy",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -241,7 +298,7 @@
         {
             "key": "field_5770ee878907d",
             "label": "Error Page",
-            "name": "error_page",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -292,27 +349,6 @@
             "tabs": "visual",
             "toolbar": "basic",
             "media_upload": 0
-        },
-        {
-            "key": "field_57710e1228e15",
-            "label": "Image",
-            "name": "error_image",
-            "type": "flickr_browser",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "flickr_api_key": "",
-            "flickr_user_id": "",
-            "flickr_limit": 1,
-            "flickr_sizes": [
-                "url_c"
-            ],
-            "flickr_extras": ""
         },
         {
             "key": "field_57710b3c28e11",
@@ -429,7 +465,7 @@
         {
             "key": "field_57998e40d8c49",
             "label": "Donation",
-            "name": "_copy",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -466,7 +502,7 @@
         {
             "key": "field_57999aabced1c",
             "label": "Privacy Policy",
-            "name": "privacy_policy",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -602,6 +638,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "local": "php",
-    "modified": 1472539784
+    "modified": 1472632752
 }
