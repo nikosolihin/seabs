@@ -1,5 +1,8 @@
 .SinglePage {
   box: horizontal;
+  border-top: 4px solid $brand-primary;
+  margin-top: $spacer-single*3;
+  padding-top: $spacer-single*5;
 
   // &-content {
   //   > .container {
