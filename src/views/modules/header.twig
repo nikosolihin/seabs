@@ -1,29 +1,44 @@
 <header class="Header wrapper">
 
   <nav class="Header-secondaryNav" role="navigation">
-    <div class="container">
+    <!-- <div class="container"> -->
       <ul class="List List--inline">
-        {% for item in secondary_menu %}
+        <!-- {% for item in secondary_menu %}
           <li><a href="{{item.url}}">{{item.title}}</a></li>
-        {% endfor %}
+        {% endfor %} -->
+        <li><a href="">Calendars</a></li>
+        <li><a href="">Giving</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Directories</a></li>
       </ul>
       <a class="Header-search" href="">
         <svg aria-hidden="true" role="presentation" title="Search Our Website">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
         </svg>
       </a>
-    </div>
+    <!-- </div> -->
   </nav>
 
   <nav class="Header-primaryNav" role="navigation">
-    <div class="container">
+    <!-- <div class="container"> -->
+      <div class="Header-logo">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+        </svg>
+      </div>
       <ul class="List List--inline">
-        {% for item in primary_menu %}
+        <!-- {% for item in primary_menu %}
           <li><a href="{{item.url}}">{{item.title}}</a></li>
-        {% endfor %}
+        {% endfor %} -->
+        <li><a href="">About Yale</a></li>
+        <li><a href="">Academics</a></li>
+        <li><a href="">Admissions</a></li>
+        <li><a href="">Life at Yale</a></li>
+        <li><a href="">Library</a></li>
+        <li><a href="">Campus Life</a></li>
       </ul>
       <button type="button" class="Button Header-quickNav" href="">More Info</button>
-    </div>
+    <!-- </div> -->
   </nav>
 
 </header>

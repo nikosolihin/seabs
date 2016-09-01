@@ -91,9 +91,9 @@ class StarterSite extends TimberSite {
 			'contacts' => get_field('org_contacts', 'option')
 		);
 
-		// // Languages
-		// $context['languages'] = get_field('languages', 'option');
-		//
+		// Languages
+		$context['languages'] = get_field('languages', 'option');
+
 		// // Newsletter Sign-up
 		// $context['newsletter'] = get_field('newsletter', 'option');
 		//

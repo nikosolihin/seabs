@@ -1,7 +1,7 @@
 .Footer {
   box: horizontal wrap;
   padding-top: $spacer-single*4.5;
-  padding-bottom: $spacer-single*3.5;
+  padding-bottom: $spacer-single*2.5;
   font-size: $font-size-h5;
   @include from(lg) {
     font-size: $font-size-h6 1.25;
@@ -51,7 +51,13 @@
   }
   &-logo {
     width: 15%;
+    box: horizontal center;
     flex: 0 0 auto;
+    margin-right: $spacer-single*1.5;
+    svg {
+      fill: #aaa;
+      size: 100px;
+    }
   }
   &-contact {
     h5 {

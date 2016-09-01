@@ -18,7 +18,7 @@
   // }
 
   &-primaryNav .container,
-  &-secondaryNav .container {
+  &-secondaryNav {
     box: horizontal right middle;
   }
 
@@ -35,19 +35,29 @@
   }
 
   &-primaryNav {
-    padding: $spacer-single*2.5 0;
+    // .container {
+      box: horizontal space-between middle;
+    // }
+    padding: $spacer-single 0;
     a {
-      @include hover($gray-dark);
-      font-size: $font-size-h4;
+      @include hover($gray-darker);
+      font-size: 1.05rem;
       font-weight: $font-weight-light;
-      letter-spacing: .75px;
+      letter-spacing: .3px;
       padding: 0 $spacer-single;
     }
     li {
-      margin-right: $spacer-single*3;
+      margin-right: $spacer-single*1.25;
       &:last-child {
         margin: 0;
       }
+    }
+  }
+
+  &-logo {
+    svg {
+      fill: $brand-primary;
+      size: 120px;
     }
   }
 
