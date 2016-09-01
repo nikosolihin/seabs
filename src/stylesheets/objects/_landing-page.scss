@@ -2,9 +2,7 @@
   box: horizontal space-around wrap;
   margin-top: $spacer-single*4;
   &--grid {
-    @include fullwidth;
-    background-color: #f5f5f5;
-    padding: $spacer-single*3 0;
+    margin-top: $spacer-single*9;
   }
 }
 
@@ -14,11 +12,26 @@
     width: 50%;
   }
   &-frame .Twin-box {
+    // If box has 1 item, square the item.
     &:only-child {
       flex: 1 0 auto;
     }
-    &:first-child:nth-last-child(3) {
-      transform: scale(1.125);
+    // If box has 2 items, make em horizontal
+    &:first-child:nth-last-child(2),
+    &:first-child:nth-last-child(2) ~ .Twin-box {
+      @include square(50%);
+      width: 100%;
+    }
+    // If box has 3 items, expand last item.
+    + .Twin-box + .Twin-box {
+      @include square(50%);
+      width: 100%;
+    }
+    // If box has 4 items, make square grid
+    &:first-child:nth-last-child(4),
+    &:first-child:nth-last-child(4) ~ .Twin-box {
+      @include square(100%);
+      width: 50%;
     }
   }
   &-box {
@@ -28,6 +41,13 @@
     position: relative;
     background-color: black;
     overflow: hidden;
+    &--popout {
+      // width: 40%;
+      position: relative;
+      transform: scale(1.1);
+      transform-origin: top left;
+      top: -40px;
+    }
   }
   &-content {
     @include white;
