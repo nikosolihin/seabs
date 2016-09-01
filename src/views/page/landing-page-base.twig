@@ -1,10 +1,111 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <!-- <section class="Banner Banner--{{acf.banner_size}}" style="background-image:url({{acf.image|first.url_l}})">
-    <h1 class="Heading--dropshadow">{{post.title|title}}</h1>
-  </section> -->
+  {% set layout = acf.landing_layout %}
+
+  {% if acf.teaser %}
+    <p class="Lead Lead--landing Lead--center container container--text-nosidebar">{{acf.teaser}}</p>
+  {% endif %}
+
+  {% if acf.position == "before" %}
+    <div class="container">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
+
+  {% if layout == "extensive" %}
+    {# Card Layout #}
+    <section class="landing-page container">
+      {% for child in children %}
+        {% if child.image %}
+          {# Has image, render. If not, skip #}
+          <div class="Solo">
+            <div class="Solo-image lazyload" data-bgset="{{child.image[small]}} 1x, {{child.image[medium]}} 2x">
+              <h3 class="Lead Lead--white Lead--landing">{{child.title}}</h3>
+              {% if child.teaser %}<p>{{child.teaser}}</p>{% endif %}
+            </div>
+            {% if child.children %}
+              <div class="Solo-content">
+                {% for grandchild in child.children %}
+                  <a href="{{grandchild.link}}">{{grandchild.title}}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+  {% else %}
+    {# Grid Layout #}
+    <section class="landing-page landing-page--grid">
+      <div class="container container--max">
+
+      <div class="Twin">
+        <div class="Twin-box lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/1184562/screenshots/2936044/tentacle_dribbble.gif">
+          <div class="Twin-content">
+            <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+            <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+          </div>
+        </div>
+        <div class="Twin-frame Twin">
+          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/cook-dinner/cook-dinner-2.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/making-remote-teams-work/making-remote-teams-work.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+          <div class="Twin-box lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/458522/screenshots/2936415/new_york_city_statue_of_liberty_rgb_dribbbler_2city__landmark__lettering__logo__mark__buildings__ill.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
+      <div class="Twin Twin--alternate">
+        <div class="Twin-box lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/1083406/screenshots/2935685/untitled-1.gif">
+          <div class="Twin-content">
+            <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+            <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+          </div>
+        </div>
+        <div class="Twin-frame Twin">
+          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/cook-dinner/cook-dinner-2.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/making-remote-teams-work/making-remote-teams-work.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+          <div class="Twin-box lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/458522/screenshots/2936415/new_york_city_statue_of_liberty_rgb_dribbbler_2city__landmark__lettering__logo__mark__buildings__ill.jpg">
+            <div class="Twin-content">
+              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
+              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div>
+    </section>
+  {% endif %}
+
+  {% if acf.position == "after" %}
+    <div class="container">
+      {% include 'layout/base.twig' %}
+    </div>
+  {% endif %}
 {% endblock %}

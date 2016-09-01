@@ -27,6 +27,25 @@
   background-position: center center;
   background-size: cover;
 }
+@mixin overlay($full) {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    size: 100%;
+    @if $full {
+      background: rgba(0,0,0,.4);
+    } @else {
+      background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
+    }
+  }
+}
+@mixin promote {
+  > * {
+    z-index: 1;
+  }
+}
 @mixin no-outline {
   outline: none !important;
 }
@@ -40,6 +59,7 @@
   padding-left: 0;
 }
 @mixin square($height: 100%) {
+  // Based on https://spin.atomicobject.com/2015/07/14/css-responsive-square/
   &::after {
     content: "";
     display: block;
@@ -64,6 +84,15 @@
     color: $after;
     text-decoration: none;
   }
+}
+@mixin fullwidth {
+  // Based on https://css-tricks.com/full-width-containers-limited-width-parents/
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 @mixin gutter($multiplier: 1) {
   > *:first-of-type {

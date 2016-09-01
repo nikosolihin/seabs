@@ -1,6 +1,5 @@
 .Lead {
   text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
-  margin: $lead-margin 0;
   &--intro {
     margin-top: 0;
   }
@@ -9,10 +8,9 @@
   }
   &--landing {
     font-size: $lead-font-size*1.25;
-    margin-bottom: $lead-margin*2;
   }
-  @at-root .Callout--column #{&}:first-child {
-    margin-top: 0;
+  &--white {
+    @include white;
   }
 }
 .meta {
@@ -31,8 +29,5 @@
   }
   &--subtitle {
     margin-bottom: $spacer-half;
-  }
-  &--dropshadow {
-    text-shadow: #262626 2px 1px 6px;
   }
 }
