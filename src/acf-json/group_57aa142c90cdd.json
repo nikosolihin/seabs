@@ -1,20 +1,22 @@
 {
-    "key": "group_576233ecd0b59",
-    "title": "Form",
+    "key": "group_57aa142c90cdd",
+    "title": "Column Options",
     "fields": [
         {
-            "key": "field_576233ecd60f2",
-            "label": "Embed Google Form",
-            "name": "form",
-            "type": "google_forms_field",
-            "instructions": "Click <a href=\"https:\/\/docs.google.com\/forms\/u\/0\/\">here<\/a> to create a new form.",
+            "key": "field_57aa1479bbb00",
+            "label": "Column Options",
+            "name": "column_options",
+            "type": "true_false",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
-            }
+            },
+            "message": "This is a callout column",
+            "default_value": 0
         }
     ],
     "location": [
@@ -33,6 +35,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 0,
-    "description": "COMPONENTS : Form",
-    "modified": 1472983846
+    "description": "COMPONENTS : Column Options for Page Builders",
+    "local": "php",
+    "modified": 1472800472
 }

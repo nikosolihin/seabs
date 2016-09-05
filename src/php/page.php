@@ -7,17 +7,18 @@ $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
+$context['sidebar_position'] = $context['acf']['sidebar_position'];
 
-// // Get Sidebar
-// $context['inherit'] = ($context['acf']['inherit'] === 'true');
-// if ($context['inherit']) {
-// 	$parent = $post->get_parent();
-// 	$context['sidebar_sections'] = $parent->get_field('sidebar_sections');
-// } else {
-// 	$context['sidebar_sections'] = $post->get_field('sidebar_sections');
-// }
+// Get Sidebar
+$context['inherit'] = ($context['acf']['inherit'] === 'true');
+if ($context['inherit']) {
+	$parent = $post->get_parent();
+	$context['sidebar_sections'] = $parent->get_field('sidebar_sections');
+} else {
+	$context['sidebar_sections'] = $post->get_field('sidebar_sections');
+}
 
-// Find root ID
+// Find root ID - For sidebar TOC
 if ($post->post_parent)	{
 	$ancestors = get_post_ancestors($post->id);
 	$id = $ancestors[ count($ancestors)-1 ];

@@ -6,7 +6,10 @@
   background-color: $button-bg;
   text-transform: capitalize;
   transition: all .1s ease-in-out;
-  text: $white $font-weight-bold left none $font-size-h6 1;
+  text: $white 600 left none $font-size-h6 1;
+  margin-bottom: $spacer-single;
+
+  // Pseudo
   &:hover {
     background-color: darken($button-bg, 3%);
   }
@@ -15,11 +18,15 @@
   &--block {
     width: 100%;
     text-align: center;
-    margin-top: $spacer-single*1.5;
   }
   &--outline {
     color: $button-bg;
     border: 2px solid $button-bg;
+    background-color: transparent;
+  }
+  &--outline-white {
+    color: $white;
+    border: 2px solid $white;
     background-color: transparent;
   }
 

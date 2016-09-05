@@ -1,5 +1,110 @@
-.page-template-landing-page {
-  .landing-page-listing {
-    margin: $spacer-single*4 0 $spacer-single*5;
+.landing-page {
+  box: horizontal space-around wrap;
+  margin-top: $spacer-single*4;
+  &--grid {
+    margin-top: $spacer-single*7;
   }
+}
+
+.Twin {
+  box: horizontal wrap;
+  &-frame, &-box {
+    width: 50%;
+  }
+  &-frame .Twin-box {
+    // If box has 1 item, square the item.
+    &:only-child {
+      flex: 1 0 auto;
+    }
+    // If box has 2 items, make em horizontal
+    &:first-child:nth-last-child(2),
+    &:first-child:nth-last-child(2) ~ .Twin-box {
+      @include square(50%);
+      width: 100%;
+    }
+    // If box has 3 items, expand last item.
+    + .Twin-box + .Twin-box {
+      @include square(50%);
+      width: 100%;
+    }
+    // If box has 4 items, make square grid
+    &:first-child:nth-last-child(4),
+    &:first-child:nth-last-child(4) ~ .Twin-box {
+      @include square(100%);
+      width: 50%;
+    }
+  }
+  &-box {
+    @include square;
+    @include overlay(true);
+    @include cover;
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    &--popout {
+      // width: 40%;
+      position: relative;
+      transform: scale(1.1);
+      transform-origin: top left;
+      top: -40px;
+    }
+  }
+  &-content {
+    @include white;
+    box: vertical bottom;
+    position: absolute;
+    size: 100%;
+    padding: $spacer-single*1.5;
+    h3 {
+      margin-bottom: $spacer-single*1.5;
+    }
+    p {
+      font-weight: $font-weight-light;
+      max-width: 470px;
+    }
+  }
+
+  // Alignment
+  &--alternate {
+    > div:first-child {
+      order: 2;
+    }
+    > .Twin-frame {
+      box: horizontal right wrap;
+    }
+  }
+}
+
+// Refactor this to its own layout sheet
+.Solo {
+  box: vertical;
+  width: 50%;
+  border: $spacer-single*1.5 solid transparent;
+  margin-bottom: $spacer-single*3;
+  flex: 1 1 auto;
+
+  &-image {
+    @include white;
+    @include cover;
+    @include overlay(false);
+    @include promote;
+    position: relative;
+    box: vertical bottom;
+    min-height: $spacer-single*22;
+    padding: $spacer-single*2;
+  }
+  &-content {
+    box: horizontal wrap;
+    margin-top: $spacer-single*1.5;
+    padding-bottom: $spacer-single*2;
+    border-bottom: 6px solid #f5f5f5;
+
+    a {
+      @extend .Lead;
+      display: block;
+      width: 33%;
+      padding: $spacer-half $spacer-single;
+    }
+  }
+
 }

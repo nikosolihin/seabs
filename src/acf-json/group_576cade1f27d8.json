@@ -5,36 +5,9 @@
         {
             "key": "field_576e526bbdf7f",
             "label": "Landing Page Type",
-            "name": "type",
+            "name": "landing_layout",
             "type": "select",
-            "instructions": "Should this landing page only fetch children (limited) or children and grand children (extensive)? Different layout will be used for each option.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": [
-                "Limited",
-                "Extensive"
-            ],
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0,
-            "return_format": "value"
-        },
-        {
-            "key": "field_5770d0dfa3649",
-            "label": "Banner Size",
-            "name": "banner_size",
-            "type": "radio",
-            "instructions": "",
+            "instructions": "Should this landing page only fetch children's titles (grid) or children and grand children (extensive)? Different layout will be used for each option.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -43,16 +16,16 @@
                 "id": ""
             },
             "choices": {
-                "small": "Small",
-                "medium": "Medium",
-                "large": "Large"
+                "grid": "Grid",
+                "extensive": "Extensive"
             },
+            "default_value": [],
             "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "medium",
-            "layout": "horizontal",
-            "return_format": "value"
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
         },
         {
             "key": "field_577206d248af1",
@@ -77,6 +50,23 @@
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
+        },
+        {
+            "key": "field_57cc59f577305",
+            "label": "Sidebar",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Unlike the default page template, the landing page template will not display any sidebar. You may still build a sidebar using the builder on the left so that children of this landing page can inherit it, saving you time from defining repeated sidebar modules across children pages.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -101,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Landing Page",
-    "modified": 1472543968
+    "modified": 1473010707
 }

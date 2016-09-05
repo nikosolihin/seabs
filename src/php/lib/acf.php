@@ -5,6 +5,13 @@
 // add_filter('acf/settings/show_admin', '__return_false');
 
 //=============================================
+// Add google maps api key
+//=============================================
+add_filter('acf/settings/google_api_key', function () {
+  return 'AIzaSyAMsLZxTH-d2FC5qDwSKWKhvCWjI2jbchE';
+});
+
+//=============================================
 // Change local JSON path for load and save
 // to /src folder
 //=============================================

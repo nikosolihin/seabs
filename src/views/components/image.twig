@@ -1,24 +1,27 @@
-{% set images = data.figure|first %}
-<figure class="Figure Figure--{{data.direction}}">
+{% set image = data.figure %}
+
+<figure class="{{'Figure'|modifiers("#{data.direction}")}}">
   <picture>
     <!--[if IE 9]><video style="display: none;"><![endif]-->
 
-    {# Desktops #}
-    <source media="(min-width: {{lg}})" data-srcset="{{images[xlarge]}}">
+    {# Desktops - load 1024px #}
+    <source media="(min-width: {{lg}})" data-srcset="{{image[xlarge]}}">
 
-    {# Tablets #}
-    <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{images[large]}}">
+    {# Tablets - load 800px #}
+    <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{image[large]}}">
 
-    {# Landscape phones #}
-    <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{images[medium]}}">
+    {# Landscape phones - load 640px #}
+    <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{image[medium]}}">
 
-    {# Portrait phones #}
-    <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{images[small]}}">
+    {# Portrait phones - load 320px #}
+    <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{image[small]}}">
     <!--[if IE 9]></video><![endif]-->
 
     {# Fallback with transparent LQIP #}
-    <img alt="{{images.title}}" class="lazyload" data-src="{{images[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <img alt="{{image.title}}" class="lazyload" data-src="{{image[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
   </picture>
 
-  <figcaption class="Figure-caption">{{data.caption}}</figcaption>
+  <figcaption class="Figure-caption container--text-nosidebar">
+    {{data.caption}}
+  </figcaption>
 </figure>

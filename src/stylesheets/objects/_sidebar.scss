@@ -1,15 +1,16 @@
 .Sidebar {
-  width: 23%;
+  width: 27.5%;
   flex: 0 0 auto;
 
-  // Default Links
-  a {
-    @include hover($gray-dark, $blue);
-    display: block;
-    padding: $spacer-single $spacer-single*1.5;
-  }
-
+  // Table of contents
   > .List {
+    margin-bottom: $spacer-single*3;
+    a {
+      // Default links in the TOC
+      @include hover($gray-dark, $blue);
+      display: block;
+      padding: $spacer-single $spacer-single*1.5;
+    }
     > li > a {
       border-bottom: 1px solid #eee;
     }
@@ -28,7 +29,7 @@
       // If active, show sub list
       display: block;
       margin-left: 0;
-      background-color: $callout-bg-light;
+      background-color: $callout-bg;
       a {
         font-weight: $font-weight-light;
         font-size: .92rem;
@@ -41,6 +42,31 @@
     }
   }
 
+  &-section {
+    overflow: hidden;
+    margin-bottom: $spacer-single*3;
+    &--center {
+      text-align: center;
+    }
+    &--callout {
+      background-color: $callout-bg;
+      padding: $spacer-single*2.5 $spacer-single*2;
+    }
+    &--framed {
+      border: 1px solid #ddd;
+      padding: $spacer-single*2.5 $spacer-single*2;
+    }
+    &--accent {
+      border-top: 4px solid $brand-secondary;
+      padding-top: $spacer-single*2.5;
+    }
+  }
+
+  &-sectionHeading {
+    color: $brand-primary;
+    font-weight: $font-weight-normal;
+  }
+
   // .Block {
   //   border: none;
   //   min-height: $card-height*1.2;
@@ -49,17 +75,6 @@
   //   }
   // }
 
-  // &-section {
-  //   overflow: hidden;
-  //   margin-bottom: $spacer-single*2.5;
-  //   p { margin-bottom: $spacer-half; }
-  // }
-  // &-sectionHeading {
-  //   @extend .h4;
-  //   color: $gray-dark;
-  //   font-weight: $font-weight-normal;
-  // }
-  //
   // &--borderless {
   //   border-top: none;
   // }

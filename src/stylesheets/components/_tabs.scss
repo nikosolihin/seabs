@@ -4,26 +4,27 @@
     @include normalist;
     overflow: hidden;
     position: relative;
+    margin-bottom: $spacer-single*1.5;
     &::after {
       content: "";
       display: block;
       position: absolute;
       height: 1px;
       width: 100%;
-      background-color: $gray-lighter;
+      background-color: #ddd;
       left: 0;
       bottom: 0;
       z-index: -99999;
     }
   }
   &-tab {
-    @include hover($body-color, $red);
+    @include hover($gray-light, $brand-primary);
     @include no-outline;
     float: left;
-    padding: 0 $spacer-single $spacer-half;
+    padding: 0 $spacer-single $spacer-threefourth;∑
     &.selected,
     &[aria-selected = "true"] {
-      color: $red;
+      color: $brand-primary;
       font-weight: $font-weight-bold;
       position: relative;
       &::after {
@@ -32,7 +33,7 @@
         position: absolute;
         height: 2px;
         width: 100%;
-        background-color: $red;
+        background-color: lighten($brand-primary,3%);
         left: 0;
         bottom: 0;
       }
@@ -41,7 +42,6 @@
   &-panel {
     overflow: scroll;
     margin-top: $spacer-single;
-    transition: opacity 2s ease-out;
     opacity: 0;
     &--show {
       opacity: 1;

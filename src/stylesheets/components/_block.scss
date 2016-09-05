@@ -2,12 +2,13 @@
   @include cover;
   position: relative;
   box: vertical middle;
-  min-height: $card-height*1.4;
+  min-height: $card-height*1.25;
   padding: $spacer-single*1.25 $spacer-single*1.75;
 
   &-link {
     position: absolute 0 auto auto 0;
     size: 100%;
+    z-index: 1;
   }
   &-head {
     @include cover;
@@ -19,26 +20,36 @@
     box: vertical;
     size: 100%;
     text-align: center;
+    p {
+      margin-bottom: 0;
+    }
     @at-root .Block--left #{&} {
       text-align: left;
     }
     @at-root .Block--card #{&} {
       background-color: $callout-bg;
-      padding: $spacer-single*1.25 $spacer-single*1.75;
+      padding: $spacer-single*1.75 $spacer-single*2 $spacer-single*2.25;
       p {
         color: $body-color;
       }
     }
+    @at-root .Callout--landing .Block--card #{&} {
+      background-color: $white;
+    }
   }
   &-heading {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-light;
+    letter-spacing: .3px;
     margin-bottom: $spacer-half;
     @at-root .Block--card #{&} {
-      color: $headings-color;
+      font-weight: $font-weight-bold;
+      letter-spacing: 0;
+      color: $brand-primary;
     }
   }
   &--card {
     padding: 0;
+    font-size: .95rem;
   }
   &--bookmark {
     margin: 0 auto;
@@ -47,7 +58,7 @@
   }
   &--tinted {
     .Block-link {
-      background: linear-gradient( rgba(0,0,0,.30), rgba(0,0,0,.60) );
+      background: linear-gradient( rgba(0,0,0,.23), rgba(0,0,0,.83) );
     }
   }
 }

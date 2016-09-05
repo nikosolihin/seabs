@@ -1,6 +1,6 @@
 {
     "key": "group_5773382ac6cac",
-    "title": "Link",
+    "title": "URL",
     "fields": [
         {
             "key": "field_57715f2ceaa16",
@@ -86,7 +86,7 @@
             "label": "URL",
             "name": "search_url",
             "type": "url",
-            "instructions": "To generate the URL of a filtered resource search, head over to the resource <a href=\"\/resources\/search\">search page<\/a>. The URL of the page will update as you set\/unset search filters. When finished, paste the URL here. ",
+            "instructions": "To generate the URL of a filtered resource search, head over to the resource <a href=\"\/resources\/search\">search page<\/a>. The URL of the page will update as you set\/unset search filters. When finished, paste the URL here.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -123,6 +123,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "local": "php",
-    "modified": 1472539718
+    "modified": 1472998088
 }

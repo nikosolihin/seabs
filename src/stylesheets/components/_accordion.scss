@@ -1,6 +1,8 @@
-// TODO: Style accordion
 .Accordion {
   @include normalist;
+  border-top: 5px solid #f5f5f5;
+  padding-top: $spacer-half;
+
   &-checkbox {
     display: none;
     &:not(checked) ~ .Accordion-body {
@@ -9,17 +11,40 @@
     &:checked {
       ~ .Accordion-body {
         display: block;
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        animation: expand .165s ease-out;
       }
-      ~ .Accordion-head::before {
-        content: "-";
+      ~ .Accordion-head .Accordion-icon {
+        transform: rotate(45deg);
       }
     }
   }
+
   &-head {
+    box: horizontal space-between;
     cursor: pointer;
-    display: block;
-    &::before {
-      content: "+";
+    color: $brand-primary;
+    font-weight: $font-weight-bold;
+    padding: $spacer-single*1.5 0;
+    margin-bottom: 0;
+  }
+
+  &-icon {
+    flex: 0 0 auto;
+    margin: 0 $spacer-threefourth 0 $spacer-single*1.5;
+    size: 30px;
+    transition: all .1025s ease-in-out;
+    svg {
+      fill: #aaa;
     }
+  }
+
+  &-body {
+    margin-bottom: $spacer-single*3;
+  }
+
+  &-item {
+    border-bottom: 1px solid #e3e3e3;
   }
 }

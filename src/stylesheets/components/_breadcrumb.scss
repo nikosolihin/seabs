@@ -1,6 +1,6 @@
 .Breadcrumb {
   @include normalist;
-  margin-bottom: $spacer-quarter;
+  margin-bottom: $spacer-threefourth;
   &-item {
     position: relative;
     display: inline-block;
@@ -11,15 +11,24 @@
     &::after {
       content: '/';
       position: relative 0 -8px auto auto;
+      font-weight: $font-weight-bold;
+      font-size: 1.125rem;
+    }
+    &:last-child {
+      &::after { content: ''; }
+      .Breadcrumb-link {
+        font-weight: 600;
+      }
     }
   }
   &-home {
     position: relative 4px auto auto auto;
     svg {
       margin: 0;
+      size: 20px;
     }
   }
   &-link {
-    text: $gray $font-weight-normal left normal .9rem 1 normal;
+    text: $white $font-weight-normal left normal 1rem 1 .3px;
   }
 }

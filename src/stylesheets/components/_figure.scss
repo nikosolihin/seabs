@@ -1,6 +1,11 @@
 .Figure {
   display: inline-block;
-  margin: $spacer-single -25px;
+  margin: $spacer-single auto $spacer-single*2.5;
+  width: 100%;
+  picture, img {
+    margin: 0 auto;
+  }
+
   &-caption {
     font-size: $font-size-h6;
     color: $figure-caption-color;
@@ -10,10 +15,18 @@
       padding: 0 $spacer-quarter;
     }
   }
+
+  // Alignment
+  &--center {
+    .Figure-caption {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
   &--left {
     @include from(md) {
       float: left;
-      margin: $spacer-half $spacer-single * 1.75 $spacer-half -25px;
+      margin: $spacer-half $spacer-single*2.5 $spacer-half 0;
       max-width: 50%;
     }
   }

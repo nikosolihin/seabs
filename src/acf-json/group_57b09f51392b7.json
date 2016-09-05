@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "This template splits the sidebar into two parts, primary and secondary, located in the left and right side of the page's main content. The primary sidebar will be larger than the secondary.",
+            "message": "This template splits the sidebar into two parts, primary and secondary, located in the left and right side of the page's main content. The primary sidebar will be wider than the secondary and will use contents defined in the sidebar builder, while the secondary's contents will come from the secondary builder.",
             "new_lines": "",
             "esc_html": 0
         },
@@ -91,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Split Sidebars",
-    "modified": 1472543997
+    "modified": 1473056227
 }

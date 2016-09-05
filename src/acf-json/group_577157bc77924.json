@@ -46,7 +46,7 @@
         {
             "key": "field_57bd238bccce9",
             "label": "Bookmark Notice",
-            "name": "bookmark_notice",
+            "name": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -145,11 +145,11 @@
             "disabled": 0
         },
         {
-            "key": "field_57bd9f8c2cbe5",
+            "key": "field_57cc40929c43d",
             "label": "Text Alignment",
-            "name": "alignment",
+            "name": "text_alignment",
             "type": "radio",
-            "instructions": "By default, texts on blocks are centered.",
+            "instructions": "By default, texts on blocks are left aligned.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -166,13 +166,13 @@
                 "id": ""
             },
             "choices": {
-                "center": "Center",
-                "left": "Left"
+                "left": "Left",
+                "center": "Center"
             },
             "allow_null": 0,
             "other_choice": 0,
             "save_other_choice": 0,
-            "default_value": "center",
+            "default_value": "left",
             "layout": "horizontal",
             "return_format": "value"
         },
@@ -277,6 +277,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "local": "php",
-    "modified": 1472541908
+    "modified": 1473004861
 }

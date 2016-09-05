@@ -1,12 +1,28 @@
 .SinglePage {
-  box: horizontal;
-  border-top: 4px solid $brand-primary;
-  // margin-top: $spacer-single*3;
-  padding-top: $spacer-single*5;
+  box: horizontal space-between;
 
-  // &-content {
-  //   > .container {
-  //     padding: 0;
-  //   }
-  // }
+  &-content {
+    > .container {
+      padding: 0;
+    }
+  }
+
+  // Sidebar alignments
+  &--leftSidebar {
+    .SinglePage-sidebar {
+      order: 1;
+    }
+    .SinglePage-content {
+      order: 2;
+    }
+  }
+
+  &--rightSidebar {
+    .SinglePage-sidebar {
+      order: 2;
+    }
+    .SinglePage-content {
+      order: 1;
+    }
+  }
 }
