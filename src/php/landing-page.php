@@ -8,7 +8,7 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
-// $context['sections'] = $context['acf']['sections'];
+$context['sections'] = $context['acf']['sections'];
 $context['children'] = array();
 
 foreach ($post->get_children() as $child) {

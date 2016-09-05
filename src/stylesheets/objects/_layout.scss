@@ -64,10 +64,16 @@
     @include from(lg) {
       > * { width: 33.33333%; }
     }
+    .column {
+      padding: 0 $spacer-threefourth;
+    }
   }
   &--of-4 {
     > * {
       width: 25%;
+    }
+    .column {
+      padding: 0 $spacer-threefourth;
     }
   }
 }

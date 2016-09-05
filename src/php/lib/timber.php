@@ -163,21 +163,6 @@ class StarterSite extends TimberSite {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 
 		//=============================================
-		// GRAVITY FORMS
-		//=============================================
-		// http://cmsmess.com/timber-gravity-forms-dynamic-population-fields/
-		$gravityfunction = new Twig_SimpleFunction('displayform', function ($id) {
-			// https://www.gravityhelp.com/documentation/article/gravity_form_enqueue_scripts/
-	    gravity_form_enqueue_scripts($id, true);
-
-			// https://www.gravityhelp.com/documentation/article/embedding-a-form/#function-call
-			$form = gravity_form($id, false, false, false, '', false, 1, false);
-
-			return $form;
-		});
-		$twig->addFunction($gravityfunction);
-
-		//=============================================
 		// LIST COMPONENT
 		//=============================================
 		$listfunction = new Twig_SimpleFunction('populatelist', function ($options) {

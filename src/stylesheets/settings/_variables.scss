@@ -38,7 +38,7 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 $wrapper-width:                   1600px !default;
-$wrapper-narrow-width:            1440px !default;
+$wrapper-narrow-width:            1400px !default;
 $container-width:                 1200px !default;
 $container-text-width:            725px !default;
 $container-text-nosidebar-width:  925px !default;
@@ -93,12 +93,13 @@ $font-size:                    1rem !default;
 // Common properties //////////////////////////
 $font-weight-light:            300 !default;
 $font-weight-normal:           400 !default;
-$font-weight-bold:             600 !default;
+$font-weight-bold:           500 !default;
 $headings-color:               $gray-darker !default;
 
 // Sans Serif /////////////////////////////////
 $font-family-sans:             "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:            Georgia, "Times New Roman", Times, serif;
+// TODO: Add fallback fonts for linux
 $font-size-h1:                 3.074rem !default;
 $font-size-h2:                 1.728rem !default;
 $font-size-h3:                 1.44rem !default;
@@ -106,13 +107,13 @@ $font-size-h4:                 1.2rem !default;
 $font-size-h5:                 1rem !default;
 $font-size-h6:                 .882rem !default;
 $font-size-h7:                 .795rem !default;
-$line-height:                  1.55 !default;
+$line-height:                  1.58 !default;
 $headings-line-height:         1.25 !default;
 
 // Lead //////////////////////////////////////
-$lead-font-size:               $font-size-h4 !default;
+$lead-font-size:               1.125rem !default;
 $lead-font-weight:             $font-weight-light !default;
-$lead-font-color:              $gray !default;
+$lead-font-color:              $gray-dark !default;
 $lead-line-height:             1.55 !default;
 $lead-margin:                  $lead-font-size*1.25;
 
@@ -142,9 +143,8 @@ $sidebar-heading-color:         $body-color !default;
 $sidebar-border-top:            8px solid #ddd;
 
 // Callout ///////////////////////////////////
-$callout-bg:                    $gray-lightest !default;
-$callout-bg-light:              lighten($black, 97.5%) !default;
-$callout-padding:               $spacer-single*1.75 !default;
+$callout-bg:                    lighten($black, 97%) !default;
+$callout-padding:               $spacer-single*3.5 !default;
 
 // Buttons ///////////////////////////////////
 $button-bg:                     $brand-secondary !default;
@@ -157,7 +157,7 @@ $loader-color:                 lighten($brand-secondary, 10%) !default;
 // Banner ///////////////////////////////////
 $banner-small-height:          220px !default;
 $banner-medium-height:         400px !default;
-$banner-large-height:          600px !default;
+$banner-large-height:          650px !default;
 $banner-margin-bottom:         $spacer-single*3 !default;
 $banner-fallback:               repeating-linear-gradient(115deg,rgba(155,155,155,.15),rgba(155,155,155,0) 3px,rgba(155,155,155,0) 3px,rgba(155,155,155,0) 5px) !default;
 

@@ -4,7 +4,7 @@
   {% set layout = acf.landing_layout %}
 
   {% if acf.teaser %}
-    <p class="Lead Lead--landing Lead--center container container--text-nosidebar">{{acf.teaser}}</p>
+    <p class="Lead Lead--landing Lead--center Lead--spaced container container--text-nosidebar">{{acf.teaser}}</p>
   {% endif %}
 
   {% if acf.position == "before" %}
@@ -37,44 +37,41 @@
     </section>
   {% else %}
     {# Grid Layout #}
-    <div class="container landing-page--grid">
-
-      <div class="Twin">
-        <div class="Twin-box Twin-box--popout lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/458522/screenshots/2936415/new_york_city_statue_of_liberty_rgb_dribbbler_2city__landmark__lettering__logo__mark__buildings__ill.jpg">
-          <div class="Twin-content">
-            <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
-            <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
-          </div>
+    <section class="landing-page--grid container">
+      {% for boxes in children|batch(5) %}
+        <div class="Twin">
+          {% for box in boxes %}
+            {% if loop.first %}
+              <div class="Twin-box Twin-box--popout lazyload" data-bgset="
+                {{box.image[xlarge]}} [(min-width: {{lg}})] |
+                {{box.image[large]}} [(min-width: {{md}})] |
+                {{box.image[medium]}} [(min-width: {{sm}})] |
+                {{box.image[small]}}">
+                <div class="Twin-content">
+                  <h3 class="Lead Lead--white Lead--landing">{{box.title|title}}</h3>
+                  {% if box.teaser %}<p>{{box.teaser}}</p>{% endif %}
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline-white">Learn More</a></div>
+                </div>
+              </div>
+              <div class="Twin-frame Twin">
+            {% else %}
+              <div class="Twin-box lazyload" data-bgset="
+              {{box.image[large]}} [(min-width: {{md}})] |
+              {{box.image[medium]}} [(min-width: {{sm}})] |
+              {{box.image[small]}}">
+                <div class="Twin-content">
+                  <h3 class="Lead Lead--white Lead--landing">{{box.title|title}}</h3>
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline-white">Learn More</a></div>
+                </div>
+              </div>
+            {% endif %}
+            {% if loop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        <div class="Twin-frame Twin">
-          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/making-remote-teams-work/making-remote-teams-work.jpg">
-            <div class="Twin-content">
-              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
-              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
-            </div>
-          </div>
-          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/making-remote-teams-work/making-remote-teams-work.jpg">
-            <div class="Twin-content">
-              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
-              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
-            </div>
-          </div>
-          <div class="Twin-box lazyload" data-bgset="http://stet.editorially.com/images/articles/making-remote-teams-work/making-remote-teams-work.jpg">
-            <div class="Twin-content">
-              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
-              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
-            </div>
-          </div>
-          <div class="Twin-box lazyload" data-bgset="https://d13yacurqjgara.cloudfront.net/users/458522/screenshots/2936415/new_york_city_statue_of_liberty_rgb_dribbbler_2city__landmark__lettering__logo__mark__buildings__ill.jpg">
-            <div class="Twin-content">
-              <h3 class="Lead Lead--white Lead--landing">Sample Title</h3>
-              <div><a href="" class="Button Button--small Button--outline-white">Learn More</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+      {% endfor %}
+    </section>
   {% endif %}
 
   {% if acf.position == "after" %}

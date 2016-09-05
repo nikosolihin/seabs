@@ -1,23 +1,29 @@
 .Banner {
   @include cover;
   @include white;
+  @include overlay(false, 'rgba(0,0,0,0) 30%, rgba(0,0,0,.7) 80%' );
   box: vertical middle center;
   position: relative;
+  margin-bottom: $spacer-single*5;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    size: 100%;
-    background-image: linear-gradient(rgba(0,0,0,.1) 60%, rgba(0,0,0,.5) 100%);
+  h1 {
+    font-size: $font-size-h1;
+    font-weight: $font-weight-light !important;
+    line-height: 1.15;
+    letter-spacing: .5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    max-width: 65%;
   }
-
   .container {
     position: relative;
     z-index: 1;
   }
 
+  &-content {
+    margin-bottom: $spacer-single*3;
+  }
+
+  // Styles
   &--small { height: $banner-small-height; }
   &--medium { height: $banner-medium-height; }
   &--large { height: $banner-large-height; }
@@ -31,6 +37,5 @@
 
   &--textbottom {
     justify-content: flex-end;
-    padding-bottom: $spacer-single*1.5;
   }
 }

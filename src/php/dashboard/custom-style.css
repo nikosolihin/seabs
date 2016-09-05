@@ -72,7 +72,7 @@ p#backtoblog {
 .acf-fc-popup [data-layout="textarea"]::before {
 	content: "\e907";
 }
-.acf-fc-popup [data-layout="button"]::before {
+.acf-fc-popup [data-layout="link"]::before {
 	content: "\e157";
 }
 .acf-fc-popup [data-layout="image"]::before {

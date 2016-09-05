@@ -27,7 +27,7 @@
                     "sub_fields": [
                         {
                             "key": "field_57a5f3d7e19ff",
-                            "label": "",
+                            "label": "Components",
                             "name": "full",
                             "type": "reusable_field_group_field",
                             "instructions": "",
@@ -39,6 +39,24 @@
                                 "id": ""
                             },
                             "group_key": "group_575fe9b36d7ca",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        },
+                        {
+                            "key": "field_57cc534612a59",
+                            "label": "Column Options",
+                            "name": "full",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57aa142c90cdd",
                             "name_prefix": 1,
                             "key_prefix": 1,
                             "label_prefix": 0
@@ -166,6 +184,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Regular Page Builder",
-    "local": "php",
-    "modified": 1472539654
+    "modified": 1473008496
 }

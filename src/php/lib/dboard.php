@@ -22,7 +22,7 @@ add_filter('mce_buttons_2', 'custom_style_TinyMCE');
 function custom_style_def_TinyMCE( $init_array ) {
 	$style_formats = array(
 		array(
-			'title' => 'Lead Paragraph',
+			'title' => 'Lead Text',
 			'block' => 'p',
 			'classes' => 'Lead',
 		),

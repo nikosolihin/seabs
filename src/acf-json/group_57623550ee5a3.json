@@ -1,11 +1,11 @@
 {
-    "key": "group_574d3d19743ad",
-    "title": "Accordion",
+    "key": "group_57623550ee5a3",
+    "title": "Tabs",
     "fields": [
         {
-            "key": "field_574d3dbcb8e6d",
+            "key": "field_57ad952ffe7b3",
             "label": "",
-            "name": "items",
+            "name": "tabs",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -15,16 +15,16 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_574d3e59b8e6e",
+            "collapsed": "field_57ad9578fe7b4",
             "min": 1,
             "max": "",
             "layout": "block",
-            "button_label": "Add Accordion Item",
+            "button_label": "Add Tab",
             "sub_fields": [
                 {
-                    "key": "field_574d3e59b8e6e",
-                    "label": "Head",
-                    "name": "head",
+                    "key": "field_57ad9578fe7b4",
+                    "label": "Tab Title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -43,19 +43,19 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_574d3e71b8e6f",
-                    "label": "Body",
-                    "name": "body",
+                    "key": "field_57ada5a2db7a7",
+                    "label": "Content",
+                    "name": "content",
                     "type": "reusable_field_group_field",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "group_key": "group_57cc2c8823ce8",
+                    "group_key": "group_57ada5ceaa1e9",
                     "name_prefix": 0,
                     "key_prefix": 1,
                     "label_prefix": 0
@@ -79,6 +79,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 0,
-    "description": "COMPONENTS : Accordion",
-    "modified": 1472998927
+    "description": "COMPONENTS : Tabs",
+    "local": "php",
+    "modified": 1472998775
 }

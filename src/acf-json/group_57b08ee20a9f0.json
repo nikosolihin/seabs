@@ -33,38 +33,13 @@
                 "id": ""
             },
             "choices": {
-                "left": "Left",
-                "right": "Right"
+                "leftSidebar": "Left",
+                "rightSidebar": "Right"
             },
             "allow_null": 0,
             "other_choice": 0,
             "save_other_choice": 0,
             "default_value": "right",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_57b0951025539",
-            "label": "Banner Size",
-            "name": "banner_size",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "small": "Small",
-                "medium": "Medium",
-                "large": "Large"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "medium",
             "layout": "horizontal",
             "return_format": "value"
         }
@@ -91,5 +66,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Default Page",
-    "modified": 1472543956
+    "modified": 1473075941
 }

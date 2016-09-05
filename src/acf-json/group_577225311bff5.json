@@ -1,6 +1,6 @@
 {
     "key": "group_577225311bff5",
-    "title": "Button",
+    "title": "Link",
     "fields": [
         {
             "key": "field_5772253122b8a",
@@ -24,15 +24,47 @@
             "disabled": 0
         },
         {
+            "key": "field_57c905d8f57eb",
+            "label": "Display as...",
+            "name": "form",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "text": "Text Link",
+                "button": "Button"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_57722c2b81c42",
             "label": "Button Type",
             "name": "display",
             "type": "radio",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c905d8f57eb",
+                        "operator": "==",
+                        "value": "button"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": 50,
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -50,14 +82,14 @@
         },
         {
             "key": "field_577227a862daf",
-            "label": "Link",
-            "name": "link",
+            "label": "URL",
+            "name": "url",
             "type": "reusable_field_group_field",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -83,7 +115,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 0,
-    "description": "COMPONENTS : Button",
-    "local": "php",
-    "modified": 1472539654
+    "description": "COMPONENTS : Link",
+    "modified": 1472998111
 }

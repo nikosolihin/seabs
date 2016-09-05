@@ -27,7 +27,13 @@
   background-position: center center;
   background-size: cover;
 }
-@mixin overlay($full) {
+@mixin caps {
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h6;
+  letter-spacing: .45px;
+}
+@mixin overlay($full, $value: null) {
   &::before {
     content: '';
     position: absolute;
@@ -35,9 +41,17 @@
     left: 0;
     size: 100%;
     @if $full {
-      background: rgba(0,0,0,.4);
+      @if ($value) {
+        background: #{$value};
+      } @else {
+        background: rgba(0,0,0,.4);
+      }
     } @else {
-      background-image: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
+      @if ($value) {
+        background: linear-gradient( #{$value} );
+      } @else {
+        background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
+      }
     }
   }
 }

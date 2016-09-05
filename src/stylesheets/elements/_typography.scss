@@ -101,8 +101,7 @@ a, a[href] {
 // }
 
 // No margin for only-child paragraph
-p:only-child,
-p:last-of-type {
+p:only-child {
   margin-bottom: 0;
 }
 

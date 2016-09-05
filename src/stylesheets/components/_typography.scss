@@ -6,28 +6,27 @@
   &--center {
     text-align: center;
   }
+  &--overview {
+    font-size: $lead-font-size*1.125;
+    margin-bottom: $spacer-single*3;
+  }
   &--landing {
     font-size: $lead-font-size*1.25;
   }
   &--white {
     @include white;
   }
-}
-.meta {
-  text: #999 $font-weight-normal left normal .9rem 1.3 normal;
-  margin-bottom: 0;
-  &--caps {
-    text-transform: uppercase;
-    font-size: 90%;
-    letter-spacing: $caps-heading-letter-spacing/4;
+  &--spaced {
+    margin-top: $spacer-single*4;
+    margin-bottom: $spacer-single*5.5;
   }
 }
-.Heading {
-  text: $caps-heading-color $font-weight-bold left uppercase $caps-heading-font-size $headings-line-height $caps-heading-letter-spacing;
-  &--section {
-    margin-bottom: $spacer-single*1.25;
-  }
-  &--subtitle {
-    margin-bottom: $spacer-half;
-  }
-}
+// .meta {
+//   text: #999 $font-weight-normal left normal .9rem 1.3 normal;
+//   margin-bottom: 0;
+//   &--caps {
+//     text-transform: uppercase;
+//     font-size: 90%;
+//     letter-spacing: $caps-heading-letter-spacing/4;
+//   }
+// }

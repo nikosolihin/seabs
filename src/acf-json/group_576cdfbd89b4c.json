@@ -72,6 +72,31 @@
             "label_prefix": 0
         },
         {
+            "key": "field_57b0951025539",
+            "label": "Banner Size",
+            "name": "banner_size",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "medium": "Medium",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "medium",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5773958df7880",
             "label": "Notes",
             "name": "",
@@ -115,11 +140,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "redirect-page.php"
             }
         ]
     ],
@@ -144,5 +164,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Page",
-    "modified": 1472722297
+    "modified": 1473084910
 }

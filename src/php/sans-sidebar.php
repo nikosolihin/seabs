@@ -8,7 +8,8 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context['acf'] = get_fields();
-$context['with_sidebar'] = false;
+$context['sections'] = $context['acf']['sections'];
+$context['no_sidebar'] = true;
 
 // Generate breadcrumb. Must be last.
 $context['breadcrumb'] = array();

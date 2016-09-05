@@ -2,7 +2,7 @@
 {% set style = post.get_field('style') %}
 {% set image = post.get_field('image') %}
 {% set description = post.get_field('description') %}
-{% set alignment = post.get_field('alignment') %}
+{% set alignment = post.get_field('text_alignment') %}
 {% set link_type = post.get_field('type') %}
 {% set notitle = post.get_field('notitle') %}
 {% set tinted = notitle ? '' : 'tinted' %}
@@ -27,7 +27,7 @@
     <a href="{{url}}" class="Block-link"></a>
     <div class="Block-head lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x"></div>
     <div class="Block-body">
-      <h4 class="h3 Block-heading">{{post.title|title}}</h4>
+      <h4 class="Block-heading">{{post.title|title}}</h4>
       {% if description|trim is not empty %}
         <p>{{description|trim}}</p>
       {% endif %}

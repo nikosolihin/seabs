@@ -4,17 +4,19 @@
   margin: $spacer-single 0;
   border-collapse: collapse;
   background-color: transparent;
+  font-size: .9rem;
 
   @at-root .Tabs #{&} {
     margin-top: 0;
   }
 
   th {
+    // Hide on mobile, switch to horizontal view
     display: none;
-    color: #555;
-    border-bottom: 2px solid #eceeef;
-    background-color: #eceeef;
-    font-weight: $font-weight-bold;
+    @include caps;
+    font-size: $font-size-h7;
+    color: #999;
+    border-bottom: 1px solid #eee;
   }
   td {
     display: block;
@@ -28,20 +30,29 @@
   }
   th, td {
     text-align: left;
-    border-top: 1px solid #eceeef;
+    border-top: 3px solid #eee;
     padding: $spacer-quarter;
     @include from(sm) {
-      padding: $spacer-half;
       display: table-cell;
+      padding: $spacer-single;
     }
   }
+
+  // Horizontal mobile view
   tr {
+    border-top: $spacer-single*1.25 solid transparent;
+    border-bottom: $spacer-single*1.25 solid transparent;
+    @include from(sm) {
+      border: 0;
+    }
     td {
       border: none;
     }
     &:nth-of-type(even) {
       background-color: $callout-bg;
-      @include from(sm) { background-color: transparent; }
+      // @include from(sm) { background-color: transparent; }
     }
   }
 }
+
+// TODO: Style this more

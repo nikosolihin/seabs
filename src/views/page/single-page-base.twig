@@ -1,26 +1,27 @@
 {% extends "base.twig" %}
 
 {% block content %}
+  {% set with_sidebar = no_sidebar ? 'text-nosidebar' : '' %}
+  {% set direction = sidebar_position == 'leftSidebar' ? 'right' : 'left' %}
 
-    <!-- {% include 'components/banner.twig' %} -->
+{% include 'components/banner.twig' %}
+  <div class="container {{'SinglePage'|modifiers("#{sidebar_position}")}}">
+    <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}}">
+      {% if acf.teaser %}
+        <div class="Lead Lead--intro Lead--overview">{{acf.teaser}}</div>
+      {% endif %}
+      {% include 'layout/base.twig' %}
+    </div>
 
-    <div class="SinglePage container">
-      <div class="SinglePage-content container container--text container--left container--nopadding {% if not sidebar %}container--text-nosidebar{% endif %}">
-        {% include 'components/breadcrumb.twig' with {data: breadcrumb} %}
-        {% if acf.teaser %}
-          <div class="Lead Lead--intro">{{acf.teaser}}</div>
-        {% endif %}
-        {% include 'layout/base.twig' %}
-        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
-      </div>
-
+    {% if not no_sidebar %}
       <div class="SinglePage-sidebar Sidebar">
         {% if hierarchy %}
           <ul class="List">{{hierarchy}}</ul>
         {% endif %}
-        <!-- {% include 'layout/sidebar-base.twig' %} -->
+        {% include 'layout/sidebar-base.twig' %}
       </div>
-
-    </div>
+    {% endif %}
+  </div>
 {% endblock %}
+
+{# <!-- {% if section.description %}<p>{{section.description}}</p>{% endif %} --> #}

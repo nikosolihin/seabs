@@ -50,6 +50,23 @@
             "default_value": "",
             "layout": "horizontal",
             "return_format": "value"
+        },
+        {
+            "key": "field_57cc59f577305",
+            "label": "Sidebar",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Unlike the default page template, the landing page template will not display any sidebar. You may still build a sidebar using the builder on the left so that children of this landing page can inherit it, saving you time from defining repeated sidebar modules across children pages.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -74,5 +91,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Landing Page",
-    "modified": 1472722726
+    "modified": 1473010707
 }
