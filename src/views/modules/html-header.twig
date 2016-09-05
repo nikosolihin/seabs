@@ -21,28 +21,17 @@
   <meta name="description" content="{{site.description}}">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+  {# Stylesheet #}
+  <link rel="stylesheet" href="{{site.theme.uri}}/stylesheets/app.css">
+  <!-- <link rel="dns-prefetch" href="//www.google-analytics.com"> -->
+
   {# Favicons #}
   {% include 'modules/favicons.twig' %}
-
-  <!-- Font Loading stuff -->
-  <link href="https://fonts.googleapis.com/" rel="preconnect" crossorigin>
 
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <script>
-    (function() {
-      if (sessionStorage.gcffonts) {
-        document.onreadystatechange = function () {
-          if (document.readyState === 'interactive') {
-            document.documentElement.classList.add('wf-active');
-          }
-        };
-      }
-    })();
-  </script>
 
   {{function('wp_head')}}
 </head>
