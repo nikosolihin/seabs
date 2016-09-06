@@ -1,25 +1,30 @@
 .Block {
   @include cover;
   position: relative;
-  box: vertical middle;
-  min-height: $card-height*1.25;
-  padding: $spacer-single*1.25 $spacer-single*1.75;
+  // box: vertical middle;
+  min-height: $card-height*1.5;
+  padding: $spacer-single*1.25;
 
   &-link {
     position: absolute 0 auto auto 0;
     size: 100%;
     z-index: 1;
   }
+  &-cta {
+    margin-top: $spacer-single;
+  }
   &-head {
     @include cover;
     min-height: $card-height*.9;
   }
   &-body {
-    @include white;
     position: relative;
     box: vertical;
     size: 100%;
     text-align: center;
+    h4, p {
+      @include white;
+    }
     p {
       margin-bottom: 0;
     }
@@ -57,8 +62,6 @@
     padding: 0;
   }
   &--tinted {
-    .Block-link {
-      background: linear-gradient( rgba(0,0,0,.23), rgba(0,0,0,.83) );
-    }
+    @include overlay(true);
   }
 }

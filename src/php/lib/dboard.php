@@ -4,7 +4,7 @@
 /* from including unnecessary headings
 /*=============================================*/
 function custom_format_TinyMCE( $in ) {
-  $in['block_formats'] = "Heading=h3; Sub-Heading=h5; Paragraph=p;";
+  $in['block_formats'] = "Heading=h3; Sub-Heading=h4; Paragraph=p;";
 	return $in;
 }
 add_filter( 'tiny_mce_before_init', 'custom_format_TinyMCE' );

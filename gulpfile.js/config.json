@@ -1,8 +1,8 @@
 {
   "root": {
     "src": "./src",
-    "dev_dest": "./htdocs/wp-content/themes/saat",
-    "dest": "./public"
+    "dest": "./htdocs/wp-content/themes/saat",
+    "deploy": "./public"
   },
 
   "tasks": {
