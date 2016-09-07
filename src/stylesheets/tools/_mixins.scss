@@ -30,7 +30,7 @@
 @mixin caps {
   text-transform: uppercase;
   font-weight: $font-weight-bold;
-  font-size: $font-size-h6;
+  font-size: .85rem;
   letter-spacing: .45px;
 }
 @mixin overlay($full, $value: null) {

@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block before_content %}
+  {% include 'components/media-object.twig' %}
+{% endblock %}
+
+{% block content %}
+  <div class="container ArchiveEvent" data-component="event" data-options='{ "domain": "{{site.domain}}", "ppp": "{{ppp}}" }'>
+    <div class="ArchiveEvent-content">
+      {% include 'components/loader.twig' %}
+
+      <div class="ArchiveEvent-result"></div>
+
+      <!-- <div class="Pagination">
+        <span class="Pagination-label">Page</span>
+        <ul class="Pagination-pages List List--inline"></ul>
+      </div> -->
+    </div>
+    <div class="ArchiveEvent-sidebar Sidebar">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+    </div>
+  </div>
+{% endblock %}

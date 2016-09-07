@@ -152,7 +152,7 @@ $button-small-padding:          $spacer-half .625rem !default;
 
 // Loader //////////////////////////////////////
 $loader-size:                  $spacer-single*2 !default;
-$loader-color:                 lighten($brand-secondary, 10%) !default;
+$loader-color:                 lighten($gray-light, 40%) !default;
 
 // Banner ///////////////////////////////////
 $banner-small-height:          220px !default;
@@ -179,13 +179,12 @@ $footer-children-color:         $gray-light !default;
 $footer-legal-bg:               #8A0000 !default;
 
 // Pills ///////////////////////////////////
-$pill-color:                   #777 !default;
-$pill-bg:                      #EBEBEB !default;
+$pill-color:                   #fff !default;
 $pill-font-weight:             $font-weight-bold !default;
 $pill-line-height:             1.45 !default;
 $pill-font-size:               .8rem !default;
 $pill-letter-spacing:          .25px !default;
-$pill-padding:                 $spacer-quarter $spacer-threefourth !default;
+$pill-padding:                 $spacer-quarter $spacer-half !default;
 $pill-padding-small:           .15rem $spacer-half !default;
 $pill-padding-outline:         ($spacer-quarter - .105rem) ($spacer-threefourth - .105rem) !default;
 

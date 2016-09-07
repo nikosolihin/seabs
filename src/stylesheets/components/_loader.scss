@@ -1,7 +1,9 @@
 .Loader {
   transition: all .1s ease-in-out;
   size: $loader-size;
-  position: absolute $spacer-single*17 auto auto 50%;
+  position: absolute;
+  left: 50%;
+  top: $spacer-single*5;
   opacity: 0;
   &--show {
     opacity: 1;
