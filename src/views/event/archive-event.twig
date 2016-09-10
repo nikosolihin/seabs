@@ -5,19 +5,37 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container ArchiveEvent" data-component="event" data-options='{ "domain": "{{site.domain}}", "ppp": "{{ppp}}" }'>
+  <div class="container ArchiveEvent" data-component="event" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "label": "{{label|title}}", "categories": {{categories_json}} }'>
     <div class="ArchiveEvent-content">
       {% include 'components/loader.twig' %}
 
+      <h3 class="Lead">September 2016</h3>
       <div class="ArchiveEvent-result"></div>
-
       <!-- <div class="Pagination">
         <span class="Pagination-label">Page</span>
         <ul class="Pagination-pages List List--inline"></ul>
       </div> -->
     </div>
     <div class="ArchiveEvent-sidebar Sidebar">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem pariatur provident eaque, obcaecati laudantium officia dolores maxime illum assumenda. Dolor tenetur saepe voluptatem iure suscipit hic labore, consequuntur cum at.</p>
+      <h3 class="Lead">Find Events</h3>
+
+      <div class="ArchiveEvent-sidebarSection">
+        <h5>Date</h5>
+        <div class="Datepicker" data-component="datepicker"></div>
+      </div>
+
+      <div class="ArchiveEvent-sidebarSection">
+        <h5>Categories</h5>
+        <ul class="List">
+          {% for category in categories %}
+            <div class="Pill" data-category-id="{{category.id}}">{{category}}</div>
+          {% endfor %}
+        </ul>
+      </div>
+
+
+
+      <!-- {% include 'layout/sidebar-base.twig' %} -->
     </div>
   </div>
 {% endblock %}

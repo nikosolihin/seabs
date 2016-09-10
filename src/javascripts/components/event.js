@@ -6,41 +6,44 @@ import getQueryParams from '../lib/getQueryParams'
 import paramReplace from '../lib/paramReplace'
 import Mustache from 'mustache'
 import moment from 'moment'
-//
-// export default class Resource {
-//   constructor(el) {
-//     this.$el = $(el)
-//     this.$loader = $("#Loader")
-//     this.searchButton = "#searchResources"
-//     this.$resultArea = $(".searchResource-result")
-//     this.$pagination = $(".Pagination-pages")
-//     this.$sort = $(".searchResource-sort")
-//
-//     // Options
-//     this.domain = this.$el.data('options').domain
-//     this.ppp = this.$el.data('options').ppp
-//
-//     // Index all type and topic tags
-//     this.allTypes = {}
-//     this.allTopics = {}
-//     this.allYears = []
-//     this.getAllTags()
-//     this.getAllYears()
-//
-//     // Get filters from URL & store them
-//     this.queryString = location.search
-//     let filters = getQueryParams()
-//     this.page = filters.page === undefined ? '1' : filters.page
-//     this.order = filters.order === undefined ? 'desc' : filters.order
-//     this.types = filters.types === undefined ? [] : filters.types.split(',')
-//     this.topics = filters.topics === undefined ? [] : filters.topics.split(',')
-//     this.year = filters.yr === undefined ? 'any' : filters.yr
-//     this.month = filters.month === undefined ? 'any' : filters.month
-//
-//     this.prepSidebar()
-//     this.attachEvents()
-//     this.fetchResources()
-//   }
+
+export default class Event {
+  constructor(el) {
+    this.$el = $(el)
+    this.$loader = $("#Loader")
+    // this.searchButton = "#searchResources"
+    this.$resultArea = $(".ArchiveEvent-result")
+    // this.$pagination = $(".Pagination-pages")
+    // this.$sort = $(".searchResource-sort")
+
+    // Options
+    let options = this.$el.data('options')
+    this.domain = options.domain
+    this.label = options.label
+    this.ppp = options.ppp
+    this.allCategories = options.categories
+
+    console.log(typeof(this.allCategories))
+
+    // Index all type and topic tags
+    // this.allYears = []
+    // this.getAllTags()
+    // this.getAllYears()
+
+    // Get filters from URL & store them
+    // this.queryString = location.search
+    // let filters = getQueryParams()
+    // this.page = filters.page === undefined ? '1' : filters.page
+    // this.order = filters.order === undefined ? 'desc' : filters.order
+    // this.types = filters.types === undefined ? [] : filters.types.split(',')
+    // this.topics = filters.topics === undefined ? [] : filters.topics.split(',')
+    // this.year = filters.yr === undefined ? 'any' : filters.yr
+    // this.month = filters.month === undefined ? 'any' : filters.month
+
+    // this.prepSidebar()
+    // this.attachEvents()
+    this.fetchResources()
+  }
 //
 //   getAllTags() {
 //     forEach( this.$el.find("[data-type-id]"), (data) => {
@@ -132,96 +135,101 @@ import moment from 'moment'
 //     window.history.pushState(null, document.title, `?yr=${this.year}&month=${this.month}${typeString}${topicString}&order=${this.order}&page=${this.page}` )
 //   }
 //
-//   fetchResources() {
-//     let dataObject = {}
-//     dataObject.filter = {}
-//     dataObject.order = this.order
-//     dataObject.page = this.page
-//     dataObject.filter.posts_per_page = this.ppp
-//     if (this.topics || this.types) {
-//       if (this.topics) {
-//         dataObject.filter.resource_topic = this.topics.join(',')
-//       }
-//       if (this.types) {
-//         dataObject.filter.resource_type = this.types.join(',')
-//       }
-//     }
-//     if (this.year != 'any') {
-//       if (this.month != 'any') {
-//         if (this.month == 12) {
-//           dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
-//           dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
-//         } else {
-//           dataObject.before = `${this.year}-${padStart(parseInt(this.month)+1, 2, '0')}-01T00:00:00`
-//           dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
-//         }
-//       } else {
-//         dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
-//         dataObject.after = `${this.year}-01-01T00:00:00`
-//       }
-//     }
-//
-//     $.ajax({
-//       url: `//${this.domain}/wp-json/wp/v2/resources`,
-//       data: dataObject,
-//       type: "GET",
-//       dataType : "json",
-//       beforeSend: () => {
-//         this.$resultArea.toggleClass('searchResource--fadeOut')
-//         this.$loader.toggleClass('Loader--show')
-//       }
-//     })
-//     .always( () => {
-//       this.$resultArea.empty()
-//       this.$pagination.empty()
-//       this.$loader.toggleClass('Loader--show')
-//       this.$resultArea.toggleClass('searchResource--fadeOut')
-//     })
-//     .done( (data, status, xhr) => {
-//       if (data.length) {
-//         $(".Pagination--hidden").toggleClass('Pagination--hidden')
-//         let totalPages = parseInt(xhr.getResponseHeader('x-wp-totalpages'))
-//         forEach(data, (obj) => {
-//           let templateVars = {
-//             title: obj.title.rendered,
-//             link: obj.link,
-//             date: moment(obj.date).format('MMMM D, YYYY'),
-//             teaser: obj.acf.teaser,
-//             image: obj.acf.image[Object.keys(obj.acf.image)[0]].url_n,
-//             topics: []
-//           }
-//           templateVars.type = this.allTypes[obj['resources/types'][0]]
-//           map(obj['resources/topics'], (id) => {
-//             templateVars.topics[templateVars.topics.length] = this.allTopics[id]
-//           })
-//           templateVars.topics = templateVars.topics.join(', ')
-//           this.renderResources(templateVars)
-//         })
-//         // Setup Pagination
-//         for (let i=1; i<=totalPages; i++) {
-//           if (i==this.page) {
-//             this.$pagination.append(`<li class="Pagination--current"><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
-//           } else {
-//             this.$pagination.append(`<li><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
-//           }
-//         }
-//       } else {
-//         this.renderResources({ empty: "No resources found. Please try again." })
-//         $(".Pagination").toggleClass('Pagination--hidden')
-//       }
-//     })
-//     .fail( (xhr, status, errorThrown) => {
-//       this.renderResources({ error: `${errorThrown}: ${status}` })
-//       $(".Pagination").toggleClass('Pagination--hidden')
-//     })
-//   }
-//
-//   renderResources(data) {
-//     let template = $("#MediaObject").html()
-//     Mustache.parse(template)
-//     this.$resultArea.append( Mustache.render(template, data) )
-//   }
-//
+  fetchResources() {
+    let dataObject = {}
+    // dataObject.filter = {}
+    // dataObject.order = this.order
+    // dataObject.page = this.page
+    // dataObject.filter.posts_per_page = this.ppp
+    // if (this.topics || this.types) {
+    //   if (this.topics) {
+    //     dataObject.filter.resource_topic = this.topics.join(',')
+    //   }
+    //   if (this.types) {
+    //     dataObject.filter.resource_type = this.types.join(',')
+    //   }
+    // }
+
+    if (this.year != 'any') {
+      if (this.month != 'any') {
+        if (this.month == 12) {
+          dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
+          dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
+        } else {
+          dataObject.before = `${this.year}-${padStart(parseInt(this.month)+1, 2, '0')}-01T00:00:00`
+          dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
+        }
+      } else {
+        dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
+        dataObject.after = `${this.year}-01-01T00:00:00`
+      }
+    }
+
+    $.ajax({
+      url: `//${this.domain}/wp-json/wp/v2/events`,
+      // data: dataObject,
+      type: "GET",
+      dataType : "json",
+      beforeSend: () => {
+        // this.$resultArea.toggleClass('searchResource--fadeOut')
+        // this.$loader.toggleClass('Loader--show')
+      }
+    })
+    .always( () => {
+      // this.$resultArea.empty()
+      // this.$pagination.empty()
+      // this.$loader.toggleClass('Loader--show')
+      // this.$resultArea.toggleClass('searchResource--fadeOut')
+    })
+    .done( (data, status, xhr) => {
+      console.log(data)
+      if (data.length) {
+      //   $(".Pagination--hidden").toggleClass('Pagination--hidden')
+        let totalPages = parseInt(xhr.getResponseHeader('x-wp-totalpages'))
+        forEach(data, (obj) => {
+          let templateVars = {
+            id: obj.acf.id,
+            title: obj.title.rendered,
+            link: obj.link,
+            date: moment(obj.date).format('MMMM D, YYYY'),
+            teaser: obj.acf.teaser,
+            image: obj.acf.image.url_z,
+            label: this.label,
+            category: this.allCategories[obj['events/categories']]
+          }
+          // templateVars.type = this.allTypes[obj['resources/types'][0]]
+          // map(obj['resources/topics'], (id) => {
+          //   templateVars.topics[templateVars.topics.length] = this.allTopics[id]
+          // })
+          // templateVars.topics = templateVars.topics.join(', ')
+          this.renderResources(templateVars)
+        })
+
+      //   // Setup Pagination
+      //   for (let i=1; i<=totalPages; i++) {
+      //     if (i==this.page) {
+      //       this.$pagination.append(`<li class="Pagination--current"><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
+      //     } else {
+      //       this.$pagination.append(`<li><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
+      //     }
+      //   }
+      } else {
+        this.renderResources({ empty: "No resources found. Please try again." })
+      //   $(".Pagination").toggleClass('Pagination--hidden')
+      }
+    })
+    .fail( (xhr, status, errorThrown) => {
+      this.renderResources({ error: `${errorThrown}: ${status}` })
+      // $(".Pagination").toggleClass('Pagination--hidden')
+    })
+  }
+
+  renderResources(data) {
+    let template = $("#MediaObject").html()
+    Mustache.parse(template)
+    this.$resultArea.append( Mustache.render(template, data) )
+  }
+
 //   handlePagination(pageNum) {
 //     this.page = pageNum
 //     // Update URL
@@ -235,4 +243,4 @@ import moment from 'moment'
 //     window.history.pushState(null, document.title, paramReplace( location.search, 'order', order) )
 //     this.fetchResources()
 //   }
-// }
+}

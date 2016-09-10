@@ -3,8 +3,28 @@
 
   &-content {
     position: relative;
+    padding-right: $spacer-single*4;
   }
   &-sidebar {
+    width: 24%;
+  }
+  &-sidebarSection {
+    padding: $spacer-single*1.5 0 $spacer-single;
+    border-bottom: 1px solid #eee;
+
+    h5 {
+      @include caps;
+      color: #666;
+      letter-spacing: .75px;
+      font-weight: 600;
+      font-size: .775rem;
+      margin-bottom: $spacer-threefourth;
+    }
+    input {
+      width: 100%;
+    }
+  }
+  &-result {
 
   }
 }
