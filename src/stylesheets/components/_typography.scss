@@ -1,17 +1,12 @@
 .Lead {
-  text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
+  color: $gray-dark;
+  font-weight: $font-weight-light;
+
   &--intro {
     margin-top: 0;
   }
   &--center {
     text-align: center;
-  }
-  &--overview {
-    font-size: $lead-font-size*1.125;
-    margin-bottom: $spacer-single*3;
-  }
-  &--landing {
-    font-size: $lead-font-size*1.25;
   }
   &--white {
     @include white;
@@ -21,6 +16,12 @@
     margin-bottom: $spacer-single*5.5;
   }
 }
+
+.white {
+  @include white;
+}
+
+
 // .meta {
 //   text: #999 $font-weight-normal left normal .9rem 1.3 normal;
 //   margin-bottom: 0;
