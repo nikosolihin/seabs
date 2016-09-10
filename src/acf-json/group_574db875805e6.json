@@ -174,13 +174,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "page"
             },
             {
@@ -198,5 +191,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Sidebar Builder",
-    "modified": 1473049980
+    "modified": 1473317508
 }

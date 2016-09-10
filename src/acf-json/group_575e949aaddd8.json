@@ -1,0 +1,46 @@
+{
+    "key": "group_575e949aaddd8",
+    "title": "Event Categories",
+    "fields": [
+        {
+            "key": "field_575e94b1fd1c8",
+            "label": "",
+            "name": "tag_box",
+            "type": "taxonomy",
+            "instructions": "The category of this event. These will be used in event search as well as any automatically generated feeds of related items.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "event_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TAG BOX : Replacement for event categories",
+    "modified": 1473425030
+}
