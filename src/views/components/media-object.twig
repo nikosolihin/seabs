@@ -9,7 +9,7 @@
 {{/empty}}
 
 {{#title}}
-  <div class="Media">
+  <div class="Media" data-id="{{id}}">
     {{#image}}
     <div class="Media-image">
       <a href="{{link}}">
@@ -30,7 +30,7 @@
       </a>
     </div>
     {{/image}}
-    
+
     <div class="Media-body">
       <h3 class="h4"><a href="{{link}}">{{title}}</a></h3>
       {{#teaser}}<p>{{{teaser}}}</p>{{/teaser}}

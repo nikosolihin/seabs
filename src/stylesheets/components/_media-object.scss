@@ -8,13 +8,13 @@
   }
 
   &-image {
-    width: 23%;
+    width: 25%;
     flex: 0 0 auto;
     position: relative;
   }
   &-body {
     width: 77%;
-    padding-left: $spacer-single*1.5;
+    padding-left: $spacer-single*1.75;
     h3 a {
       @include hover($brand-primary);
     }
