@@ -24,8 +24,10 @@
 // Reset/normalize, first layer which gnerates actual CSS.
 // =====================================================
 @import "normalize";
+@import "pikaday";
+@import "generic/datepicker";
 @import "generic/keyframes";
-// @import "generic/flickity";
+// @import "generic/flickity"; // import from node_modules/
 
 // =====================================================
 // ELEMENTS

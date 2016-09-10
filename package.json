@@ -72,6 +72,7 @@
     "object-assign": "4.0.1",
     "open": "0.0.5",
     "picturefill": "^3.0.2",
+    "pikaday": "^1.4.0",
     "postcss-clearfix": "^1.0.0",
     "postcss-flexbox": "^1.0.2",
     "postcss-flexbugs-fixes": "^2.0.0",
