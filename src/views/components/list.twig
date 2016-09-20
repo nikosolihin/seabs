@@ -1,49 +1,12 @@
-{% set style = data.style %}
-<ul class="Feed{% include 'utility/generate-classes.twig' with {'component' : 'Feed', 'options' : style} %}">
-  {% set meta = data.metadata %}
-  {% for item in populatelist(data) %}
-    {% set post = TimberPost(item) %}
-    <li class="Feed-item">
-      {% if style == 'object-list' %}
-        <div class="Feed-left">
-          <a href="{{post.link}}">
-            <img src="{{post.get_field('image')|first.url_sq}}">
-          </a>
-        </div>
-      {% endif %}
-      {% if style == 'card' %}
-        <div class="Feed-top" style="background-image:url({{post.get_field('image')|first[thumb]}})">
-          {% if 'type' in meta %}
-            <span class="Pill Pill--small">{{post.get_terms('resource_type')|first|title}}</span>
-          {% endif %}
-          <a class="Feed-link" href="{{post.link}}"></a>
-        </div>
-      {% endif %}
-
-      <div class="Feed-right">
-        {% if 'type' in meta and style != 'card' %}
-          <a href="" class="Pill Pill--small">{{post.get_terms('resource_type')|first|title}}</a>
-        {% endif %}
-
-        <h4 class="h5"><a href="{{post.link}}">{{post.title}}</a></h4>
-
-        {% if 'teaser' in meta %}
-          <p>{{post.teaser|slice(0,50)~'...'}}</p>
-        {% endif %}
-
-        {% if 'date' in meta %}
-          <p class="meta">{{post.date}}
-            {% if 'authors' in meta %}
-              &nbsp;&#8226;&nbsp; By
-              {{ TimberPost(post.authors)|join(', ') }}
-            {% endif %}
-          </p>
-        {% endif %}
-
-        {% if 'topics' in meta %}
-          <p class="meta">Posted in <strong>{{ post.get_terms('resource_topic')|join(', ') }}</strong>
-        {% endif %}
-      </div>
-    </li>
-  {% endfor %}
+<ul class="List List--terms">
+  {% if data.post_type == 'event' %}
+    {% set term = listterms('event_category') %}
+  {% endif %}
+  {% if data.post_type == 'news' %}
+    {% set term = listterms('news_topic') %}
+  {% endif %}
+  {% if data.post_type == 'media' %}
+    {% set term = listterms('media_type') %}
+  {% endif %}
+  {{term}}
 </ul>

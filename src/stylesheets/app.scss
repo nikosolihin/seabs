@@ -3,7 +3,6 @@
 // =====================================================
 .xdebug-var-dump {
   font-size: 14px;
-  margin-left: 300px;
 }
 
 // =====================================================
@@ -25,6 +24,7 @@
 // =====================================================
 @import "normalize";
 @import "pikaday";
+@import "flickity";
 @import "generic/datepicker";
 @import "generic/keyframes";
 // @import "generic/flickity"; // import from node_modules/
@@ -48,9 +48,10 @@
 @import "objects/header";
 @import "objects/sidebar";
 @import "objects/footer";
-@import "objects/single-page";
 @import "objects/landing-page";
-@import "objects/event";
+@import "objects/single-page";
+@import "objects/archive-event";
+@import "objects/single-event";
 // @import "objects/front-page";
 // @import "objects/single-resource";
 // @import "objects/search-resource";
@@ -80,18 +81,18 @@
 @import "components/pill";
 @import "components/loader";
 @import "components/pagination";
+@import "components/share";
+@import "components/feed";
 // @import "components/newsletter";
 // @import "components/donate";
 // @import "components/duet";
 // @import "components/card";
 // @import "components/carousel";
 // @import "components/hero";
-// @import "components/feed";
 // @import "components/theater";
 // @import "components/gallery";
 // @import "components/media";
 // @import "components/searchbar";
-// @import "components/share";
 
 // =====================================================
 // TRUMPS

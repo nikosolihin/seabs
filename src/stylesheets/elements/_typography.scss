@@ -22,11 +22,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  text: $font-weight-bold left none $headings-color $font-size-h3 1.25 normal;
+  text: $font-weight-bold left none $headings-color $font-size-h3 1.2 normal;
 }
 
 h4, .h4 {
-  text: $font-weight-bold left none $headings-color $font-size-h3 1.364 normal;
+  text: $font-weight-bold left none $headings-color $font-size-h4 1.364 normal;
 }
 
 h5, .h5 {
@@ -81,18 +81,20 @@ a, a[href] {
 
 // Default Links
 a[href]:not([class]) {
+  @include hover($link-color, $link-hover-color);
   display: inline;
-  color: $link-color;
-  border-bottom: 1px dotted #cccccc;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 1px;
+  font-weight: $font-weight-medium;
   &:focus,
   &:hover {
-    color: $link-hover-color;
     border-bottom: 1px dotted $brand-primary;
   }
 }
 
 // No margin for only-child paragraph
-p:only-child {
+p:only-child,
+p:last-child {
   margin-bottom: 0;
 }
 

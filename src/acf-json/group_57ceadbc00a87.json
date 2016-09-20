@@ -20,10 +20,10 @@
         },
         {
             "key": "field_57ceae29ce3fe",
-            "label": "Event ID",
-            "name": "id",
+            "label": "Select Event",
+            "name": "gcal",
             "type": "google_calendar_field",
-            "instructions": "Choose the event you've created on Google Calendar under the calendar named \"Website Events\". This linking will only pulls in date & time and location.",
+            "instructions": "Choose the event you've created on Google Calendar under the calendar named \"Website Events\". This linking pulls in <strong><em>date, time, location, and description<\/em><\/strong>. If you change event details within Google Calendar in the future, just hit <strong>Sync<\/strong> and publish the post.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -33,41 +33,6 @@
             },
             "calendar_api_key": "",
             "calendar_id": ""
-        },
-        {
-            "key": "field_57ceadbc0affc",
-            "label": "Teaser",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_57ceadbc0b097",
-            "label": "Paragraph",
-            "name": "teaser",
-            "type": "textarea",
-            "instructions": "This will become the teaser and the overview paragraph for this resource item.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
         },
         {
             "key": "field_57ceadbc0b12f",
@@ -136,5 +101,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Event",
-    "modified": 1473174462
+    "modified": 1474354999
 }

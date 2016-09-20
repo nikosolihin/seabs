@@ -3,6 +3,44 @@
     "title": "Event Settings",
     "fields": [
         {
+            "key": "field_57da6c385914d",
+            "label": "Featured Events",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57da6bfa5914c",
+            "label": "Select Events",
+            "name": "event_featured",
+            "type": "post_object",
+            "instructions": "Select events to feature above the search listing. The order of events here will be the slideshow's order.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_5784bf7b73351",
             "label": "Listing Page",
             "name": "",
@@ -23,7 +61,7 @@
             "label": "Results Per Page",
             "name": "event_listing_ppp",
             "type": "number",
-            "instructions": "Number of resource results to show per page.",
+            "instructions": "Number of events to show per page. Events are grouped by months.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -91,6 +129,38 @@
             "name_prefix": 1,
             "key_prefix": 1,
             "label_prefix": 0
+        },
+        {
+            "key": "field_57d7c6c13d2a8",
+            "label": "Google Calendar",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d7c6dc3d2a9",
+            "label": "Downloadable .ics URL",
+            "name": "ics_url",
+            "type": "url",
+            "instructions": "Public URL for the downloadable export file.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -110,5 +180,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Event Settings",
-    "modified": 1473318105
+    "modified": 1474355144
 }

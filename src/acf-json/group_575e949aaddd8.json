@@ -5,7 +5,7 @@
         {
             "key": "field_575e94b1fd1c8",
             "label": "",
-            "name": "tag_box",
+            "name": "event_tag_box",
             "type": "taxonomy",
             "instructions": "The category of this event. These will be used in event search as well as any automatically generated feeds of related items.",
             "required": 0,
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "taxonomy": "event_category",
-            "field_type": "multi_select",
+            "field_type": "radio",
             "allow_null": 0,
             "add_term": 1,
             "save_terms": 1,
@@ -40,7 +40,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": 0,
     "description": "TAG BOX : Replacement for event categories",
-    "modified": 1473425030
+    "modified": 1473759845
 }

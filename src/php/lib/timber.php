@@ -69,13 +69,15 @@ class StarterSite extends TimberSite {
 			}
 		}
 
-		// // Social Links
-		// $context['social'] = array(
-		// 	'facebook' => get_field('facebook', 'option'),
-		// 	'twitter' => get_field('twitter', 'option'),
-		// 	'youtube' => get_field('youtube', 'option'),
-		// 	'instagram' => get_field('instagram', 'option')
-		// );
+		// Social Links
+		$context['social'] = array(
+			'facebook' => get_field('facebook', 'option'),
+			'facebook_app_id' => get_field('facebook_app_id', 'option'),
+			'twitter' => get_field('twitter', 'option'),
+			'twitter_analytics_id' => get_field('twitter_analytics_id', 'option'),
+			'youtube' => get_field('youtube', 'option'),
+			'instagram' => get_field('instagram', 'option')
+		);
 
 		// 404 stuff
 		$context['error'] = array(
@@ -163,12 +165,17 @@ class StarterSite extends TimberSite {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 
 		//=============================================
-		// LIST COMPONENT
+		// LIST COMPONENT & TERMS
 		//=============================================
 		$listfunction = new Twig_SimpleFunction('populatelist', function ($options) {
 			return populateList($options);
 		});
 		$twig->addFunction($listfunction);
+
+		$termfunction = new Twig_SimpleFunction('listterms', function ($tax) {
+			return listTerms($tax);
+		});
+		$twig->addFunction($termfunction);
 
 		//=============================================
 		// Generate classes from component options

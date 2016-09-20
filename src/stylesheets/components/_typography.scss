@@ -15,19 +15,32 @@
     margin-top: $spacer-single*4;
     margin-bottom: $spacer-single*5.5;
   }
+  &--section {
+    margin-bottom: $spacer-single*2;
+  }
 }
 
 .white {
   @include white;
 }
 
+.caps {
+  @include caps;
+}
 
-// .meta {
-//   text: #999 $font-weight-normal left normal .9rem 1.3 normal;
-//   margin-bottom: 0;
-//   &--caps {
-//     text-transform: uppercase;
-//     font-size: 90%;
-//     letter-spacing: $caps-heading-letter-spacing/4;
-//   }
-// }
+.brandColor {
+  color: $brand-primary !important;
+}
+
+.meta {
+  box: horizontal middle;
+  font-size: $font-size-h5;
+  font-weight: $font-weight-medium;
+  color: #777;
+  margin-right: $spacer-single;
+  svg {
+    size: $spacer-single*1.125;
+    fill: $brand-primary;
+    margin-right: $spacer-half;
+  }
+}

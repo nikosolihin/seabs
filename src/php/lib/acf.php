@@ -134,13 +134,6 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug'	=> 'settings',
   ));
 
-  // Featured events //////////////////////
-  acf_add_options_sub_page(array(
-		'page_title' 	=> 'Featured Events',
-		'menu_title'	=> 'Featured Events',
-		'parent_slug'	=> 'edit.php?post_type=event',
-	));
-
   // Resource Search Page //////////////////////
   acf_add_options_sub_page(array(
 		'page_title' 	=> 'Event Settings',

@@ -2,10 +2,10 @@
 {% verbatim %}
 
 {{#error}}
-  <p class="Lead"><strong>{{error}}</strong></p>
+  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{error}}</h3>
 {{/error}}
 {{#empty}}
-  <p class="Lead"><strong>{{empty}}</strong></p>
+  <h3 class="h4 Lead Lead--center ArchiveEvent-error">{{empty}}</h3>
 {{/empty}}
 
 {{#title}}
@@ -32,9 +32,9 @@
     {{/image}}
 
     <div class="Media-body">
-      <h3 class="h4"><a href="{{link}}">{{title}}</a></h3>
+      <h4><a href="{{link}}">{{title}}</a></h4>
       {{#teaser}}<p>{{{teaser}}}</p>{{/teaser}}
-      {{#category}}<div class="Pill">{{category}}</div>{{/category}}
+      {{#category}}<div class="Pill" style="background-color: {{color}};">{{category}}</div>{{/category}}
       <div class="Media-cta">
         <a href="{{link}}" class="Link">{{label}}
           <svg aria-hidden="true" role="presentation" title="Visit Link">

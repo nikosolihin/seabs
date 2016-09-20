@@ -44,9 +44,6 @@ p#backtoblog {
 #tagsdiv-role.postbox {
 	display: none;
 }
-#tagsdiv-resource_topic.postbox {
-	display: none;
-}
 
 /*=============================================*/
 /* Use icomoon in the dashboard
@@ -71,8 +68,11 @@ p#backtoblog {
 .acf-fc-popup [data-layout="people"]::before {
 	content: "\e7fe";
 }
+.acf-fc-popup [data-layout="feed"]::before {
+	content: "\e90c";
+}
 .acf-fc-popup [data-layout="list"]::before {
-	content: "\e90d";
+	content: "\e910";
 }
 .acf-fc-popup [data-layout="editor"]::before {
 	content: "\e907";

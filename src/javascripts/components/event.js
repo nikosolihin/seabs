@@ -1,246 +1,238 @@
-import padStart from 'lodash/padstart'
-import map from 'lodash/map'
-import forEach from 'lodash/foreach'
-import split from 'lodash/split'
+import _ from 'lodash'
 import getQueryParams from '../lib/getQueryParams'
 import paramReplace from '../lib/paramReplace'
 import Mustache from 'mustache'
 import moment from 'moment'
+import Pikaday from 'pikaday'
 
 export default class Event {
   constructor(el) {
     this.$el = $(el)
-    this.$loader = $("#Loader")
-    // this.searchButton = "#searchResources"
-    this.$resultArea = $(".ArchiveEvent-result")
-    // this.$pagination = $(".Pagination-pages")
-    // this.$sort = $(".searchResource-sort")
+    this.$sidebar = $(el).find('.Sidebar')
 
-    // Options
+    // Datepicker
+    this.$datepicker = this.$sidebar.find('.Datepicker')
+    this.picker = new Pikaday({
+      firstDay: 0
+    })
+    this.$datepicker.append(this.picker.el)
+
+    // Search field
+    this.$search = this.$sidebar.find('input')
+
+    // Others
+    this.$loader = $("#Loader")
+    this.$resultArea = $(".ArchiveEvent-result")
+    this.searchButton = ".ArchiveEvent-search"
+    this.$pagination = $(".Pagination-pages")
+
+    // Data attribute options
     let options = this.$el.data('options')
     this.domain = options.domain
     this.label = options.label
     this.ppp = options.ppp
     this.allCategories = options.categories
 
-    console.log(typeof(this.allCategories))
-
-    // Index all type and topic tags
-    // this.allYears = []
-    // this.getAllTags()
-    // this.getAllYears()
-
     // Get filters from URL & store them
-    // this.queryString = location.search
-    // let filters = getQueryParams()
-    // this.page = filters.page === undefined ? '1' : filters.page
-    // this.order = filters.order === undefined ? 'desc' : filters.order
-    // this.types = filters.types === undefined ? [] : filters.types.split(',')
-    // this.topics = filters.topics === undefined ? [] : filters.topics.split(',')
-    // this.year = filters.yr === undefined ? 'any' : filters.yr
-    // this.month = filters.month === undefined ? 'any' : filters.month
+    this.queryString = location.search
+    let filters = getQueryParams()
+    this.page = filters.page === undefined ? '1' : filters.page
+    this.categories = filters.categories === undefined ? [] : filters.categories.split(',')
+    this.date = filters.date === undefined ? 'any' : filters.date
+    this.keyword = filters.q === undefined ? undefined : encodeURI(filters.q)
+    this.willJump = filters.page === undefined ? false : true
 
-    // this.prepSidebar()
-    // this.attachEvents()
-    this.fetchResources()
+    this.prepSidebar()
+    this.attachEvents()
+    this.fetchEvents()
   }
-//
-//   getAllTags() {
-//     forEach( this.$el.find("[data-type-id]"), (data) => {
-//       let id = $(data).data('typeId'),
-//         text = $(data).text().trim()
-//       this.allTypes[id] = text
-//     })
-//     forEach( this.$el.find("[data-topic-id]"), (data) => {
-//       let id = $(data).data('topicId'),
-//         text = $(data).text().trim()
-//       this.allTopics[id] = text
-//     })
-//   }
-//
-//   getAllYears() {
-//     forEach( $("#filter-yr option"), (option) => {
-//       this.allYears[this.allYears.length] = option.value
-//     })
-//     this.allYears.sort().pop()
-//   }
-//
-//   prepSidebar() {
-//     $("#filter-yr").val( this.year ) // Year
-//     $("#filter-month").val( this.month ) // Month
-//     forEach( this.types, (tag) => { // Types
-//       this.$el.find(".Pill[data-type-slug='"+ tag +"']").addClass('Pill--dark')
-//     })
-//     forEach( this.topics, (tag) => { // Topics
-//       this.$el.find(".Checkbox[data-topic-slug='"+ tag +"']").addClass('Checkbox--checked')
-//     })
-//   }
-//
-//   attachEvents() {
-//     this.$el.on('click', this.searchButton, (event) => {
-//       event.preventDefault()
-//       this.updateQueryStrings()
-//       this.fetchResources()
-//     })
-//     .on('change', '#filter-yr', (event) => {
-//       if ( $(event.target).val() == 'any' ) {
-//         $("#filter-month").parent().toggleClass('Dropdown--hidden')
-//       } else {
-//         $(".Dropdown--hidden").toggleClass('Dropdown--hidden')
-//       }
-//     })
-//     .on('click', '[data-type-slug]', (event) => {
-//       event.preventDefault()
-//       $(event.target).toggleClass('Pill--dark').toggleClass('Pill--toggled')
-//     })
-//     .on('click', '.Checkbox', (event) => {
-//       event.preventDefault()
-//       $(event.target).toggleClass('Checkbox--checked')
-//     })
-//     this.$pagination.on('click', '.Pagination-link', (event) => {
-//       event.preventDefault()
-//       window.scrollTo(0, 0)
-//       this.handlePagination( $(event.target).text() )
-//     })
-//     this.$sort.on('click', 'a', (event) => {
-//       event.preventDefault()
-//       $(".sort-active").removeClass()
-//       $(event.target).toggleClass('sort-active')
-//       this.handleSort( $(event.target).attr('id').split("filter-").pop() )
-//     })
-//   }
-//
-//   updateQueryStrings() {
-//     // Dates
-//     this.year = $("#filter-yr").val()
-//     this.month = $("#filter-month").val()
-//
-//     // Types
-//     this.types = []
-//     forEach( $(".Pill--dark"), (value) => {
-//       this.types[this.types.length] = $(value).data('type-slug')
-//     })
-//     let types = this.types.join(','),
-//       typeString = types ? `&types=${types}` : ''
-//
-//     // Topics
-//     this.topics = []
-//     forEach( $(".Checkbox--checked"), (value) => {
-//       this.topics[this.topics.length] = $(value).data('topic-slug')
-//     })
-//     let topics = this.topics.join(','),
-//       topicString = topics ? `&topics=${topics}` : ''
-//
-//     // Update URL
-//     window.history.pushState(null, document.title, `?yr=${this.year}&month=${this.month}${typeString}${topicString}&order=${this.order}&page=${this.page}` )
-//   }
-//
-  fetchResources() {
-    let dataObject = {}
-    // dataObject.filter = {}
-    // dataObject.order = this.order
-    // dataObject.page = this.page
-    // dataObject.filter.posts_per_page = this.ppp
-    // if (this.topics || this.types) {
-    //   if (this.topics) {
-    //     dataObject.filter.resource_topic = this.topics.join(',')
-    //   }
-    //   if (this.types) {
-    //     dataObject.filter.resource_type = this.types.join(',')
-    //   }
-    // }
 
-    if (this.year != 'any') {
-      if (this.month != 'any') {
-        if (this.month == 12) {
-          dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
-          dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
-        } else {
-          dataObject.before = `${this.year}-${padStart(parseInt(this.month)+1, 2, '0')}-01T00:00:00`
-          dataObject.after = `${this.year}-${padStart(this.month, 2, '0')}-01T00:00:00`
-        }
-      } else {
-        dataObject.before = `${parseInt(this.year)+1}-01-01T00:00:00`
-        dataObject.after = `${this.year}-01-01T00:00:00`
+  prepSidebar() {
+    if (this.date != 'any') {
+      this.picker.setMoment(moment(this.date, 'YYYY-MM-DD'))
+    }
+    if (this.keyword) {
+      this.$search.val( decodeURI(this.keyword) )
+    }
+    _.forEach( this.categories, (category) => { // Categories
+      this.$sidebar.find(".Pill[data-category-slug='"+ category +"']").toggleClass('Pill--inactive')
+    })
+    if (this.willJump) {
+      window.scrollTo(0, 1050)
+    }
+  }
+
+  attachEvents() {
+    this.$sidebar.on('click', this.searchButton, (event) => {
+      event.preventDefault()
+      this.updateQueryStrings()
+      this.fetchEvents()
+    })
+    .on('click', '.Datepicker-clear', (event) => {
+      event.preventDefault()
+      this.picker.setDate(null)
+    })
+    .on('click', '.Pill-clear', (event) => {
+      event.preventDefault()
+      this.$sidebar.find('.Pill').addClass('Pill--inactive')
+    })
+    this.$pagination.on('click', '.Pagination-link', (event) => {
+      event.preventDefault()
+      window.scrollTo(0, 0)
+      this.handlePagination( $(event.target).text() )
+    })
+    $(document).keypress( (event) => {
+      if(event.which == 13) {
+        event.preventDefault()
+        this.updateQueryStrings()
+        this.fetchEvents()
       }
+    })
+  }
+
+  updateQueryStrings() {
+    // Date
+    if(this.$datepicker.find('td.is-selected').length != 0) {
+      this.date = this.picker.getMoment().format('YYYY-MM-DD')
+    } else {
+      this.date = 'any'
+    }
+
+    // Keyword
+    this.keyword = encodeURI(this.$search.val())
+
+    // Categories
+    this.categories = []
+    _.forEach( this.$sidebar.find('.Pill').not('.Pill--inactive'), (category) => {
+      this.categories[this.categories.length] = $(category).data('category-slug')
+    })
+    let categories = this.categories.join(','),
+      categoriesString = categories ? `&categories=${categories}` : ''
+
+    // Update URL
+    window.history.pushState(null, document.title, `?utf8=✓&q=${this.keyword}&date=${this.date}${categoriesString}&page=${this.page}` )
+  }
+
+  fetchEvents() {
+    let dataObject = {}
+    dataObject.filter = {}
+    dataObject.page = this.page
+    dataObject.filter.posts_per_page = this.ppp
+
+    // Set search filter
+    if (this.keyword) {
+      dataObject.search = this.keyword
+    }
+
+    // Set categories filter
+    if (this.categories) {
+      dataObject.filter.event_category = this.categories.join(',')
+    }
+
+    // Set date filter
+    if (this.date != 'any') {
+      dataObject.filter.meta_compare = 'LIKE'
+      dataObject.filter.meta_key = 'id'
+      dataObject.filter.meta_value = this.date
     }
 
     $.ajax({
       url: `//${this.domain}/wp-json/wp/v2/events`,
-      // data: dataObject,
+      data: dataObject,
       type: "GET",
       dataType : "json",
       beforeSend: () => {
-        // this.$resultArea.toggleClass('searchResource--fadeOut')
-        // this.$loader.toggleClass('Loader--show')
+        this.$resultArea.toggleClass('ArchiveEvent-result--fadeOut')
+        this.$loader.toggleClass('Loader--show')
       }
     })
     .always( () => {
-      // this.$resultArea.empty()
-      // this.$pagination.empty()
-      // this.$loader.toggleClass('Loader--show')
-      // this.$resultArea.toggleClass('searchResource--fadeOut')
+      this.$resultArea.empty()
+      this.$pagination.empty()
+      this.$loader.toggleClass('Loader--show')
+      this.$resultArea.toggleClass('ArchiveEvent-result--fadeOut')
     })
     .done( (data, status, xhr) => {
-      console.log(data)
       if (data.length) {
-      //   $(".Pagination--hidden").toggleClass('Pagination--hidden')
+        // Group by month
+        let groupedData = _.chain(data)
+          .groupBy( (item) => {
+            return moment(item.date).format('MMMM YYYY')
+          })
+          .toPairs()
+          .map( (item) => {
+            return _.zipObject(["month", "events"], item)
+          })
+          .value()
+
+        $(".Pagination--hidden").toggleClass('Pagination--hidden')
         let totalPages = parseInt(xhr.getResponseHeader('x-wp-totalpages'))
-        forEach(data, (obj) => {
-          let templateVars = {
-            id: obj.acf.id,
-            title: obj.title.rendered,
-            link: obj.link,
-            date: moment(obj.date).format('MMMM D, YYYY'),
-            teaser: obj.acf.teaser,
-            image: obj.acf.image.url_z,
-            label: this.label,
-            category: this.allCategories[obj['events/categories']]
-          }
-          // templateVars.type = this.allTypes[obj['resources/types'][0]]
-          // map(obj['resources/topics'], (id) => {
-          //   templateVars.topics[templateVars.topics.length] = this.allTopics[id]
-          // })
-          // templateVars.topics = templateVars.topics.join(', ')
-          this.renderResources(templateVars)
+
+        _.forEach(groupedData, (month) => {
+          this.$resultArea.append( `<div class="ArchiveEvent-resultGroup"><h3 class="h4 Lead">${month.month}</h3>` )
+          _.forEach(month.events, (event) => {
+            let templateVars = {
+              id: event.acf.gcal.id,
+              title: event.title.rendered,
+              link: event.link,
+              date: moment(event.date).format('MMMM D, YYYY'),
+              teaser: event.acf.gcal.description,
+              image: event.acf.image.url_n,
+              label: this.label,
+              category: this.allCategories[event['events/categories']]['name'],
+              color: this.allCategories[event['events/categories']]['color']
+            }
+            this.renderEvents(templateVars, '.ArchiveEvent-resultGroup')
+          })
+          this.$resultArea.append( `</div>` )
         })
 
-      //   // Setup Pagination
-      //   for (let i=1; i<=totalPages; i++) {
-      //     if (i==this.page) {
-      //       this.$pagination.append(`<li class="Pagination--current"><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
-      //     } else {
-      //       this.$pagination.append(`<li><a class="Pagination-link" href="${this.queryString}&page=${i}">${i}</a></li>`)
-      //     }
-      //   }
+        // Setup Pagination
+        for (let i=1; i<=totalPages; i++) {
+          let qstring = paramReplace( this.queryString, 'page', i )
+          if (i == this.page) {
+            this.$pagination.append(`<li class="Pagination--current"><a class="Pagination-link" href="${qstring}">${i}</a></li>`)
+          } else {
+            this.$pagination.append(`<li><a class="Pagination-link" href="${qstring}">${i}</a></li>`)
+          }
+        }
+        if (totalPages > 1) { // Only show prev next if more than 1 page
+          $(".Pagination").removeClass('Pagination--hidePrevNext')
+          $(".Pagination-prev").attr('href', paramReplace( this.queryString, 'page', parseInt(this.page)-1))
+          $(".Pagination-next").attr('href', paramReplace( this.queryString, 'page', parseInt(this.page)+1))
+          if (this.page == 1) { // On first page
+            $(".Pagination").toggleClass('Pagination--hidePrev')
+            $(".Pagination-next").attr('href', paramReplace( this.queryString, 'page', parseInt(this.page)+1))
+          } else if (this.page == totalPages) { // On last page
+            $(".Pagination").toggleClass('Pagination--hideNext')
+            $(".Pagination-next").attr('href', paramReplace( this.queryString, 'page', parseInt(this.page)-1))
+          }
+        }
       } else {
-        this.renderResources({ empty: "No resources found. Please try again." })
-      //   $(".Pagination").toggleClass('Pagination--hidden')
+        this.renderEvents({ empty: "No events found. Please try again." })
+        $(".Pagination").toggleClass('Pagination--hidden')
       }
     })
     .fail( (xhr, status, errorThrown) => {
-      this.renderResources({ error: `${errorThrown}: ${status}` })
-      // $(".Pagination").toggleClass('Pagination--hidden')
+      this.renderEvents({ error: `${errorThrown}: ${status}` })
+      $(".Pagination").toggleClass('Pagination--hidden')
     })
   }
 
-  renderResources(data) {
+  renderEvents(data, target) {
     let template = $("#MediaObject").html()
     Mustache.parse(template)
-    this.$resultArea.append( Mustache.render(template, data) )
+    if (target) {
+      this.$resultArea.find(target).last().append( Mustache.render(template, data) )
+    } else {
+      this.$resultArea.append( Mustache.render(template, data) )
+    }
   }
 
-//   handlePagination(pageNum) {
-//     this.page = pageNum
-//     // Update URL
-//     window.history.pushState(null, document.title, paramReplace( location.search, 'page', pageNum) )
-//     this.fetchResources()
-//   }
-//
-//   handleSort(order) {
-//     this.order = order
-//     // Update URL
-//     window.history.pushState(null, document.title, paramReplace( location.search, 'order', order) )
-//     this.fetchResources()
-//   }
+  handlePagination(pageNum) {
+    this.page = pageNum
+    // Update URL
+    window.history.pushState(null, document.title, paramReplace( location.search, 'page', pageNum) )
+    this.fetchEvents()
+  }
 }

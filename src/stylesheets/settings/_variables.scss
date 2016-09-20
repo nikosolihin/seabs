@@ -53,8 +53,8 @@ $body-color:                   $gray-dark !default;
 $headings-color:               $gray-darker !default;
 
 // Links //////////////////////////////////////
-$link-color:                    #666 !default;
-$link-hover-color:              darketn($link-color, 5%) !default;
+$link-color:                    $body-color !default;
+$link-hover-color:              $brand-primary !default;
 
 // List ///////////////////////////////////////
 $list-style-type-ul-first:      square !default;
@@ -98,11 +98,10 @@ $font-weight-bold:             600 !default;
 // Sans Serif /////////////////////////////////
 $font-family-sans:             "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 $font-family-serif:            Georgia, "Times New Roman", Times, serif;
-// TODO: Add fallback fonts for linux
-$font-size-h1:                 3.75rem !default;
-$font-size-h2:                 3rem !default;
-$font-size-h3:                 2rem !default;
-$font-size-h4:                 1.375rem !default;
+$font-size-h1:                 3rem !default;
+$font-size-h2:                 2rem !default;
+$font-size-h3:                 1.375rem !default;
+$font-size-h4:                 1.25rem !default;
 $font-size-h5:                 1rem !default;
 $font-size-h6:                 .875rem !default;
 $font-size-h7:                 .75rem !default;
@@ -173,16 +172,13 @@ $footer-legal-bg:               #8A0000 !default;
 // Pills ///////////////////////////////////
 $pill-color:                   #fff !default;
 $pill-font-weight:             $font-weight-bold !default;
-$pill-line-height:             1.45 !default;
+$pill-line-height:             1 !default;
 $pill-font-size:               .8rem !default;
-$pill-letter-spacing:          .25px !default;
-$pill-padding:                 $spacer-quarter $spacer-half !default;
-$pill-padding-small:           .15rem $spacer-half !default;
+$pill-padding:                 .35rem $spacer-half !default;
 $pill-padding-outline:         ($spacer-quarter - .105rem) ($spacer-threefourth - .105rem) !default;
 
 // Cards ///////////////////////////////////
 $card-height:               $spacer-single*10.5 !default;
 
-//=============================================
-// Pages
-//=============================================
+
+// TODO: Install admin columns on staging - display page template in columns, hide author, hide comments, change flickr api ID, File download block, Restyle Blocks with new heading sizes, Style table more, Sidebar inherit parent + its own components, if "page=1" in URL scroll to event explorer
