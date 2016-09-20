@@ -1,0 +1,379 @@
+{
+    "key": "group_57db8340ef27b",
+    "title": "Taxonomies Metadata Selector",
+    "fields": [
+        {
+            "key": "field_57add3560dfed",
+            "label": "Mode",
+            "name": "mode",
+            "type": "select",
+            "instructions": "<strong>Automatic<\/strong> will display recent posts by categories\/tags. <strong>Manual<\/strong> allows picking individual posts of your choice. Items will be displayed in descending order by publish\/event date.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "automatic": "Automatic",
+                "manual": "Manual"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57db95919f531",
+            "label": "Select Post(s)",
+            "name": "manual_posts",
+            "type": "post_object",
+            "instructions": "This list contains all posts under every post type. You may select any posts you like, but try to keep them under the same type. <strong><em>The type of the first post in the order will determine the post type of this feed.<\/em><\/strong> Drag to reorder.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "manual"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event",
+                "news",
+                "person",
+                "attachment"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_57db8470a16f2",
+            "label": "Post Type",
+            "name": "post_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "news": "News",
+                "event": "Events",
+                "media": "Media",
+                "person": "People"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57db8517609dc",
+            "label": "Event Categories",
+            "name": "event_categories",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "event"
+                    },
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "event_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_57db87f447bc1",
+            "label": "News Topics",
+            "name": "news_topics",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "news"
+                    },
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "news_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_57db894d47bc2",
+            "label": "Roles",
+            "name": "roles",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "person"
+                    },
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "role",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_57dcd4643a835",
+            "label": "Manual Metadata",
+            "name": "manual_metadata",
+            "type": "checkbox",
+            "instructions": "All possible metadatas. Irrelevant metadatas will be ignored.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "manual"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teaser": "Teaser",
+                "image": "Teaser Image",
+                "date": "Start\/Publish Date",
+                "category": "Event Category",
+                "topic": "News Topic",
+                "author": "Author(s)",
+                "photo": "Person's Photo",
+                "email": "Email",
+                "phone": "Phone",
+                "title": "Title",
+                "bio": "Bio",
+                "social": "Social"
+            },
+            "default_value": [
+                "date"
+            ],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57b59199df3a3",
+            "label": "Event Metadata",
+            "name": "event_metadata",
+            "type": "checkbox",
+            "instructions": "<strong>NOTE:<\/strong> Each teaser in a list will be limited to its first 50 characters.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    },
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "event"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teaser": "Teaser",
+                "date": "Start Date",
+                "category": "Category"
+            },
+            "default_value": [
+                "date"
+            ],
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57db904d1fa39",
+            "label": "News Metadata",
+            "name": "news_metadata",
+            "type": "checkbox",
+            "instructions": "<strong>NOTE:<\/strong> Each teaser in a list will be limited to its first 50 characters.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    },
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "news"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teaser": "Teaser",
+                "author": "Author(s)",
+                "date": "Publish Date"
+            },
+            "default_value": [
+                "teaser"
+            ],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_57db90a21fa3a",
+            "label": "Person Metadata",
+            "name": "person_metadata",
+            "type": "checkbox",
+            "instructions": "<strong>NOTE:<\/strong> Each teaser in a list will be limited to its first 50 characters.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    },
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "person"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "photo": "Photo",
+                "email": "Email",
+                "title": "Titles",
+                "bio": "Bio",
+                "phone": "Phone",
+                "social": "Social"
+            },
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 1,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Taxonomies Selector",
+    "modified": 1474132088
+}

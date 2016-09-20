@@ -1,5 +1,16 @@
 .Pagination {
-  box: horizontal;
+  box: horizontal center;
+  font-size: $font-size-h6;
+  font-weight: $font-weight-medium;
+  border-top: 1px solid #dfdfdf;
+  margin-top: $spacer-single*4;
+  padding-top: $spacer-single;
+  transition: all .125s ease-in-out;
+
+  a {
+    @include hover($body-color, $brand-primary);
+  }
+
   &-label {
     margin-right: $spacer-half;
     font-weight: $font-weight-bold;
@@ -7,29 +18,84 @@
   &-pages {
     li {
       position: relative;
-      margin: 0 $spacer-threefourth;
     }
     a {
-      @include hover($gray-dark, $gray-dark);
-      font-size: $font-size-h6;
+      padding: 0 $spacer-single;
     }
   }
+  &-prev,
+  &-next {
+    font-weight: $font-weight-bold;
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      size: $spacer-single*1.12;
+      fill: #999;
+      transition: all .1s ease-in-out;
+    }
+    &:hover svg {
+      fill: $brand-primary;
+    }
+  }
+  &-prev {
+    margin-right: $spacer-single;
+    svg {
+      margin-right: .4rem;
+    }
+    &:hover svg {
+      transform: translate3d(-4px, 0, 0);
+    }
+  }
+  &-next {
+    margin-left: $spacer-single;
+    svg {
+      margin-left: .4rem;
+    }
+    &:hover svg {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  // Status
   &--current {
     a {
+      color: $brand-primary;
       font-weight: $font-weight-bold;
     }
-    &::after {
+    &::before {
       content: '';
-      background: #ddd;
-      height: $spacer-quarter;
-      width: $spacer-single;
+      background: $brand-primary;
+      height: 3px;
+      width: 85%;
       position: absolute;
-      bottom: -8px;
+      top: -$spacer-single;
       left: 50%;
       transform: translatex(-50%);
     }
   }
   &--hidden {
     display: none;
+  }
+  &--hidePrevNext {
+    .Pagination-prev,
+    .Pagination-next {
+      display: none;
+    }
+  }
+  &--hidePrev {
+    .Pagination-prev {
+      display: none;
+    }
+    .Pagination-next {
+      display: inline-block;
+    }
+  }
+  &--hideNext {
+    .Pagination-prev {
+      display: inline-block;
+    }
+    .Pagination-next {
+      display: none;
+    }
   }
 }

@@ -50,7 +50,9 @@
         "errLogToConsole": true,
         "outputStyle": "compressed",
         "includePaths": [
-          "./node_modules/normalize.css"
+          "./node_modules/normalize.css",
+          "./node_modules/pikaday/scss",
+          "./node_modules/flickity/css"
         ]
       },
       "extensions": ["scss", "css"]

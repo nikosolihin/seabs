@@ -1,0 +1,87 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set meta = data.event_metadata %}
+{% else %}
+  {% set meta = data.manual_metadata %}
+{% endif %}
+
+{% if style == 'object-list' %}
+  <div class="Feed-left">
+    {% if 'date' in meta and style != 'card' %}
+      <div class="date">
+        <div>
+          <span class="date-day">{{post.date[0:2]}}</span>
+          <span class="date-month">{{post.date[3:3]|upper}}</span>
+        </div>
+      </div>
+    {% else %}
+      <a href="{{post.link}}">
+        {% if style == 'card' %}
+          <div class="lazyload" data-bgset="{{post.image[small]}}"></div>
+        {% endif %}
+        {% if style == 'object-list' %}
+          <img src="{{post.image[square]}}">
+        {% endif %}
+      </a>
+    {% endif %}
+  </div>
+  <div class="Feed-right">
+    <h4 class="h5"><a href="{{post.link}}">{{post.title}}</a></h4>
+    {% if 'teaser' in meta %}
+      <p>{{post.teaser|slice(0,60)~'...'}}</p>
+    {% endif %}
+    <div class="meta">
+      {% if 'category' in meta %}
+        <div class="Pill Pill--mini" style="background-color: {{post.term_color}};">{{post.term}}</div>
+      {% endif %}
+      {% if style == 'list' and 'date' in meta %}
+        <svg aria-hidden="true" role="presentation" title="Event Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+        </svg>{{post.date}}
+      {% endif %}
+    </div>
+  </div>
+
+{% elseif style == 'card' %}
+  <a href="{{post.link}}" class="Feed-left lazyload" data-bgset="{{post.image[small]}}"></a>
+  <div class="Feed-right">
+    <h4 class="h5"><a href="{{post.link}}">{{post.title}}</a></h4>
+    {% if 'teaser' in meta %}
+      <p>{{post.teaser|slice(0,60)~'...'}}</p>
+    {% endif %}
+    {% if 'date' in meta or 'category' in meta %}
+    <div class="meta">
+      {% if 'date' in meta %}
+        <svg aria-hidden="true" role="presentation" title="Event Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+        </svg>{{post.date}}
+      {% endif %}
+      {% if 'category' in meta %}
+        {% if 'date' in meta %}
+          <div class="Pill Pill--mini Pill--spaced" style="background-color: {{post.term_color}};">{{post.term}}</div>
+        {% else %}
+          <div class="Pill Pill--mini" style="background-color: {{post.term_color}};">{{post.term}}</div>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+{% elseif style == 'list' %}
+  <div class="Feed-right">
+    <h4 class="h5"><a href="{{post.link}}">{{post.title}}</a></h4>
+    {% if 'teaser' in meta %}
+      <p>{{post.teaser|slice(0,60)~'...'}}</p>
+    {% endif %}
+    <div class="meta">
+      {% if 'category' in meta %}
+        <div class="Pill Pill--mini" style="background-color: {{post.term_color}};">{{post.term}}</div>
+      {% endif %}
+      {% if style == 'list' and 'date' in meta %}
+        <svg aria-hidden="true" role="presentation" title="Event Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+        </svg>{{post.date}}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

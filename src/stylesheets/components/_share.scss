@@ -1,11 +1,29 @@
 .Share {
-  &-item {
-    @include hover($body-color);
-    padding: $spacer-half $spacer-single;
+  box: horizontal;
+
+  &-button {
+    @include square;
+    display: block;
+    position: relative;
+    width: 50px;
+    background-color: #eee;
+    margin-right: 10px;
+    border-radius: 3px;
+    transition: all .08s ease-in-out;
+    &:hover {
+      background-color: $brand-secondary;
+      svg {
+        fill: $white;
+      }
+    }
   }
   svg {
-    size: $spacer-threefourth;
+    fill: #444;
+    size: $spacer-single*1.0625;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all .05s ease-in-out;
   }
 }
-
-// TODO: File block, Feed w/ popularity, get up to speed with rev, caching, and deployment, clone project, figure out home stream.

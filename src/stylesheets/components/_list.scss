@@ -6,6 +6,7 @@
     margin-left: $spacer-threefourth;
   }
 
+  // Alignments
   &--inline {
     box: vertical;
     text-align: center;
@@ -14,11 +15,51 @@
       text-align: left;
     }
   }
-
   &--inlineLeft {
     justify-content: flex-start;
   }
   &--inlineRight {
     justify-content: flex-end;
+  }
+
+  // Taxonomy list
+  &--terms {
+    // default wp_list_categories classes
+    .cat-item {
+      padding: $spacer-half 0;
+      border-bottom: 1px solid #ddd;
+      &:last-child {
+        border: 0;
+      }
+      > a {
+        position: relative;
+        display: inline-block;
+        color: #555;
+        font-size: .9375rem;
+        border-bottom: 0;
+        &:hover {
+          border-bottom: 0;
+        }
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 7px;
+          right: -13px;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-left: 4px solid $brand-secondary;
+        }
+      }
+    }
+    .List {
+      .cat-item {
+        border: 0;
+      }
+      a {
+        color: #666;
+        font-size: .875rem;
+      }
+    }
   }
 }

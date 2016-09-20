@@ -3,7 +3,7 @@
 //=============================================
 $black:                        #000000 !default;
 $white:                        #ffffff !default;
-$blue:                         #286dc0 !default;
+$blue:                         #0068ac !default;
 $sky:                          #628b9d !default;
 $red:                          #D65B2D !default;
 $gray-darker:                  lighten($black, 13.5%) !default;
@@ -48,14 +48,13 @@ $container-text-nosidebar-width:  925px !default;
 // Elements
 //=============================================
 
-// Body ///////////////////////////////////////
-$body-color:                    $gray-dark !default;
+// Text Colors ////////////////////////////////
+$body-color:                   $gray-dark !default;
+$headings-color:               $gray-darker !default;
 
 // Links //////////////////////////////////////
-$link-color:                    $blue !default;
-$link-decoration:               none !default;
-$link-hover-color:              lighten($link-color, 5%) !default;
-$link-hover-decoration:         none !default;
+$link-color:                    $body-color !default;
+$link-hover-color:              $brand-primary !default;
 
 // List ///////////////////////////////////////
 $list-style-type-ul-first:      square !default;
@@ -86,36 +85,28 @@ $svg-margin:                    $spacer-half !default;
 //=============================================
 // Typography
 //=============================================
-$font-size-root:               17px !default;
+$font-size-root:               16px !default;
 $font-size-small:              14px !default;
 $font-size:                    1rem !default;
 
 // Common properties //////////////////////////
 $font-weight-light:            300 !default;
 $font-weight-normal:           400 !default;
-$font-weight-bold:           500 !default;
-$headings-color:               $gray-darker !default;
+$font-weight-medium:           500 !default;
+$font-weight-bold:             600 !default;
 
 // Sans Serif /////////////////////////////////
-$font-family-sans:             "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans:             "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 $font-family-serif:            Georgia, "Times New Roman", Times, serif;
-// TODO: Add fallback fonts for linux
-$font-size-h1:                 3.074rem !default;
-$font-size-h2:                 1.728rem !default;
-$font-size-h3:                 1.44rem !default;
-$font-size-h4:                 1.2rem !default;
+$font-size-h1:                 3rem !default;
+$font-size-h2:                 2rem !default;
+$font-size-h3:                 1.375rem !default;
+$font-size-h4:                 1.25rem !default;
 $font-size-h5:                 1rem !default;
-$font-size-h6:                 .882rem !default;
-$font-size-h7:                 .795rem !default;
-$line-height:                  1.58 !default;
+$font-size-h6:                 .875rem !default;
+$font-size-h7:                 .75rem !default;
+$line-height:                  1.5 !default;
 $headings-line-height:         1.25 !default;
-
-// Lead //////////////////////////////////////
-$lead-font-size:               1.125rem !default;
-$lead-font-weight:             $font-weight-light !default;
-$lead-font-color:              $gray-dark !default;
-$lead-line-height:             1.55 !default;
-$lead-margin:                  $lead-font-size*1.25;
 
 // All Caps Heading ///////////////////////////
 $caps-heading-color:                $gray !default;
@@ -152,7 +143,7 @@ $button-small-padding:          $spacer-half .625rem !default;
 
 // Loader //////////////////////////////////////
 $loader-size:                  $spacer-single*2 !default;
-$loader-color:                 lighten($brand-secondary, 10%) !default;
+$loader-color:                 lighten($gray-light, 40%) !default;
 
 // Banner ///////////////////////////////////
 $banner-small-height:          220px !default;
@@ -179,19 +170,15 @@ $footer-children-color:         $gray-light !default;
 $footer-legal-bg:               #8A0000 !default;
 
 // Pills ///////////////////////////////////
-$pill-color:                   #777 !default;
-$pill-bg:                      #EBEBEB !default;
+$pill-color:                   #fff !default;
 $pill-font-weight:             $font-weight-bold !default;
-$pill-line-height:             1.45 !default;
+$pill-line-height:             1 !default;
 $pill-font-size:               .8rem !default;
-$pill-letter-spacing:          .25px !default;
-$pill-padding:                 $spacer-quarter $spacer-threefourth !default;
-$pill-padding-small:           .15rem $spacer-half !default;
+$pill-padding:                 .35rem $spacer-half !default;
 $pill-padding-outline:         ($spacer-quarter - .105rem) ($spacer-threefourth - .105rem) !default;
 
 // Cards ///////////////////////////////////
 $card-height:               $spacer-single*10.5 !default;
 
-//=============================================
-// Pages
-//=============================================
+
+// TODO: Install admin columns on staging - display page template in columns, hide author, hide comments, change flickr api ID, File download block, Restyle Blocks with new heading sizes, Style table more, Sidebar inherit parent + its own components, if "page=1" in URL scroll to event explorer

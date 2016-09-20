@@ -2,7 +2,7 @@
   @include cover;
   position: relative;
   // box: vertical middle;
-  min-height: $card-height*1.5;
+  min-height: $card-height*1.25;
   padding: $spacer-single*1.25;
 
   &-link {

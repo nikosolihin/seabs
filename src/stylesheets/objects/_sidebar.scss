@@ -44,13 +44,13 @@
 
   &-section {
     overflow: hidden;
-    margin-bottom: $spacer-single*3;
+    margin-bottom: $spacer-single*2.5;
     &--center {
       text-align: center;
     }
     &--callout {
       background-color: $callout-bg;
-      padding: $spacer-single*2.5 $spacer-single*2;
+      padding: $spacer-single*1.75 $spacer-single*2;
     }
     &--framed {
       border: 1px solid #ddd;
@@ -61,22 +61,7 @@
       padding-top: $spacer-single*2.5;
     }
   }
-
   &-sectionHeading {
-    color: $brand-primary;
-    font-weight: $font-weight-normal;
+    margin-bottom: $spacer-single*1.125;
   }
-
-  // .Block {
-  //   border: none;
-  //   min-height: $card-height*1.2;
-  //   +.Block {
-  //     margin-top: $spacer-single;
-  //   }
-  // }
-
-  // &--borderless {
-  //   border-top: none;
-  // }
-
 }
