@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="container SingleEvent">
+    <div class="SingleEvent-content {{'container'|modifiers("text")}}">
+      <h1 class="h2 brand">{{post.title}}</h1>
+      {% if acf.gcal.description %}
+        <h3 class="Lead">{{acf.gcal.description}}</h3>
+      {% endif %}
+      <div class="SingleEvent-metaWrapper">
+        <div class="SingleEvent-meta">
+          {% if event_date %}
+            <div class="meta meta--icon">
+              <svg aria-hidden="true" role="presentation" title="Event Date">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+              </svg>
+              <span>{{event_date}}</span>
+            </div>
+          {% endif %}
+          {% if event_time %}
+            <div class="meta meta--icon">
+              <svg aria-hidden="true" role="presentation" title="Event Date">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+              </svg>
+              <span>{{event_time}}</span>
+            </div>
+          {% endif %}
+          {% if acf.gcal.location %}
+            <div class="meta meta--icon">
+              <svg aria-hidden="true" role="presentation" title="Event Date">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
+              </svg>
+              <span>{{acf.gcal.location}}</span>
+            </div>
+          {% endif %}
+        </div>
+        {% if event_children_date %}
+          {% for repeat in event_children_date %}
+            <div class="SingleEvent-meta">
+              <div class="meta meta--icon">
+                <svg aria-hidden="true" role="presentation" title="Event Date">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
+                </svg>
+                <span>{{repeat}}</span>
+              </div>
+              <div class="meta meta--icon">
+                <svg aria-hidden="true" role="presentation" title="Event Date">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
+                </svg>
+                <span>{{event_children_time[loop.index0]}}</span>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% if acf.image %}
+        <div class="SingleEvent-image">
+          {% set image = acf.image %}
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            {# Desktops - load 1024px #}
+            <source media="(min-width: {{lg}})" data-srcset="{{image[xlarge]}}">
+            {# Tablets - load 800px #}
+            <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{image[large]}}">
+            {# Landscape phones - load 640px #}
+            <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{image[medium]}}">
+            {# Portrait phones - load 320px #}
+            <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{image[small]}}">
+            <!--[if IE 9]></video><![endif]-->
+            {# Fallback with transparent LQIP #}
+            <img alt="{{image.title}}" class="lazyload" data-src="{{image[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
+        </div>
+      {% endif %}
+      {% include 'layout/base.twig' %}
+    </div>
+    <div class="SingleEvent-sidebar Sidebar">
+      <div class="Sidebar-section">
+        <h3 class="Sidebar-sectionHeading Lead brand">
+          {{__('Share this event', 'saat')}}
+        </h3>
+        {% include 'components/social-share.twig' %}
+      </div>
+      {% include 'layout/sidebar-base.twig' %}
+    </div>
+  </div>
+{% endblock %}

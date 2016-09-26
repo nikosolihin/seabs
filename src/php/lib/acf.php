@@ -134,12 +134,19 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug'	=> 'settings',
   ));
 
-  // // Resource Search Page //////////////////////
-  // acf_add_options_sub_page(array(
-	// 	'page_title' 	=> 'Resource Search Page Settings',
-	// 	'menu_title'	=> 'Search Settings',
-	// 	'parent_slug'	=> 'edit.php?post_type=resource',
-	// ));
+  // Event Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Event Settings',
+		'menu_title'	=> 'Event Settings',
+		'parent_slug'	=> 'edit.php?post_type=event',
+	));
+
+  // News Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'News Settings',
+		'menu_title'	=> 'News Settings',
+		'parent_slug'	=> 'edit.php?post_type=news',
+	));
 }
 
 

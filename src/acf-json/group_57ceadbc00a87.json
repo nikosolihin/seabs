@@ -1,0 +1,105 @@
+{
+    "key": "group_57ceadbc00a87",
+    "title": "Event Details",
+    "fields": [
+        {
+            "key": "field_57ceae6cce3ff",
+            "label": "Google Calendar",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57ceae29ce3fe",
+            "label": "Select Event",
+            "name": "gcal",
+            "type": "google_calendar_field",
+            "instructions": "Choose the event you've created on Google Calendar under the calendar named \"Website Events\". This linking pulls in <strong><em>date, time, location, and description<\/em><\/strong>. If you change event details within Google Calendar in the future, just hit <strong>Sync<\/strong> and publish the post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "calendar_api_key": "",
+            "calendar_id": ""
+        },
+        {
+            "key": "field_57ceadbc0b12f",
+            "label": "Teaser Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57ceadbc0b1c6",
+            "label": "Image",
+            "name": "image",
+            "type": "reusable_field_group_field",
+            "instructions": "This is the main banner and will also show up in list-based view like search result and feed list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_57bd72b2e0e2c",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "POST_TYPE : New Event",
+    "modified": 1474354999
+}

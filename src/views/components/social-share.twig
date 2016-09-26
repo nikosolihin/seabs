@@ -1,37 +1,31 @@
 {% set postlink = post.link|url_encode %}
-{% set posttitle = post.title|url_encode %}
-{% set twitter = 'https://twitter.com/intent/tweet?text='~posttitle~'&amp;url='~postlink %}
-{% set facebook = 'https://facebook.com/sharer/sharer.php?u='~postlink %}
-{% set google = 'https://plus.google.com/share?url='~postlink %}
+{% set posttitle = post.title %}
+{% set appID = social.facebook_app_id %}
+{% set handle = social.twitter_analytics_id %}
+{% set facebook = 'https://www.facebook.com/dialog/share?app_id='~appID~'&display=popup&href='~postlink %}
+{% set twitter = 'https://twitter.com/intent/tweet?text='~posttitle~'&url='~postlink~'&via='~handle %}
 {% set whatsapp = 'whatsapp://send?text='~posttitle~' '~postlink %}
 {% set email = 'mailto:?subject='~posttitle~'&body='~postlink %}
 
 <div class="Share">
-
-	<a href="{{facebook}}" class="Share-item" target="_blank">
+	<a href="{{facebook}}" class="Share-button" target="_blank">
 		<svg aria-hidden="true" role="presentation" title="">
 	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
-		</svg>Facebook
+		</svg>
 	</a>
-	<a href="{{twitter}}" class="Share-item" target="_blank">
+	<a href="{{twitter}}" class="Share-button" target="_blank">
 		<svg aria-hidden="true" role="presentation" title="">
 	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-		</svg>Twitter
+		</svg>
 	</a>
-	<a href="{{whatsapp}}" class="Share-item" target="_blank">
+	<a href="{{whatsapp}}" class="Share-button">
 		<svg aria-hidden="true" role="presentation" title="">
 	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#whatsapp"></use>
-		</svg>Whatsapp
+		</svg>
 	</a>
-	<a href="{{email}}" class="Share-item" target="_blank">
+	<a href="{{email}}" class="Share-button" target="_blank">
 		<svg aria-hidden="true" role="presentation" title="">
 	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#email"></use>
-		</svg>Email
+		</svg>
 	</a>
-	<a href="" class="Share-toggle">
-		<svg aria-hidden="true" role="presentation" title="Share this resource">
-	  	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use>
-		</svg>Share
-	</a>
-
 </div>

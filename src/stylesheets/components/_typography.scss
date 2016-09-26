@@ -1,17 +1,13 @@
 .Lead {
-  text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
+  color: $gray-dark;
+  font-weight: $font-weight-light;
+  letter-spacing: .4px;
+
   &--intro {
     margin-top: 0;
   }
   &--center {
     text-align: center;
-  }
-  &--overview {
-    font-size: $lead-font-size*1.125;
-    margin-bottom: $spacer-single*3;
-  }
-  &--landing {
-    font-size: $lead-font-size*1.25;
   }
   &--white {
     @include white;
@@ -20,13 +16,49 @@
     margin-top: $spacer-single*4;
     margin-bottom: $spacer-single*5.5;
   }
+  &--section {
+    margin-bottom: $spacer-single*2.5;
+    letter-spacing: .4px;
+  }
 }
-// .meta {
-//   text: #999 $font-weight-normal left normal .9rem 1.3 normal;
-//   margin-bottom: 0;
-//   &--caps {
-//     text-transform: uppercase;
-//     font-size: 90%;
-//     letter-spacing: $caps-heading-letter-spacing/4;
-//   }
-// }
+
+.white {
+  @include white;
+}
+
+.caps {
+  @include caps;
+}
+
+.brand {
+  color: $brand-primary !important;
+}
+
+.tag {
+  @extend .caps;
+  color: #777;
+  flex: 1 0 auto;
+  margin-bottom: $spacer-half;
+}
+
+.meta {
+  color: #777;
+  font-size: $font-size-h6;
+  font-weight: $font-weight-normal;
+  margin-right: $spacer-single;
+  margin-bottom: 0;
+  &-dot {
+    color: #bbb;
+    padding: 0 $spacer-quarter;
+  }
+  &--icon {
+    box: horizontal middle;
+    font-size: $font-size-h5;
+    font-weight: $font-weight-medium;
+    svg {
+      size: $spacer-single*1.125;
+      fill: $brand-primary;
+      margin-right: $spacer-half;
+    }
+  }
+}

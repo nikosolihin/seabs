@@ -1,0 +1,120 @@
+{
+    "key": "group_574dc76280653",
+    "title": "Feed",
+    "fields": [
+        {
+            "key": "field_57adb3acff5e5",
+            "label": "Feed Items",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57db8e06d5781",
+            "label": "Taxonomies Selector",
+            "name": "taxonomies_selector",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_57db8340ef27b",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        },
+        {
+            "key": "field_57adb356ff5e4",
+            "label": "Feed Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57ade7f1341f3",
+            "label": "Max number of items to display",
+            "name": "quantity",
+            "type": "number",
+            "instructions": "A feed that is too long might be okay on desktop, but ruin the experience of mobile users.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 4,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 15,
+            "step": 1
+        },
+        {
+            "key": "field_5780e1043a1a4",
+            "label": "Display Style",
+            "name": "style",
+            "type": "radio",
+            "instructions": "Displaying resources as a list saves space and should be used if there are many resources to be displayed. The card display style will feature a larger teaser image and works best if there are fewer resources in the list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-image-select",
+                "id": ""
+            },
+            "choices": {
+                "list": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/list.png\"><p>List<\/p>",
+                "object-list": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/object-list.png\"><p>Media Object<\/p>",
+                "card": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "list",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "special",
+                "operator": "==",
+                "value": "nowhere"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "COMPONENTS : Feed",
+    "modified": 1474027529
+}

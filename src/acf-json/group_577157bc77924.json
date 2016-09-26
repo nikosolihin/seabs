@@ -211,8 +211,66 @@
             "label_prefix": 0
         },
         {
+            "key": "field_57ce791a3c0a1",
+            "label": "Button",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57ce79373c0a3",
+            "label": "Button",
+            "name": "with_button",
+            "type": "true_false",
+            "instructions": "Check this if you want a button on the block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add a button",
+            "default_value": 0
+        },
+        {
+            "key": "field_57ce7861002c8",
+            "label": "Button",
+            "name": "button",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ce79373c0a3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_577225311bff5",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
+        },
+        {
             "key": "field_577158f21d1bb",
-            "label": "Link",
+            "label": "URL",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -277,5 +335,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1473004861
+    "modified": 1473149716
 }

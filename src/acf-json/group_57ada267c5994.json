@@ -105,17 +105,17 @@
                 },
                 {
                     "key": "57addadab1af7",
-                    "name": "list",
-                    "label": "List",
+                    "name": "feed",
+                    "label": "Feed",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_57addadab1af8",
-                            "label": "List",
-                            "name": "list",
+                            "label": "Feed",
+                            "name": "feed",
                             "type": "reusable_field_group_field",
                             "instructions": "",
-                            "required": 1,
+                            "required": "",
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -123,6 +123,34 @@
                                 "id": ""
                             },
                             "group_key": "group_574dc76280653",
+                            "name_prefix": 0,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57debb92bcffd",
+                    "name": "list",
+                    "label": "List",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57debb97bcffe",
+                            "label": "List",
+                            "name": "list",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57de5ad238e33",
                             "name_prefix": 0,
                             "key_prefix": 1,
                             "label_prefix": 0
@@ -228,13 +256,41 @@
                             "type": "reusable_field_group_field",
                             "instructions": "",
                             "required": "",
-                            "conditional_logic": 0,
+                            "conditional_logic": "",
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
                             "group_key": "group_5799c139c255f",
+                            "name_prefix": "",
+                            "key_prefix": "",
+                            "label_prefix": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57dae4fbd1434",
+                    "name": "map",
+                    "label": "Maps",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57dae503d1435",
+                            "label": "Maps",
+                            "name": "map",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_576048fbe7bc8",
                             "name_prefix": 0,
                             "key_prefix": 1,
                             "label_prefix": 0
@@ -263,5 +319,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1473046920
+    "modified": 1474214847
 }

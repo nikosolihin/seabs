@@ -4,7 +4,7 @@
   {% set with_sidebar = no_sidebar ? 'text-nosidebar' : '' %}
   {% set direction = sidebar_position == 'leftSidebar' ? 'right' : 'left' %}
 
-{% include 'components/banner.twig' %}
+  {% include 'components/banner.twig' %}
   <div class="container {{'SinglePage'|modifiers("#{sidebar_position}")}}">
     <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}}">
       {% if acf.teaser %}
@@ -23,5 +23,3 @@
     {% endif %}
   </div>
 {% endblock %}
-
-{# <!-- {% if section.description %}<p>{{section.description}}</p>{% endif %} --> #}

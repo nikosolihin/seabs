@@ -1,0 +1,51 @@
+{% set style = data.style %}
+{% if data.mode == 'automatic' %}
+  {% set meta = data.person_metadata %}
+{% else %}
+  {% set meta = data.manual_metadata %}
+{% endif %}
+
+{% if style != 'list' %}
+  <div class="Feed-left Feed-profile">
+    <div class="lazyload" data-bgset="{{post.photo[square2x]}}"></div>
+  </div>
+{% endif %}
+
+<div class="Feed-right Feed-contact">
+  <h4 class="h5">{{post.name}}</h4>
+  {% if 'email' in meta %}
+    <a href="mailto:{{post.email}}" class="brand">{{post.email|lower}}</a>
+  {% endif %}
+  {% if 'phone' in meta %}
+    <p>{{post.phone}}</p>
+  {% endif %}
+  {% if 'title' in meta %}
+    <p>{{post.title}}</p>
+  {% endif %}
+  {% if 'social' in meta %}
+    {% if post.facebook %}
+      <a href="{{post.facebook}}" class="">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+        </svg>
+      </a>
+    {% endif %}
+    {% if post.twitter %}
+      <a href="{{post.twitter}}" class="">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+        </svg>
+      </a>
+    {% endif %}
+    {% if post.instagram %}
+      <a href="{{post.instagram}}" class="">
+        <svg aria-hidden="true" role="presentation" title="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+        </svg>
+      </a>
+    {% endif %}
+  {% endif %}
+  {% if 'bio' in meta %}
+    <div class="bio">{{post.bio}}</div>
+  {% endif %}
+</div>

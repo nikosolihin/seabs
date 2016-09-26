@@ -70,7 +70,9 @@
             },
             "choices": {
                 "default": "Default",
+                "light": "Light",
                 "outline": "Outline",
+                "outline-light": "Outline (Light)",
                 "block": "Block"
             },
             "allow_null": 0,
@@ -116,5 +118,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "modified": 1472998111
+    "modified": 1473149668
 }

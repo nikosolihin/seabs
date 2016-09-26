@@ -1,50 +1,31 @@
 .Pill {
-  position: relative;
   display: inline-block;
-  text: $pill-color $font-weight-bold left normal $pill-font-size $pill-line-height $pill-letter-spacing;
-  background-color: $pill-bg;
+  user-select: none;
+  border-radius: 3px;
+  text: $pill-color $pill-font-weight left normal $pill-font-size $pill-line-height normal;
   padding: $pill-padding;
-  border-radius: 2px;
-  svg {
-    fill: currentColor;
-    size: $spacer-single*.85;
-    position: absolute 50% auto auto $spacer-single*.35;
-    transform: translateY(-50%);
-    display: none;
+  margin: 0 $spacer-half $spacer-half 0;
+  transition: all .125s ease-in-out;
+
+  &--inactive {
+    background-color: transparent !important;
+    color: #666;
+    border: 1px solid #ccc;
+    &:hover {
+      border: 1px solid #999;
+    }
   }
-  &:hover {
-    color: inherit;
-    background-color: darken($pill-bg, 3.5%);
+
+  &--pointer {
+    cursor: pointer;
   }
-  &--small {
-    padding: $pill-padding-small;
+
+  &--mini {
+    font-size: $font-size-h7;
+    padding: .25rem .45rem;
   }
+
   &--spaced {
-    margin: 0 .35rem .35rem 0;
-  }
-  &--iconized {
-    padding-left: $spacer-single*1.35;
-    svg {
-      display: block;
-    }
-    use:nth-of-type(2) {
-      display: none;
-    }
-  }
-  &--toggled {
-    use:nth-of-type(1) {
-      display: none;
-    }
-    use:nth-of-type(2) {
-      display: block;
-    }
-  }
-  &--dark,
-  &--dark:hover {
-    color: $white;
-    background-color: $brand-secondary;
-  }
-  &--nomargin {
-    margin: 0;
+    margin: 0 $spacer-single;
   }
 }

@@ -2,7 +2,7 @@ var config  = require('../config')
 var compact = require('lodash/compact')
 
 // Grouped by what can run in parallel
-var assetTasks = ['svgSprite', 'wp', 'acf']
+var assetTasks = ['svgSprite', 'wp', 'acf', 'languages']
 var codeTasks = ['php', 'twig', 'css', 'js']
 
 module.exports = function(env) {

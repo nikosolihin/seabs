@@ -1,0 +1,187 @@
+{
+    "key": "group_57846f22e8759",
+    "title": "Event Settings",
+    "fields": [
+        {
+            "key": "field_57da6c385914d",
+            "label": "Featured Events",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57da6bfa5914c",
+            "label": "Select Events",
+            "name": "event_featured",
+            "type": "post_object",
+            "instructions": "Select events to be featured above the search listing. The order of events here will be the slideshow's order.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5784bf7b73351",
+            "label": "Listing Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5784bf91bc85f",
+            "label": "Results Per Page",
+            "name": "event_listing_ppp",
+            "type": "number",
+            "instructions": "Number of events to show per page. Events are grouped by months.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 10,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 25,
+            "step": 1
+        },
+        {
+            "key": "field_57e39508b42a7",
+            "label": "Read More Link",
+            "name": "event_link_label",
+            "type": "text",
+            "instructions": "This is the label for each event in the listing. Usually \"Read More\" or \"See Event\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d10baf99267",
+            "label": "Listing Sidebar",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d10b9599266",
+            "label": "Sidebar Builder",
+            "name": "event",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_574db875805e6",
+            "name_prefix": 1,
+            "key_prefix": 1,
+            "label_prefix": 0
+        },
+        {
+            "key": "field_57e395f0b42a8",
+            "label": "Google Calendar",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57e395ffb42a9",
+            "label": "Downloadable .ics URL",
+            "name": "ics_url",
+            "type": "text",
+            "instructions": "Public URL for the downloadable export file.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-event-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Event Settings",
+    "modified": 1474533360
+}

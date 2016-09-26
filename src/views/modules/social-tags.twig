@@ -1,18 +1,17 @@
-{# https://css-tricks.com/essential-meta-tags-social-media/ #}
 <meta property="og:type" content="website" />
-<meta property="og:title" content="European Travel Destinations">
-<meta property="og:description" content="Offering tour packages for individuals or groups.">
+<meta property="og:title" content="{{post.title}}">
+<meta property="og:description" content="{{acf.teaser}}">
 {# Follow Facebook's recommendation of a minimum dimension of 1200x630 pixels and an aspect ratio of 1.91:1, but adhere to Twitter's file size requirement of less than 1MB #}
-<meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
-<meta property="og:url" content="http://euro-travel-example.com/index.htm">
+<meta property="og:image" content="{{acf.image[xlarge]}}">
+<meta property="og:url" content="{{post.link}}">
 <meta name="twitter:card" content="summary_large_image">
 
 {# Social Media Analytics #}
-{# https://facebook.com/insights #}
-<meta property="fb:app_id" content="your_app_id">
+{# https://developers.facebook.com/docs/sharing/insights #}
+<meta property="fb:app_id" content="{{social.facebook_app_id}}">
 {# https://analytics.twitter.com #}
-<meta name="twitter:site" content="@website-username">
+<meta name="twitter:site" content="{{social.twitter_analytics_id}}">
 
 {# Misc recommendations #}
-<meta name="og:site_name" content="European Travel, Inc.">
-<meta name="twitter:image:alt" content="Alt text for the image of shared webpage">
+<meta name="og:site_name" content="{{site.name}}">
+<meta name="twitter:image:alt" content="{{post.title}}">

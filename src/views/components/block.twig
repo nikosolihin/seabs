@@ -34,7 +34,7 @@
     </div>
   </div>
 
-{% else %}
+{% else %} {# Panel #}
   <div class="{{'Block'|modifiers("panel, #{alignment}, #{tinted}")}} lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x">
     <a href="{{url}}" class="Block-link"></a>
     {% if not notitle %}
@@ -42,6 +42,11 @@
         <h4 class="h3 Block-heading">{{post.title|title}}</h4>
         {% if description|trim is not empty %}
           <p>{{description|trim}}</p>
+        {% endif %}
+        {% if cta %}
+          <div class="Block-cta">
+            <a href="" class="Button Button--small Button--light">Read More</a>
+          </div>
         {% endif %}
       </div>
     {% endif %}

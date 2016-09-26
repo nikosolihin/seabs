@@ -1,11 +1,15 @@
 .Loader {
   transition: all .1s ease-in-out;
   size: $loader-size;
-  position: absolute $spacer-single*17 auto auto 50%;
+  position: absolute;
+  left: 50%;
+  top: $spacer-single*8;
   opacity: 0;
+  z-index: -99999;
+
   &--show {
     opacity: 1;
-    transform: translate3d(0, 15px, 0);
+    z-index: 99999;
   }
   &-cube {
     float: left;

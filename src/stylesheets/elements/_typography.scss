@@ -13,41 +13,32 @@ body {
   text: $body-color $font-weight-normal left none $font-size $line-height normal;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: $font-weight-bold;
-  color: $headings-color;
-  line-height: $headings-line-height;
-}
-
-h1 {
-  font-weight: 500 !important;
-  line-height: 1.2;
-  letter-spacing: -.005em;
-}
-
 h1, .h1 {
-  font-size: $font-size-h1;
+  text: $font-weight-light left none $headings-color $font-size-h1 1 normal;
 }
 
 h2, .h2 {
-  font-size: $font-size-h2;
+  text: $font-weight-light left none $headings-color $font-size-h2 1.275 .4px;
 }
 
 h3, .h3 {
-  font-size: $font-size-h3;
+  text: $font-weight-bold left none $headings-color $font-size-h3 1.2 normal;
 }
 
 h4, .h4 {
-  font-size: $font-size-h4;
+  text: $font-weight-bold left none $headings-color $font-size-h4 1.364 normal;
 }
 
 h5, .h5 {
-  font-size: $font-size-h5;
+  text: $font-weight-bold left none $headings-color $font-size-h5 1.4 normal;
 }
 
 h6, .h6 {
-  font-size: $font-size-h6;
+  text: $font-weight-bold left none $headings-color $font-size-h6 $line-height normal;
+}
+
+h7, .h7 {
+  text: $font-weight-bold left none $headings-color $font-size-h7 $line-height normal;
 }
 
 strong {
@@ -81,27 +72,22 @@ ol {
 
 // All Links
 a, a[href] {
-  text-decoration: $link-decoration;
+  text-decoration: none;
   &:focus,
   &:hover {
-    text-decoration: $link-hover-decoration;
-  }
-  &:focus {
-    @include tab-focus;
+    text-decoration: none;
   }
 }
 
 // Default Links
-// a[href]:not([class]) {
-//   color: $link-color;
-//   &:focus,
-//   &:hover {
-//     color: $link-hover-color;
-//   }
-// }
+a[href]:not([class]) {
+  @include hover($headings-color, $brand-primary);
+  display: inline;
+}
 
 // No margin for only-child paragraph
-p:only-child {
+p:only-child,
+p:last-child {
   margin-bottom: 0;
 }
 
@@ -117,6 +103,6 @@ hr {
 }
 
 blockquote {
-  text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
+  // text: $lead-font-color $lead-font-weight left none $lead-font-size $lead-line-height normal;
   margin: 0;
 }

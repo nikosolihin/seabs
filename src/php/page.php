@@ -10,12 +10,23 @@ $context['sections'] = $context['acf']['sections'];
 $context['sidebar_position'] = $context['acf']['sidebar_position'];
 
 // Get Sidebar
-$context['inherit'] = ($context['acf']['inherit'] === 'true');
-if ($context['inherit']) {
+$inherit = ($context['acf']['inherit'] === 'true');
+$sidebar = $post->get_field('sidebar_sections');
+if ($inherit) {
+	$order = $context['acf']['order'];
 	$parent = $post->get_parent();
-	$context['sidebar_sections'] = $parent->get_field('sidebar_sections');
+	$parents_sidebar = $parent->get_field('sidebar_sections');
+	if ($parents_sidebar) {
+		if ($sidebar) {
+			$context['sidebar_sections'] = $order == 'parent' ? array_merge($parents_sidebar, $sidebar) : array_merge($sidebar, $parents_sidebar);
+		} else {
+			$context['sidebar_sections'] = $parents_sidebar;
+		}
+	} else {
+		$context['sidebar_sections'] = $sidebar;
+	}
 } else {
-	$context['sidebar_sections'] = $post->get_field('sidebar_sections');
+	$context['sidebar_sections'] = $sidebar;
 }
 
 // Find root ID - For sidebar TOC
