@@ -2,21 +2,21 @@
 //=============================================
 // Register front-end styles
 //=============================================
-function saat_styles() {
-	wp_deregister_style( 'saat-style' );
-	wp_register_style( 'saat-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', false, null );
-	wp_enqueue_style( 'saat-style' );
-}
-add_action( 'wp_enqueue_scripts', 'saat_styles' );
+// function saat_styles() {
+// 	wp_deregister_style( 'saat-style' );
+// 	wp_register_style( 'saat-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', false, null );
+// 	wp_enqueue_style( 'saat-style' );
+// }
+// add_action( 'wp_enqueue_scripts', 'saat_styles' );
 
 //=============================================
 // Register front-end scripts
 //=============================================
-function saat_scripts() {
-	wp_deregister_script( 'saat-script' );
-	wp_register_script( 'saat-script', get_stylesheet_directory_uri() . '/javascripts/app.js', false, null, true );
-	wp_enqueue_script( 'saat-script' );
-}
+// function saat_scripts() {
+// 	wp_deregister_script( 'saat-script' );
+// 	wp_register_script( 'saat-script', get_stylesheet_directory_uri() . '/javascripts/app.js', false, null, true );
+// 	wp_enqueue_script( 'saat-script' );
+// }
 // add_action( 'wp_enqueue_scripts', 'saat_scripts' );
 
 //=============================================
