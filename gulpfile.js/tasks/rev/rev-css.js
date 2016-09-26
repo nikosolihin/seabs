@@ -13,8 +13,6 @@ var ignoreWP = '!' + path.join(config.root.dest,'style.css')
 var dashboard = '!' + path.join(config.root.dest,'dashboard/**')
 var ignoreScreenshot = '!' + path.join(config.root.dest,'screenshot.png')
 
-console.log(languages)
-
 gulp.task('rev-css', function(){
   return gulp.src([path.join(config.root.dest,'/**/*.css'), languages, ignoreWP, dashboard, ignoreScreenshot])
     .pipe(rev())
