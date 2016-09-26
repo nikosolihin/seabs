@@ -14,8 +14,11 @@ function post_type_change_title_text( $title ){
   if( 'person' == $screen->post_type) {
     $title = "Enter person's name";
   }
-  if( 'resource' == $screen->post_type) {
-    $title = "Enter resource's title";
+  if( 'news' == $screen->post_type) {
+    $title = "Enter news title";
+  }
+  if( 'event' == $screen->post_type) {
+    $title = "Enter event name";
   }
   return $title;
 }

@@ -70,6 +70,12 @@
       "extensions": ["php"]
     },
 
+    "languages": {
+      "src": "languages",
+      "dest": "languages",
+      "extensions": ["mo", "po"]
+    },
+
     "images": {
       "src": "images",
       "dest": "images",

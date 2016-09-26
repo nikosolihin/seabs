@@ -1,5 +1,8 @@
 .ArchiveEvent {
   box: horizontal space-between;
+  .Lead {
+    letter-spacing: .5px;
+  }
   &-content {
     width: 76%;
     position: relative;
@@ -40,23 +43,18 @@
     margin-top: $spacer-single*6;
   }
   &-search {
-
+    margin-bottom: $spacer-single*4 !important;
   }
-}
-
-// Override flickity slider for fade to work
-.flickity-slider {
-  transform: none !important;
 }
 
 .FeaturedEvents {
   position: relative;
-  margin-bottom: $spacer-single*6;
+  margin-bottom: $spacer-single*7;
 
   //Flickity cells
   &-image {
     @include cover;
-    width: 80%;
+    width: 77%;
     height: $spacer-single*43;
     margin-right: $spacer-threefourth;
     left: 0 !important;
@@ -68,57 +66,29 @@
       z-index: 0
     }
   }
-  &-nav {
-    box: horizontal;
-    position: absolute;
-    top: -$spacer-single*1.25;
-    right: $spacer-single*1.5;
-    z-index: 1;
-  }
-  &-navItem {
-    @include square;
-    position: relative;
-    width: 55px;
-    background-color: $brand-highlight;
-    &:last-of-type {
-      margin-left: 1px;
-    }
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%,-50%,0);
-      fill: $white;
-      size: $spacer-single*2.25;
-    }
+
+  // Override flickity slider for fade to work
+  .flickity-slider {
+    transform: none !important;
   }
 
   &-body {
     @include square;
     position: absolute;
     right: 0;
-    bottom: $spacer-single*1.75;
-    width: 34%;
-    background-color: $callout-bg;
+    bottom: $spacer-single*2.25;
+    width: 33%;
+    background-color: #fafafa;
   }
   &-content {
-    color: $headings-color;
-    font-size: 1.125rem;
     position: absolute;
     top: 0;
     left: 0;
     padding: $spacer-single*3.25 $spacer-single*3.75;
     opacity: 0;
     transition: opacity .25s ease-in-out;
-    h3 {
-      margin-bottom: $spacer-threefourth;
-    }
-    p {
-      margin-bottom: $spacer-single*2;
-    }
-    .caps {
-      display: inline-block;
-      margin-bottom: $spacer-threefourth;
+    .Button {
+      margin-top: $spacer-single;
     }
     &--show {
       opacity: 1;

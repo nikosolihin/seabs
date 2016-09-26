@@ -1,0 +1,543 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SAAT\n"
+"POT-Creation-Date: 2016-09-26 10:31+0700\n"
+"PO-Revision-Date: 2016-09-26 11:06+0700\n"
+"Last-Translator: \n"
+"Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: views\n"
+"X-Poedit-SearchPath-1: php/lib\n"
+
+#: php/lib/post-types.php:9
+msgid "Blocks"
+msgstr ""
+
+#: php/lib/post-types.php:10 php/lib/post-types.php:34
+msgid "Block"
+msgstr ""
+
+#: php/lib/post-types.php:11
+msgid "Block Archives"
+msgstr ""
+
+#: php/lib/post-types.php:12
+msgid "Parent Block:"
+msgstr ""
+
+#: php/lib/post-types.php:13
+msgid "All Blocks"
+msgstr ""
+
+#: php/lib/post-types.php:14
+msgid "Add New Blocks"
+msgstr ""
+
+#: php/lib/post-types.php:15 php/lib/post-types.php:16
+msgid "New Block"
+msgstr ""
+
+#: php/lib/post-types.php:17
+msgid "Edit Block"
+msgstr ""
+
+#: php/lib/post-types.php:18
+msgid "Update Block"
+msgstr ""
+
+#: php/lib/post-types.php:19
+msgid "View Block"
+msgstr ""
+
+#: php/lib/post-types.php:20
+msgid "Search Blocks"
+msgstr ""
+
+#: php/lib/post-types.php:21
+msgid "No block found"
+msgstr ""
+
+#: php/lib/post-types.php:22
+msgid "No block found in trash"
+msgstr ""
+
+#: php/lib/post-types.php:23 php/lib/post-types.php:79
+#: php/lib/post-types.php:143 php/lib/post-types.php:272
+msgid "Featured Image"
+msgstr ""
+
+#: php/lib/post-types.php:24 php/lib/post-types.php:80
+#: php/lib/post-types.php:144 php/lib/post-types.php:273
+msgid "Set featured image"
+msgstr ""
+
+#: php/lib/post-types.php:25 php/lib/post-types.php:81
+#: php/lib/post-types.php:145 php/lib/post-types.php:274
+msgid "Remove featured image"
+msgstr ""
+
+#: php/lib/post-types.php:26 php/lib/post-types.php:82
+#: php/lib/post-types.php:146 php/lib/post-types.php:275
+msgid "Use as featured image"
+msgstr ""
+
+#: php/lib/post-types.php:27 php/lib/post-types.php:83
+#: php/lib/post-types.php:147 php/lib/post-types.php:276
+msgid "Insert into item"
+msgstr ""
+
+#: php/lib/post-types.php:28 php/lib/post-types.php:84
+#: php/lib/post-types.php:148 php/lib/post-types.php:277
+msgid "Uploaded to this item"
+msgstr ""
+
+#: php/lib/post-types.php:29 php/lib/post-types.php:85
+#: php/lib/post-types.php:149 php/lib/post-types.php:278
+#: php/lib/taxonomies.php:25 php/lib/taxonomies.php:73
+#: php/lib/taxonomies.php:171
+msgid "Items list"
+msgstr ""
+
+#: php/lib/post-types.php:30 php/lib/post-types.php:86
+#: php/lib/post-types.php:150 php/lib/post-types.php:279
+#: php/lib/taxonomies.php:26 php/lib/taxonomies.php:74
+#: php/lib/taxonomies.php:172
+msgid "Items list navigation"
+msgstr ""
+
+#: php/lib/post-types.php:31 php/lib/post-types.php:87
+#: php/lib/post-types.php:151 php/lib/post-types.php:280
+msgid "Filter items list"
+msgstr ""
+
+#: php/lib/post-types.php:35
+msgid "Custom post type for blocks"
+msgstr ""
+
+#: php/lib/post-types.php:65
+msgid "Events"
+msgstr ""
+
+#: php/lib/post-types.php:66 php/lib/post-types.php:96
+msgid "Event"
+msgstr ""
+
+#: php/lib/post-types.php:67
+msgid "Event Archives"
+msgstr ""
+
+#: php/lib/post-types.php:68
+msgid "Parent Event:"
+msgstr ""
+
+#: php/lib/post-types.php:69
+msgid "All Events"
+msgstr ""
+
+#: php/lib/post-types.php:70
+msgid "Add New Events"
+msgstr ""
+
+#: php/lib/post-types.php:71 php/lib/post-types.php:72
+msgid "New Event"
+msgstr ""
+
+#: php/lib/post-types.php:73
+msgid "Edit Event"
+msgstr ""
+
+#: php/lib/post-types.php:74
+msgid "Update Event"
+msgstr ""
+
+#: php/lib/post-types.php:75
+msgid "View Event"
+msgstr ""
+
+#: php/lib/post-types.php:76
+msgid "Search Events"
+msgstr ""
+
+#: php/lib/post-types.php:77
+msgid "No event found"
+msgstr ""
+
+#: php/lib/post-types.php:78
+msgid "No event found in trash"
+msgstr ""
+
+#: php/lib/post-types.php:97
+msgid "Custom post type for event"
+msgstr ""
+
+#: php/lib/post-types.php:129 php/lib/post-types.php:130
+#: php/lib/post-types.php:160
+msgid "News"
+msgstr ""
+
+#: php/lib/post-types.php:131
+msgid "News Archives"
+msgstr ""
+
+#: php/lib/post-types.php:132
+msgid "Parent News:"
+msgstr ""
+
+#: php/lib/post-types.php:133
+msgid "All News"
+msgstr "Semua Artikel"
+
+#: php/lib/post-types.php:134
+msgid "Add New News"
+msgstr ""
+
+#: php/lib/post-types.php:135 php/lib/post-types.php:136
+msgid "New News"
+msgstr ""
+
+#: php/lib/post-types.php:137
+msgid "Edit News"
+msgstr ""
+
+#: php/lib/post-types.php:138
+msgid "Update News"
+msgstr ""
+
+#: php/lib/post-types.php:139
+msgid "View News"
+msgstr ""
+
+#: php/lib/post-types.php:140
+msgid "Search News"
+msgstr ""
+
+#: php/lib/post-types.php:141
+msgid "No news found"
+msgstr ""
+
+#: php/lib/post-types.php:142
+msgid "No news found in trash"
+msgstr ""
+
+#: php/lib/post-types.php:161
+msgid "Custom post type for news"
+msgstr ""
+
+#: php/lib/post-types.php:258
+msgid "People"
+msgstr ""
+
+#: php/lib/post-types.php:259 php/lib/post-types.php:283
+msgid "Person"
+msgstr ""
+
+#: php/lib/post-types.php:260
+msgid "People Archives"
+msgstr ""
+
+#: php/lib/post-types.php:261
+msgid "Parent Person:"
+msgstr ""
+
+#: php/lib/post-types.php:262
+msgid "All People"
+msgstr ""
+
+#: php/lib/post-types.php:263
+msgid "Add New Person"
+msgstr ""
+
+#: php/lib/post-types.php:264 php/lib/post-types.php:265
+msgid "New Person"
+msgstr ""
+
+#: php/lib/post-types.php:266
+msgid "Edit Person"
+msgstr ""
+
+#: php/lib/post-types.php:267
+msgid "Update Person"
+msgstr ""
+
+#: php/lib/post-types.php:268
+msgid "View Person"
+msgstr ""
+
+#: php/lib/post-types.php:269
+msgid "Search Person"
+msgstr ""
+
+#: php/lib/post-types.php:270
+msgid "No person found"
+msgstr ""
+
+#: php/lib/post-types.php:271
+msgid "No person found in trash"
+msgstr ""
+
+#: php/lib/post-types.php:284
+msgid "Custom post type for people"
+msgstr ""
+
+#: php/lib/taxonomies.php:9
+msgid "Categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:10
+msgid "All Categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:11
+msgid "Parent Category"
+msgstr ""
+
+#: php/lib/taxonomies.php:12
+msgid "Parent Category:"
+msgstr ""
+
+#: php/lib/taxonomies.php:13
+msgid "New Category Name"
+msgstr ""
+
+#: php/lib/taxonomies.php:14
+msgid "Add New Category"
+msgstr ""
+
+#: php/lib/taxonomies.php:15
+msgid "Edit Category"
+msgstr ""
+
+#: php/lib/taxonomies.php:16
+msgid "Update Category"
+msgstr ""
+
+#: php/lib/taxonomies.php:17
+msgid "View Category"
+msgstr ""
+
+#: php/lib/taxonomies.php:18 php/lib/taxonomies.php:66
+msgid "Separate categories with commas"
+msgstr ""
+
+#: php/lib/taxonomies.php:19
+msgid "Add or remove categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:20
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:21
+msgid "Popular Categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:22
+msgid "Search categories"
+msgstr ""
+
+#: php/lib/taxonomies.php:23 php/lib/taxonomies.php:71
+#: php/lib/taxonomies.php:169
+msgid "Not Found"
+msgstr ""
+
+#: php/lib/taxonomies.php:24 php/lib/taxonomies.php:72
+#: php/lib/taxonomies.php:170
+msgid "No items"
+msgstr ""
+
+#: php/lib/taxonomies.php:57
+msgid "Topics"
+msgstr ""
+
+#: php/lib/taxonomies.php:58 views/news/archive-news.twig:122
+#: views/news/archive-news.twig:127
+msgid "All Topics"
+msgstr "Semua Topik"
+
+#: php/lib/taxonomies.php:59
+msgid "Parent Topic"
+msgstr ""
+
+#: php/lib/taxonomies.php:60
+msgid "Parent Topic:"
+msgstr ""
+
+#: php/lib/taxonomies.php:61
+msgid "New Topic Name"
+msgstr ""
+
+#: php/lib/taxonomies.php:62
+msgid "Add New Topic"
+msgstr ""
+
+#: php/lib/taxonomies.php:63
+msgid "Edit Topic"
+msgstr ""
+
+#: php/lib/taxonomies.php:64
+msgid "Update Topic"
+msgstr ""
+
+#: php/lib/taxonomies.php:65
+msgid "View Topic"
+msgstr ""
+
+#: php/lib/taxonomies.php:67
+msgid "Add or remove topics"
+msgstr ""
+
+#: php/lib/taxonomies.php:68
+msgid "Choose from the most used topics"
+msgstr ""
+
+#: php/lib/taxonomies.php:69
+msgid "Popular Topics"
+msgstr ""
+
+#: php/lib/taxonomies.php:70
+msgid "Search topics"
+msgstr ""
+
+#: php/lib/taxonomies.php:155
+msgid "Roles"
+msgstr ""
+
+#: php/lib/taxonomies.php:156
+msgid "All Roles"
+msgstr ""
+
+#: php/lib/taxonomies.php:157
+msgid "Parent Role"
+msgstr ""
+
+#: php/lib/taxonomies.php:158
+msgid "Parent Role:"
+msgstr ""
+
+#: php/lib/taxonomies.php:159
+msgid "New Role Name"
+msgstr ""
+
+#: php/lib/taxonomies.php:160
+msgid "Add New Role"
+msgstr ""
+
+#: php/lib/taxonomies.php:161
+msgid "Edit Role"
+msgstr ""
+
+#: php/lib/taxonomies.php:162
+msgid "Update Role"
+msgstr ""
+
+#: php/lib/taxonomies.php:163
+msgid "View Role"
+msgstr ""
+
+#: php/lib/taxonomies.php:164
+msgid "Separate roles with commas"
+msgstr ""
+
+#: php/lib/taxonomies.php:165
+msgid "Add or remove roles"
+msgstr ""
+
+#: php/lib/taxonomies.php:166
+msgid "Choose from the most used roles"
+msgstr ""
+
+#: php/lib/taxonomies.php:167
+msgid "Popular Roles"
+msgstr ""
+
+#: php/lib/taxonomies.php:168
+msgid "Search roles"
+msgstr ""
+
+#: php/lib/wordings.php:5
+msgid "File Library"
+msgstr ""
+
+#: views/event/archive-event.twig:11
+msgid "Featured Events"
+msgstr ""
+
+#: views/event/archive-event.twig:64
+msgid "Upcoming Events"
+msgstr ""
+
+#: views/event/archive-event.twig:73
+msgid "Prev"
+msgstr ""
+
+#: views/event/archive-event.twig:77
+msgid "Next"
+msgstr ""
+
+#: views/event/archive-event.twig:85
+msgid "Filter Events"
+msgstr ""
+
+#: views/event/archive-event.twig:87
+msgid "By Date"
+msgstr ""
+
+#: views/event/archive-event.twig:88
+msgid "Clear Date"
+msgstr ""
+
+#: views/event/archive-event.twig:92
+msgid "By Keywords"
+msgstr ""
+
+#: views/event/archive-event.twig:96
+msgid "By Categories"
+msgstr ""
+
+#: views/event/archive-event.twig:97
+msgid "Clear All"
+msgstr ""
+
+#: views/event/archive-event.twig:104
+msgid "Search"
+msgstr ""
+
+#: views/event/single-event.twig:80
+msgid "Share this event"
+msgstr ""
+
+#: views/news/archive-news.twig:11
+msgid "Featured News"
+msgstr ""
+
+#: views/news/archive-news.twig:66
+msgid "Latest News"
+msgstr "Berita Terbaru"
+
+#: views/news/archive-news.twig:118
+#, fuzzy
+msgid "All Articles"
+msgstr "Semua Artikel"
+
+#: views/news/archive-news.twig:120
+msgid "Filter News By Topic"
+msgstr "Saring Berita Berdasarkan Topik"
+
+#: views/news/archive-news.twig:130
+msgid "View"
+msgstr "Lihat"
+
+#: views/news/single-news.twig:56
+msgid "Share this news"
+msgstr ""
+
+#~ msgid "More News"
+#~ msgstr "Tambah Berita"

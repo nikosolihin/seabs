@@ -5,7 +5,7 @@
 
   <div class="{{'Sidebar-section'|modifiers("#{alignment}, #{callout}, #{accent}")}}">
     {% if section.title %}
-      <h3 class="Sidebar-sectionHeading Lead brandColor">{{section.title}}</h3>
+      <h3 class="Sidebar-sectionHeading Lead brand">{{section.title}}</h3>
     {% endif %}
     {% for component in section.sidebar_components %}
       {% include 'components/' ~ component.acf_fc_layout ~ '.twig' with {'data': component} %}

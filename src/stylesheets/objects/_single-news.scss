@@ -1,4 +1,4 @@
-.SingleEvent {
+.SingleNews {
   box: horizontal space-between;
 
   &-content {
@@ -17,7 +17,19 @@
     box: horizontal;
     padding-bottom: $spacer-quarter;
     .meta {
-      margin-right: $spacer-single*2;
+      margin-right: 0;
+      font-size: $font-size-h5;
+      font-weight: $font-weight-medium;
+    }
+    .meta-dot {
+      padding: 0 $spacer-single;
+    }
+    .meta--icon {
+      margin-left: $spacer-single*2;
+      a {
+        @include hover(#777, $brand-primary);
+        @include underlink;
+      }
     }
   }
   &-metaWrapper {
@@ -30,6 +42,6 @@
   }
   &-sidebar {
     padding: 0 $spacer-single;
-    margin-top: $spacer-single*3;
+    margin-top: $spacer-single*4.5;
   }
 }

@@ -14,7 +14,7 @@
 <div class="Feed-right Feed-contact">
   <h4 class="h5">{{post.name}}</h4>
   {% if 'email' in meta %}
-    <a href="mailto:{{post.email}}" class="brandColor">{{post.email|lower}}</a>
+    <a href="mailto:{{post.email}}" class="brand">{{post.email|lower}}</a>
   {% endif %}
   {% if 'phone' in meta %}
     <p>{{post.phone}}</p>

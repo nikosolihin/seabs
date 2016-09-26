@@ -1,6 +1,7 @@
 .Lead {
   color: $gray-dark;
   font-weight: $font-weight-light;
+  letter-spacing: .4px;
 
   &--intro {
     margin-top: 0;
@@ -16,7 +17,8 @@
     margin-bottom: $spacer-single*5.5;
   }
   &--section {
-    margin-bottom: $spacer-single*2;
+    margin-bottom: $spacer-single*2.5;
+    letter-spacing: .4px;
   }
 }
 
@@ -28,19 +30,35 @@
   @include caps;
 }
 
-.brandColor {
+.brand {
   color: $brand-primary !important;
 }
 
-.meta {
-  box: horizontal middle;
-  font-size: $font-size-h5;
-  font-weight: $font-weight-medium;
+.tag {
+  @extend .caps;
   color: #777;
+  flex: 1 0 auto;
+  margin-bottom: $spacer-half;
+}
+
+.meta {
+  color: #777;
+  font-size: $font-size-h6;
+  font-weight: $font-weight-normal;
   margin-right: $spacer-single;
-  svg {
-    size: $spacer-single*1.125;
-    fill: $brand-primary;
-    margin-right: $spacer-half;
+  margin-bottom: 0;
+  &-dot {
+    color: #bbb;
+    padding: 0 $spacer-quarter;
+  }
+  &--icon {
+    box: horizontal middle;
+    font-size: $font-size-h5;
+    font-weight: $font-weight-medium;
+    svg {
+      size: $spacer-single*1.125;
+      fill: $brand-primary;
+      margin-right: $spacer-half;
+    }
   }
 }

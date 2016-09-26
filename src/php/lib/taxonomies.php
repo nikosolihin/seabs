@@ -40,7 +40,7 @@ function event_category_taxonomy() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => $rewrite,
     'show_in_rest'               => true,
-    'rest_base'                  => 'events/categories',
+    'rest_base'                  => 'categories',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'event_category', array( 'event' ), $args );
@@ -74,9 +74,9 @@ function news_topic_taxonomy() {
 		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                       => 'topics',
+		'slug'                       => 'news/?utf8=✓&page=1&topics=',
 		'with_front'                 => true,
-		'hierarchical'               => true,
+		'hierarchical'               => false,
 	);
 	$args = array(
 		'labels'                     => $labels,
@@ -88,7 +88,7 @@ function news_topic_taxonomy() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => $rewrite,
     'show_in_rest'               => true,
-    'rest_base'                  => 'news/topics',
+    'rest_base'                  => 'topics',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'news_topic', array( 'news' ), $args );

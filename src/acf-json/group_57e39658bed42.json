@@ -1,10 +1,10 @@
 {
-    "key": "group_57846f22e8759",
-    "title": "Event Settings",
+    "key": "group_57e39658bed42",
+    "title": "News Settings",
     "fields": [
         {
-            "key": "field_57da6c385914d",
-            "label": "Featured Events",
+            "key": "field_57e39658ca2fe",
+            "label": "Featured News",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,11 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_57da6bfa5914c",
-            "label": "Select Events",
-            "name": "event_featured",
+            "key": "field_57e39658ca3a2",
+            "label": "Select News",
+            "name": "news_featured",
             "type": "post_object",
-            "instructions": "Select events to be featured above the search listing. The order of events here will be the slideshow's order.",
+            "instructions": "Select news to be featured above the search listing. The order of news here will be the slideshow's order. <br><strong>Only the first 4 items will be used.<\/strong> You may add more and remove them as articles become old news.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -32,7 +32,7 @@
                 "id": ""
             },
             "post_type": [
-                "event"
+                "news"
             ],
             "taxonomy": [],
             "allow_null": 0,
@@ -41,7 +41,42 @@
             "ui": 1
         },
         {
-            "key": "field_5784bf7b73351",
+            "key": "field_57e5190e4615d",
+            "label": "Latest News",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57e519204615e",
+            "label": "Number of items in the list?",
+            "name": "news_latest_quantity",
+            "type": "text",
+            "instructions": "The latest news carousel display latest news grouped by news topics. How many items should be displayed under each topic?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 4,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e39658ca442",
             "label": "Listing Page",
             "name": "",
             "type": "tab",
@@ -57,11 +92,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_5784bf91bc85f",
+            "key": "field_57e39658ca4f0",
             "label": "Results Per Page",
-            "name": "event_listing_ppp",
+            "name": "news_listing_ppp",
             "type": "number",
-            "instructions": "Number of events to show per page. Events are grouped by months.",
+            "instructions": "Number of news to show per page. These are the quantity above the \"Load More\" button.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -69,20 +104,20 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": 10,
+            "default_value": 16,
             "placeholder": "",
             "prepend": "",
             "append": "",
             "min": 1,
-            "max": 25,
+            "max": 50,
             "step": 1
         },
         {
-            "key": "field_57e39508b42a7",
-            "label": "Read More Link",
-            "name": "event_link_label",
+            "key": "field_57e518d24615c",
+            "label": "Load More Button",
+            "name": "news_load_more",
             "type": "text",
-            "instructions": "This is the label for each event in the listing. Usually \"Read More\" or \"See Event\".",
+            "instructions": "What should the load more button be labeled?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -97,7 +132,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_57d10baf99267",
+            "key": "field_57e39658ca61f",
             "label": "Listing Sidebar",
             "name": "",
             "type": "tab",
@@ -113,9 +148,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_57d10b9599266",
+            "key": "field_57e39658ca6be",
             "label": "Sidebar Builder",
-            "name": "event",
+            "name": "news",
             "type": "reusable_field_group_field",
             "instructions": "",
             "required": 0,
@@ -129,41 +164,6 @@
             "name_prefix": 1,
             "key_prefix": 1,
             "label_prefix": 0
-        },
-        {
-            "key": "field_57e395f0b42a8",
-            "label": "Google Calendar",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_57e395ffb42a9",
-            "label": "Downloadable .ics URL",
-            "name": "ics_url",
-            "type": "text",
-            "instructions": "Public URL for the downloadable export file.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -171,7 +171,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-event-settings"
+                "value": "acf-options-news-settings"
             }
         ]
     ],
@@ -182,6 +182,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "OPTIONS_PAGE : Event Settings",
-    "modified": 1474533360
+    "description": "OPTIONS_PAGE : News Settings",
+    "modified": 1474730831
 }

@@ -179,8 +179,8 @@ export default class Event {
               teaser: event.acf.gcal.description,
               image: event.acf.image.url_n,
               label: this.label,
-              category: this.allCategories[event['events/categories']]['name'],
-              color: this.allCategories[event['events/categories']]['color']
+              category: this.allCategories[event['categories']]['name'],
+              color: this.allCategories[event['categories']]['color']
             }
             this.renderEvents(templateVars, '.ArchiveEvent-resultGroup')
           })

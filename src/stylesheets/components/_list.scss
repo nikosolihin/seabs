@@ -28,6 +28,9 @@
     .cat-item {
       padding: $spacer-half 0;
       border-bottom: 1px solid #ddd;
+      &:first-child {
+        padding-top: 0;
+      }
       &:last-child {
         border: 0;
       }

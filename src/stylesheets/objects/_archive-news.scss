@@ -1,0 +1,209 @@
+.FeaturedNews {
+  position: relative;
+  margin-bottom: $spacer-single*12;
+
+  .Arrows {
+    top: $spacer-single*6.5;
+    right: $spacer-single*3;
+  }
+
+  &-caption {
+    @include white;
+    position: absolute;
+    bottom: $spacer-single*2.25;
+    left: $spacer-single*3;
+    h2 {
+      font-size: 1.9rem;
+    }
+    .meta {
+      font-size: $font-size-h5;
+      font-weight: $font-weight-medium;
+    }
+  }
+  &-captionTitle {
+    font-size: 1.9rem;
+  }
+
+  //Flickity cells
+  &-image {
+    @include cover;
+    @include white;
+    @include overlay(false, (rgba(0,0,0,0) 45%, rgba(0,0,0,1) 95%));
+    display: block;
+    width: 71%;
+    height: $spacer-single*37;
+    left: 0 !important;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.35s ease-in-out;
+    &.is-selected {
+      opacity: 1;
+      z-index: 0
+    }
+  }
+  // Override flickity slider for fade to work
+  .flickity-slider {
+    transform: none !important;
+  }
+  &-body {
+    position: absolute;
+    top: $spacer-single*8;
+    right: 0;
+    width: 36%;
+    background-color: #fafafa;
+    border-bottom: 2px solid #eee;
+    .news {
+      width: 100%;
+      padding: $spacer-single*1.5 $spacer-single*2 $spacer-single*1.5 $spacer-single*2.35;
+      &:last-of-type {
+        border-bottom: 0;
+      }
+      &--active {
+        border-right: 5px solid $brand-secondary;
+      }
+    }
+    .news-topic {
+      color: $brand-primary;
+    }
+  }
+}
+
+.CarouselNews {
+  background-color: $callout-bg;
+  margin-bottom: $spacer-single*6;
+  .container {
+    position: relative;
+  }
+  .Lead {
+    position: relative;
+    top: -$spacer-single*4.5;
+    margin-bottom: 0;
+  }
+
+  &-wrapper {
+    padding-top: $spacer-single*1.5;
+    padding-bottom: $spacer-single*4;
+  }
+  &-card {
+    width: 31%;
+    margin: 0 $spacer-single*1.25;
+    .tag {
+      margin-bottom: $spacer-single;
+    }
+  }
+  &-image {
+    @include white;
+    @include cover;
+    @include overlay(true, rgba(0,0,0,.5));
+    display: block;
+    position: relative;
+    height: $card-height*1.25;
+    padding: $spacer-single*1.5 $spacer-single*2;
+    transition: all .12s ease-out;
+    > * {
+      position: relative;
+    }
+    &:hover {
+      @include overlay(true, rgba(0,0,0,.7));
+    }
+  }
+  &-body {
+    background-color: $white;
+    padding: $spacer-threefourth $spacer-single*2 $spacer-single;
+    article {
+      border-bottom: 1px solid #eee;
+      padding: $spacer-single 0;
+      &:last-child {
+        border: 0;
+      }
+    }
+    h5 {
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacer-quarter;
+    }
+  }
+}
+
+.ArchiveNews {
+  position: relative;
+  text-align: center;
+  .Lead {
+    margin-bottom: $spacer-single*4.5;
+  }
+  &-control {
+    box: horizontal middle;
+    position: absolute;
+    top: 0;
+    right: $spacer-single;
+    h5 {
+      color: #888;
+      font-weight: $font-weight-normal;
+      margin-bottom: 0;
+    }
+    .Button {
+      margin-bottom: 0;
+    }
+  }
+  &-topics {
+    box: horizontal middle space-between;
+    color: $brand-primary;
+    width: $spacer-single*13;
+    padding: .85rem $spacer-single*1.25;
+    margin: 0 $spacer-threefourth 0 $spacer-single*1.5;
+    background-color: $callout-bg;
+    cursor: pointer;
+    position: relative;
+    svg {
+      fill: #888;
+      size: .6rem;
+    }
+  }
+  &-topicsDropdown {
+    display: none;
+    position: absolute;
+    background-color: $callout-bg;
+    width: $spacer-single*13;
+    right: 0;
+    top: $spacer-single*3;
+    text-align: left;
+    a {
+      @include hover($body-color, $brand-primary);
+      display: block;
+      text-transform: capitalize;
+      font-size: 15px;
+      letter-spacing: 0;
+      padding: .8rem $spacer-single*1.25;
+      border-top: 1px solid #eee;
+    }
+    &--show {
+      display: block;
+    }
+  }
+  &-content {
+    box: horizontal wrap space-between;
+    margin-bottom: $spacer-single*3;
+    &--fadeOut {
+      opacity: .3;
+    }
+  }
+}
+
+.news {
+  width: 47.5%;
+  flex: 0 0 auto;
+  border-bottom: 1px solid #eee;
+  padding: $spacer-single*1.25 0;
+  text-align: left;
+  &-bar {
+    box: horizontal top;
+  }
+  &-share {
+    display: block;
+    size: $spacer-single*1.25;
+    margin-right: $spacer-single;
+    svg {
+      fill: $brand-primary;
+      size: $spacer-single;
+    }
+  }
+}

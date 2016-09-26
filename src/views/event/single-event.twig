@@ -3,46 +3,51 @@
 {% block content %}
   <div class="container SingleEvent">
     <div class="SingleEvent-content {{'container'|modifiers("text")}}">
-      <h1 class="h2 brandColor">{{post.title}}</h1>
+      <h1 class="h2 brand">{{post.title}}</h1>
       {% if acf.gcal.description %}
         <h3 class="Lead">{{acf.gcal.description}}</h3>
       {% endif %}
       <div class="SingleEvent-metaWrapper">
         <div class="SingleEvent-meta">
           {% if event_date %}
-            <div class="meta">
+            <div class="meta meta--icon">
               <svg aria-hidden="true" role="presentation" title="Event Date">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
-              </svg>{{event_date}}
+              </svg>
+              <span>{{event_date}}</span>
             </div>
           {% endif %}
           {% if event_time %}
-            <div class="meta">
+            <div class="meta meta--icon">
               <svg aria-hidden="true" role="presentation" title="Event Date">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-              </svg>{{event_time}}
+              </svg>
+              <span>{{event_time}}</span>
             </div>
           {% endif %}
           {% if acf.gcal.location %}
-            <div class="meta">
+            <div class="meta meta--icon">
               <svg aria-hidden="true" role="presentation" title="Event Date">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
-              </svg>{{acf.gcal.location}}
+              </svg>
+              <span>{{acf.gcal.location}}</span>
             </div>
           {% endif %}
         </div>
         {% if event_children_date %}
           {% for repeat in event_children_date %}
             <div class="SingleEvent-meta">
-              <div class="meta">
+              <div class="meta meta--icon">
                 <svg aria-hidden="true" role="presentation" title="Event Date">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#calendar"></use>
-                </svg>{{repeat}}
+                </svg>
+                <span>{{repeat}}</span>
               </div>
-              <div class="meta">
+              <div class="meta meta--icon">
                 <svg aria-hidden="true" role="presentation" title="Event Date">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clock"></use>
-                </svg>{{event_children_time[loop.index0]}}
+                </svg>
+                <span>{{event_children_time[loop.index0]}}</span>
               </div>
             </div>
           {% endfor %}
@@ -71,7 +76,9 @@
     </div>
     <div class="SingleEvent-sidebar Sidebar">
       <div class="Sidebar-section">
-        <h3 class="Sidebar-sectionHeading Lead brandColor">Share this event</h3>
+        <h3 class="Sidebar-sectionHeading Lead brand">
+          {{__('Share this event', 'saat')}}
+        </h3>
         {% include 'components/social-share.twig' %}
       </div>
       {% include 'layout/sidebar-base.twig' %}

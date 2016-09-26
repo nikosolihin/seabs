@@ -88,13 +88,21 @@ if (array_key_exists('children', $gcal)) {
 
 // Get Sidebar
 $inherit = ($context['acf']['inherit'] === 'true');
-$order = $context['acf']['order'];
+$sidebar = $post->get_field('sidebar_sections');
 if ($inherit) {
+	$order = $context['acf']['order'];
 	$parents_sidebar = get_field('event_sidebar_sections', 'option');
-	$sidebar = $post->get_field('sidebar_sections');
-	$context['sidebar_sections'] = $order == 'parent' ? array_merge($parents_sidebar, $sidebar) : array_merge($sidebar, $parents_sidebar);
+	if ($parents_sidebar) {
+		if ($sidebar) {
+			$context['sidebar_sections'] = $order == 'parent' ? array_merge($parents_sidebar, $sidebar) : array_merge($sidebar, $parents_sidebar);
+		} else {
+			$context['sidebar_sections'] = $parents_sidebar;
+		}
+	} else {
+		$context['sidebar_sections'] = $sidebar;
+	}
 } else {
-	$context['sidebar_sections'] = $post->get_field('sidebar_sections');
+	$context['sidebar_sections'] = $sidebar;
 }
 
 Timber::render( 'event/single-event.twig' , $context );

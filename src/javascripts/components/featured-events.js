@@ -1,10 +1,11 @@
 import Flickity from 'flickity-bg-lazyload'
 
-export default class Gallery {
+export default class FeaturedEvents {
   constructor(el) {
     this.$el = $(el)
     this.cellName = '.FeaturedEvents-image'
-    this.gallery = new Flickity (el, {
+    this.$arrows = $(".FeaturedEvents").find('.Arrows')
+    this.featuredEvents = new Flickity (el, {
       cellSelector: this.cellName,
       callAlign: 'left',
       draggable: false,
@@ -16,30 +17,29 @@ export default class Gallery {
       autoPlay: 8000,
       pauseAutoPlayOnHover: false
     })
-    this.galleryData = Flickity.data(el)
+    this.featuredEventsData = Flickity.data(el)
     this.attachEvents()
     this.showFirstCell()
   }
 
   attachEvents() {
-    this.gallery.on( 'select', () => {
-      this.displayContent( this.galleryData.selectedIndex )
+    this.featuredEvents.on( 'select', () => {
+      this.displayContent( this.featuredEventsData.selectedIndex )
     })
-
-    $(".FeaturedEvents-nav").on('click', '.Flickity-prev', (event) => {
+    this.$arrows.on('click', '.Flickity-prev', (event) => {
       event.preventDefault()
-      this.gallery.previous()
+      this.featuredEvents.previous()
     })
     .on('click', '.Flickity-next', (event) => {
       event.preventDefault()
-      this.gallery.next()
+      this.featuredEvents.next()
     })
 
     // Pause flickity if user is reading
     $(".FeaturedEvents-body").hover(() => {
-      this.gallery.pausePlayer()
+      this.featuredEvents.pausePlayer()
     }, () => {
-      this.gallery.unpausePlayer()
+      this.featuredEvents.unpausePlayer()
     })
   }
 
