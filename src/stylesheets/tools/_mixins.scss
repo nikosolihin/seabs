@@ -33,7 +33,13 @@
   font-size: $font-size-h6;
   letter-spacing: .45px;
 }
+@mixin promote {
+  > * {
+    z-index: 1;
+  }
+}
 @mixin overlay($full, $value: null) {
+  @include promote;
   &::before {
     content: '';
     position: absolute;
@@ -54,11 +60,6 @@
         background: linear-gradient(rgba(0,0,0,0) 30%, rgba(0,0,0,1) 97%);
       }
     }
-  }
-}
-@mixin promote {
-  > * {
-    z-index: 1;
   }
 }
 @mixin underlink {

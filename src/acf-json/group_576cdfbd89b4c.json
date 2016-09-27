@@ -23,7 +23,7 @@
             "label": "Paragraph",
             "name": "teaser",
             "type": "textarea",
-            "instructions": "This will become the teaser and the overview paragraph for this resource item.",
+            "instructions": "This is the teaser\/overview paragraph for this item. A sentence or two should suffice. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong>Don't leave this blank.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -164,5 +164,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Page",
-    "modified": 1473084910
+    "modified": 1474951622
 }

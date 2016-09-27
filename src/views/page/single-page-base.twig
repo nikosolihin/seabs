@@ -6,9 +6,9 @@
 
   {% include 'components/banner.twig' %}
   <div class="container {{'SinglePage'|modifiers("#{sidebar_position}")}}">
-    <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}}">
+    <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}} content-body">
       {% if acf.teaser %}
-        <div class="Lead Lead--intro Lead--overview">{{acf.teaser}}</div>
+        <h3 class="Lead">{{acf.teaser}}</h3>
       {% endif %}
       {% include 'layout/base.twig' %}
     </div>
@@ -16,7 +16,7 @@
     {% if not no_sidebar %}
       <div class="SinglePage-sidebar Sidebar">
         {% if hierarchy %}
-          <ul class="List">{{hierarchy}}</ul>
+          <ul class="List Toc">{{hierarchy}}</ul>
         {% endif %}
         {% include 'layout/sidebar-base.twig' %}
       </div>

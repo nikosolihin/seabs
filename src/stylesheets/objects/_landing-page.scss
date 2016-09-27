@@ -1,13 +1,19 @@
 .landing-page {
   box: horizontal space-around wrap;
-  margin-top: $spacer-single*4;
   &--grid {
     margin-top: $spacer-single*7;
+    margin-bottom: $spacer-single*7;
   }
 }
 
 .Twin {
   box: horizontal wrap;
+
+  .Button {
+    margin-top: $spacer-single;
+    margin-bottom: 0;
+  }
+
   &-frame, &-box {
     width: 50%;
   }
@@ -50,17 +56,13 @@
     }
   }
   &-content {
-    @include white;
     box: vertical bottom;
     position: absolute;
     size: 100%;
-    padding: $spacer-single*1.5;
-    h3 {
-      margin-bottom: $spacer-single*1.5;
-    }
+    padding: $spacer-single*2;
     p {
-      font-weight: $font-weight-light;
-      max-width: 470px;
+      max-width: 29rem;
+      margin-bottom: $spacer-single;
     }
   }
 
@@ -75,13 +77,12 @@
   }
 }
 
-// Refactor this to its own layout sheet
 .Solo {
   box: vertical;
   width: 50%;
   border: $spacer-single*1.5 solid transparent;
   margin-bottom: $spacer-single*3;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 
   &-image {
     @include white;
@@ -97,10 +98,8 @@
     box: horizontal wrap;
     margin-top: $spacer-single*1.5;
     padding-bottom: $spacer-single*2;
-    border-bottom: 6px solid #f5f5f5;
-
+    border-bottom: 4px solid #f5f5f5;
     a {
-      @extend .Lead;
       display: block;
       width: 33%;
       padding: $spacer-half $spacer-single;

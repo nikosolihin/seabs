@@ -3,12 +3,16 @@
 {% block content %}
   {% set layout = acf.landing_layout %}
 
+
   {% if acf.teaser %}
-    <p class="Lead Lead--landing Lead--center Lead--spaced container container--text-nosidebar">{{acf.teaser}}</p>
+  <div class="container container--text-nosidebar">
+    <h5 class="tag brand center">About Us</h5>
+    <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
+  </div>
   {% endif %}
 
   {% if acf.position == "before" %}
-    <div class="container">
+    <div class="container container--spacedBottom">
       {% include 'layout/base.twig' %}
     </div>
   {% endif %}
@@ -20,14 +24,16 @@
         {% if child.image %}
           {# Has image, render. If not, skip #}
           <div class="Solo">
-            <div class="Solo-image lazyload" data-bgset="{{child.image[small]}} 1x, {{child.image[medium]}} 2x">
-              <h3 class="Lead Lead--white Lead--landing">{{child.title}}</h3>
-              {% if child.teaser %}<p>{{child.teaser}}</p>{% endif %}
-            </div>
+            <a href="{{child.link}}" class="Solo-image lazyload" data-bgset="{{child.image[medium]}} 1x, {{child.image[large]}} 2x">
+              <h3>{{child.title}}</h3>
+              {% if child.teaser %}
+                <p>{{child.teaser}}</p>
+              {% endif %}
+            </a>
             {% if child.children %}
               <div class="Solo-content">
                 {% for grandchild in child.children %}
-                  <a href="{{grandchild.link}}">{{grandchild.title}}</a>
+                  <a href="{{grandchild.link}}" class="h4 Lead">{{grandchild.title}}</a>
                 {% endfor %}
               </div>
             {% endif %}
@@ -48,9 +54,11 @@
                 {{box.image[medium]}} [(min-width: {{sm}})] |
                 {{box.image[small]}}">
                 <div class="Twin-content">
-                  <h3 class="Lead Lead--white Lead--landing">{{box.title|title}}</h3>
-                  {% if box.teaser %}<p>{{box.teaser}}</p>{% endif %}
-                  <div><a href="{{box.link}}" class="Button Button--small Button--outline-white">Learn More</a></div>
+                  <h3 class="h2 white">{{box.title|title}}</h3>
+                  {% if box.teaser|trim is not empty %}
+                    <p class="white">{{box.teaser|trim}}</p>
+                  {% endif %}
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
                 </div>
               </div>
               <div class="Twin-frame Twin">
@@ -60,8 +68,8 @@
               {{box.image[medium]}} [(min-width: {{sm}})] |
               {{box.image[small]}}">
                 <div class="Twin-content">
-                  <h3 class="Lead Lead--white Lead--landing">{{box.title|title}}</h3>
-                  <div><a href="{{box.link}}" class="Button Button--small Button--outline-white">Learn More</a></div>
+                  <h3 class="Lead white">{{box.title|title}}</h3>
+                  <div><a href="{{box.link}}" class="Button Button--small Button--outline Button--outline-light">{{__('Read More', 'saat')}}</a></div>
                 </div>
               </div>
             {% endif %}
@@ -75,7 +83,7 @@
   {% endif %}
 
   {% if acf.position == "after" %}
-    <div class="container">
+    <div class="container container--spacedTop">
       {% include 'layout/base.twig' %}
     </div>
   {% endif %}

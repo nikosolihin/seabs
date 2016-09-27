@@ -1,7 +1,6 @@
 .Accordion {
   @include normalist;
   border-top: 5px solid #f5f5f5;
-  padding-top: $spacer-half;
 
   &-checkbox {
     display: none;

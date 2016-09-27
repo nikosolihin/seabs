@@ -44,8 +44,9 @@ var cssTask = function () {
     .on('error', handleErrors)
     .pipe(postcss( processors )).on('error', handleErrors)
     .pipe(gulpif(!global.production, sourcemaps.write()))
+    // .pipe(browserSync.stream())
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .on('end', browserSync.reload)
 }
 
 gulp.task('css', cssTask)

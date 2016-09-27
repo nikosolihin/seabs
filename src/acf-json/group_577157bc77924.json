@@ -44,6 +44,86 @@
             "return_format": "value"
         },
         {
+            "key": "field_57ea21987936f",
+            "label": "Background Color",
+            "name": "card_style",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "card"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "message": "By default, card blocks have white background. Check to override.",
+            "default_value": 0
+        },
+        {
+            "key": "field_57ea210114fef",
+            "label": "Background",
+            "name": "card_bg",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "card"
+                    },
+                    {
+                        "field": "field_57ea21987936f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#8a0000"
+        },
+        {
+            "key": "field_57ea22e9c244e",
+            "label": "Foreground",
+            "name": "card_fg",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bc86a8ab7df",
+                        "operator": "==",
+                        "value": "card"
+                    },
+                    {
+                        "field": "field_57ea21987936f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff"
+        },
+        {
             "key": "field_57bd238bccce9",
             "label": "Bookmark Notice",
             "name": "",
@@ -211,65 +291,7 @@
             "label_prefix": 0
         },
         {
-            "key": "field_57ce791a3c0a1",
-            "label": "Button",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_57ce79373c0a3",
-            "label": "Button",
-            "name": "with_button",
-            "type": "true_false",
-            "instructions": "Check this if you want a button on the block.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Add a button",
-            "default_value": 0
-        },
-        {
-            "key": "field_57ce7861002c8",
-            "label": "Button",
-            "name": "button",
-            "type": "reusable_field_group_field",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_57ce79373c0a3",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "group_key": "group_577225311bff5",
-            "name_prefix": 0,
-            "key_prefix": 1,
-            "label_prefix": 0
-        },
-        {
-            "key": "field_577158f21d1bb",
+            "key": "field_57ea238560372",
             "label": "URL",
             "name": "",
             "type": "tab",
@@ -285,9 +307,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_57a4cc8707b94",
-            "label": "Link",
-            "name": "link",
+            "key": "field_57ea236421996",
+            "label": "URL",
+            "name": "url",
             "type": "reusable_field_group_field",
             "instructions": "",
             "required": 0,
@@ -335,5 +357,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1473149716
+    "modified": 1474962321
 }

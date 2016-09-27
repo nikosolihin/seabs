@@ -4,7 +4,7 @@
 /* from including unnecessary headings
 /*=============================================*/
 function custom_format_TinyMCE( $in ) {
-  $in['block_formats'] = "Heading=h3; Sub-Heading=h4; Paragraph=p;";
+  $in['block_formats'] = "Heading=h2; Sub-Heading=h4; Paragraph=p;";
 	return $in;
 }
 add_filter( 'tiny_mce_before_init', 'custom_format_TinyMCE' );
@@ -24,7 +24,7 @@ function custom_style_def_TinyMCE( $init_array ) {
 		array(
 			'title' => 'Lead Text',
 			'block' => 'p',
-			'classes' => 'Lead',
+			'classes' => ['Lead', 'Lead--body', 'h3']
 		),
 	);
 	$init_array['style_formats'] = json_encode( $style_formats );

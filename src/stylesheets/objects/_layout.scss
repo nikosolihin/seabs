@@ -34,6 +34,14 @@
   &--right {
     margin: 0 0 0 auto;
   }
+
+  //=== Spacing ===
+  &--spacedTop {
+    margin-top: $spacer-single*4;
+  }
+  &--spacedBottom {
+    margin-bottom: $spacer-single*4;
+  }
 }
 
 .row {
@@ -48,38 +56,34 @@
   }
   &--of-2 {
     @include from(md) {
-      > * { width: 50%; }
-    }
-    .column:nth-child(odd) {
-      padding-right: $spacer-single*1.75;
-    }
-    .column:nth-child(even) {
-      padding-left: $spacer-single*1.75;
+      .column { width: 50%; }
     }
   }
   &--of-3 {
     @include from(md) {
-      > * { width: 50%; }
+      .column { width: 50%; }
     }
     @include from(lg) {
-      > * { width: 33.33333%; }
-    }
-    .column {
-      padding: 0 $spacer-threefourth;
+      .column { width: 33%; }
     }
   }
   &--of-4 {
-    > * {
-      width: 25%;
-    }
     .column {
-      padding: 0 $spacer-threefourth;
+      width: 25%;
     }
   }
 }
 
 .column {
   // The column divs act as a flex child wrapper.
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  &:first-of-type {
+    border-left: 0;
+  }
+  &:last-of-type {
+    border-right: 0;
+  }
 }
 
 .four-o-four {

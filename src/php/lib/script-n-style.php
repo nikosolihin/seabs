@@ -2,12 +2,12 @@
 //=============================================
 // Register front-end styles
 //=============================================
-// function saat_styles() {
-// 	wp_deregister_style( 'saat-style' );
-// 	wp_register_style( 'saat-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', false, null );
-// 	wp_enqueue_style( 'saat-style' );
-// }
-// add_action( 'wp_enqueue_scripts', 'saat_styles' );
+function saat_styles() {
+	wp_deregister_style( 'saat-style' );
+	wp_register_style( 'saat-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', false, null );
+	wp_enqueue_style( 'saat-style' );
+}
+add_action( 'wp_enqueue_scripts', 'saat_styles' );
 
 //=============================================
 // Register front-end scripts

@@ -13,7 +13,7 @@ var paths = {
 var twigTask = function() {
   return gulp.src(paths.src)
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .on('end', browserSync.reload)
 }
 
 gulp.task('twig', twigTask)

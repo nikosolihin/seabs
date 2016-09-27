@@ -5,7 +5,7 @@
 {% set alignment = post.get_field('text_alignment') %}
 {% set link_type = post.get_field('type') %}
 {% set notitle = post.get_field('notitle') %}
-{% set tinted = notitle ? '' : 'tinted' %}
+{% set overlay = notitle ? '' : 'overlay' %}
 
 {% if link_type == "single" %}
   {% set url = post.get_field('single_url') %}
@@ -15,6 +15,7 @@
   {% set url = post.get_field('search_url') %}
 {% endif %}
 
+
 {% if style == "bookmark" %}
   <div class="{{'Block'|modifiers('bookmark')}}" style="width:{{image.originalwidth}}px; height:{{image.originalheight}}px;">
     <a href="{{url}}">
@@ -23,33 +24,45 @@
   </div>
 
 {% elseif style == "card" %}
+  {% set card_style = post.get_field('card_style') %}
+  {% if card_style %}
+    {% set bg = post.get_field('card_bg') %}
+    {% set fg = post.get_field('card_fg') %}
+  {% endif %}
+
   <div class="{{'Block'|modifiers("card, #{alignment}")}}">
-    <a href="{{url}}" class="Block-link"></a>
-    <div class="Block-head lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x"></div>
-    <div class="Block-body">
-      <h4 class="Block-heading">{{post.title|title}}</h4>
-      {% if description|trim is not empty %}
-        <p>{{description|trim}}</p>
+    <a href="{{url}}" class="Block-link">
+      <div class="Block-head lazyload" data-bgset="{{image[medium]}} 1x, {{image[large]}} 2x"></div>
+      {% if card_style %}
+        <div class="Block-body" style="background-color: {{bg}};">
+          <h3 style="color: {{fg}};">{{post.title|title}}</h3>
+          {% if description|trim is not empty %}
+            <p style="color: {{fg}};">{{description|trim}}</p>
+          {% endif %}
+        </div>
+      {% else %}
+        <div class="Block-body">
+          <h3>{{post.title|title}}</h3>
+          {% if description|trim is not empty %}
+            <p>{{description|trim}}</p>
+          {% endif %}
+        </div>
       {% endif %}
-    </div>
+    </a>
   </div>
 
 {% else %} {# Panel #}
-  <div class="{{'Block'|modifiers("panel, #{alignment}, #{tinted}")}} lazyload" data-bgset="{{image[small]}} 1x, {{image[medium]}} 2x">
-    <a href="{{url}}" class="Block-link"></a>
+  <div class="{{'Block'|modifiers("panel, #{alignment}, #{overlay}")}} lazyload" data-bgset="{{image[medium]}} 1x, {{image[large]}} 2x">
+    <a href="{{url}}" class="Block-link">
     {% if not notitle %}
       <div class="Block-body">
-        <h4 class="h3 Block-heading">{{post.title|title}}</h4>
+        <h3 class="h2">{{post.title|title}}</h3>
         {% if description|trim is not empty %}
           <p>{{description|trim}}</p>
         {% endif %}
-        {% if cta %}
-          <div class="Block-cta">
-            <a href="" class="Button Button--small Button--light">Read More</a>
-          </div>
-        {% endif %}
       </div>
     {% endif %}
+    </a>
   </div>
 
 {% endif %}

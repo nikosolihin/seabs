@@ -1,39 +1,34 @@
 .Block {
   @include cover;
   position: relative;
-  // box: vertical middle;
-  min-height: $card-height*1.25;
-  padding: $spacer-single*1.25;
 
   &-link {
+    box: vertical middle;
+    padding: $spacer-single*2;
     position: absolute 0 auto auto 0;
     size: 100%;
     z-index: 1;
-  }
-  &-cta {
-    margin-top: $spacer-single;
+    @at-root .Block--card #{&} {
+      position: relative;
+      display: block;
+      padding: 0;
+    }
   }
   &-head {
     @include cover;
-    min-height: $card-height*.9;
+    @include square(50%);
   }
   &-body {
-    position: relative;
-    box: vertical;
-    size: 100%;
-    text-align: center;
-    h4, p {
-      @include white;
-    }
+    @include white;
     p {
-      margin-bottom: 0;
-    }
-    @at-root .Block--left #{&} {
-      text-align: left;
+      font-size: 1.125rem;
     }
     @at-root .Block--card #{&} {
-      background-color: $callout-bg;
-      padding: $spacer-single*1.75 $spacer-single*2 $spacer-single*2.25;
+      background-color: #fff;
+      padding: $spacer-single*1.5 $spacer-single*2 $spacer-single*2.25;
+      h3 {
+        color: $brand-primary;
+      }
       p {
         color: $body-color;
       }
@@ -42,26 +37,29 @@
       background-color: $white;
     }
   }
-  &-heading {
-    font-weight: $font-weight-light;
-    letter-spacing: .3px;
-    margin-bottom: $spacer-half;
-    @at-root .Block--card #{&} {
-      font-weight: $font-weight-bold;
-      letter-spacing: 0;
-      color: $brand-primary;
-    }
-  }
+
+  // Style
   &--card {
-    padding: 0;
-    font-size: .95rem;
+    border: 1px solid #eee;
   }
   &--bookmark {
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
   }
-  &--tinted {
-    @include overlay(true);
+  &--panel {
+    @include square(54%);
+  }
+  &--overlay {
+    @include overlay(true, rgba(0,0,0,.55));
+    @include promote;
+    transition: all .12s ease-out;
+    &:hover {
+      @include overlay(true, rgba(0,0,0,.65));
+    }
+  }
+  &--center {
+    text-align: center;
+    h3 { text-align: center; }
   }
 }

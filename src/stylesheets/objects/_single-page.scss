@@ -2,6 +2,9 @@
   box: horizontal space-between;
 
   &-content {
+    .Lead {
+      margin-bottom: $spacer-single*2.5;
+    }
     > .container {
       padding: 0;
     }

@@ -6,12 +6,6 @@
   &--intro {
     margin-top: 0;
   }
-  &--center {
-    text-align: center;
-  }
-  &--white {
-    @include white;
-  }
   &--spaced {
     margin-top: $spacer-single*4;
     margin-bottom: $spacer-single*5.5;
@@ -19,6 +13,14 @@
   &--section {
     margin-bottom: $spacer-single*2.5;
     letter-spacing: .4px;
+  }
+  &--landing {
+    margin: $spacer-single 0 $spacer-single*6;
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+  &--body {
+    letter-spacing: 0;
   }
 }
 
@@ -28,6 +30,10 @@
 
 .caps {
   @include caps;
+}
+
+.center {
+  text-align: center;
 }
 
 .brand {
@@ -61,4 +67,32 @@
       margin-right: $spacer-half;
     }
   }
+}
+
+.content-body {
+  h2 {
+    color: $brand-primary;
+    margin-bottom: $spacer-single;
+  }
+  p {
+    margin-bottom: $spacer-single*1.5;
+    line-height: 1.6875;
+    a[href]:not([class]) {
+      @include hover($brand-primary);
+      @include underlink;
+      font-weight: $font-weight-medium;
+    }
+  }
+  li:not([class]) {
+    line-height: 1.6875;
+    margin-top: $spacer-threefourth;
+  }
+  ul ul > li:not([class]),
+  ol ol > li:not([class]),
+  ul ol > li:not([class]),
+  ol ul > li:not([class]) {
+    margin-top: $spacer-half;
+  }
+
+
 }

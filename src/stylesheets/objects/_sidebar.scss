@@ -3,13 +3,14 @@
   flex: 0 0 auto;
 
   // Table of contents
-  > .List {
+  > .Toc {
     margin-bottom: $spacer-single*3;
     a {
       // Default links in the TOC
-      @include hover($gray-dark, $blue);
+      @include hover($gray-dark, $brand-primary);
       display: block;
-      padding: $spacer-single $spacer-single*1.5;
+      padding: $spacer-single*1.25 $spacer-single*1.5;
+      font-weight: $font-weight-medium;
     }
     > li > a {
       border-bottom: 1px solid #eee;
@@ -23,22 +24,26 @@
   .is-Active {
     > a {
       @include white;
-      background-color: $brand-secondary;
+      @include hover($white);
+      background-color: $brand-highlight;
+      font-weight: $font-weight-bold;
     }
     > .List {
       // If active, show sub list
       display: block;
       margin-left: 0;
-      background-color: $callout-bg;
+      padding-left: $spacer-single*1.5;
+      background-color: #f9f9f9;
       a {
-        font-weight: $font-weight-light;
-        font-size: .92rem;
+        font-weight: $font-weight-normal;
       }
-    }
-    .is-Active a {
-      @include hover($brand-highlight);
-      background-color: transparent;
-      font-weight: $font-weight-bold;
+      > .is-Active {
+        border-right: 4px solid $brand-secondary;
+        a {
+          @include hover($gray-dark, $brand-primary);
+          background-color: transparent;
+        }
+      }
     }
   }
 
