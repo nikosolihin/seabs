@@ -214,6 +214,34 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "57eba1aab952a",
+                    "name": "feed",
+                    "label": "Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eba1aeb952b",
+                            "label": "Feed",
+                            "name": "feed",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_574dc76280653",
+                            "name_prefix": 0,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -235,5 +263,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Accordion Components Parent",
-    "modified": 1474887486
+    "modified": 1475060161
 }
