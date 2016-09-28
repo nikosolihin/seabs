@@ -9,7 +9,6 @@
  $context['post'] = $post;
  $context['acf'] = get_fields();
  $context['sections'] = $context['acf']['sections'];
- $context['sidebar_position'] = $context['acf']['sidebar_position'];
 
  // Get Sidebar
  $inherit = ($context['acf']['inherit'] === 'true');
