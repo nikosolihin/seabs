@@ -127,7 +127,8 @@
             "flickr_user_id": "",
             "flickr_limit": 1,
             "flickr_sizes": [
-                "url_q"
+                "url_q",
+                "url_o"
             ],
             "flickr_extras": ""
         },
@@ -228,5 +229,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Person",
-    "modified": 1474887753
+    "modified": 1475047783
 }

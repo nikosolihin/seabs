@@ -89,6 +89,8 @@ function populateList($options) {
       case 'person':
         $tax = 'role';
         $term_ids = $options['roles'];
+        $args['orderby'] = 'title';
+        $args['order'] = 'ASC';
         break;
     }
 

@@ -106,8 +106,37 @@
       }
     }
 
-    // If we're on single page, become 2 columns
+    // If we're on single page, become 2 columns, and apply
+    // extra styling
+    @at-root .SinglePage-content #{&} {
+      box: horizontal wrap;
+      .Feed-item {
+        box: vertical;
+        width: 33.333%;
+        border-right: 2rem solid transparent;
+        border-bottom: 2.75rem solid transparent;
+        padding: 0;
+        margin: 0;
 
+        .Feed-profile {
+          width: 100%;
+          margin-bottom: $spacer-threefourth;
+          div {
+            border-radius: 0;
+          }
+        }
+        .Feed-contact {
+          padding-left: 0;
+          font-size: $font-size-h5;
+          .h5 {
+            @extend .h4;
+          }
+          a, p {
+            line-height: 1.55;
+          }
+        }
+      }
+    }
   }
 
   &--event {

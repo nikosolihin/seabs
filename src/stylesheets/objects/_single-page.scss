@@ -28,4 +28,15 @@
       order: 1;
     }
   }
+
+  &--slimSidebar {
+    .SinglePage-content {
+      flex: 1 1 auto;
+      max-width: none;
+      padding-right: $spacer-single*3;
+    }
+    .SinglePage-sidebar {
+      width: 25%;
+    }
+  }
 }

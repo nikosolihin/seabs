@@ -188,6 +188,18 @@
                 "operator": "==",
                 "value": "news"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "people-page.php"
+            }
         ]
     ],
     "menu_order": 2,
@@ -198,5 +210,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Regular Page Builder",
-    "modified": 1474887759
+    "modified": 1475044837
 }
