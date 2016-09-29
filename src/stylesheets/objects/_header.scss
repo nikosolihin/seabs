@@ -1,27 +1,11 @@
 .Header {
-  box: vertical;
-  margin-bottom: $spacer-single*3;
-
-  // &-logo {
-  //   width: 20%;
-  //   flex: 0 0 auto;
-  //   a {
-  //     display: block;
-  //     padding: $spacer-single*1.5 $spacer-single;
-  //   }
-  // }
-  // &-nav {
-  //   flex: 1 1 auto;
-  //   a[href]:not([class]) {
-  //     display: block;
-  //     @include hover(inherit, #d35c37);
-  //   }
-  // }
+  // box: vertical;
+  // margin-bottom: $spacer-single*5;
 
   &-secondaryNav {
     box: horizontal right middle;
     background-color: #f5f5f5;
-    padding: .125rem $spacer-single*1.5;
+    padding: 0 $spacer-single*3;
     a {
       @include hover($gray-dark);
       font-size: $font-size-h6;
@@ -31,32 +15,20 @@
       margin-right: $spacer-single*1.5;
     }
   }
-
-  &-primaryNav {
-    box: horizontal space-between middle;
-    padding: $spacer-single $spacer-single*1.5;
-    a {
-      @include hover($gray-darker);
-      font-size: 1.05rem;
-      font-weight: $font-weight-light;
-      letter-spacing: .3px;
-      padding: 0 $spacer-single;
-    }
-    li {
-      margin-right: $spacer-single*1.25;
-      &:last-child {
-        margin: 0;
-      }
-    }
-  }
-
-  &-logo {
+  &-languages {
+    box: horizontal middle space-between;
+    color: $brand-primary;
+    width: $spacer-single*4;
+    padding: $spacer-half 0 $spacer-half $spacer-single*1.5;
+    margin-left: $spacer-single;
+    border-left: 1px solid #ddd;
+    cursor: pointer;
     svg {
-      fill: $brand-primary;
-      size: 110px;
+      fill: #888;
+      size: .6rem;
     }
   }
-
+  //============ Search ===============
   &-search {
     box: horizontal center middle;
     padding: $spacer-single*.35;
@@ -67,65 +39,4 @@
     }
   }
 
-  &-quickNav {
-    margin: 0 !important;
-  }
-
-
-
-    // @include from(lg) {
-    //   font-size: $font-size-h6 1.25;
-    // }
-    // a[href]:not([class]) {
-    //   color: $gray-lighter;
-    //   padding: $spacer-threefourth;
-    // }
-    // .List {
-    //   flex: 1 0 auto;
-    // }
-    // .Button {
-    //   margin: 0;
-    //   height: inherit;
-    //   border-radius: 0;
-    //   padding: $spacer-threefourth $spacer-single*1.5;
-    //   background-color: #D65B2D;
-    // }
-
-
-
-  //
-  // &-language {
-  //   position: relative;
-  //   cursor: pointer;
-  //   display: block;
-  //   border-left: 1px solid #555;
-  //   padding: $spacer-threefourth $spacer-single $spacer-threefourth $spacer-single*1.25;
-  //   height: 100%;
-  //   width: $spacer-single*6.5;
-  //   svg {
-  //     size: $spacer-half;
-  //     margin-right: 0;
-  //     margin-left: $spacer-half;
-  //   }
-  // }
-  //
-  // &-languageDropdown {
-  //   width: 100%;
-  //   position: absolute 48px auto auto 0;
-  //   background-color: $footer-bg-color;
-  //   padding: 0 $spacer-single*1.125 $spacer-quarter;
-  //   border-bottom: 5px solid #628b9d;
-  //   z-index: $zindex-header;
-  //   transition: all .1125s ease-in-out;
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   a {
-  //     padding: 0;
-  //     border-top: 1px solid #555;
-  //   }
-  //   &.is-Visible {
-  //     visibility: visible;
-  //     opacity: 1;
-  //   }
-  // }
 }

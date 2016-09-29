@@ -13,3 +13,17 @@
     transform: translate3d(0,0,0);
   }
 }
+
+@keyframes drop {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    box: horizontal;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

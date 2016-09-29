@@ -123,6 +123,9 @@ $caps-heading-letter-spacing:       .25px !default;
 $zindex-header:                  1100 !default;
 $zindex-searchbar:               1000 !default;
 $zindex-announcement:            1200 !default;
+$zindex-primarynav-dropdown:     1900 !default;
+$zindex-primarynav:              2000 !default;
+$zindex-primarynav-marker:       2010 !default;
 
 //=============================================
 // Components
@@ -182,4 +185,4 @@ $pill-padding-outline:         ($spacer-quarter - .105rem) ($spacer-threefourth 
 $card-height:               $spacer-single*10.5 !default;
 
 
-// TODO: Add horizontal TOC to the without sidebar template, Move close button on annonuncement bar to the right, Add more seo-tags, File download block, calendar .ics, Style table more, hide whatsapp share on desktop
+// TODO: Smooth out dropdown transition, A bunch of lazysizes error in the console, Add horizontal TOC to the without sidebar template, Move close button on annonuncement bar to the right, Add more seo-tags, File download block, calendar .ics, Style table more, hide whatsapp share on desktop
