@@ -53,10 +53,10 @@
   &-logo {
     @include square;
     position: absolute;
-    top: -$spacer-single*1.6875;
+    top: -.95rem;
     left: $spacer-single*5.5;
     z-index: 99999;
-    size: 133px;
+    size: 128px;
     border-radius: 50%;
     background-color: $white;
     svg {
@@ -65,27 +65,25 @@
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
       fill: $brand-primary;
-      size: 125px;
+      size: 120px;
     }
   }
 
   &-menu {
     box: horizontal middle center;
-    width: 92%;
-    padding-left: $spacer-single*8.125;
+    padding-left: $spacer-single*9.25;
+    flex: 1 0 auto;
   }
   &-menuItem {
     &:hover {
-      // > .Dropdown-panel {
-      //   animation: .125s drop ease-out;
-      //   box: horizontal;
-      //   opacity: 1;
-      // }
+      > .Dropdown-panel {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
   &-panel {
-    // box: horizontal space-between;
-    display: none;
+    box: horizontal space-between;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -98,6 +96,10 @@
     border-top: 1px solid #e5e5e5;
     box-shadow: 0px 7px 15px -6px rgba(0,0,0,.12);
     border-bottom: 1px solid #e8e8e8;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .1s ease-in-out;
+    // will-change: transform, opacity, visibility;
   }
   &-panelLeft {
     box: horizontal wrap;
@@ -117,7 +119,7 @@
   &-link {
     @include hover($gray, $brand-primary);
     display: inline-block;
-    padding: $spacer-single*1.85 $spacer-single;
+    padding: $spacer-single*2.25 $spacer-single;
     letter-spacing: .7px;
     &.is-Active {
       position: relative;
@@ -138,14 +140,35 @@
     }
   }
 
-
   // States
-  &--sticky {
-    .Dropdown-logo {
-      display: none;
-    }
-    .Dropdown-mark {
-      display: block;
-    }
-  }
+  // &--sticky {
+  //   position: fixed;
+  //   visibility: hidden;
+  //   transition: all 0s ease-out;
+  //   .Dropdown-logo {
+  //     display: none;
+  //   }
+  //   .Dropdown-mark {
+  //     display: block;
+  //   }
+  //   .Dropdown-menu {
+  //     width: initial;
+  //     padding-right: 3.5rem;
+  //     padding-left: 0;
+  //   }
+  //   .Dropdown-link {
+  //     padding: $spacer-single*1.025 $spacer-single;
+  //   }
+  // }
+  //
+  // &--close {
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   transition: all .2s ease-out;
+  // }
+  // &--open {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   transition: all .2s ease-out;
+  // }
 }

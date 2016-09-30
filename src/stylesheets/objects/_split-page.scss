@@ -1,0 +1,23 @@
+.SplitPage {
+  box: horizontal space-between;
+
+  &-secondary {
+    width: 20%;
+    font-size: .95rem;
+  }
+
+  &-content {
+    width: 56%;
+    padding: 0 $spacer-single*2.75;
+    .Lead {
+      margin-bottom: $spacer-single*2.5;
+    }
+    > .container {
+      padding: 0;
+    }
+  }
+
+  &-sidebar {
+    width: 24%;
+  }
+}

@@ -1,5 +1,8 @@
 .landing-page {
   box: horizontal space-around wrap;
+  &-teaser {
+    margin-top: $spacer-single*7;
+  }
   &--grid {
     margin-top: $spacer-single*7;
     margin-bottom: $spacer-single*7;

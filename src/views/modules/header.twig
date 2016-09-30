@@ -15,6 +15,21 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
     </svg>
   </a>
+  <a class="Header-social" href="">
+    <svg aria-hidden="true" role="presentation" title="Search Our Website">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+    </svg>
+  </a>
+  <a class="Header-social" href="">
+    <svg aria-hidden="true" role="presentation" title="Search Our Website">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+    </svg>
+  </a>
+  <a class="Header-social" href="">
+    <svg aria-hidden="true" role="presentation" title="Search Our Website">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+    </svg>
+  </a>
   <div class="Header-languages caps">
     <span>EN</span>
     <svg aria-hidden="true" role="presentation" title="Select Language">
@@ -23,7 +38,7 @@
   </div>
 </nav>
 
-<nav class="Dropdown Dropdown--sticky" role="navigation">
+<nav class="Dropdown" role="navigation">
   <a href="{{site.url}}" class="Dropdown-logo">
     <svg aria-hidden="true" role="presentation" title="">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
@@ -35,6 +50,51 @@
     </svg>
   </a>
   <div class="Dropdown-menu">
+    <div class="Dropdown-menuItem">
+      <a href="" class="Dropdown-link">About</a>
+      <div class="Dropdown-panel">
+        <div class="Dropdown-panelLeft">
+          <ul class="List">
+            <li>
+              <a href="{{parent.link}}" class="caps">Another</a>
+              <ul class="List-sublist">
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="List">
+            <li>
+              <a href="{{parent.link}}" class="caps">Another</a>
+              <ul class="List-sublist">
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+                <li><a href="{{child.link}}">Test</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="Dropdown-panelRight">
+          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
+            <a href="//localhost:3000/about-us/" class="Block-link">
+              <div class="Block-body">
+                <h5>Choralfest 2016</h5>
+              </div>
+            </a>
+          </div>
+          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
+            <a href="//localhost:3000/about-us/" class="Block-link">
+              <div class="Block-body">
+                <h5>Pretty Long Title</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="Dropdown-menuItem">
       <a href="" class="Dropdown-link is-Active">Campus Life</a>
       <div class="Dropdown-panel">
@@ -80,8 +140,53 @@
         </div>
       </div>
     </div>
+    <div class="Dropdown-menuItem">
+      <a href="" class="Dropdown-link">Academics</a>
+      <div class="Dropdown-panel">
+        <div class="Dropdown-panelLeft">
+          <ul class="List">
+            <li>
+              <a href="{{parent.link}}" class="caps">Test</a>
+              <ul class="List-sublist">
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="List">
+            <li>
+              <a href="{{parent.link}}" class="caps">Another</a>
+              <ul class="List-sublist">
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+                <li><a href="{{child.link}}">Another</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="Dropdown-panelRight">
+          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
+            <a href="//localhost:3000/about-us/" class="Block-link">
+              <div class="Block-body">
+                <h5>WEFEWFWEFEWF</h5>
+              </div>
+            </a>
+          </div>
+          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
+            <a href="//localhost:3000/about-us/" class="Block-link">
+              <div class="Block-body">
+                <h5>WFEWFEEWF</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <button type="button" class="Button Button--small Dropdown-quickNav" href="">More Info</button>
+  <a href="" class="Button Dropdown-quickNav" href="">More Info</a>
 </nav>
 
 </header>

@@ -54,7 +54,7 @@
   &-section {
     overflow: hidden;
     margin-bottom: $spacer-single*2.5;
-    &--center {
+    &--center .Sidebar-sectionHeading {
       text-align: center;
     }
     &--callout {
