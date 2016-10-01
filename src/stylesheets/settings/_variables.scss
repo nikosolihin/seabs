@@ -37,6 +37,7 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 ) !default;
+$desktop:                         'md' !default;
 $wrapper-width:                   1600px !default;
 $wrapper-narrow-width:            1400px !default;
 $container-width:                 1200px !default;
@@ -64,7 +65,7 @@ $list-style-type-ul-third:      circle !default;
 $list-style-type-ol-first:      decimal !default;
 $list-style-type-ol-second:     lower-alpha !default;
 $list-style-type-ol-third:      lower-roman !default;
-$list-padding-left:             $spacer-single*2 !default;
+$list-padding-left:             $spacer-single*1.125 !default;
 
 // HR ////////////////////////////////////////
 $hr-padding:                    $spacer-single*1.25 !default;
@@ -75,19 +76,12 @@ $svg-fill:                      currentColor !default;
 $svg-size:                      100% !default;
 $svg-margin:                    $spacer-half !default;
 
-// Tables /////////////////////////////////////
-// $table-cell-padding:            $three-quarter !default;
-// $table-bg:                      transparent !default;
-// $table-border-width:            1px !default;
-// $table-border-color:            $dimmed !default;
-// $table-bg-accent:               $muted !default;
-
 
 //=============================================
 // Typography
 //=============================================
 $font-size-root:               16px !default;
-$font-size-small:              14px !default;
+$font-size-small:              16px !default;
 $font-size:                    1rem !default;
 
 // Common properties //////////////////////////
@@ -122,10 +116,14 @@ $caps-heading-letter-spacing:       .25px !default;
 // Z-Index ///////////////////////////////////
 $zindex-header:                  1100 !default;
 $zindex-searchbar:               1000 !default;
-$zindex-announcement:            1200 !default;
 $zindex-primarynav-dropdown:     1900 !default;
 $zindex-primarynav:              2000 !default;
 $zindex-primarynav-marker:       2010 !default;
+
+$zindex-mobilenav:               4010 !default;
+$zindex-mobilepanel:             4000 !default;
+
+$zindex-announcement:            5000 !default;
 
 //=============================================
 // Components
@@ -152,7 +150,7 @@ $loader-color:                 lighten($gray-light, 40%) !default;
 // Banner ///////////////////////////////////
 $banner-small-height:          220px !default;
 $banner-medium-height:         400px !default;
-$banner-large-height:          650px !default;
+$banner-large-height:          570px !default;
 $banner-margin-bottom:         $spacer-single*3 !default;
 $banner-fallback:               repeating-linear-gradient(115deg,rgba(155,155,155,.15),rgba(155,155,155,0) 3px,rgba(155,155,155,0) 3px,rgba(155,155,155,0) 5px) !default;
 

@@ -1,6 +1,9 @@
 .Dropdown {
+  display: none;
+  @include from(lg) {
+    box: horizontal space-between middle nowrap;
+  }
   position: relative;
-  box: horizontal space-between middle nowrap;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -40,16 +43,6 @@
     margin-bottom: 0;
   }
 
-  &-mark {
-    display: none;
-    // box: vertical middle;
-    padding: $spacer-half 0;
-    svg {
-      fill: $brand-primary;
-      width: 157px;
-      height: 30px;
-    }
-  }
   &-logo {
     @include square;
     position: absolute;
@@ -83,10 +76,7 @@
   }
   &-panel {
     display: none;
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: absolute auto auto 0 0;
     transform: translateY(100%);
     padding: $spacer-threefourth 8rem;
     max-width: none;

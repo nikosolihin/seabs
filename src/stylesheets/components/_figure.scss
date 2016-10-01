@@ -24,14 +24,14 @@
     }
   }
   &--left {
-    @include from(md) {
+    @include from($desktop) {
       float: left;
       margin: $spacer-half $spacer-single*2.5 $spacer-half 0;
       max-width: 50%;
     }
   }
   &--right {
-    @include from(md) {
+    @include from($desktop) {
       float: right;
       margin: $spacer-half -25px $spacer-half $spacer-single * 1.75;
       max-width: 50%;

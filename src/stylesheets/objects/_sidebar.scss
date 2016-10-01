@@ -1,4 +1,8 @@
 .Sidebar {
+  display: none;
+  @include from(lg) {
+    display: block;
+  }
   width: 27.5%;
   flex: 0 0 auto;
 

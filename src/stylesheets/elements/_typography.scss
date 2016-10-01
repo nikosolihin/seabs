@@ -105,7 +105,9 @@ hr {
   border: 0;
   margin: $spacer-single*4 0;
   position: relative;
-  left: -$spacer-single*1.25;
+  @include from(lg) {
+    left: -$spacer-single*1.25;
+  }
 }
 
 blockquote {

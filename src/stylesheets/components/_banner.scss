@@ -2,25 +2,30 @@
   @include cover;
   @include white;
   @include overlay(false, 'rgba(0,0,0,0) 30%, rgba(0,0,0,.7) 80%' );
-  box: vertical middle center;
+  box: vertical bottom;
   position: relative;
-  margin-bottom: $spacer-single*5;
+  padding-bottom: $spacer-single*2.25;
+
+  margin-bottom: $spacer-single*3;
+  @include from($desktop) {
+    margin-bottom: $spacer-single*5;
+  }
 
   h1 {
-    font-size: $font-size-h1;
-    font-weight: $font-weight-light !important;
+    font-size: $font-size-h2;
+    @include from($desktop) {
+      font-size: $font-size-h1;
+    }
     line-height: 1.15;
     letter-spacing: .5px;
     text-shadow: 1px 1px 1px rgba(0,0,0,.5);
-    max-width: 65%;
-  }
-  .container {
-    position: relative;
-    z-index: 1;
   }
 
-  &-content {
-    margin-bottom: $spacer-single*2.25;
+  .container {
+    @include from(xl) {
+      min-width: $container-width;
+      margin: 0 auto;
+    }
   }
 
   // Styles
@@ -33,9 +38,5 @@
   }
   &--bottom {
     background-position: bottom center;
-  }
-
-  &--textbottom {
-    justify-content: flex-end;
   }
 }

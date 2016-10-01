@@ -2,6 +2,20 @@
   box: horizontal space-around wrap;
   &-teaser {
     margin-top: $spacer-single*7;
+    .Lead {
+      font-size: $font-size-h3;
+      @include from(md) {
+        font-size: $font-size-h2;
+      }
+    }
+  }
+  &-content {
+    .Lead--body {
+      font-size: $font-size-h4;
+      @include from(lg) {
+        font-size: $font-size-h3;
+      }
+    }
   }
   &--grid {
     margin-top: $spacer-single*7;
@@ -82,10 +96,16 @@
 
 .Solo {
   box: vertical;
-  width: 50%;
-  border: $spacer-single*1.5 solid transparent;
   margin-bottom: $spacer-single*3;
   flex: 0 0 auto;
+  width: 100%;
+  @include from(md) {
+    width: 50%;
+    border: $spacer-single solid transparent;
+  }
+  @include from(lg) {
+    border: $spacer-single*1.5 solid transparent;
+  }
 
   &-image {
     @include white;
@@ -94,7 +114,10 @@
     @include promote;
     position: relative;
     box: vertical bottom;
-    min-height: $spacer-single*22;
+    min-height: $spacer-single*19;
+    @include from(md) {
+      min-height: $spacer-single*22;
+    }
     padding: $spacer-single*2;
   }
   &-content {
@@ -104,8 +127,11 @@
     border-bottom: 4px solid #f5f5f5;
     a {
       display: block;
-      width: 33%;
       padding: $spacer-half $spacer-single;
+      width: 50%;
+      @include from(md) {
+        font-size: 1.125rem;
+      }
     }
   }
 

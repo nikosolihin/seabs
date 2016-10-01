@@ -153,15 +153,15 @@
   }
 }
 @mixin at($name, $breakpoints: $grid-breakpoints) {
-  @include media-breakpoint-up($name, $breakpoints) {
-    @include media-breakpoint-down($name, $breakpoints) {
+  @include from($name, $breakpoints) {
+    @include to($name, $breakpoints) {
       @content;
     }
   }
 }
 @mixin between($lower, $upper, $breakpoints: $grid-breakpoints) {
-  @include media-breakpoint-up($lower, $breakpoints) {
-    @include media-breakpoint-down($upper, $breakpoints) {
+  @include from($lower, $breakpoints) {
+    @include to($upper, $breakpoints) {
       @content;
     }
   }

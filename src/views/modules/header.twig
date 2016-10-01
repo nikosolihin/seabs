@@ -44,11 +44,6 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
     </svg>
   </a>
-  <a href="{{site.url}}" class="Dropdown-mark">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mark"></use>
-    </svg>
-  </a>
   <div class="Dropdown-menu">
     <div class="Dropdown-menuItem">
       <a href="" class="Dropdown-link">About</a>
@@ -188,5 +183,98 @@
   </div>
   <a href="" class="Button Dropdown-quickNav" href="">More Info</a>
 </nav>
+
+<!-- <form class="SearchBar" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
+  <input class="SearchBar-input" id="SearchBar-input" type="text" name="q">
+  <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
+</form> -->
+
+<nav class="MobileNav MobileNav--open" role="navigation" data-component="mobile-nav">
+  <a href="{{site.url}}" class="MobileNav-mark">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mark"></use>
+    </svg>
+  </a>
+  <div class="MobileNav-right">
+    <a href="" class="MobileNav-search">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+      </svg>
+    </a>
+    <a href="" class="Burger">
+      <div class="Burger-box">
+        <div class="Burger-inner"></div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div class="MobilePanel">
+  <div class="MobilePanel-primary">
+    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">About Us</a>
+    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Academics</a>
+    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Campus Life</a>
+    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Admissions</a>
+    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Resources</a>
+  </div>
+
+  <div class="MobilePanel-secondary">
+    <div class="MobilePanel-quicklinks">
+      <h5 class="tag brand">Quicklinks</h5>
+      <h5><a href="">Events</a></h5>
+      <h5><a href="">Academic Calendar</a></h5>
+      <h5><a href="">News</a></h5>
+      <h5><a href="">Media</a></h5>
+    </div>
+    <div class="MobilePanel-quicklinks">
+      <h5 class="tag brand">Info For...</h5>
+      <h5><a href="">Students</a></h5>
+      <h5><a href="">Faculty & Staff</a></h5>
+      <h5><a href="">Parents</a></h5>
+      <h5><a href="">Alumni</a></h5>
+    </div>
+  </div>
+
+  <div class="MobilePanel-blocks">
+    <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
+      <a href="//localhost:3000/about-us/" class="Block-link">
+        <div class="Block-body">
+          <h5>I am a pretty long block title</h5>
+        </div>
+      </a>
+    </div>
+    <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
+      <a href="//localhost:3000/about-us/" class="Block-link">
+        <div class="Block-body">
+          <h5>Another Featured Block</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="MobilePanel-social">
+    <h5 class="tag center">Social</h5>
+    <a href="" class="MobilePanel-socialLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
+      </svg>
+    </a>
+    <a href="" class="MobilePanel-socialLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
+      </svg>
+    </a>
+    <a href="" class="MobilePanel-socialLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
+      </svg>
+    </a>
+    <a href="" class="MobilePanel-socialLink">
+      <svg aria-hidden="true" role="presentation" title="">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
+      </svg>
+    </a>
+  </div>
+</div>
 
 </header>
