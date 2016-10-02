@@ -1,11 +1,12 @@
 .MobileNav {
   box: horizontal middle space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: $zindex-mobilenav;
   padding: 0 $spacer-single*1.25;
+  background-color: #f9f9f9;
+  transition: background-color .25s ease-in-out;
+  will-change: background-color, fill;
 
   &-mark {
     box: vertical middle;
@@ -14,33 +15,33 @@
       fill: $brand-primary;
       width: 132px;
       height: 28px;
+      transition: fill .4s ease-in;
+      will-change: fill;
     }
   }
   &-right {
     box: horizontal middle;
     position: relative;
-    top: $spacer-single;
-    z-index: $zindex-primarynav-marker;
+    top: 13px;
   }
   &-search {
-    position: relative;
     box: vertical center middle;
-    size: $spacer-single*3.75;
-    background-color: $callout-bg;
-    margin-right: $spacer-single;
+    size: $spacer-single*3.25;
+    background-color: #f2f2f2;
+    margin-right: $spacer-half;
     svg {
       fill: $brand-primary;
-      size: $spacer-single*1.75;
+      size: $spacer-single*1.5;
     }
+  }
+  &-burger {
+    size: $spacer-single*3.25;
   }
 
   &--open {
     background-color: $brand-secondary;
     .MobileNav-mark svg {
       fill: $white;
-    }
-    .MobileNav-search svg {
-      fill: $brand-primary;
     }
   }
 }
@@ -53,17 +54,26 @@
   height: 100%;
   overflow: scroll;
   z-index: $zindex-mobilepanel;
-  padding-top: 58px;
   background-color: #111;
+
+  will-change: transform, opacity;
+  transition: transform .3s cubic-bezier(.175,.885,.24,1.11) , opacity .2s ease-in;
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+  &--open {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 
   &-primary {
     box: vertical;
     background-color: $brand-highlight;
     padding: $spacer-single*1.5;
+    padding-top: $spacer-single*5.125;
 
     .MobilePanel-link {
       @include hover($white);
-      font-size: $font-size-h4;
+      font-size: 1.125rem;
       font-weight: $font-weight-medium;
       padding: $spacer-threefourth 0;
     }
@@ -92,6 +102,7 @@
 
   &-social {
     box: horizontal space-around wrap;
+    background-color: #111;
     padding: $spacer-single*1.5;
     svg {
       fill: $white;
@@ -99,7 +110,6 @@
     }
     .tag {
       width: 100%;
-      // margin-bottom: : 0;
     }
   }
   &-socialLink {

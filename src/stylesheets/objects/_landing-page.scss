@@ -1,7 +1,10 @@
 .landing-page {
   box: horizontal space-around wrap;
   &-teaser {
-    margin-top: $spacer-single*7;
+    margin-top: $spacer-single*4.5;
+    @include from(lg) {
+      margin-top: $spacer-single*7;
+    }
     .Lead {
       font-size: $font-size-h3;
       @include from(md) {

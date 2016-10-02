@@ -184,12 +184,19 @@
   <a href="" class="Button Dropdown-quickNav" href="">More Info</a>
 </nav>
 
-<!-- <form class="SearchBar" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
-  <input class="SearchBar-input" id="SearchBar-input" type="text" name="q">
-  <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
-</form> -->
+<div class="SearchBar">
+  <form class="SearchBar-form" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
+    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
+    <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
+  </form>
+  <!-- <a href="" class="SearchBar-close">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use>
+    </svg>
+  </a> -->
+</div>
 
-<nav class="MobileNav MobileNav--open" role="navigation" data-component="mobile-nav">
+<nav class="MobileNav" role="navigation" data-component="mobile-nav">
   <a href="{{site.url}}" class="MobileNav-mark">
     <svg aria-hidden="true" role="presentation" title="">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mark"></use>
@@ -201,9 +208,11 @@
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
       </svg>
     </a>
-    <a href="" class="Burger">
-      <div class="Burger-box">
-        <div class="Burger-inner"></div>
+    <a href="" class="MobileNav-burger">
+      <div class="Burger">
+        <div class="Burger-box">
+          <div class="Burger-inner"></div>
+        </div>
       </div>
     </a>
   </div>

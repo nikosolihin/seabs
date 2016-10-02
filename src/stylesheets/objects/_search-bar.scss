@@ -1,5 +1,48 @@
 .SearchBar {
-  color: $white;
-  background-color: $brand-secondary;
-  padding: $spacer-single;
+  box: horizontal top space-between;
+  position: relative;
+  z-index: $zindex-searchbar;
+  background-color: #222;
+  padding: 0 $spacer-single;
+  overflow: hidden;
+  max-height: 0;
+
+  &--open {
+    max-height: 500px;
+  }
+
+  &-form {
+    flex: 1 0 auto;
+    margin: $spacer-single 0;
+  }
+  &-close {
+    box: vertical middle center;
+    size: $spacer-single*2;
+    margin-left: $spacer-threefourth;
+    svg {
+      fill: $white;
+      size: $spacer-single*2;
+      transform: rotate(45deg);
+    }
+  }
+  &-input {
+    width: 100%;
+    color: $white;
+    border: 0;
+    border-bottom: 1px solid #444;
+    margin-bottom: $spacer-half;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    letter-spacing: .7px;
+    padding: $spacer-threefourth 0;
+
+    &:focus {
+      border: 0;
+      border-bottom: 1px solid #444;
+    }
+  }
+  &-label {
+    color: #999;
+    font-size: $font-size-h6;
+  }
 }

@@ -120,8 +120,11 @@ $zindex-primarynav-dropdown:     1900 !default;
 $zindex-primarynav:              2000 !default;
 $zindex-primarynav-marker:       2010 !default;
 
-$zindex-mobilenav:               4010 !default;
+$zindex-body-overlay:            3000 !default;
+
 $zindex-mobilepanel:             4000 !default;
+$zindex-mobilenav:               4010 !default;
+$zindex-searchbar:               4020 !default;
 
 $zindex-announcement:            5000 !default;
 
