@@ -1,30 +1,170 @@
-<header class="Header wrapper">
+{% if site.id == '1' %}
+  {% set language = 'id' %}
+{% elseif site.id == '2' %}
+  {% set language = 'en' %}
+{% else %}
+  {% set language = 'zh' %}
+{% endif %}
 
-  <nav class="Header-secondaryNav" role="navigation">
-    <ul class="List List--inline">
-      {% for item in secondary_menu %}
-        <li><a href="{{item.url}}">{{item.title}}</a></li>
+<header class="Header">
+
+<div class="SearchBar">
+  <form class="SearchBar-form container" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
+    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
+    <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
+  </form>
+</div>
+
+<nav class="Header-secondaryNav" role="navigation">
+  <ul class="List List--inline">
+    {% for item in secondary_menu %}
+      <li><a href="{{item.url}}" class="Header-secondaryNavLink">{{item.title}}</a></li>
+    {% endfor %}
+  </ul>
+  <a class="Header-search" href="">
+    <svg aria-hidden="true" role="presentation" title="{{__('Search Our Website', 'saat')}}">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+    </svg>
+  </a>
+  {% for name, link in social %}
+    {% if link %}
+    <a class="Header-social" href="{{link}}">
+      <svg aria-hidden="true" role="presentation" title="{{name}}">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+      </svg>
+    </a>
+    {% endif %}
+  {% endfor %}
+  <div class="Header-languages">
+    <span class="caps brand">{{language}}</span>
+    <svg aria-hidden="true" role="presentation" title="Select Language">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
+    </svg>
+    <div class="Header-languagesDropdown">
+      <a href="{{site.url}}/" class="Header-languagesLink caps brand">ID</a>
+      <a href="{{site.url}}/en/" class="Header-languagesLink caps brand">EN</a>
+      <a href="{{site.url}}/zh/" class="Header-languagesLink caps brand">ZH</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="Dropdown" role="navigation">
+  <a href="{{site.url}}" class="Dropdown-logo">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
+    </svg>
+  </a>
+  <div class="Dropdown-menu">
+    {% for parent in primary_menu %}
+      <div class="Dropdown-menuItem">
+        {% if parent.link in current_url %}
+          {% set is_active = ' is-Active' %}
+        {% endif %}
+        <a href="{{parent.link}}" class="Dropdown-link {{is_active}}">{{parent.title}}</a>
+        {% if parent.children %}
+        <div class="Dropdown-panel">
+          <div class="Dropdown-panelLeft">
+            {% for child in parent.children %}
+              <div class="List">
+                <a href="{{child.link}}" class="caps">{{child.title}}</a>
+                {% if child.grandchildren %}
+                  <ul class="List-sublist">
+                    {% for grandchild in child.grandchildren %}
+                      <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
+            {% if parent.singles %}
+            <div class="List">
+              {% for single in parent.singles %}
+                <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="Dropdown-panelRight">
+            {% include 'components/blocks.twig' with {'data': {'blocks': parent.blocks}} %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="Dropdown-audience">
+    <a class="Button Dropdown-audienceButton">{{audience_label}}
+      <svg aria-hidden="true" role="presentation" title="Select Language">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
+      </svg>
+    </a>
+    <div class="Dropdown-audienceDropdown">
+      {% for link in audience_links %}
+        <h5><a href="{{link.url}}" class="Dropdown-audienceLinks">{{link.text}}</a></h5>
       {% endfor %}
-    </ul>
-    <a class="Header-search" href="">
-      <svg aria-hidden="true" role="presentation" title="Search Our Website">
+    </div>
+  </div>
+</nav>
+
+<nav class="MobileNav" role="navigation" data-component="mobile-nav">
+  <a href="{{site.url}}" class="MobileNav-mark">
+    <svg aria-hidden="true" role="presentation" title="">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mark"></use>
+    </svg>
+  </a>
+  <div class="MobileNav-right">
+    <a href="" class="MobileNav-search">
+      <svg aria-hidden="true" role="presentation" title="">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
       </svg>
     </a>
-  </nav>
+    <a href="" class="MobileNav-burger">
+      <div class="Burger">
+        <div class="Burger-box">
+          <div class="Burger-inner"></div>
+        </div>
+      </div>
+    </a>
+  </div>
+</nav>
 
-  <nav class="Header-primaryNav" role="navigation">
-    <div class="Header-logo">
-      <svg aria-hidden="true" role="presentation" title="">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
-      </svg>
-    </div>
-    <ul class="List List--inline">
-      {% for item in primary_menu %}
-        <li><a href="{{item.url}}">{{item.title}}</a></li>
+<div class="MobilePanel">
+  <div class="MobilePanel-primary">
+    {% for item in primary_menu %}
+      <a href="{{item.link}}" class="MobilePanel-link Lead">{{item.title}}</a>
+    {% endfor %}
+  </div>
+  <div class="MobilePanel-secondary">
+    <div class="MobilePanel-quicklinks">
+      <h5 class="tag brand">{{__('Quicklinks', 'saat')}}</h5>
+      {% for item in secondary_menu %}
+        <h5><a href="{{item.url}}">{{item.title}}</a></h5>
       {% endfor %}
-    </ul>
-    <button type="button" class="Button Header-quickNav" href="">More Info</button>
-  </nav>
+    </div>
+    <div class="MobilePanel-quicklinks">
+      <h5 class="tag brand">{{audience_label}}</h5>
+      {% for link in audience_links %}
+        <h5><a href="{{link.url}}">{{link.text}}</a></h5>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="MobilePanel-blocks">
+    {% include 'components/blocks.twig' with {'data': {'blocks': mobile_blocks}} %}
+  </div>
+
+  <div class="MobilePanel-social">
+    <h5 class="tag center">Social</h5>
+    {% for name, link in social %}
+      {% if link %}
+      <a href="{{link}}" class="MobilePanel-socialLink">
+        <svg aria-hidden="true" role="presentation" title="{{name}}">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+        </svg>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
 
 </header>

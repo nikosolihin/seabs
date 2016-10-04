@@ -5,10 +5,9 @@
     @include square;
     display: block;
     position: relative;
-    width: 50px;
+    width: 60px;
     background-color: #eee;
     margin-right: 10px;
-    border-radius: 3px;
     transition: all .08s ease-in-out;
     &:hover {
       background-color: $brand-secondary;

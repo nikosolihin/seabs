@@ -49,6 +49,9 @@
   }
   &--panel {
     @include square(54%);
+    @at-root .Sidebar-section #{&} {
+      @include square(75%);
+    }
   }
   &--overlay {
     @include overlay(true, rgba(0,0,0,.55));

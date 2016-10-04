@@ -4,7 +4,7 @@
   {% set layout = acf.landing_layout %}
 
   {% if acf.teaser %}
-  <div class="container container--text-nosidebar">
+  <div class="container container--text-nosidebar landing-page-teaser">
     <h5 class="tag brand center">About Us</h5>
     <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
   </div>
@@ -32,7 +32,7 @@
             {% if child.children %}
               <div class="Solo-content">
                 {% for grandchild in child.children %}
-                  <a href="{{grandchild.link}}" class="h4 Lead">{{grandchild.title}}</a>
+                  <a href="{{grandchild.link}}" class="h5 Lead">{{grandchild.title}}</a>
                 {% endfor %}
               </div>
             {% endif %}
@@ -82,7 +82,7 @@
   {% endif %}
 
   {% if acf.position == "after" %}
-    <div class="container container--spacedTop">
+    <div class="landing-page-content container container--spacedTop">
       {% include 'layout/base.twig' %}
     </div>
   {% endif %}

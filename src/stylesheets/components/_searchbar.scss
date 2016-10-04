@@ -1,42 +1,54 @@
-.Searchbar {
-  @include white;
-  box: vertical;
-  position: absolute;
-  top: 151px;
+.SearchBar {
+  position: relative;
   z-index: $zindex-searchbar;
-  width: 100%;
-  max-width: $wrapper-width;
-  padding: $spacer-single*2 0;
-  background-color: #222;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate3d(0, -5%, 0);
-  transition: all .105s ease-in-out;
-  &.is-Visible {
-    visibility: visible;
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  background-color: #171717;
+  padding: 0 $spacer-single;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .12s ease-in-out;
+  will-change: max-height;
+
+  &--open {
+    // need to be the same with MobilePanel--openWithSearch padding top
+    max-height: $spacer-single*15;
   }
 
   &-form {
-    box: horizontal middle;
-  }
-  &-icon {
-    size: $spacer-single*1.5;
-    fill: #666;
-    margin-right: $spacer-threefourth;
-    margin-top: $spacer-half;
+    flex: 1 0 auto;
+    @include to(lg) {
+      margin: $spacer-single*2 0;
+    }
+    @include from(lg) {
+      margin-top: $spacer-single*3;
+      margin-bottom: $spacer-single*3;
+    }
   }
   &-input {
+    width: 100%;
+    color: $white;
+    border: 0;
+    border-bottom: 1px solid #444;
+    margin-bottom: $spacer-quarter;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    letter-spacing: .7px;
     padding: 0;
-    border: none;
-    font-size: $font-size-h1;
+    padding-bottom: $spacer-half;
+    @include from(lg) {
+      font-size: $font-size-h2;
+    }
+
+    &:focus {
+      border: 0;
+      border-bottom: 1px solid #444;
+    }
   }
   &-label {
-    display: block;
-    color: #bbb;
-    border-top: 1px solid #333;
-    margin-top: $spacer-half;
-    padding-top: .125rem;
+    color: #999;
+    font-size: $font-size-h6;
+    margin-bottom: 0;
+    @include from(lg) {
+      font-size: $font-size-h5;
+    }
   }
 }

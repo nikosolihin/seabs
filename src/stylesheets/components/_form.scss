@@ -1,0 +1,5 @@
+.Form {
+  @include to(sm) {
+    @include fullwidth;
+  }
+}

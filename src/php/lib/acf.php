@@ -178,7 +178,7 @@ function menu_relationship_query( $args, $field, $post_id ) {
   $args['post_parent'] = 0;
   return $args;
 }
-add_filter('acf/fields/relationship/query/name=primary_menu', 'menu_relationship_query', 10, 3);
+add_filter('acf/fields/post_object/query/name=parent', 'menu_relationship_query', 10, 3);
 add_filter('acf/fields/relationship/query/name=footer', 'menu_relationship_query', 10, 3);
 
 //=============================================

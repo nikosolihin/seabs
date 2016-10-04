@@ -8,6 +8,9 @@
     > .container {
       padding: 0;
     }
+    @include to(lg) {
+      margin: 0 auto;
+    }
   }
 
   // Sidebar alignments
@@ -17,6 +20,9 @@
     }
     .SinglePage-content {
       order: 2;
+      @include at(lg) {
+        padding-left: $spacer-single;
+      }
     }
   }
 
@@ -26,6 +32,9 @@
     }
     .SinglePage-content {
       order: 1;
+      @include at(lg) {
+        padding-right: $spacer-single;
+      }
     }
   }
 
@@ -33,7 +42,9 @@
     .SinglePage-content {
       flex: 1 1 auto;
       max-width: none;
-      padding-right: $spacer-single*3;
+      @include from(lg) {
+        padding-right: $spacer-single*3;
+      }
     }
     .SinglePage-sidebar {
       width: 25%;

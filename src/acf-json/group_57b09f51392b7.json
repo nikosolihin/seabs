@@ -18,55 +18,6 @@
             "message": "This template splits the sidebar into two parts, primary and secondary, located in the left and right side of the page's main content. The primary sidebar will be wider than the secondary and will use contents defined in the sidebar builder, while the secondary's contents will come from the secondary builder.",
             "new_lines": "",
             "esc_html": 0
-        },
-        {
-            "key": "field_57b09f514592b",
-            "label": "Primary Sidebar Position",
-            "name": "sidebar_position",
-            "type": "radio",
-            "instructions": "The secondary sidebar will be positioned opposite of the primary.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "Left",
-                "right": "Right"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "right",
-            "layout": "horizontal",
-            "return_format": "value"
-        },
-        {
-            "key": "field_57b09f51459db",
-            "label": "Banner Size",
-            "name": "banner_size",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "small": "Small",
-                "medium": "Medium",
-                "large": "Large"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "save_other_choice": 0,
-            "default_value": "medium",
-            "layout": "horizontal",
-            "return_format": "value"
         }
     ],
     "location": [
@@ -79,7 +30,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "split-sidebars.php"
+                "value": "split-page.php"
             }
         ]
     ],
@@ -91,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Split Sidebars",
-    "modified": 1474887819
+    "modified": 1475258896
 }

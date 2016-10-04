@@ -85,6 +85,12 @@ a[href]:not([class]) {
   display: inline;
 }
 
+a[href^="mailto"]:not([class]) {
+  @include hover($headings-color, $brand-primary);
+  @include underlink;
+  display: inline;
+}
+
 // No margin for only-child paragraph
 p:only-child,
 p:last-child,
@@ -99,7 +105,9 @@ hr {
   border: 0;
   margin: $spacer-single*4 0;
   position: relative;
-  left: -$spacer-single*1.25;
+  @include from(lg) {
+    left: -$spacer-single*1.25;
+  }
 }
 
 blockquote {

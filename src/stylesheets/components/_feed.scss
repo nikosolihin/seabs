@@ -109,17 +109,31 @@
     // If we're on single page, become 2 columns, and apply
     // extra styling
     @at-root .SinglePage-content #{&} {
-      box: horizontal wrap;
+      box: vertical;
+      @include from(sm) {
+        box: horizontal wrap;
+      }
       .Feed-item {
         box: vertical;
-        width: 33.333%;
-        border-right: 2rem solid transparent;
+        @include from(sm) {
+          width: 50%;
+          &:nth-child(odd) {
+            border-right: $spacer-single*1.25 solid transparent;
+          }
+        }
+        @include from(md) {
+          width: 33.333%;
+          border-right: $spacer-single*2 solid transparent;
+        }
         border-bottom: 2.75rem solid transparent;
         padding: 0;
         margin: 0;
 
         .Feed-profile {
-          width: 100%;
+          width: 70%;
+          @include from(sm) {
+            width: 100%;
+          }
           margin-bottom: $spacer-threefourth;
           div {
             border-radius: 0;
