@@ -232,7 +232,7 @@
             "label": "Footer",
             "name": "footer",
             "type": "relationship",
-            "instructions": "Pick parent pages to show in footers. Children of these pages will automatically be pulled.",
+            "instructions": "Pick parent pages to show in footers. Children of these pages as well as dynamic post types will automatically be pulled.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -251,6 +251,30 @@
             "min": 1,
             "max": 7,
             "return_format": "id"
+        },
+        {
+            "key": "field_57f3ba80fcca0",
+            "label": "Background",
+            "name": "footer_bg",
+            "type": "flickr_browser",
+            "instructions": "This is the faint photo of the seal in the dark background. Keep file size in mind when changing this to something else.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_z",
+                "url_c",
+                "url_l",
+                "url_o"
+            ],
+            "flickr_extras": ""
         },
         {
             "key": "field_57f23feafe364",
@@ -321,5 +345,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1475558218
+    "modified": 1475592019
 }

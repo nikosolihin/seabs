@@ -1,25 +1,42 @@
 .Footer {
   box: horizontal wrap;
-  padding-top: $spacer-single*4.5;
-  padding-bottom: $spacer-single*2.5;
-  font-size: $font-size-h5;
-  @include from(lg) {
-    font-size: $font-size-h6 1.25;
+  font-size: $font-size-h6 1.25;
+  padding: $spacer-single 0;
+  @include from(md) {
+    padding-top: $spacer-single*5;
+    padding-bottom: $spacer-single*3.75;
   }
 
   a[href]:not([class]) {
-    @include hover($footer-children-color, $blue);
+    @include hover($footer-children-color);
   }
 
   &-wrapper {
-    @include cover;
+    background-repeat: no-repeat;
     background-color: $footer-bg-color;
-    background-position: top center;
     margin-top: $spacer-single*8;
+    background-size: cover;
+    background-position: center right;
+    @include from(md) {
+      background-size: auto 100%;
+      background-position: 40% 70%;
+    }
+    @include from(lg) {
+      background-size: auto 115%;
+      background-position: 25% 70%;
+    }
+    @include from(xl) {
+      background-size: auto 130%;
+      background-position: 40% 60%;
+    }
+    @include from(xxl) {
+      background-size: auto 130%;
+      background-position: 100% 60%;
+    }
   }
   &-heading {
     display: block;
-    margin-bottom: $spacer-half;
+    margin-bottom: $spacer-single*1.25;
     color: $footer-parent-color;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
@@ -38,51 +55,99 @@
     flex: 0 0 auto;
   }
   &-top {
-    box: horizontal space-between;
+    padding: 0 $spacer-single;
+    display: none;
+    @include from(md) {
+      display: block;
+    }
   }
   &-bottom {
-    box: horizontal;
-    border-top: 1px solid #ddd;
-    margin-top: $spacer-single*3;
-    padding-top: $spacer-single*3;
-    > * {
-      margin-right: $spacer-single*3.5;
+    box: vertical center;
+    @include from(md) {
+      box: horizontal;
+      border-top: 1px solid #333;
+      margin-top: $spacer-single*3;
+      padding-top: $spacer-single*3;
     }
   }
   &-logo {
-    width: 15%;
     box: horizontal center;
+    width: 11%;
+    @include from(md) {
+      width: 15%;
+      margin-right: $spacer-single*1.5;
+    }
     flex: 0 0 auto;
-    margin-right: $spacer-single*1.5;
     svg {
-      fill: #aaa;
-      size: 100px;
+      size: 90px;
+      fill: $brand-highlight;
+      @include from(md) {
+        fill: $white;
+      }
+    }
+  }
+  &-contacts {
+    box: vertical center;
+    border-top: 1px solid #333;
+    padding-top: $spacer-single*1.5;
+    @include from(md) {
+      box: horizontal wrap;
+      border: 0;
+      padding-top: 0;
     }
   }
   &-contact {
+    text-align: center;
+    @include from(md) {
+      text-align: left;
+      padding-right: $spacer-single*2;
+    }
+    margin-bottom: $spacer-single*2;
+    @include from(lg) {
+      padding-right: $spacer-single*3.5;
+    }
     h5 {
       color: $footer-parent-color;
       font-weight: $font-weight-bold;
       margin-bottom: $spacer-quarter;
+      @include to(sm) {
+        text-align: center;
+      }
     }
     p {
-      line-height: 1.65;
+      line-height: 1.45;
+      color: $footer-children-color;
+    }
+    abbr {
+      color: $white;
+    }
+    &:nth-of-type(n+3) {
+      @include to(sm) {
+        display: none;
+      }
     }
   }
 
   .List {
-    box: horizontal;
+    box: horizontal wrap;
+    width: 100%;
+    text-align: left;
     > li {
-      margin-right: $spacer-single*2.5;
+      display: block;
+      width: 25%;
+      @include from(xl) {
+        width: 20%;
+      }
+      @include from(xxl) {
+        width: 16.65%;
+      }
+      padding-right: $spacer-single*2;
+      margin-bottom: $spacer-single*2.25;
     }
     .List-sublist {
       @include normalist;
-      display: none;
-      @include from(lg) {
-        display: block;
-      }
       li {
-        margin-bottom: $spacer-half;
+        margin-bottom: $spacer-threefourth;
       }
       a {
         color: $footer-children-color;
@@ -93,25 +158,38 @@
   @at-root {
     .legal {
       @include white;
-      padding: $spacer-threefourth 0;
+      padding: .85rem 0;
       background-color: $footer-legal-bg;
-      font-size: $font-size-h5;
-      @include from(lg) {
+      font-size: $font-size-h6;
+      @include from(md) {
         font-size: $font-size-h7;
       }
       .container {
         box: horizontal space-between;
       }
-      &-copy + span {
+      &-dot {
         margin: 0 $spacer-half;
         font-size: .6rem;
       }
-      &-language {
-        padding: 0 .65rem;
-        border-right: 1px solid #383838;
+      &-link {
+        @include hover($white);
+        @include underlink;
         font-weight: $font-weight-bold;
-        &:last-of-type {
-          border: none;
+      }
+      &-languages {
+        display: none;
+        @include from(md) {
+          display: block;
+        }
+        .legal-link {
+          // The language links
+          margin: 0 .65rem;
+        }
+      }
+      &-legal {
+        text-align: center;
+        @include from(md) {
+          text-align: left;
         }
       }
     }

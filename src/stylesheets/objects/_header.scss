@@ -4,9 +4,15 @@
     display: none;
     @include from(lg) {
       box: horizontal right middle;
+      padding: 0;
+    }
+    @include from(xl) {
+      padding: 0 $spacer-single*1.5;
+    }
+    @include from(xxl) {
+      padding: 0 $spacer-single*3;
     }
     background-color: $callout-bg;
-    padding: 0 $spacer-single*3;
   }
   &-secondaryNavLink {
     @include hover($gray-dark, $brand-primary);

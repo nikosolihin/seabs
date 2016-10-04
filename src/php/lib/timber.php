@@ -102,15 +102,15 @@ class StarterSite extends TimberSite {
 			// Add other post type arvhive links manually
 			array_push($context['secondary_menu'], array(
 				'title' => 'Events',
-				'url' => $this->url . "/events/"
+				'link' => $this->url . "/events/"
 			));
 			array_push($context['secondary_menu'], array(
 				'title' => 'News',
-				'url' => $this->url . "/news/"
+				'link' => $this->url . "/news/"
 			));
 			array_push($context['secondary_menu'], array(
 				'title' => 'Media',
-				'url' => $this->url . "/media/"
+				'link' => $this->url . "/media/"
 			));
 		}
 
@@ -154,10 +154,11 @@ class StarterSite extends TimberSite {
 		// // Newsletter Sign-up
 		// $context['newsletter'] = get_field('newsletter', 'option');
 
-		// // Policy Page
-		// $context['policy'] = get_field('policy', 'option');
+		// Policy Page
+		$context['policy'] = get_field('policy', 'option');
 
 		// Footer items
+		$context['footer_bg'] = get_field('footer_bg', 'option');
 		$footer_items = Timber::get_posts(get_field('footer', 'option'));
 		$context['footer']['singles'] = array();
 		$context['footer']['parents'] = array();
@@ -185,6 +186,19 @@ class StarterSite extends TimberSite {
 				));
 			}
 		}
+		// Add post types archives to single footer list
+		array_push($context['footer']['singles'], array(
+			'title' => 'Events',
+			'link' => $this->url . "/events/"
+		));
+		array_push($context['footer']['singles'], array(
+			'title' => 'News',
+			'link' => $this->url . "/news/"
+		));
+		array_push($context['footer']['singles'], array(
+			'title' => 'Media',
+			'link' => $this->url . "/media/"
+		));
 
 		// Site Announcement
 		if ( get_field('announcement_status', 'option') == 'on' ) {

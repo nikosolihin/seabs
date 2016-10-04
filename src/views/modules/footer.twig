@@ -1,6 +1,4 @@
-<footer class="Footer-wrapper wrapper lazyload" data-bgset="
-  {{footer_bg[xlarge]}} [(min-width: {{lg}})] |
-  {{footer_bg[medium]}}">
+<footer class="Footer-wrapper lazyload" data-bgset="{{footer_bg[original]}} [(min-width: {{xl}})] | {{footer_bg[xlarge]}} [(min-width: {{lg}})] | {{footer_bg[large]}} [(min-width: {{md}})] |  {{footer_bg[medium]}}">
 
   <div class="Footer container">
     <div class="Footer-top">
@@ -15,11 +13,13 @@
             </ul>
           </li>
         {% endfor %}
+        {% if footer.singles %}
         <li>
           {% for single in footer.singles %}
-            <a href="{{single.link}}">{{single.title}}</a>
+            <a href="{{single.link}}" class="Footer-heading">{{single.title}}</a>
           {% endfor %}
         </li>
+        {% endif %}
       </ul>
     </div>
     <div class="Footer-bottom">
@@ -28,30 +28,39 @@
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-footer"></use>
         </svg>
       </div>
-
-      {% for contact in org.contacts %}
+      <div class="Footer-contacts">
         <address class="Footer-contact">
-          <h5 class="Footer-heading">{{contact.name}}</h5>
-          <p>{{contact.details}}</p>
+          <h5 class="Footer-heading">{{org.name}}</h5>
+          <p class="white">{{org.address}}</p>
         </address>
-      {% endfor %}
 
+        {% for contact in org.contacts %}
+          <address class="Footer-contact">
+            <h5 class="Footer-heading">{{contact.name}}</h5>
+            <p>{{contact.details}}</p>
+          </address>
+        {% endfor %}
+      </div>
     </div>
   </div>
 
   <div class="legal">
     <div class="container">
-      <div>
-        <span class="legal-copy">© {{"now"|date('Y')}} {{org.name}}</span>
-        <span>●</span>
-        <a href="{{policy}}">Privacy Policy</a>
+      <div class="legal-legal">
+        <span class="legal-copy">Copyright&nbsp;&nbsp;©&nbsp;&nbsp;{{"now"|date('Y')}} {{org.name}}</span>
+        <span class="legal-dot">●</span>
+        {% if policy %}
+          <a href="{{policy}}" class="legal-link">Privacy Policy</a>
+          <span class="legal-dot">●</span>
+        {% endif %}
+        <a href="mailto:it.support@seabs.ac.id" class="legal-link">Feedback</a>
       </div>
-      <!-- <div class="legal-languages">
-        Languages:
-        {% for language in languages %}
-          <a href="{{language.url}}" class="legal-language">{{language.code|upper}}</a>
-        {% endfor %}
-      </div> -->
+      <div class="legal-languages">
+        {{__('Languages', 'saat')}}:
+        <a href="{{site.url}}" class="legal-link">ID</a>
+        <a href="{{site.url}}/en" class="legal-link">EN</a>
+        <a href="{{site.url}}/zh" class="legal-link">ZH</a>
+      </div>
     </div>
   </div>
 
