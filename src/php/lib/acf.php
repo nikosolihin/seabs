@@ -147,6 +147,15 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'News Settings',
 		'parent_slug'	=> 'edit.php?post_type=news',
 	));
+
+  // Services //////////////////////////////
+  acf_add_options_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Services',
+    'menu_slug' 	=> 'service-details',
+    'position' 		=> '203',
+    'icon_url' 		=> 'dashicons-admin-network'
+  ));
 }
 
 
