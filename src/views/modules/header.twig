@@ -1,40 +1,50 @@
+{% if site.id == '1' %}
+  {% set language = 'id' %}
+{% elseif site.id == '2' %}
+  {% set language = 'en' %}
+{% else %}
+  {% set language = 'zh' %}
+{% endif %}
+
 <header class="Header">
+
+<div class="SearchBar">
+  <form class="SearchBar-form container" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
+    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
+    <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
+  </form>
+</div>
 
 <nav class="Header-secondaryNav" role="navigation">
   <ul class="List List--inline">
     {% for item in secondary_menu %}
-      <li><a href="{{item.url}}">{{item.title}}</a></li>
+      <li><a href="{{item.url}}" class="Header-secondaryNavLink">{{item.title}}</a></li>
     {% endfor %}
-    <li><a href="">Subitem</a></li>
-    <li><a href="">Subitem</a></li>
-    <li><a href="">Subitem</a></li>
-    <li><a href="">Subitem</a></li>
   </ul>
   <a class="Header-search" href="">
-    <svg aria-hidden="true" role="presentation" title="Search Our Website">
+    <svg aria-hidden="true" role="presentation" title="{{__('Search Our Website', 'saat')}}">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
     </svg>
   </a>
-  <a class="Header-social" href="">
-    <svg aria-hidden="true" role="presentation" title="Search Our Website">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
-    </svg>
-  </a>
-  <a class="Header-social" href="">
-    <svg aria-hidden="true" role="presentation" title="Search Our Website">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-    </svg>
-  </a>
-  <a class="Header-social" href="">
-    <svg aria-hidden="true" role="presentation" title="Search Our Website">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
-    </svg>
-  </a>
-  <div class="Header-languages caps">
-    <span>EN</span>
+  {% for name, link in social %}
+    {% if link %}
+    <a class="Header-social" href="{{link}}">
+      <svg aria-hidden="true" role="presentation" title="{{name}}">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+      </svg>
+    </a>
+    {% endif %}
+  {% endfor %}
+  <div class="Header-languages">
+    <span class="caps brand">{{language}}</span>
     <svg aria-hidden="true" role="presentation" title="Select Language">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
     </svg>
+    <div class="Header-languagesDropdown">
+      <a href="{{site.url}}/" class="Header-languagesLink caps brand">ID</a>
+      <a href="{{site.url}}/en/" class="Header-languagesLink caps brand">EN</a>
+      <a href="{{site.url}}/zh/" class="Header-languagesLink caps brand">ZH</a>
+    </div>
   </div>
 </nav>
 
@@ -45,156 +55,56 @@
     </svg>
   </a>
   <div class="Dropdown-menu">
-    <div class="Dropdown-menuItem">
-      <a href="" class="Dropdown-link">About</a>
-      <div class="Dropdown-panel">
-        <div class="Dropdown-panelLeft">
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Another</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Another</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="Dropdown-panelRight">
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>Choralfest 2016</h5>
+    {% for parent in primary_menu %}
+      <div class="Dropdown-menuItem">
+        {% if parent.link in current_url %}
+          {% set is_active = ' is-Active' %}
+        {% endif %}
+        <a href="{{parent.link}}" class="Dropdown-link {{is_active}}">{{parent.title}}</a>
+        {% if parent.children %}
+        <div class="Dropdown-panel">
+          <div class="Dropdown-panelLeft">
+            {% for child in parent.children %}
+              <div class="List">
+                <a href="{{child.link}}" class="caps">{{child.title}}</a>
+                {% if child.grandchildren %}
+                  <ul class="List-sublist">
+                    {% for grandchild in child.grandchildren %}
+                      <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </div>
-            </a>
+            {% endfor %}
+            {% if parent.singles %}
+            <div class="List">
+              {% for single in parent.singles %}
+                <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
           </div>
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>Pretty Long Title</h5>
-              </div>
-            </a>
+          <div class="Dropdown-panelRight">
+            {% include 'components/blocks.twig' with {'data': {'blocks': parent.blocks}} %}
           </div>
         </div>
+        {% endif %}
       </div>
-    </div>
-    <div class="Dropdown-menuItem">
-      <a href="" class="Dropdown-link is-Active">Campus Life</a>
-      <div class="Dropdown-panel">
-        <div class="Dropdown-panelLeft">
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Test</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Another</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-                <li><a href="{{child.link}}">Test</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="Dropdown-panelRight">
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>Choralfest 2016</h5>
-              </div>
-            </a>
-          </div>
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>Pretty Long Title</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="Dropdown-menuItem">
-      <a href="" class="Dropdown-link">Academics</a>
-      <div class="Dropdown-panel">
-        <div class="Dropdown-panelLeft">
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Test</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="List">
-            <li>
-              <a href="{{parent.link}}" class="caps">Another</a>
-              <ul class="List-sublist">
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-                <li><a href="{{child.link}}">Another</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="Dropdown-panelRight">
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>WEFEWFWEFEWF</h5>
-              </div>
-            </a>
-          </div>
-          <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
-            <a href="//localhost:3000/about-us/" class="Block-link">
-              <div class="Block-body">
-                <h5>WFEWFEEWF</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+    {% endfor %}
+  </div>
+  <div class="Dropdown-audience">
+    <a href="" class="Button Dropdown-audienceButton">{{audience_label}}
+      <svg aria-hidden="true" role="presentation" title="Select Language">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
+      </svg>
+    </a>
+    <div class="Dropdown-audienceDropdown">
+      {% for link in audience_links %}
+        <h5><a href="{{link.url}}" class="Dropdown-audienceLinks">{{link.text}}</a></h5>
+      {% endfor %}
     </div>
   </div>
-  <a href="" class="Button Dropdown-quickNav" href="">More Info</a>
 </nav>
-
-<div class="SearchBar">
-  <form class="SearchBar-form" role="form" action="{{site.url}}/search/results" accept-charset="UTF-8" method="get">
-    <input class="SearchBar-input" id="SearchBar-input" type="text" name="q" autocomplete="off">
-    <label class="SearchBar-label" for="SearchBar-input">Search events, media or keywords</label>
-  </form>
-  <!-- <a href="" class="SearchBar-close">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use>
-    </svg>
-  </a> -->
-</div>
 
 <nav class="MobileNav" role="navigation" data-component="mobile-nav">
   <a href="{{site.url}}" class="MobileNav-mark">
@@ -220,69 +130,40 @@
 
 <div class="MobilePanel">
   <div class="MobilePanel-primary">
-    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">About Us</a>
-    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Academics</a>
-    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Campus Life</a>
-    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Admissions</a>
-    <a href="//localhost:3000/about-us/" class="MobilePanel-link Lead">Resources</a>
+    {% for item in primary_menu %}
+      <a href="{{item.link}}" class="MobilePanel-link Lead">{{item.title}}</a>
+    {% endfor %}
   </div>
-
   <div class="MobilePanel-secondary">
     <div class="MobilePanel-quicklinks">
-      <h5 class="tag brand">Quicklinks</h5>
-      <h5><a href="">Events</a></h5>
-      <h5><a href="">Academic Calendar</a></h5>
-      <h5><a href="">News</a></h5>
-      <h5><a href="">Media</a></h5>
+      <h5 class="tag brand">{{__('Quicklinks', 'saat')}}</h5>
+      {% for item in secondary_menu %}
+        <h5><a href="{{item.url}}">{{item.title}}</a></h5>
+      {% endfor %}
     </div>
     <div class="MobilePanel-quicklinks">
-      <h5 class="tag brand">Info For...</h5>
-      <h5><a href="">Students</a></h5>
-      <h5><a href="">Faculty & Staff</a></h5>
-      <h5><a href="">Parents</a></h5>
-      <h5><a href="">Alumni</a></h5>
+      <h5 class="tag brand">{{audience_label}}</h5>
+      {% for link in audience_links %}
+        <h5><a href="{{link.url}}">{{link.text}}</a></h5>
+      {% endfor %}
     </div>
   </div>
 
   <div class="MobilePanel-blocks">
-    <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="https://farm9.staticflickr.com/8513/29875292471_7a98d264e3_z.jpg">
-      <a href="//localhost:3000/about-us/" class="Block-link">
-        <div class="Block-body">
-          <h5>I am a pretty long block title</h5>
-        </div>
-      </a>
-    </div>
-    <div class="Block Block--panel Block--left Block--overlay lazyload" data-bgset="http://rosenfeldmedia.com/wp-content/uploads/2014/12/users-journey-front-640x960.jpg">
-      <a href="//localhost:3000/about-us/" class="Block-link">
-        <div class="Block-body">
-          <h5>Another Featured Block</h5>
-        </div>
-      </a>
-    </div>
+    {% include 'components/blocks.twig' with {'data': {'blocks': mobile_blocks}} %}
   </div>
 
   <div class="MobilePanel-social">
     <h5 class="tag center">Social</h5>
-    <a href="" class="MobilePanel-socialLink">
-      <svg aria-hidden="true" role="presentation" title="">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#facebook"></use>
-      </svg>
-    </a>
-    <a href="" class="MobilePanel-socialLink">
-      <svg aria-hidden="true" role="presentation" title="">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-      </svg>
-    </a>
-    <a href="" class="MobilePanel-socialLink">
-      <svg aria-hidden="true" role="presentation" title="">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#instagram"></use>
-      </svg>
-    </a>
-    <a href="" class="MobilePanel-socialLink">
-      <svg aria-hidden="true" role="presentation" title="">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use>
-      </svg>
-    </a>
+    {% for name, link in social %}
+      {% if link %}
+      <a href="{{link}}" class="MobilePanel-socialLink">
+        <svg aria-hidden="true" role="presentation" title="{{name}}">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{name}}"></use>
+        </svg>
+      </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 

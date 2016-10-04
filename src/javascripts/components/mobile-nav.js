@@ -23,6 +23,22 @@ export default class MobileNav {
 
       }
     })
+    $(".Header-secondaryNav").on('click', '.Header-search', (event) => {
+      event.preventDefault()
+      if (!this.searchOpen) {
+        this.searchOpen = !this.searchOpen
+        this.$searchbar.addClass('SearchBar--open')
+        $(".Header-search").addClass('Header-search--open')
+        setTimeout( () => {
+          $("#SearchBar-input").focus()
+        }, 300)
+      } else {
+        this.searchOpen = !this.searchOpen
+        $("#SearchBar-input").blur()
+        this.$searchbar.removeClass('SearchBar--open')
+        $(".Header-search").removeClass('Header-search--open')
+      }
+    })
     this.$el.on('click', this.burger, (event) => {
       event.preventDefault()
       if (!this.navOpen) {
@@ -31,15 +47,17 @@ export default class MobileNav {
         this.$burger.addClass('Burger--morph')
         this.$nav.addClass('MobileNav--open')
         this.$panel.addClass('MobilePanel--open')
+        if (this.searchOpen) {
+          this.$panel.addClass('MobilePanel--openWithSearch')
+        }
       } else {
         // Already opened
         this.navOpen = !this.navOpen
         this.$body.removeClass('noScroll')
         this.$burger.removeClass('Burger--morph')
-        this.$panel.removeClass('MobilePanel--open')
+        this.$panel.removeClass('MobilePanel--open MobilePanel--openWithSearch')
         this.$nav.removeClass('MobileNav--open')
       }
-      // $(event.target).toggleClass('Burger--morph')
     })
     .on('click', this.search, (event) => {
       event.preventDefault()
@@ -49,10 +67,16 @@ export default class MobileNav {
         setTimeout( () => {
           $("#SearchBar-input").focus()
         }, 300)
+        if (this.navOpen) {
+          this.$panel.addClass('MobilePanel--openWithSearch')
+        }
       } else {
         this.searchOpen = !this.searchOpen
         $("#SearchBar-input").blur()
         this.$searchbar.removeClass('SearchBar--open')
+        if (this.navOpen) {
+          this.$panel.removeClass('MobilePanel--openWithSearch')
+        }
       }
     })
   }
