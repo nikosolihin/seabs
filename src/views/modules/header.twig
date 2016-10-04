@@ -18,7 +18,7 @@
 <nav class="Header-secondaryNav" role="navigation">
   <ul class="List List--inline">
     {% for item in secondary_menu %}
-      <li><a href="{{item.url}}" class="Header-secondaryNavLink">{{item.title}}</a></li>
+      <li><a href="{{item.link}}" class="Header-secondaryNavLink">{{item.title}}</a></li>
     {% endfor %}
   </ul>
   <a class="Header-search" href="">
@@ -41,9 +41,9 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
     </svg>
     <div class="Header-languagesDropdown">
-      <a href="{{site.url}}/" class="Header-languagesLink caps brand">ID</a>
-      <a href="{{site.url}}/en/" class="Header-languagesLink caps brand">EN</a>
-      <a href="{{site.url}}/zh/" class="Header-languagesLink caps brand">ZH</a>
+      <a href="{{languages.id}}" class="Header-languagesLink caps brand">ID</a>
+      <a href="{{languages.en}}" class="Header-languagesLink caps brand">EN</a>
+      <a href="{{languages.zh}}" class="Header-languagesLink caps brand">ZH</a>
     </div>
   </div>
 </nav>
@@ -138,7 +138,7 @@
     <div class="MobilePanel-quicklinks">
       <h5 class="tag brand">{{__('Quicklinks', 'saat')}}</h5>
       {% for item in secondary_menu %}
-        <h5><a href="{{item.url}}">{{item.title}}</a></h5>
+        <h5><a href="{{item.link}}">{{item.title}}</a></h5>
       {% endfor %}
     </div>
     <div class="MobilePanel-quicklinks">
