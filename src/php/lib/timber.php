@@ -90,8 +90,8 @@ class StarterSite extends TimberSite {
 
 		// Secondary
 		$secondary_menu = get_field('secondary_menu', 'option');
+		$context['secondary_menu'] = array();
 		if ($secondary_menu) {
-			$context['secondary_menu'] = array();
 			foreach ($secondary_menu as $item) {
 				$post = Timber::get_post($item);
 				array_push($context['secondary_menu'], array(
@@ -99,20 +99,20 @@ class StarterSite extends TimberSite {
 					'link' => $post->link
 				));
 			}
-			// Add other post type arvhive links manually
-			array_push($context['secondary_menu'], array(
-				'title' => 'Events',
-				'link' => $this->url . "/events/"
-			));
-			array_push($context['secondary_menu'], array(
-				'title' => 'News',
-				'link' => $this->url . "/news/"
-			));
-			array_push($context['secondary_menu'], array(
-				'title' => 'Media',
-				'link' => $this->url . "/media/"
-			));
 		}
+		// Add other post type arvhive links manually
+		array_push($context['secondary_menu'], array(
+			'title' => 'Events',
+			'link' => $this->url . "/events/"
+		));
+		array_push($context['secondary_menu'], array(
+			'title' => 'News',
+			'link' => $this->url . "/news/"
+		));
+		array_push($context['secondary_menu'], array(
+			'title' => 'Media',
+			'link' => $this->url . "/media/"
+		));
 
 		// Menu Blocks
 		$context['mobile_blocks'] = get_field('blocks', 'option');
@@ -219,6 +219,11 @@ class StarterSite extends TimberSite {
 				'url' => $url,
 			);
 		}
+
+		// Languages
+		$context['languages']['id'] = "https://v2.seabs.ac.id/"
+		$context['languages']['en'] = "https://v2.seabs.ac.id/en"
+		$context['languages']['zh'] = "https://v2.seabs.ac.id/zh"
 
 		// Current URL
 		global $wp;
