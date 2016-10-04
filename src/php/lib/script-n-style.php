@@ -7,7 +7,7 @@ function saat_styles() {
 	wp_register_style( 'saat-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', false, null );
 	wp_enqueue_style( 'saat-style' );
 }
-add_action( 'wp_enqueue_scripts', 'saat_styles' );
+// add_action( 'wp_enqueue_scripts', 'saat_styles' );
 
 //=============================================
 // Register front-end scripts
