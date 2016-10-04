@@ -173,6 +173,7 @@
   }
   &-audienceButton {
     box: horizontal space-between middle;
+    cursor: pointer;
     position: relative;
     z-index: $zindex-mobilenav;
     svg {
