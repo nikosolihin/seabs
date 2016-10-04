@@ -124,7 +124,7 @@ export default class Event {
     }
 
     $.ajax({
-      url: `//${this.domain}/wp-json/wp/v2/news`,
+      url: `${this.domain}/wp-json/wp/v2/news`,
       data: dataObject,
       type: "GET",
       dataType : "json",

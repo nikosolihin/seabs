@@ -91,7 +91,7 @@
     border-top: 1px solid #333;
     padding-top: $spacer-single*1.5;
     @include from(md) {
-      box: horizontal wrap;
+      box: horizontal wrap top left;
       border: 0;
       padding-top: 0;
     }
