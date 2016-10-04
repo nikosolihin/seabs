@@ -222,8 +222,8 @@ class StarterSite extends TimberSite {
 
 		// Languages
 		$context['languages']['id'] = "https://v2.seabs.ac.id/"
-		$context['languages']['en'] = "https://v2.seabs.ac.id/en"
 		$context['languages']['zh'] = "https://v2.seabs.ac.id/zh"
+		$context['languages']['en'] = "https://v2.seabs.ac.id/en"
 
 		// Current URL
 		global $wp;
