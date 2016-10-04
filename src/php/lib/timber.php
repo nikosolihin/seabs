@@ -45,38 +45,96 @@ class StarterSite extends TimberSite {
 		//=============================================
 		// Layout Modules
 		//=============================================
-		// Menu Items
+
+		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
-		$secondary_menu = get_field('secondary_menu', 'option');
-		if ($primary_menu) {
+		foreach ($primary_menu as $menu) {
 			$context['primary_menu'] = array();
-			foreach ($primary_menu as $item) {
-				$post = Timber::get_post($item);
-				array_push($context['primary_menu'], array(
-					'title' => $post->title,
-					'url' => $post->link
-				));
+			$parent = Timber::get_post($menu['parent']);
+
+			// At level 1, assume children
+			$children = array();
+			$singles = array();
+			foreach ($parent->get_children() as $child) {
+
+				// See if there are grand children
+				$grandchildren = array();
+				if ( !empty($child->get_children()) ) {
+					foreach ($child->get_children() as $grandchild) {
+						array_push($grandchildren, array(
+							'title' => $grandchild->title,
+							'link' => $grandchild->link
+						));
+					}
+					array_push($children, array(
+						'title' => $child->title,
+						'link' => $child->link,
+						'grandchildren' => $grandchildren
+					));
+				} else {
+					// If empty put it in a different bucket
+					array_push($singles, array(
+						'title' => $child->title,
+						'link' => $child->link
+					));
+				}
 			}
+			array_push($context['primary_menu'], array(
+				'title' => $parent->title,
+				'link' => $parent->link,
+				'blocks' => $menu['blocks'],
+				'children' => $children,
+				'singles' => $singles
+			));
 		}
+
+		// Secondary
+		$secondary_menu = get_field('secondary_menu', 'option');
 		if ($secondary_menu) {
 			$context['secondary_menu'] = array();
 			foreach ($secondary_menu as $item) {
 				$post = Timber::get_post($item);
 				array_push($context['secondary_menu'], array(
 					'title' => $post->title,
-					'url' => $post->link
+					'link' => $post->link
 				));
 			}
+			// Add other post type arvhive links manually
+			array_push($context['secondary_menu'], array(
+				'title' => 'Events',
+				'link' => $this->url . "/events/"
+			));
+			array_push($context['secondary_menu'], array(
+				'title' => 'News',
+				'link' => $this->url . "/news/"
+			));
+			array_push($context['secondary_menu'], array(
+				'title' => 'Media',
+				'link' => $this->url . "/media/"
+			));
+		}
+
+		// Menu Blocks
+		$context['mobile_blocks'] = get_field('blocks', 'option');
+
+		// Audience Dropdown
+		if (get_field('audience_dropdown', 'option')) {
+			$context['audience_label'] = get_field('audience_label', 'option');
+			$context['audience_links'] = get_field('audience_links', 'option');
 		}
 
 		// Social Links
 		$context['social'] = array(
 			'facebook' => get_field('facebook', 'option'),
-			'facebook_app_id' => get_field('facebook_app_id', 'option'),
 			'twitter' => get_field('twitter', 'option'),
-			'twitter_analytics_id' => get_field('twitter_analytics_id', 'option'),
 			'youtube' => get_field('youtube', 'option'),
 			'instagram' => get_field('instagram', 'option')
+		);
+
+		// Social Analytics
+		$context['analytics'] = array(
+			'facebook_app_id' => get_field('facebook_app_id', 'option'),
+			'twitter_analytics_id' => get_field('twitter_analytics_id', 'option')
 		);
 
 		// 404 stuff
@@ -93,17 +151,11 @@ class StarterSite extends TimberSite {
 			'contacts' => get_field('org_contacts', 'option')
 		);
 
-		// Languages
-		$context['languages'] = get_field('languages', 'option');
-
 		// // Newsletter Sign-up
 		// $context['newsletter'] = get_field('newsletter', 'option');
-		//
-		// // Donate Page
-		// $context['donation'] = get_field('donation', 'option');
-		//
-		// // Policy Page
-		// $context['policy'] = get_field('policy', 'option');
+
+		// Policy Page
+		$context['policy'] = get_field('policy', 'option');
 
 		// Footer items
 		$context['footer_bg'] = get_field('footer_bg', 'option');
@@ -134,6 +186,19 @@ class StarterSite extends TimberSite {
 				));
 			}
 		}
+		// Add post types archives to single footer list
+		array_push($context['footer']['singles'], array(
+			'title' => 'Events',
+			'link' => $this->url . "/events/"
+		));
+		array_push($context['footer']['singles'], array(
+			'title' => 'News',
+			'link' => $this->url . "/news/"
+		));
+		array_push($context['footer']['singles'], array(
+			'title' => 'Media',
+			'link' => $this->url . "/media/"
+		));
 
 		// Site Announcement
 		if ( get_field('announcement_status', 'option') == 'on' ) {
@@ -155,8 +220,13 @@ class StarterSite extends TimberSite {
 			);
 		}
 
+		// Current URL
+		global $wp;
+		$context['current_url'] = home_url(add_query_arg(array(),$wp->request)).'/';
+
 		// Site default
 		$context['site'] = $this;
+
 		return $context;
 	}
 

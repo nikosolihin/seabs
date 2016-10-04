@@ -1,0 +1,160 @@
+{
+    "key": "group_57eeaa163cc13",
+    "title": "Secondary Sidebar Builder",
+    "fields": [
+        {
+            "key": "field_57eeaa1647df8",
+            "label": "",
+            "name": "secondary_sections",
+            "type": "repeater",
+            "instructions": "<strong>TIP:<\/strong> The secondary sidebar will be narrower than the primary, so we don't recommend using callouts here.<br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "acf-sidebar-builder"
+            },
+            "collapsed": "field_57eeaa164e3ec",
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Section",
+            "sub_fields": [
+                {
+                    "key": "field_57eeaa164e3ec",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_57eeaa164e494",
+                    "label": "Align title...",
+                    "name": "sidebar_section_alignment",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "left": "Left",
+                        "center": "Center"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_57eeaa164e538",
+                    "label": "Sidebar Modules",
+                    "name": "sidebar_modules",
+                    "type": "reusable_field_group_field",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "group_key": "group_57ada267c5994",
+                    "name_prefix": 0,
+                    "key_prefix": 1,
+                    "label_prefix": 0
+                },
+                {
+                    "key": "field_57eeaa164e5db",
+                    "label": "Callout Options",
+                    "name": "sidebar_section_options",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
+                        "class": "acf-image-select",
+                        "id": ""
+                    },
+                    "choices": {
+                        "plain": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>",
+                        "callout": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>",
+                        "framed": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-framed.png\"><p>Framed<\/p>"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "plain",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_57eeaa164e68a",
+                    "label": "Top Border",
+                    "name": "sidebar_section_border",
+                    "type": "radio",
+                    "instructions": "Add an accent border to the top of the box.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "35",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "no": "No",
+                        "accent": "Yes"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "no",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "split-page.php"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Secondary Sidebar Builder",
+    "modified": 1475260759
+}

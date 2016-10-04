@@ -89,6 +89,8 @@ function populateList($options) {
       case 'person':
         $tax = 'role';
         $term_ids = $options['roles'];
+        $args['orderby'] = 'title';
+        $args['order'] = 'ASC';
         break;
     }
 
@@ -106,17 +108,16 @@ function populateList($options) {
 
   } else { // Manual
 
-    // Get the posts and type of first element
-    $posts = $options['manual_posts'];
-    $type = $posts[0]->type;
+    // Get the posts and post type based of first element
+    $posts = Timber::get_posts($options['manual_posts']);
+    $type = $posts[0]->type->slug;
 
     // Check the rest of the posts for junks
     foreach ($posts as $key => $post) {
-      if( $post->type != $type ) {
+      if( $post->type->slug != $type ) {
         unset($posts[$key]);
       }
     }
-
   }
 
   // Discard excess info, depending on post types

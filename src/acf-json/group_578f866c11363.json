@@ -19,11 +19,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_57723132992e2",
+            "key": "field_57f3347e3a0fc",
             "label": "Primary Menu",
             "name": "primary_menu",
-            "type": "relationship",
-            "instructions": "Pick <strong><em>pages<\/em><\/strong> to set as menu items. You may choose up to 7 pages to display in the menu bar. The logo links back to the home page. After selecting, drag the menu items up or down to change the order they appear.",
+            "type": "repeater",
+            "instructions": "Pick <strong><em>parent pages<\/em><\/strong> to set as primary menu items. You may choose up to 6 parent pages to display in the menu bar. After selecting, drag the menu items up or down to change the order they appear. Additionally, you may also pick up to 2 blocks to feature within the dropdown.<br><strong>TIP: Do not include a bookmark block here.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -31,24 +31,60 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "min": 1,
-            "max": 7,
-            "return_format": "id"
+            "collapsed": "field_57f3355d3a0fd",
+            "min": "",
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Parent Page",
+            "sub_fields": [
+                {
+                    "key": "field_57f3355d3a0fd",
+                    "label": "Choose Page",
+                    "name": "parent",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                },
+                {
+                    "key": "field_57f335cc3a0fe",
+                    "label": "Choose Blocks",
+                    "name": "",
+                    "type": "reusable_field_group_field",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "group_key": "group_5799c139c255f",
+                    "name_prefix": 0,
+                    "key_prefix": 1,
+                    "label_prefix": 0
+                }
+            ]
         },
         {
-            "key": "field_578f4be7a0066",
+            "key": "field_57f1f17dc9afd",
             "label": "Secondary Menu",
             "name": "secondary_menu",
-            "type": "relationship",
-            "instructions": "The secondary menu appears under the primary menu and provides shortcuts to important pages of the website. Unlike the primary menu, you may also choose resource <strong><em>posts<\/em><\/strong> here.",
+            "type": "post_object",
+            "instructions": "The secondary menu appears within a bar above the primary and under \"Quicklinks\" on mobile. It provides a more direct shortcuts to non-parents pages of the site. Additionally, links to listing pages for dynamic contents will be displayed automatically.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,16 +94,122 @@
             },
             "post_type": [
                 "page",
-                "resource"
+                "event",
+                "news",
+                "attachment"
             ],
             "taxonomy": [],
-            "filters": [
-                "search"
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_57f200e07cfee",
+            "label": "Audience Dropdown",
+            "name": "audience_dropdown",
+            "type": "true_false",
+            "instructions": "It's common for academic institutions to have a dropdown linking to external resources or gateways that's targeted for different audiences.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable Dropdown",
+            "default_value": 0
+        },
+        {
+            "key": "field_57f200432cc37",
+            "label": "Button Label",
+            "name": "audience_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57f200e07cfee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
             ],
-            "elements": "",
-            "min": 1,
-            "max": 7,
-            "return_format": "id"
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57f1f4ad2cc34",
+            "label": "Links",
+            "name": "audience_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57f200e07cfee",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_57f200742cc38",
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Link",
+            "sub_fields": [
+                {
+                    "key": "field_57f2033edd2cf",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_57f200742cc38",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
         },
         {
             "key": "field_57906abc0a906",
@@ -90,7 +232,7 @@
             "label": "Footer",
             "name": "footer",
             "type": "relationship",
-            "instructions": "Pick parent pages to show in footers. Children of these pages will automatically be listed.",
+            "instructions": "Pick parent pages to show in footers. Children of these pages as well as dynamic post types will automatically be pulled.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -111,11 +253,11 @@
             "return_format": "id"
         },
         {
-            "key": "field_57c67cbc1a8b2",
+            "key": "field_57f3ba80fcca0",
             "label": "Background",
             "name": "footer_bg",
             "type": "flickr_browser",
-            "instructions": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.",
+            "instructions": "This is the faint photo of the seal in the dark background. Keep file size in mind when changing this to something else.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -128,9 +270,62 @@
             "flickr_limit": 1,
             "flickr_sizes": [
                 "url_z",
-                "url_l"
+                "url_c",
+                "url_l",
+                "url_o"
             ],
             "flickr_extras": ""
+        },
+        {
+            "key": "field_57f23feafe364",
+            "label": "Mobile Menu",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57f2402aa2167",
+            "label": "Featured Blocks",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Here you may pick 2 blocks to show within the dropdown menu in mobile. Useful to quickly get visitors to certain parts of the site. <br><strong>TIP: Do not include a bookmark block here.<\/strong>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57f23f85fe363",
+            "label": "Choose Blocks",
+            "name": "mobile_blocks",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_5799c139c255f",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
         }
     ],
     "location": [
@@ -150,5 +345,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1474887547
+    "modified": 1475592019
 }

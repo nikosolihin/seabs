@@ -272,6 +272,34 @@
                     "max": ""
                 },
                 {
+                    "key": "57eb58c422236",
+                    "name": "feed",
+                    "label": "Feed",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57eb58ee22237",
+                            "label": "Feed",
+                            "name": "feed",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_574dc76280653",
+                            "name_prefix": 0,
+                            "key_prefix": 1,
+                            "label_prefix": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "57a330f004666",
                     "name": "table",
                     "label": "Table",
@@ -347,5 +375,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Components Parent",
-    "modified": 1474887495
+    "modified": 1475041773
 }

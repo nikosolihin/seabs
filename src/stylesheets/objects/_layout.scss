@@ -13,7 +13,9 @@
   padding: 0 $spacer-single;
 
   &--max {
-    min-width: $container-width;
+    @include from($desktop) {
+      // min-width: $container-width;
+    }
   }
   &--nopadding {
     padding: 0;
@@ -45,7 +47,7 @@
 }
 
 .row {
-  display: block;
+  box: vertical;
   + .row { margin-top: $spacer-single*1.5; }
   @include from(md) {
     // Flex on tablet up
@@ -55,12 +57,12 @@
     width: 100%;
   }
   &--of-2 {
-    @include from(md) {
+    @include from($desktop) {
       .column { width: 50%; }
     }
   }
   &--of-3 {
-    @include from(md) {
+    @include from($desktop) {
       .column { width: 50%; }
     }
     @include from(lg) {
@@ -76,13 +78,15 @@
 
 .column {
   // The column divs act as a flex child wrapper.
-  border-left: 1.5rem solid transparent;
-  border-right: 1.5rem solid transparent;
-  &:first-of-type {
-    border-left: 0;
-  }
-  &:last-of-type {
-    border-right: 0;
+  @include from($desktop) {
+    border-left: 1.5rem solid transparent;
+    border-right: 1.5rem solid transparent;
+    &:first-of-type {
+      border-left: 0;
+    }
+    &:last-of-type {
+      border-right: 0;
+    }
   }
 }
 

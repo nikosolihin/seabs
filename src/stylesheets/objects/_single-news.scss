@@ -1,8 +1,9 @@
 .SingleNews {
+  margin-top: 200px;
   box: horizontal space-between;
 
   &-content {
-    padding: 0 $spacer-single*1.75;
+    padding: 0 $spacer-single*2.5;
     line-height: 1.6875;
     h1 {
       font-weight: $font-weight-bold;

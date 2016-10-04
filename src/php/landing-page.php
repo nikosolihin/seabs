@@ -32,4 +32,4 @@ foreach ($post->get_children() as $child) {
   ));
 }
 
-Timber::render( 'page/landing-page-base.twig' , $context );
+Timber::render( 'page/landing-page.twig' , $context );

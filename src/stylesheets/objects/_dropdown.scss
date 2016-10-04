@@ -1,0 +1,207 @@
+.Dropdown {
+  display: none;
+  @include from(lg) {
+    box: horizontal space-between middle nowrap;
+  }
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: $white;
+  z-index: $zindex-primarynav;
+  border-bottom: 1px solid #e5e5e5;
+  @include from(lg) {
+    padding: 0 $spacer-single;
+  }
+  @include from(xl) {
+    padding: 0 $spacer-single*4;
+  }
+
+  .List {
+    @include normalist;
+    @include from(lg) {
+      width: 33%;
+    }
+    @include from(xl) {
+      width: 25%;
+    }
+    @include from(xxl) {
+      width: 20%;
+    }
+    padding-right: $spacer-single*2;
+    margin: 0;
+    margin-bottom: $spacer-single*1.5;
+    flex: 0 1 auto;
+    .caps {
+      @include hover($brand-primary);
+      display: block;
+      padding: $spacer-quarter 0;
+      margin-bottom: $spacer-half;
+    }
+    .List-sublist {
+      @include normalist;
+      margin: 0;
+      li {
+        border-bottom: 1px solid #eee;
+      }
+      a {
+        @include hover($gray-light, $brand-primary);
+        display: block;
+        font-size: .9375rem;
+        padding: $spacer-half 0;
+      }
+    }
+  }
+  .Button {
+    margin-bottom: 0;
+  }
+
+  &-singleLink {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0 !important;
+    padding: $spacer-threefourth 0 !important;
+    &:first-of-type {
+      padding-top: $spacer-quarter !important;
+    }
+  }
+  &-logo {
+    @include square;
+    position: absolute;
+    top: -.6875rem;
+    z-index: 99999;
+    size: 128px;
+    border-radius: 50%;
+    background-color: $white;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      fill: $brand-primary;
+      size: 120px;
+    }
+    @include from(lg) {
+      left: $spacer-single*1.75;
+    }
+    @include from(xl) {
+      left: $spacer-single*4.75;
+    }
+  }
+
+  &-menu {
+    box: horizontal middle center;
+    flex: 1 0 auto;
+    padding-left: $spacer-single*9.25;
+    @include from(xxl) {
+      padding-left: $spacer-single*8.05;
+    }
+  }
+  &-menuItem {
+    &:hover {
+      > .Dropdown-panel {
+        box: horizontal space-between;
+      }
+    }
+  }
+  &-panel {
+    display: none;
+    position: absolute auto auto 0 0;
+    transform: translateY(100%);
+    padding: $spacer-threefourth 8rem;
+    max-width: none;
+    width: 100%;
+    z-index: $zindex-primarynav-dropdown;
+    background-color: $white;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0px 7px 15px -6px rgba(0,0,0,.12);
+    border-bottom: 1px solid #e8e8e8;
+  }
+  &-panelLeft {
+    box: horizontal wrap;
+    width: 80%;
+    padding: $spacer-single*2.5 0 $spacer-single*2;
+  }
+  &-panelRight {
+    width: 20%;
+    .Block {
+      &-link {
+        justify-content: flex-start;
+      }
+      &-body h3.h2 {
+        font-size: $font-size-h5;
+        font-weight: $font-weight-bold;
+      }
+      &:last-of-type {
+        border-top: 2px solid $white;
+      }
+    }
+  }
+  &-link {
+    @include hover($gray, $brand-primary);
+    display: inline-block;
+    font-size: 1.125rem;
+    padding: $spacer-single*2.4 $spacer-single*1.5;
+    letter-spacing: .7px;
+    &.is-Active {
+      position: relative;
+      color: $brand-primary;
+      font-weight: $font-weight-medium;
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        height: 3px;
+        background-color: $brand-primary;
+        width: 87%;
+        transform: translateX(-50%);
+        z-index: $zindex-primarynav-marker;
+      }
+    }
+  }
+  &-audience {
+    position: relative;
+    &:hover {
+      > .Dropdown-audienceDropdown {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(0,0,0);
+      }
+    }
+  }
+  &-audienceButton {
+    box: horizontal space-between middle;
+    cursor: pointer;
+    position: relative;
+    z-index: $zindex-mobilenav;
+    svg {
+      size: .6rem;
+      margin-left: $spacer-half;
+    }
+  }
+  &-audienceDropdown {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(0,-10%,0);
+    will-change: visibility, opacity, transform;
+    position: absolute;
+    z-index: $zindex-mobilepanel;
+    background-color: $callout-bg;
+    width: $spacer-single*10;
+    right: 0;
+    top: 40px;
+    border-bottom: 3px solid $brand-secondary;
+    transition: all .15s ease-out;
+    h5 { margin: 0; }
+  }
+  &-audienceLinks {
+    @include hover($body-color, $brand-primary);
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    padding: .8rem $spacer-single*1.25;
+    border-top: 1px solid #ddd;
+  }
+}

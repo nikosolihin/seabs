@@ -2,16 +2,8 @@
 {% set size = acf.banner_size %}
 {% set alignment = acf.alignment %}
 
-<section class="{{'Banner'|modifiers("#{size}, textbottom, #{alignment}")}} wrapper wrapper--narrow lazyload"
-data-bgset="
-  {{image[xxlarge]}} [(min-width: {{xxl}})] |
-  {{image[xlarge]}} [(min-width: {{lg}})] |
-  {{image[large]}} [(min-width: {{md}})] |
-  {{image[medium]}} [(min-width: {{sm}})] |
-  {{image[small]}}"
-style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
-  <div class="Banner-overlay"></div>
-  <div class="container container--max Banner-content">
+<section class="{{'Banner'|modifiers("#{size}, #{alignment}")}} wrapper wrapper--narrow lazyload" data-bgset="{{image[original]}} [(min-width: {{xxl}})] | {{image[xlarge]}} [(min-width: {{lg}})] | {{image[large]}} [(min-width: {{md}})] | {{image[medium]}} [(min-width: {{sm}})] | {{image[small]}}" style="{% if alignment == "custom" %}background-position: center {{acf.custom_alignment}}%;{% endif %}">
+  <div class="container container--left">
     {% include 'components/breadcrumb.twig' with {data: breadcrumb} %}
     <h1>{{post.title|title}}</h1>
   </div>

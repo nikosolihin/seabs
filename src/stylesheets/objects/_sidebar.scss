@@ -1,4 +1,8 @@
 .Sidebar {
+  display: none;
+  @include from(lg) {
+    display: block;
+  }
   width: 27.5%;
   flex: 0 0 auto;
 
@@ -32,16 +36,20 @@
       // If active, show sub list
       display: block;
       margin-left: 0;
-      padding-left: $spacer-single*1.5;
+      padding-left: $spacer-threefourth;
       background-color: #f9f9f9;
       a {
+        color: $gray-light;
         font-weight: $font-weight-normal;
+        font-size: .9375rem;
       }
       > .is-Active {
-        border-right: 4px solid $brand-secondary;
+        border-right: 3px solid $brand-primary;
         a {
           @include hover($gray-dark, $brand-primary);
+          color: $brand-primary;
           background-color: transparent;
+          font-weight: $font-weight-medium;
         }
       }
     }
@@ -50,7 +58,7 @@
   &-section {
     overflow: hidden;
     margin-bottom: $spacer-single*2.5;
-    &--center {
+    &--center .Sidebar-sectionHeading {
       text-align: center;
     }
     &--callout {

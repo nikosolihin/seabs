@@ -147,6 +147,15 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'News Settings',
 		'parent_slug'	=> 'edit.php?post_type=news',
 	));
+
+  // Services //////////////////////////////
+  acf_add_options_page(array(
+    'page_title' 	=> '', // No page title since acf already has
+    'menu_title'	=> 'Services',
+    'menu_slug' 	=> 'service-details',
+    'position' 		=> '203',
+    'icon_url' 		=> 'dashicons-admin-network'
+  ));
 }
 
 
@@ -178,7 +187,7 @@ function menu_relationship_query( $args, $field, $post_id ) {
   $args['post_parent'] = 0;
   return $args;
 }
-add_filter('acf/fields/relationship/query/name=primary_menu', 'menu_relationship_query', 10, 3);
+add_filter('acf/fields/post_object/query/name=parent', 'menu_relationship_query', 10, 3);
 add_filter('acf/fields/relationship/query/name=footer', 'menu_relationship_query', 10, 3);
 
 //=============================================
