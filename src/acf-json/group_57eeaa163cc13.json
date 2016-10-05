@@ -96,9 +96,9 @@
                         "id": ""
                     },
                     "choices": {
-                        "plain": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>",
-                        "callout": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>",
-                        "framed": "<img src=\"http:\/\/saat.dev\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-framed.png\"><p>Framed<\/p>"
+                        "plain": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-plain.png\"><p>Plain<br>(No callout)<\/p>",
+                        "callout": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-callout.png\"><p>Callout<\/p>",
+                        "framed": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/sidebar-framed.png\"><p>Framed<\/p>"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -156,5 +156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Secondary Sidebar Builder",
-    "modified": 1475260759
+    "modified": 1475646948
 }

@@ -2,10 +2,11 @@
 
 {% block content %}
   {% set with_sidebar = no_sidebar ? 'text-nosidebar' : '' %}
-  {% set direction = sidebar_position == 'leftSidebar' ? 'right' : 'left' %}
+  {% set slim_sidebar = slim_sidebar ? 'slimSidebar' : '' %}
+  {# set direction = sidebar_position == 'leftSidebar' ? 'right' : 'left' #}
 
   {% include 'components/banner.twig' %}
-  <div class="container {{'SinglePage'|modifiers("#{sidebar_position}")}}">
+  <div class="container {{'SinglePage'|modifiers("#{sidebar_position}, #{slim_sidebar}")}}">
     <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}} content-body">
       {% if acf.teaser %}
         <h3 class="Lead">{{acf.teaser}}</h3>
@@ -14,9 +15,14 @@
     </div>
 
     {% if not no_sidebar %}
+      <div class="TOC" data-component="toc">
+        <svg aria-hidden="true" role="presentation" title="Select Language">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#toc"></use>
+        </svg><span class="caps brand">{{breadcrumb|first.title}}</span>
+      </div>
       <div class="SinglePage-sidebar Sidebar">
         {% if hierarchy %}
-          <ul class="List Toc">{{hierarchy}}</ul>
+          <ul class="List Sidebar-toc">{{hierarchy}}</ul>
         {% endif %}
         {% include 'layout/sidebar-base.twig' %}
       </div>

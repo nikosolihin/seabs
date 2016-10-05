@@ -175,7 +175,7 @@ export default class Event {
               id: event.acf.gcal.id,
               title: event.title.rendered,
               link: event.link,
-              date: moment(event.date).format('MMMM D, YYYY'),
+              date: moment(event.date).format('D MMM, Y'),
               teaser: event.acf.gcal.description,
               image: event.acf.image.url_n,
               label: this.label,

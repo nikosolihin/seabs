@@ -32,9 +32,9 @@
                 "id": ""
             },
             "choices": {
-                "panel": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
-                "bookmark": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
-                "card": "<img src=\"http:\/\/forum.dev\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/card.png\"><p>Card<\/p>"
+                "panel": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
+                "bookmark": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
+                "card": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/gcf\/dashboard\/images\/card.png\"><p>Card<\/p>"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -357,5 +357,5 @@
     ],
     "active": 1,
     "description": "Block Builder",
-    "modified": 1474962321
+    "modified": 1475646996
 }

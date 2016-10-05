@@ -1,0 +1,46 @@
+{
+    "key": "group_57f4d4d49f7e9",
+    "title": "People Template",
+    "fields": [
+        {
+            "key": "field_57f4d4d4ac79e",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Use this template for displaying a grid of people. This template fixes the sidebar on the right and slims the sidebar a little bit, leaving some room to display a list of people",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "people-page.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TEMPLATES : People Page",
+    "modified": 1475663201
+}

@@ -1,16 +1,65 @@
 .ArchiveEvent {
-  box: horizontal space-between;
+  box: vertical;
+  @include from(lg) {
+    box: horizontal space-between;
+  }
+
   .Lead {
     letter-spacing: .5px;
   }
+
+  &-preferences {
+    box: horizontal middle;
+    background-color: $callout-bg;
+    padding: $spacer-single $spacer-single*1.5;
+    border: 1px solid #eee;
+    order: 1;
+    cursor: pointer;
+    svg {
+      size: $spacer-single*1.25;
+      fill: #999;
+      margin-right: $spacer-single*1.25;
+    }
+    span {
+      font-size: .9375rem;
+    }
+    @include from(lg) {
+      display: none;
+    }
+  }
   &-content {
-    width: 76%;
+    width: 100%;
     position: relative;
-    padding-right: $spacer-single*4;
     flex: 1 0 auto;
+    order: 3;
+    @include at(sm) {
+      padding: 0 $spacer-single;
+    }
+    @include from(lg) {
+      width: 76%;
+      order: 1;
+      padding-right: $spacer-single*4;
+    }
   }
   &-sidebar {
-    width: 24%;
+    @include to(md) {
+      order: 2;
+      padding: $spacer-single*1.5;
+      border: 1px solid #eee;
+      border-top: 0;
+    }
+    @include from(sm) {
+      padding: $spacer-single*1.5 $spacer-single*8;
+    }
+    @include from(md) {
+      padding: $spacer-single*1.5 $spacer-single*15;
+    }
+    @include from(lg) {
+      display: block;
+      width: 24%;
+      order: 2;
+      padding: 0;
+    }
   }
   &-sidebarSection {
     position: relative;
@@ -36,28 +85,53 @@
   &-result--fadeOut {
     opacity: .3;
   }
-  &-resultGroup:not(:first-child) {
-    margin-top: $spacer-single*1.5;
+  &-resultGroup {
+    .Lead {
+      margin-bottom: 0;
+      text-align: center;
+      @include from(md) {
+        text-align: left;
+      }
+    }
+    &:not(:first-child) {
+      margin-top: $spacer-single*1.75;
+    }
   }
   &-error {
-    margin-top: $spacer-single*6;
+    width: 100%;
+    text-align: center;
+    margin-top: $spacer-single*2;
+    @include from(lg) {
+      margin-top: $spacer-single*6;
+    }
   }
   &-search {
-    margin-bottom: $spacer-single*4 !important;
+    @include from(lg) {
+      margin-bottom: $spacer-single*4 !important;
+    }
   }
 }
 
 .FeaturedEvents {
   position: relative;
   padding-top: $spacer-single*6;
-  margin-bottom: $spacer-single*7;
+  margin-bottom: $spacer-single*3;
+  @include from(lg) {
+    margin-bottom: $spacer-single*7;
+  }
+
+  .Arrows {
+    box: horizontal;
+    right: 0;
+    @include from(md) {
+      right: $spacer-single*1.5;
+    }
+  }
 
   //Flickity cells
   &-image {
     @include cover;
-    width: 77%;
-    height: $spacer-single*43;
-    margin-right: $spacer-threefourth;
+    // margin-right: $spacer-threefourth;
     left: 0 !important;
     opacity: 0;
     z-index: -1;
@@ -65,6 +139,22 @@
     &.is-selected {
       opacity: 1;
       z-index: 0
+    }
+    width: 100%;
+    height: $spacer-single*21;
+    @include from(md) {
+      height: $spacer-single*27;
+    }
+    @include from(lg) {
+      width: 85%;
+      height: $spacer-single*39;
+    }
+    @include from(xl) {
+      width: 75%;
+    }
+    @include from(xxl) {
+      width: 77%;
+      height: $spacer-single*40;
     }
   }
 
@@ -74,29 +164,66 @@
   }
 
   &-body {
-    @include square;
-    position: absolute;
-    right: 0;
-    bottom: $spacer-single*2.25;
-    width: 33%;
+    position: relative;
+    top: -$spacer-single*2;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #fafafa;
+    width: 93%;
+    height: $spacer-single*24.5;
+    @include from(sm) {
+      width: 90%;
+      height: $spacer-single*23;
+    }
+    @include from(md) {
+      height: $spacer-single*20;
+    }
+    @include from(lg) {
+      @include square();
+      transform: translateX(0);
+      width: 43%;
+      height: auto;
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: 0;
+      bottom: $spacer-single*2.25;
+    }
+    @include from(xl) {
+      width: 37%;
+    }
+    @include from(xxl) {
+      width: 33%;
+    }
   }
   &-content {
     position: absolute;
     top: 0;
     left: 0;
-    padding: $spacer-single*3.25 $spacer-single*3.75;
     opacity: 0;
     transition: opacity .25s ease-in-out;
     .Button {
-      margin-top: $spacer-single;
+      margin: $spacer-single*2 0 0;
     }
     &--show {
       opacity: 1;
+    }
+    padding: $spacer-single*1.5 $spacer-single*2;
+    @include from(lg) {
+      padding: $spacer-single*2.25 $spacer-single*3;
+    }
+    @include from(xl) {
+      padding: $spacer-single*3.25 $spacer-single*3.75;
     }
   }
   &-meta {
     box: horizontal;
     margin-bottom: $spacer-single*1.5;
+    .meta {
+      font-size: .9375rem;
+      @include from(lg) {
+        font-size: $font-size-h5;
+      }
+    }
   }
 }

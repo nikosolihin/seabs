@@ -1,5 +1,8 @@
 .Arrows {
-  box: horizontal;
+  display: none;
+  @include from(md) {
+    box: horizontal;
+  }
   position: absolute;
   top: -$spacer-single*1.5;
   right: $spacer-single*1.5;
@@ -10,7 +13,7 @@
     width: 55px;
     background-color: $brand-highlight;
     &:last-of-type {
-      margin-left: 1px;
+      border-left: 1px solid $callout-bg;
     }
     &:hover {
       background-color: $brand-secondary;

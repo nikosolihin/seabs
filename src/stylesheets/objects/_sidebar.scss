@@ -1,14 +1,25 @@
 .Sidebar {
-  display: none;
+  visibility: hidden;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  transform: translate3d(0, -2.5%, 0);
+  transition: max-height .15s ease-out, opacity .1s ease-in-out, transform .12s ease-out;
+  will-change: max-height, opacity, transform;
   @include from(lg) {
-    display: block;
+    visibility: visible;
+    width: 27%;
+    opacity: 1;
+    max-height: 100%;
+    transform: translate3d(0, 0, 0);
   }
-  width: 27.5%;
   flex: 0 0 auto;
 
   // Table of contents
-  > .Toc {
-    margin-bottom: $spacer-single*3;
+  > .Sidebar-toc {
+    @include from(lg) {
+      margin-bottom: $spacer-single*3;
+    }
     a {
       // Default links in the TOC
       @include hover($gray-dark, $brand-primary);
@@ -56,6 +67,10 @@
   }
 
   &-section {
+    display: none;
+    @include from(lg) {
+      display: block;
+    }
     overflow: hidden;
     margin-bottom: $spacer-single*2.5;
     &--center .Sidebar-sectionHeading {
@@ -76,5 +91,13 @@
   }
   &-sectionHeading {
     margin-bottom: $spacer-single*1.125;
+  }
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    max-height: 100%;
+    transform: translate3d(0, 0, 0);
+    margin-bottom: $spacer-single*3;
   }
 }

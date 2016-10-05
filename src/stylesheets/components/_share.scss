@@ -15,6 +15,12 @@
         fill: $white;
       }
     }
+    // Whatsapp
+    &:nth-child(3) {
+      @include from(lg) {
+        display: none;
+      }
+    }
   }
   svg {
     fill: #444;

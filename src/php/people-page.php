@@ -9,6 +9,7 @@
  $context['post'] = $post;
  $context['acf'] = get_fields();
  $context['sections'] = $context['acf']['sections'];
+ $context['slim_sidebar'] = true;
 
  // Get Sidebar
  $inherit = ($context['acf']['inherit'] === 'true');
@@ -56,4 +57,4 @@
  }
  $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
- Timber::render( 'page/people-page.twig' , $context );
+ Timber::render( 'page/single-page.twig' , $context );

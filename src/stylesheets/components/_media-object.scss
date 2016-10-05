@@ -11,13 +11,20 @@
   }
 
   &-image {
-    width: 25%;
+    display: none;
     flex: 0 0 auto;
     position: relative;
+    @include from(md) {
+      display: block;
+      width: 25%;
+    }
   }
   &-body {
-    width: 77%;
-    padding-left: $spacer-single*1.75;
+    width: 100%;
+    @include from(md) {
+      width: 77%;
+      padding-left: $spacer-single*1.75;
+    }
     h3 a {
       @include hover($brand-primary);
     }

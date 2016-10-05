@@ -32,6 +32,7 @@ foreach (Timber::get_posts($featured_events) as $event) {
     'title'       => $event->title,
     'category'    => $event->get_terms('event_category')[0]->name,
     'date'        => $event->date,
+    'link'        => $event->link,
     'location'    => $gcal['location'],
     'description' => $gcal['description'],
     'image'       => $event->get_field('image'),

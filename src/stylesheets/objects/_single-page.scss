@@ -1,7 +1,22 @@
 .SinglePage {
-  box: horizontal space-between;
+  box: vertical;
+  @include at(sm) {
+    // Pad sides on phablet
+    padding: 0 $spacer-single*3;
+  }
+  @include at(md) {
+    // and tablet
+    padding: 0 $spacer-single*5;
+  }
+  @include from(lg) {
+    box: horizontal space-between;
+  }
 
+  &-sidebar {
+    order: 1;
+  }
   &-content {
+    order: 2;
     .Lead {
       margin-bottom: $spacer-single*2.5;
     }
@@ -9,45 +24,47 @@
       padding: 0;
     }
     @include to(lg) {
-      margin: 0 auto;
+      margin: $spacer-single*2 auto 0;
     }
   }
 
-  // Sidebar alignments
-  &--leftSidebar {
-    .SinglePage-sidebar {
-      order: 1;
-    }
-    .SinglePage-content {
-      order: 2;
-      @include at(lg) {
-        padding-left: $spacer-single;
+  // Sidebar alignments for desktop up
+  @include from(lg) {
+    &--leftSidebar {
+      .SinglePage-sidebar {
+        order: 1;
+      }
+      .SinglePage-content {
+        order: 2;
+        @include at(lg) {
+          padding-left: $spacer-single;
+        }
       }
     }
-  }
 
-  &--rightSidebar {
-    .SinglePage-sidebar {
-      order: 2;
-    }
-    .SinglePage-content {
-      order: 1;
-      @include at(lg) {
-        padding-right: $spacer-single;
+    &--rightSidebar {
+      .SinglePage-sidebar {
+        order: 2;
+      }
+      .SinglePage-content {
+        order: 1;
+        @include at(lg) {
+          padding-right: $spacer-single;
+        }
       }
     }
-  }
 
-  &--slimSidebar {
-    .SinglePage-content {
-      flex: 1 1 auto;
-      max-width: none;
-      @include from(lg) {
+    &--slimSidebar {
+      .SinglePage-content {
+        order: 1;
+        flex: 1 1 auto;
+        max-width: none;
         padding-right: $spacer-single*3;
       }
-    }
-    .SinglePage-sidebar {
-      width: 25%;
+      .SinglePage-sidebar {
+        width: 24%;
+        order: 2;
+      }
     }
   }
 }

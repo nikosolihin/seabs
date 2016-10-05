@@ -1,9 +1,25 @@
 .SingleNews {
-  margin-top: 200px;
-  box: horizontal space-between;
+  box: vertical;
+  padding-top: $spacer-single*3;
+  @include at(sm) {
+    // Pad sides on phablet
+    padding-left: $spacer-single*3;
+    padding-right: $spacer-single*3;
+  }
+  @include at(md) {
+    // and tablet
+    padding-left: $spacer-single*5;
+    padding-right: $spacer-single*5;
+  }
+  @include from(lg) {
+    box: horizontal space-between;
+  }
 
   &-content {
-    padding: 0 $spacer-single*2.5;
+    padding: 0;
+    @include from(lg) {
+      padding: 0 $spacer-single*2.125;
+    }
     line-height: 1.6875;
     h1 {
       font-weight: $font-weight-bold;
@@ -12,7 +28,17 @@
     .Lead {
       line-height: 1.54;
       margin-bottom: $spacer-single*1.75;
+      font-size: $font-size-h4;
+      @include from(md) {
+        font-size: $font-size-h3;
+      }
     }
+  }
+  &-date {
+    font-size: $font-size-h5;
+    font-weight: $font-weight-medium;
+    color: #777;
+    margin-bottom: $spacer-half;
   }
   &-meta {
     box: horizontal;
@@ -26,7 +52,6 @@
       padding: 0 $spacer-single;
     }
     .meta--icon {
-      margin-left: $spacer-single*2;
       a {
         @include hover(#777, $brand-primary);
         @include underlink;
@@ -39,7 +64,30 @@
     margin-bottom: $spacer-single*2;
   }
   &-image {
-    margin: 0 -25px $spacer-single*2.5;
+    margin-bottom: $spacer-single*2.5;
+    @include from(md) {
+      margin: 0 -25px $spacer-single*2.5;
+    }
+  }
+  &-share {
+    box: horizontal middle center;
+    @include from(sm) {
+      box: horizontal middle space-between;
+    }
+    margin-bottom: $spacer-single*1.75;
+    @include from(lg) {
+      display: none;
+    }
+    .Lead {
+      display: none;
+      margin-bottom: 0;
+      @include from(sm) {
+        display: block;
+      }
+    }
+    .Share-button {
+      width: 45px;
+    }
   }
   &-sidebar {
     padding: 0 $spacer-single;

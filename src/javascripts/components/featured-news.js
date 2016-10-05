@@ -14,7 +14,8 @@ export default class FeaturedNews {
       wrapAround: true,
       adaptiveHeight: false,
       bgLazyLoad: 1,
-      autoPlay: false
+      autoPlay: 8000,
+      pauseAutoPlayOnHover: false
     })
     this.featuredNewsData = Flickity.data(el)
     this.attachEvents()

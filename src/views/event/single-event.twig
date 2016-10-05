@@ -3,6 +3,7 @@
 {% block content %}
   <div class="container SingleEvent">
     <div class="SingleEvent-content {{'container'|modifiers("text")}}">
+      <div class="Pill" style="background-color: {{category.color}};">{{category.name}}</div>
       <h1 class="h2 brand">{{post.title}}</h1>
       {% if acf.gcal.description %}
         <h3 class="Lead">{{acf.gcal.description}}</h3>
@@ -52,6 +53,12 @@
             </div>
           {% endfor %}
         {% endif %}
+      </div>
+      <div class="SingleEvent-share">
+        <h3 class="Lead brand">
+          {{__('Share this event', 'saat')}}
+        </h3>
+        {% include 'components/social-share.twig' %}
       </div>
       {% if acf.image %}
         <div class="SingleEvent-image">

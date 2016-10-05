@@ -22,6 +22,14 @@
   }
 
   .container {
+    @include at(sm) {
+      // Pad sides on phablet
+      padding-left: $spacer-single*3;
+    }
+    @include at(md) {
+      // and tablet
+      padding-left: $spacer-single*5;
+    }
     @include from(xl) {
       min-width: $container-width;
       margin: 0 auto;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-09-26 10:31+0700\n"
-"PO-Revision-Date: 2016-09-26 11:06+0700\n"
+"POT-Creation-Date: 2016-10-06 01:13+0700\n"
+"PO-Revision-Date: 2016-10-06 01:13+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -468,76 +468,95 @@ msgstr ""
 
 #: views/event/archive-event.twig:11
 msgid "Featured Events"
-msgstr ""
+msgstr "Kegiatan pilihan"
 
 #: views/event/archive-event.twig:64
 msgid "Upcoming Events"
-msgstr ""
+msgstr "Kegiatan yang akan datang"
 
-#: views/event/archive-event.twig:73
+#: views/event/archive-event.twig:70
+msgid "Show Filters"
+msgstr "Tunjukkan Pilihan"
+
+#: views/event/archive-event.twig:79
 msgid "Prev"
-msgstr ""
+msgstr "Sebelumnya"
 
-#: views/event/archive-event.twig:77
+#: views/event/archive-event.twig:83
 msgid "Next"
-msgstr ""
+msgstr "Berikutnya"
 
-#: views/event/archive-event.twig:85
+#: views/event/archive-event.twig:91
 msgid "Filter Events"
-msgstr ""
+msgstr "Pilih Kegiatan"
 
-#: views/event/archive-event.twig:87
+#: views/event/archive-event.twig:93
 msgid "By Date"
-msgstr ""
+msgstr "Berdasar tanggal"
 
-#: views/event/archive-event.twig:88
+#: views/event/archive-event.twig:94
 msgid "Clear Date"
-msgstr ""
+msgstr "Hapus tanggal"
 
-#: views/event/archive-event.twig:92
+#: views/event/archive-event.twig:98
 msgid "By Keywords"
-msgstr ""
+msgstr "Berdasar kata kunci"
 
-#: views/event/archive-event.twig:96
+#: views/event/archive-event.twig:102
 msgid "By Categories"
-msgstr ""
+msgstr "Berdasar kategori"
 
-#: views/event/archive-event.twig:97
+#: views/event/archive-event.twig:103
 msgid "Clear All"
-msgstr ""
+msgstr "Hapus semua"
 
-#: views/event/archive-event.twig:104
+#: views/event/archive-event.twig:110
 msgid "Search"
-msgstr ""
+msgstr "Pencarian"
 
-#: views/event/single-event.twig:80
+#: views/event/single-event.twig:59 views/event/single-event.twig:87
 msgid "Share this event"
-msgstr ""
+msgstr "Bagikan kegiatan ini"
+
+#: views/modules/footer.twig:53
+msgid "Privacy Policy"
+msgstr "Kebijakan Privasi"
+
+#: views/modules/footer.twig:59
+msgid "Languages"
+msgstr "Bahasa"
+
+#: views/modules/header.twig:139
+msgid "Quicklinks"
+msgstr "Tautan cepat"
 
 #: views/news/archive-news.twig:11
 msgid "Featured News"
-msgstr ""
+msgstr "Berita pilihan"
 
 #: views/news/archive-news.twig:66
 msgid "Latest News"
-msgstr "Berita Terbaru"
+msgstr "Berita terbaru"
 
 #: views/news/archive-news.twig:118
-#, fuzzy
 msgid "All Articles"
-msgstr "Semua Artikel"
+msgstr "Semua artikel"
 
 #: views/news/archive-news.twig:120
 msgid "Filter News By Topic"
-msgstr "Saring Berita Berdasarkan Topik"
+msgstr "Pilih berdasar topik"
 
 #: views/news/archive-news.twig:130
 msgid "View"
 msgstr "Lihat"
 
-#: views/news/single-news.twig:56
+#: views/news/single-news.twig:31 views/news/single-news.twig:59
 msgid "Share this news"
-msgstr ""
+msgstr "Bagikan berita ini"
+
+#: views/page/landing-page.twig:60 views/page/landing-page.twig:71
+msgid "Read More"
+msgstr "Selengkapnya"
 
 #~ msgid "More News"
 #~ msgstr "Tambah Berita"

@@ -22,4 +22,4 @@ while( $post->get_parent ) {
 }
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
-Timber::render( 'page/single-page-base.twig' , $context );
+Timber::render( 'page/single-page.twig' , $context );

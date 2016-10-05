@@ -230,7 +230,7 @@
             "label": "Facebook App ID",
             "name": "facebook_app_id",
             "type": "text",
-            "instructions": "To use Facebook's domain insights analytics, provide an app ID. <a href=\"https:\/\/developers.facebook.com\/docs\/sharing\/insights\" target=\"_blank\">Learn More<\/a>.",
+            "instructions": "To use Facebook's domain insights analytics, provide an app ID. <a href=\"https:\/\/developers.facebook.com\/docs\/sharing\/insights\" target=\"_blank\">Learn More<\/a>.<br>\r\nUse the <a href=\"https:\/\/developers.facebook.com\/tools\/debug\/sharing\/\">Sharing Debuggerr<\/a> to debug any issues.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -265,7 +265,7 @@
             "label": "Twitter Analytics",
             "name": "twitter_analytics_id",
             "type": "text",
-            "instructions": "To use Twitter analytics, provide the associated twitter handle. <a href=\"https:\/\/dev.twitter.com\/cards\/analytics\" target=\"_blank\">Learn More<\/a>.",
+            "instructions": "To use Twitter analytics, provide the associated twitter handle. <a href=\"https:\/\/dev.twitter.com\/cards\/analytics\" target=\"_blank\">Learn More<\/a>.<br>\r\nUse the <a href=\"https:\/\/cards-dev.twitter.com\/validator\">Card Validator<\/a> to debug any issues.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -366,5 +366,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1475595188
+    "modified": 1475652936
 }

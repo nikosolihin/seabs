@@ -1,24 +1,63 @@
 .FeaturedNews {
   position: relative;
-  padding-top: $spacer-single*6;
-  margin-bottom: $spacer-single*12;
+  padding-top: $spacer-single*4;
+  margin-bottom: $spacer-single*5;
+  @include at(md) {
+    margin-bottom: $spacer-single*7;
+  }
+  @include from(lg) {
+    padding-top: $spacer-single*6;
+    margin-bottom: $spacer-single*12;
+  }
 
+  .Lead {
+    margin-bottom: $spacer-single*1.5;
+    @include from(lg) {
+      margin-bottom: $spacer-single*2.5;
+    }
+  }
   .Arrows {
-    top: $spacer-single*6.5;
-    right: $spacer-single*3;
+    @include from(md) {
+      top: $spacer-single*8;
+      right: 0;
+    }
+    @include from(lg) {
+      top: $spacer-single*6.5;
+      right: $spacer-single*3;
+    }
   }
 
   &-caption {
     @include white;
     position: absolute;
-    bottom: $spacer-single*2.25;
-    left: $spacer-single*3;
+    bottom: $spacer-single*2;
+    padding: 0 $spacer-single;
+    @include from(md) {
+      padding: 0 $spacer-single*2;
+    }
+    @include from(lg) {
+      bottom: $spacer-single*2.25;
+      left: 0;
+    }
+    @include from(xl) {
+      bottom: $spacer-single*2.25;
+      left: $spacer-single*3;
+    }
     h2 {
-      font-size: 1.9rem;
+      font-size: 1.45rem;
+      @include at(md) {
+        font-size: 1.65rem;
+      }
+      @include from(lg) {
+        font-size: 1.9rem;
+      }
     }
     .meta {
-      font-size: $font-size-h5;
+      font-size: $font-size-h6;
       font-weight: $font-weight-medium;
+      @include from(md) {
+        font-size: $font-size-h5;
+      }
     }
   }
   &-captionTitle {
@@ -31,8 +70,6 @@
     @include white;
     @include overlay(false, (rgba(0,0,0,0) 45%, rgba(0,0,0,1) 95%));
     display: block;
-    width: 71%;
-    height: $spacer-single*37;
     left: 0 !important;
     opacity: 0;
     z-index: -1;
@@ -41,21 +78,43 @@
       opacity: 1;
       z-index: 0
     }
+    width: 100%;
+    height: $spacer-single*21;
+    @include at(sm) {
+      height: $spacer-single*24;
+    }
+    @include at(md) {
+      height: $spacer-single*30;
+    }
+    @include from(lg) {
+      width: 76%;
+      height: $spacer-single*34;
+    }
+    @include from(xl) {
+      width: 71%;
+      height: $spacer-single*37;
+    }
   }
   // Override flickity slider for fade to work
   .flickity-slider {
     transform: none !important;
   }
   &-body {
-    position: absolute;
     top: $spacer-single*8;
     right: 0;
-    width: 36%;
     background-color: #fafafa;
     border-bottom: 2px solid #eee;
+    width: 100%;
+    @include from(lg) {
+      position: absolute;
+      width: 36%;
+    }
     .news {
       width: 100%;
-      padding: $spacer-single*1.5 $spacer-single*2 $spacer-single*1.5 $spacer-single*2.35;
+      padding: $spacer-single;
+      @include from(md) {
+        padding: $spacer-single*1.5 $spacer-single*2 $spacer-single*1.5 $spacer-single*2.35;
+      }
       &:last-of-type {
         border-bottom: 0;
       }
@@ -70,6 +129,10 @@
 }
 
 .CarouselNews {
+  display: none;
+  @include from(lg) {
+    display: block;
+  }
   background-color: $callout-bg;
   margin-bottom: $spacer-single*6;
   .container {
@@ -129,17 +192,36 @@
   position: relative;
   text-align: center;
   .Lead {
-    margin-bottom: $spacer-single*4.5;
+    margin-bottom: $spacer-single*1.25;
+    @include from(md) {
+      margin-bottom: $spacer-single*4.5;
+    }
+  }
+  .Loader {
+    top: $spacer-single*12;
+    @include from(md) {
+      top: $spacer-single*7;
+    }
+    @include from(lg) {
+      top: $spacer-single*8;
+    }
   }
   &-control {
-    box: horizontal middle;
-    position: absolute;
-    top: 0;
-    right: $spacer-single;
+    box: horizontal middle wrap;
+    margin-bottom: $spacer-single*1.25;
+    @include from(md) {
+      position: absolute;
+      top: 0;
+      right: $spacer-single;
+    }
     h5 {
       color: #888;
       font-weight: $font-weight-normal;
       margin-bottom: 0;
+      @include to(sm) {
+        width: 100%;
+        margin-bottom: $spacer-threefourth;
+      }
     }
     .Button {
       margin-bottom: 0;
@@ -150,7 +232,6 @@
     color: $brand-primary;
     width: $spacer-single*13;
     padding: .85rem $spacer-single*1.25;
-    margin: 0 $spacer-threefourth 0 $spacer-single*1.5;
     background-color: $callout-bg;
     cursor: pointer;
     position: relative;
@@ -158,12 +239,20 @@
       fill: #888;
       size: .6rem;
     }
+    margin: 0 $spacer-threefourth 0 0;
+    @include from(md) {
+      margin: 0 $spacer-threefourth 0 $spacer-single*1.5;
+    }
+    @include to(md) {
+      flex: 1 0 auto;
+    }
   }
   &-topicsDropdown {
     display: none;
     position: absolute;
     background-color: $callout-bg;
-    width: $spacer-single*13;
+    // width: $spacer-single*13;
+    width: 100%;
     right: 0;
     top: $spacer-single*3;
     text-align: left;
@@ -183,6 +272,12 @@
   &-content {
     box: horizontal wrap space-between;
     margin-bottom: $spacer-single*3;
+    @include from(md) {
+      padding: 0 $spacer-single;
+    }
+    @include from(xl) {
+      padding: 0;
+    }
     &--fadeOut {
       opacity: .3;
     }
@@ -190,7 +285,10 @@
 }
 
 .news {
-  width: 47.5%;
+  width: 100%;
+  @include from(md) {
+    width: 47.5%;
+  }
   flex: 0 0 auto;
   border-bottom: 1px solid #eee;
   padding: $spacer-single*1.25 0;

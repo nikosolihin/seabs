@@ -135,6 +135,14 @@
       &:last-of-type {
         border-top: 2px solid $white;
       }
+      &:only-child {
+        &::after {
+          padding-bottom: 80%;
+        }
+        .Block-link {
+          box: vertical left middle;
+        }
+      }
     }
   }
   &-link {

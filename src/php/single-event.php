@@ -12,6 +12,13 @@ $gcal = $context['acf']['gcal'];
 // For event, gcal description is the teaser
 $context['acf']['teaser'] = $gcal['description'];
 
+// Get this event's category
+$category = $post->get_terms('event_category')[0];
+$context['category'] = array(
+	'name' => $category->name,
+	'color' => $category->category_color
+);
+
 // What kind of event do we have?
 if (array_key_exists('date', $gcal['start'])) {
 	// All day - just grab date, no time
