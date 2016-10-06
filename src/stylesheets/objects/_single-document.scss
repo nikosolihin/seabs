@@ -1,0 +1,32 @@
+.SingleDocument {
+  box: horizontal space-between;
+  padding: $spacer-single*2.5 0;
+  margin: $spacer-single*3 auto;
+
+  &-body {
+    width: 55%;
+    padding-right: $spacer-single*1.5;
+    .Button {
+      margin-top: $spacer-single*3;
+      svg {
+        size: $spacer-single;
+        margin-right: $spacer-single;
+      }
+    }
+  }
+  &-cover {
+    width: 20%;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.08);
+  }
+  &-toc {
+    width: 25%;
+    position: relative;
+    top: -$spacer-single*4;
+    background-color: $white;
+    padding: $spacer-single;
+    margin-left: $spacer-single*2;
+    border: 1px solid #ddd;
+    border-top: 4px solid $brand-primary;
+  }
+}

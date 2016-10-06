@@ -1,0 +1,41 @@
+{
+    "key": "group_57f5f046877f6",
+    "title": "Media Types Options",
+    "fields": [
+        {
+            "key": "field_57f5f04693b6a",
+            "label": "Note:",
+            "name": "",
+            "type": "message",
+            "instructions": "Appears in search filters and meta lines.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<strong><u>Do not delete the pre-defined parent media types<\/u><\/strong> on the right. You may create new types under them as a way to categorize media collection.",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "media_topic"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TAXONOMY : Media Types",
+    "modified": 1475735965
+}

@@ -212,6 +212,13 @@
                 "operator": "==",
                 "value": "split-page.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media"
+            }
         ]
     ],
     "menu_order": 2,
@@ -222,5 +229,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Regular Page Builder",
-    "modified": 1475259504
+    "modified": 1475741649
 }

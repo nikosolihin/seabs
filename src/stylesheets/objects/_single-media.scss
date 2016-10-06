@@ -1,0 +1,14 @@
+.SingleMedia {
+  margin-top: $spacer-single*6;
+  &-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer-half;
+  }
+  &-subtitle {
+    color: #999;
+    font-weight: $font-weight-medium;
+  }
+  &-custom {
+    background-color: #fafafa;
+  }
+}
