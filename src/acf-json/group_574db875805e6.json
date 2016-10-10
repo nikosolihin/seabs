@@ -217,6 +217,13 @@
                 "operator": "==",
                 "value": "news"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media"
+            }
         ]
     ],
     "menu_order": 3,
@@ -227,5 +234,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Sidebar Builder",
-    "modified": 1475646964
+    "modified": 1475741727
 }

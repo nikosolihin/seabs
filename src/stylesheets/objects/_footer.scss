@@ -1,6 +1,7 @@
 .Footer {
   box: horizontal wrap;
-  font-size: $font-size-h6 1.25;
+  font-size: $font-size-h6;
+  line-height: 1.25;
   padding: $spacer-single 0;
   @include from(md) {
     padding-top: $spacer-single*5;

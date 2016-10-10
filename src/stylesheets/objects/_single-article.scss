@@ -1,0 +1,95 @@
+.SingleArticle {
+  box: vertical;
+  @include from(lg) {
+    box: horizontal left;
+  }
+  margin-top: $spacer-single*4;
+
+  // Layout
+  &-content {
+    // Pad content body for comfy reading
+    padding: 0;
+    @include from(lg) {
+      padding: 0 $spacer-single*2.125;
+    }
+  }
+
+  // Components
+  &-title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer-quarter;
+  }
+  &-subtitle {
+    color: #999;
+    font-weight: $font-weight-normal;
+  }
+  &-teaser {
+    line-height: 1.54;
+    margin: $spacer-single*1.5 0 $spacer-single*.75;
+    font-size: $font-size-h4;
+    @include from(md) {
+      font-size: $font-size-h3;
+    }
+  }
+  &-meta {
+    box: vertical;
+    @include from(md) {
+      box: horizontal;
+      // If horizontal, give more spacing
+      // padding-bottom: $spacer-quarter;
+    }
+    @include to(sm) {
+      // Multiple meta lines for repeating events
+      @at-root .SingleArticle-meta + #{&} {
+        border-top: 1px solid #eee;
+        margin-top: $spacer-threefourth;
+        padding-top: $spacer-threefourth;
+      }
+    }
+  }
+  &-share {
+    box: horizontal middle center;
+    @include from(sm) {
+      box: horizontal middle space-between;
+    }
+    margin: $spacer-single*1.5 0 $spacer-single*1.75;
+    @include from(lg) {
+      display: none;
+    }
+    .Lead {
+      display: none;
+      margin-bottom: 0;
+      @include from(sm) {
+        display: block;
+      }
+    }
+    .Share-button {
+      width: 45px;
+    }
+  }
+
+  &-teaser + &-meta {
+    margin-top: $spacer-single*1;
+  }
+  .Breadcrumb {
+    margin-bottom: $spacer-single*1.75;
+  }
+  .meta {
+    font-size: $font-size-h5;
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacer-quarter;
+  }
+  .meta-dot {
+    padding: 0 $spacer-single;
+  }
+  .content-body {
+    margin-top: $spacer-single;
+    padding-top: $spacer-single*2.5;
+    border-top: 1px solid #e1e1e1;
+  }
+  .content-body--plain {
+    border: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

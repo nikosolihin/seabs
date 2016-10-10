@@ -25,6 +25,11 @@
   &--text {
     max-width: $container-text-width;
   }
+  &--text-max {
+    @include from(lg) {
+      min-width: $container-text-width;
+    }
+  }
   &--text-nosidebar {
     max-width: $container-text-nosidebar-width;
   }

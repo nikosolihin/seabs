@@ -1,0 +1,108 @@
+.ArchiveMedia {
+  box: vertical;
+  @include from(lg) {
+    box: horizontal space-between;
+  }
+
+  .Lead {
+    letter-spacing: .5px;
+  }
+
+  // &-preferences {
+  //   box: horizontal middle;
+  //   background-color: $callout-bg;
+  //   padding: $spacer-single $spacer-single*1.5;
+  //   border: 1px solid #eee;
+  //   order: 1;
+  //   cursor: pointer;
+  //   svg {
+  //     size: $spacer-single*1.25;
+  //     fill: #999;
+  //     margin-right: $spacer-single*1.25;
+  //   }
+  //   span {
+  //     font-size: .9375rem;
+  //   }
+  //   @include from(lg) {
+  //     display: none;
+  //   }
+  // }
+  &-heading {
+    padding: 0 $spacer-single*1.75;
+  }
+  &-result {
+    box: horizontal wrap;
+  }
+  &-content {
+    width: 100%;
+    position: relative;
+    flex: 1 0 auto;
+    order: 3;
+    @include at(sm) {
+      padding: 0 $spacer-single;
+    }
+    @include from(lg) {
+      width: 76%;
+      order: 1;
+      padding-right: $spacer-single*4;
+    }
+  }
+  &-sidebar {
+    @include to(md) {
+      order: 2;
+      padding: $spacer-single*1.5;
+      border: 1px solid #eee;
+      border-top: 0;
+    }
+    @include from(sm) {
+      padding: $spacer-single*1.5 $spacer-single*8;
+    }
+    @include from(md) {
+      padding: $spacer-single*1.5 $spacer-single*15;
+    }
+    @include from(lg) {
+      display: block;
+      width: 20%;
+      order: 2;
+      padding: 0;
+    }
+  }
+  &-sidebarSection {
+    position: relative;
+    padding: $spacer-single*1.5 0;
+    border-bottom: 1px solid #eee;
+    &:last-of-type {
+      border-bottom: 0;
+      margin-bottom: $spacer-single;
+    }
+
+    h5 {
+      @include caps;
+      color: #666;
+      letter-spacing: .75px;
+      font-weight: 600;
+      font-size: .775rem;
+      margin-bottom: $spacer-single;
+    }
+    input {
+      width: 100%;
+    }
+  }
+
+  &-result--fadeOut {
+    opacity: .3;
+  }
+  &-error {
+    width: 100%;
+    text-align: center;
+    margin-top: $spacer-single*2;
+    @include from(lg) {
+      margin-top: $spacer-single*6;
+    }
+  }
+  &-search {
+    @include from(lg) {
+      margin-bottom: $spacer-single*4 !important;
+    }
+  }
+}

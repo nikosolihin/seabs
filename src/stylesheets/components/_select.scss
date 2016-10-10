@@ -1,0 +1,37 @@
+.Select {
+  @extend .caps;
+  @extend .brand;
+  box: horizontal middle space-between;
+  padding: .85rem $spacer-single*1.25;
+  background-color: $callout-bg;
+  cursor: pointer;
+  position: relative;
+  > svg {
+    fill: #888;
+    size: .6rem;
+  }
+  // @include to(md) {
+  //   flex: 1 0 auto;
+  // }
+  &-dropdown {
+    display: none;
+    position: absolute;
+    background-color: $callout-bg;
+    width: 100%;
+    right: 0;
+    top: $spacer-single*3;
+    text-align: left;
+    &--show {
+      display: block;
+    }
+  }
+  &-item {
+    @include hover($body-color, $brand-primary);
+    display: block;
+    text-transform: capitalize;
+    font-size: $font-size-h6;
+    letter-spacing: 0;
+    padding: .8rem $spacer-single*1.25;
+    border-top: 1px solid #eee;
+  }
+}

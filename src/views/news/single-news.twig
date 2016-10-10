@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="container SingleNews">
-    <div class="SingleNews-content {{'container'|modifiers("text")}}">
+    <div class="SingleNews-content content-body {{'container'|modifiers("text")}}">
       <div class="SingleNews-date">{{post.date}}</div>
       <h1 class="h2 brand">{{post.title}}</h1>
       {% if acf.teaser %}

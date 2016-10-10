@@ -1,0 +1,56 @@
+{
+    "key": "group_57f5f046877f6",
+    "title": "Media Types Options",
+    "fields": [
+        {
+            "key": "field_57fb61974f758",
+            "label": "Category color",
+            "name": "type_color",
+            "type": "color_picker",
+            "instructions": "Appears in search filters and meta lines.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ebebeb"
+        },
+        {
+            "key": "field_57f5f04693b6a",
+            "label": "Note:",
+            "name": "",
+            "type": "message",
+            "instructions": "Appears in search filters and meta lines.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<strong><u>Do not delete the pre-defined parent media types<\/u><\/strong> on the right. Deleting them will guarantee to break archive search and a few other pages.",
+            "new_lines": "",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "media_type"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "TAXONOMY : Media Types",
+    "modified": 1476092778
+}

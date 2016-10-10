@@ -1,0 +1,130 @@
+{
+    "key": "group_57fb81c405271",
+    "title": "Media Settings",
+    "fields": [
+        {
+            "key": "field_57fb81c4122b6",
+            "label": "Featured Events",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57fb81c412429",
+            "label": "Listing Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57fb81c4124f5",
+            "label": "Results Per Page",
+            "name": "media_listing_ppp",
+            "type": "number",
+            "instructions": "Number of events to show per page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 10,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 25,
+            "step": 1
+        },
+        {
+            "key": "field_57fb81c4125f0",
+            "label": "Read More Link",
+            "name": "media_link_label",
+            "type": "text",
+            "instructions": "This is the label for each media result in the listing - usually \"View\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57fb81c412692",
+            "label": "Listing Sidebar",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57fb81c41273a",
+            "label": "Sidebar Builder",
+            "name": "media",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_574db875805e6",
+            "name_prefix": 1,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-media-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Media Settings",
+    "modified": 1476100819
+}

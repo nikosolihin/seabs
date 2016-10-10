@@ -41,7 +41,7 @@ function acf_location_rules_types($choices) {
 
 add_filter('acf/location/rule_values/post_taxonomy_ancestor', 'acf_location_rules_values_post_taxonomy_ancestor');
 function acf_location_rules_values_post_taxonomy_ancestor($choices) {
-	$terms = acf_get_taxonomy_terms( 'resource_type' );
+	$terms = acf_get_taxonomy_terms( 'media_type' );
 	if(!empty($terms)) {
 		$choices = array_pop($terms);
 	}
@@ -148,6 +148,13 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'edit.php?post_type=news',
 	));
 
+  // Media Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Media Settings',
+		'menu_title'	=> 'Media Settings',
+		'parent_slug'	=> 'edit.php?post_type=media',
+	));
+
   // Services //////////////////////////////
   acf_add_options_page(array(
     'page_title' 	=> '', // No page title since acf already has
@@ -163,21 +170,21 @@ if( function_exists('acf_add_options_page') ) {
 // Only list resources for the French
 // multisite relationship field
 //=============================================
-function french_relationship_query( $args, $field, $post_id ) {
-  $args['post_type'] = 'resource';
-  return $args;
-}
-add_filter('acf/fields/relationship/query/name=french', 'french_relationship_query', 10, 3);
+// function french_relationship_query( $args, $field, $post_id ) {
+//   $args['post_type'] = 'resource';
+//   return $args;
+// }
+// add_filter('acf/fields/relationship/query/name=french', 'french_relationship_query', 10, 3);
 
 //=============================================
 // Only list resources for the Spanish
 // multisite relationship field
 //=============================================
-function spanish_relationship_query( $args, $field, $post_id ) {
-  $args['post_type'] = 'resource';
-  return $args;
-}
-add_filter('acf/fields/relationship/query/name=spanish', 'spanish_relationship_query', 10, 3);
+// function spanish_relationship_query( $args, $field, $post_id ) {
+//   $args['post_type'] = 'resource';
+//   return $args;
+// }
+// add_filter('acf/fields/relationship/query/name=spanish', 'spanish_relationship_query', 10, 3);
 
 //=============================================
 // Only list parent pages for the menu relationship
@@ -193,34 +200,34 @@ add_filter('acf/fields/relationship/query/name=footer', 'menu_relationship_query
 //=============================================
 // Bidirectional Relationships
 //=============================================
-function bidirectional_acf_update_value( $value, $post_id, $field  ) {
-	$field_name = $field['name'];
-	$global_name = 'is_updating_' . $field_name;
-	if( !empty($GLOBALS[ $global_name ]) ) return $value;
-	$GLOBALS[ $global_name ] = 1;
-	if( is_array($value) ) {
-		foreach( $value as $post_id2 ) {
-			$value2 = get_field($field_name, $post_id2, false);
-			if( empty($value2) ) {
-				$value2 = array();
-			}
-			if( in_array($post_id, $value2) ) continue;
-			$value2[] = $post_id;
-			update_field($field_name, $value2, $post_id2);
-		}
-	}
-	$old_value = get_field($field_name, $post_id, false);
-	if( is_array($old_value) ) {
-		foreach( $old_value as $post_id2 ) {
-			if( is_array($value) && in_array($post_id2, $value) ) continue;
-			$value2 = get_field($field_name, $post_id2, false);
-			if( empty($value2) ) continue;
-			$pos = array_search($post_id, $value2);
-			unset( $value2[ $pos] );
-			update_field($field_name, $value2, $post_id2);
-		}
-	}
-	$GLOBALS[ $global_name ] = 0;
-  return $value;
-}
-add_filter('acf/update_value/name=related_resources', 'bidirectional_acf_update_value', 10, 3);
+// function bidirectional_acf_update_value( $value, $post_id, $field  ) {
+// 	$field_name = $field['name'];
+// 	$global_name = 'is_updating_' . $field_name;
+// 	if( !empty($GLOBALS[ $global_name ]) ) return $value;
+// 	$GLOBALS[ $global_name ] = 1;
+// 	if( is_array($value) ) {
+// 		foreach( $value as $post_id2 ) {
+// 			$value2 = get_field($field_name, $post_id2, false);
+// 			if( empty($value2) ) {
+// 				$value2 = array();
+// 			}
+// 			if( in_array($post_id, $value2) ) continue;
+// 			$value2[] = $post_id;
+// 			update_field($field_name, $value2, $post_id2);
+// 		}
+// 	}
+// 	$old_value = get_field($field_name, $post_id, false);
+// 	if( is_array($old_value) ) {
+// 		foreach( $old_value as $post_id2 ) {
+// 			if( is_array($value) && in_array($post_id2, $value) ) continue;
+// 			$value2 = get_field($field_name, $post_id2, false);
+// 			if( empty($value2) ) continue;
+// 			$pos = array_search($post_id, $value2);
+// 			unset( $value2[ $pos] );
+// 			update_field($field_name, $value2, $post_id2);
+// 		}
+// 	}
+// 	$GLOBALS[ $global_name ] = 0;
+//   return $value;
+// }
+// add_filter('acf/update_value/name=related_resources', 'bidirectional_acf_update_value', 10, 3);

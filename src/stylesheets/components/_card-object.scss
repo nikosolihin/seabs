@@ -1,0 +1,80 @@
+.Card {
+  box: vertical;
+  border: 1px solid #e2e2e2;
+  transition: all .13s ease-in-out;
+  border-top: 0;
+  &:hover {
+    border-color: #d8d8d8;
+    box-shadow: 1px 3px 3px rgba(0,0,0,0.095);
+    h4 {
+      color: $brand-primary;
+    }
+  }
+
+  &-wrapper {
+    width: 33%;
+    border: $spacer-threefourth solid transparent;
+  }
+  &-image {
+    @include cover;
+    @include overlay(false, 'rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%');
+    width: 100%;
+    height: $spacer-single*10;
+  }
+  &-meta {
+    box: horizontal middle space-between;
+    padding-top: .35rem;
+    width: 100%;
+    position: absolute 0 auto auto 0;
+    > :nth-child(odd) {
+      box: horizontal middle;
+      padding-left: $spacer-single;
+      svg {
+        box: horizontal middle;
+        size: $spacer-single;
+        fill: currentColor;
+        margin-right: $spacer-quarter;
+      }
+    }
+    > :nth-child(even) {
+      padding-right: $spacer-single;
+      text-align: right;
+    }
+  }
+  &-body {
+    color: #777;
+    font-size: $font-size-h6;
+    padding: $spacer-threefourth $spacer-single;
+    background-color: $white;
+    transition: all .125s ease-in-out;
+    h4 {
+      margin-bottom: $spacer-quarter;
+    }
+  }
+  &-footer {
+    box: horizontal;
+    color: #777;
+    font-size: $font-size-h6;
+    font-weight: $font-weight-medium;
+    border-top: 1px solid #eee;
+    margin-top: $spacer-single;
+    &Left {
+      width: 65%;
+      box: horizontal middle;
+      padding: .6rem $spacer-single;
+      svg {
+        size: $spacer-single;
+        fill: $brand-primary;
+        margin-right: $spacer-half;
+      }
+    }
+    &Right {
+      width: 35%;
+      font-weight: $font-weight-bold;
+      border-left: 1px solid #eee;
+      padding: .6rem $spacer-quarter;
+      text-align: center;
+      transition: all .125s ease-in-out;
+    }
+  }
+}

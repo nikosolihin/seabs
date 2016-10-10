@@ -5,6 +5,8 @@
 // Disable the "No term" option on a the "resource_type" taxonomy
 add_filter( "radio-buttons-for-taxonomies-no-term-event_category", "__return_FALSE" );
 add_filter( "radio-buttons-for-taxonomies-no-term-news_topic", "__return_FALSE" );
+add_filter( "radio-buttons-for-taxonomies-no-term-media_type", "__return_FALSE" );
+add_filter( "radio-buttons-for-taxonomies-no-term-media_category", "__return_FALSE" );
 
 //==========================================================
 // Admin Columns Pro

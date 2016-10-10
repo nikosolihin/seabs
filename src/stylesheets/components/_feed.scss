@@ -47,6 +47,7 @@
       }
     }
     .Feed-left {
+      // @include cover;
       width: 100%;
       height: $spacer-single*8;
       flex: 0 0 auto;
@@ -106,7 +107,7 @@
       }
     }
 
-    // If we're on single page, become 2 columns, and apply
+    // If we're on single page, become 2 and 3 columns, and apply
     // extra styling
     @at-root .SinglePage-content #{&} {
       box: vertical;
@@ -146,8 +147,26 @@
             @extend .h4;
           }
           a, p {
-            line-height: 1.55;
+            line-height: 1.5;
           }
+        }
+      }
+    }
+
+    // If we're on single media document, become 2 columns
+    @at-root .SingleMedia-documentAuthors #{&} {
+      box: vertical;
+      @include from(sm) {
+        box: horizontal wrap;
+      }
+      .Feed-item {
+        width: 50%;
+        border: 0;
+        margin-bottom: $spacer-single*1.5;
+      }
+      .Feed-contact {
+        a, p {
+          line-height: 1.45;
         }
       }
     }

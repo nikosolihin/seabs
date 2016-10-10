@@ -13,9 +13,16 @@
       position: relative 0 -8px auto auto;
       font-weight: $font-weight-bold;
       font-size: 1.125rem;
+      @at-root .Breadcrumb--brand #{&} {
+        color: #ddd;
+      }
     }
     &:last-child {
-      &::after { content: ''; }
+      &::after {
+        @at-root .Breadcrumb--noTrail #{&} {
+          content: '';
+        }
+      }
       .Breadcrumb-link {
         font-weight: 600;
       }
@@ -26,9 +33,15 @@
     svg {
       margin: 0;
       size: 20px;
+      @at-root .Breadcrumb--brand #{&} {
+        fill: #777;
+      }
     }
   }
   &-link {
     text: $white $font-weight-normal left normal 1rem 1 .3px;
+    @at-root .Breadcrumb--brand #{&} {
+      color: $brand-primary;
+    }
   }
 }
