@@ -1,14 +1,97 @@
 .SingleMedia {
-  margin-top: $spacer-single*6;
   &-title {
     font-weight: $font-weight-bold;
-    margin-bottom: $spacer-half;
   }
-  &-subtitle {
-    color: #999;
-    font-weight: $font-weight-medium;
+
+  // Media Types
+  &-gallery {
+    @include fullwidth;
+    background-color: $black;
+    padding: $spacer-single*3.5 0;
+    &Heading {
+      box: horizontal middle space-between;
+    }
   }
-  &-custom {
+
+  &-video {
+    @include fullwidth;
+    background-color: $black;
+    padding: $spacer-single*3.25 0;
+    &Heading {
+      box: horizontal middle space-between;
+    }
+    &Wrapper {
+      padding: 0 $spacer-single*1.5;
+    }
+    .Embed {
+      margin-bottom: 0;
+    }
+  }
+
+  &-document {
+    @include fullwidth;
     background-color: #fafafa;
+    padding: $spacer-single*2 0;
+    margin-top: $spacer-single*3;
+    &Body {
+      width: 70%;
+    }
+    &Cover {
+      width: 30%;
+      position: relative;
+      left: $spacer-single*2.125;
+    }
+    &Frame {
+      border: 1px solid #ddd;
+      box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.1);
+    }
+    &Authors {
+      h2 {
+        margin-bottom: $spacer-single*2;
+      }
+    }
+    &TOC {
+      font-size: $font-size-h6;
+      line-height: 1.4;
+      color: #666;
+      background-color: $white;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      padding: $spacer-single*1.25 $spacer-single*1.5;
+      position: relative;
+      top: -$spacer-single*3.5;
+    }
+    &TOCLine {
+      padding: $spacer-threefourth 0;
+      &:first-of-type {
+        padding-top: $spacer-half;
+      }
+      p:first-child {
+        color: $headings-color;
+        margin-bottom: $spacer-quarter;
+      }
+      + .SingleMedia-documentTOCLine {
+        border-top: 1px solid #eee;
+      }
+    }
+    .SingleArticle {
+      margin-top: 0;
+    }
+    .SingleArticle-content {
+      box: horizontal;
+    }
+    .SingleArticle-teaser {
+      line-height: 1.6875;
+      font-size: $font-size-h5;
+      margin: $spacer-single 0 $spacer-single*2;
+    }
+    & + .SingleArticle {
+      margin-top: $spacer-single*3;
+    }
+  }
+  &-document--withTOC {
+    .Sidebar {
+      width: 29%;
+    }
   }
 }

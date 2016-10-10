@@ -6,13 +6,6 @@
   &-body {
     width: 55%;
     padding-right: $spacer-single*1.5;
-    .Button {
-      margin-top: $spacer-single*3;
-      svg {
-        size: $spacer-single;
-        margin-right: $spacer-single;
-      }
-    }
   }
   &-cover {
     width: 20%;

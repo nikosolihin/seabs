@@ -1,0 +1,185 @@
+{
+    "key": "group_57f662e0cbb21",
+    "title": "Gallery Details",
+    "fields": [
+        {
+            "key": "field_57f662e0d8fc9",
+            "label": "Teaser",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57f662e0d908a",
+            "label": "Paragraph",
+            "name": "teaser",
+            "type": "textarea",
+            "instructions": "This is the teaser\/overview paragraph for this item. A sentence or two should suffice. Teasers also appear in Facebook share dialogs and Twitter cards, as well as meta description tags for search engines crawlers. <strong>Don't leave this blank.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_57f664832240f",
+            "label": "Gallery",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57f6672d74d07",
+            "label": "Album Link",
+            "name": "album",
+            "type": "url",
+            "instructions": "This is the link visitors will go to to browse the rest of the photos within the Flickr album.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/www.flickr.com\/photos\/143886964@N03\/albums\/*********"
+        },
+        {
+            "key": "field_57f6649622410",
+            "label": "Select Photos",
+            "name": "gallery",
+            "type": "flickr_browser",
+            "instructions": "Select photos to feature in the slideshow. The title and description fields from Flickr will be automatically pulled and will appear in the gallery.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 9999,
+            "flickr_sizes": [
+                "url_z",
+                "url_l",
+                "url_o"
+            ],
+            "flickr_extras": [
+                "description"
+            ]
+        },
+        {
+            "key": "field_57f662e0d9862",
+            "label": "Notes",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57f662e0d9922",
+            "label": "",
+            "name": "note",
+            "type": "textarea",
+            "instructions": "You can leave internal notes here for content inventory purposes. This will <strong>not<\/strong> be shown anywhere on the front-end of the website.\r\n<br>\r\nFor example: <em>Last translated to French on 1\/1\/2016. Spanish translation pending approval.<\/em>\r\n<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "media_type:gallery"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media"
+            },
+            {
+                "param": "post_taxonomy_ancestor",
+                "operator": "==",
+                "value": "media_type:gallery"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "POST_TYPE : New Gallery",
+    "modified": 1475766304
+}

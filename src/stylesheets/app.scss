@@ -50,13 +50,24 @@
 @import "objects/burger";
 @import "objects/sidebar";
 @import "objects/footer";
+
+// Pages
 @import "objects/landing-page";
 @import "objects/split-page";
 @import "objects/single-page";
+
+// Article Layout
+@import "objects/single-article";
+
+// Event
 @import "objects/archive-event";
 @import "objects/single-event";
+
+// News
 @import "objects/archive-news";
 @import "objects/single-news";
+
+// Media
 @import "objects/single-media";
 @import "objects/single-document";
 // @import "objects/front-page";
@@ -94,6 +105,7 @@
 @import "components/share";
 @import "components/feed";
 @import "components/toc";
+@import "components/gallery";
 // @import "components/newsletter";
 // @import "components/donate";
 // @import "components/duet";
@@ -101,7 +113,6 @@
 // @import "components/carousel";
 // @import "components/hero";
 // @import "components/theater";
-// @import "components/gallery";
 // @import "components/media";
 // @import "components/searchbar";
 

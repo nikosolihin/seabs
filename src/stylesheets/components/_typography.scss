@@ -51,16 +51,20 @@
   color: #777;
   font-size: $font-size-h6;
   font-weight: $font-weight-normal;
-  margin-right: $spacer-single;
   margin-bottom: 0;
   &-dot {
-    color: #bbb;
+    color: #ccc;
     padding: 0 $spacer-quarter;
+  }
+  &-link {
+    @include hover(#777, $brand-primary);
+    @include underlink;
   }
   &--icon {
     box: horizontal middle;
     font-size: $font-size-h5;
     font-weight: $font-weight-medium;
+    margin-right: $spacer-single*2;
     svg {
       size: $spacer-single*1.125;
       fill: $brand-primary;

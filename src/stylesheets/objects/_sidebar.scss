@@ -73,6 +73,9 @@
     }
     overflow: hidden;
     margin-bottom: $spacer-single*2.5;
+    .Button {
+      margin: 0;
+    }
     &--center .Sidebar-sectionHeading {
       text-align: center;
     }
@@ -90,7 +93,7 @@
     }
   }
   &-sectionHeading {
-    margin-bottom: $spacer-single*1.125;
+    margin-bottom: $spacer-single;
   }
 
   &--open {

@@ -1,0 +1,23 @@
+<div class="SingleArticle container">
+  <div class="SingleArticle-content {{'container'|modifiers("text-max")}}">
+
+    {% set authors = TimberPost(acf.authors) %}
+    <div class="SingleMedia-documentAuthors">
+      <h2 class="brand">Authors</h2>
+      {% include 'components/feed.twig' with {data: {mode: 'manual', style: 'object-list', manual_posts: authors, type: 'person',  manual_metadata: ['photo', 'email', 'title']}} %}
+    </div>
+
+    {# Page Builder #}
+    {% if sections %}
+      <div class="content-body--plain">
+        {% include 'layout/base.twig' %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="SingleArticle-sidebar Sidebar">
+    {# Sidebar Builder #}
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
+  </div>
+</div>

@@ -126,20 +126,15 @@
             "key": "field_57f65ebdfa4a8",
             "label": "Download Link",
             "name": "file",
-            "type": "file",
-            "instructions": "",
+            "type": "google_drive_field",
+            "instructions": "Paste the file's shareable link.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
+            }
         },
         {
             "key": "field_57f604435250e",
@@ -275,27 +270,6 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
-                },
-                {
-                    "key": "field_57f6028493121",
-                    "label": "Page Number",
-                    "name": "page_number",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": "",
-                    "max": "",
-                    "step": 1
                 }
             ]
         },
@@ -386,5 +360,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Document",
-    "modified": 1475764003
+    "modified": 1476020706
 }

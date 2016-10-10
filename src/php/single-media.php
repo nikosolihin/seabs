@@ -10,11 +10,26 @@ $context['acf'] = get_fields();
 // Get media type
 $context['media_type'] = $post->get_terms('media_type')[0]->slug;
 
-// Get page contents
-if ($context['acf']['sections']) {
-	// If the page builder was used
-	$context['sections'] = $context['acf']['sections'];
+// If type is gallery, audio or video, grab og:image
+if ($context['media_type'] == 'video') {
+	preg_match('/src="([^"]+)"/', $context['acf']['video'], $match);
+	$url = $match[1];
+	if (preg_match('/youtube\.com\/watch\?v=([^\&\?\/]+)/', $url, $id)) {
+  	$context['youtube_id'] = $id[1];
+	} else if (preg_match('/youtube\.com\/embed\/([^\&\?\/]+)/', $url, $id)) {
+	  $context['youtube_id'] = $id[1];
+	} else if (preg_match('/youtube\.com\/v\/([^\&\?\/]+)/', $url, $id)) {
+	  $context['youtube_id'] = $id[1];
+	} else if (preg_match('/youtu\.be\/([^\&\?\/]+)/', $url, $id)) {
+	  $context['youtube_id'] = $id[1];
+	}
+	else if (preg_match('/youtube\.com\/verify_age\?next_url=\/watch%3Fv%3D([^\&\?\/]+)/', $url, $id)) {
+    $context['youtube_id'] = $id[1];
+	}
 }
+
+// Get page contents
+$context['sections'] = $context['acf']['sections'];
 
 // Get Sidebar
 $inherit = ($context['acf']['inherit'] === 'true');
@@ -38,14 +53,12 @@ if ($inherit) {
 }
 
 // Generate breadcrumb. Must be last.
+// Breadcrumb for media
 $context['breadcrumb'] = array();
-while( $post->get_parent ) {
-	$post = $post->get_parent();
-	array_push( $context['breadcrumb'], array(
-    'title' => $post->title,
-    'link' => $post->link
-  ));
-}
+array_push( $context['breadcrumb'], array(
+	'title' => ucfirst($post->type->name),
+	'link' => $context['site']->url. '/' .$post->type->slug
+));
 $context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
 
 Timber::render( 'media/single-media.twig' , $context );

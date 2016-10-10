@@ -1,0 +1,46 @@
+<div class="SingleMedia-document">
+  <div class="SingleArticle container">
+    <div class="SingleArticle-content {{'container'|modifiers("text")}}">
+      <div class="SingleMedia-documentBody">
+
+        {# Teaser #}
+        {% if acf.teaser %}
+        <p class="SingleArticle-teaser">{{acf.teaser}}</p>
+        {% endif %}
+
+        {# CTA #}
+        <a href="{{acf.file}}" class="Button Button--icon">
+          <svg aria-hidden="true" role="presentation" title="{{post.title}}">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use>
+          </svg>{{__('Download', 'saat')}}
+        </a>
+      </div>
+      <div class="SingleMedia-documentCover">
+        <div class="SingleMedia-documentFrame">
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source media="(min-width: {{lg}})" data-srcset="{{cover[xlarge]}}">
+            <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{cover[large]}}">
+            <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{cover[medium]}}">
+            <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{cover[small]}}">
+            <!--[if IE 9]></video><![endif]-->
+            <img alt="{{post.title}}" class="lazyload" data-src="{{cover[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="SingleArticle-sidebar Sidebar">
+      {% if acf.with_toc %}
+      <div class="SingleMedia-documentTOC">
+        <h5 class="brand caps">{{__('Table of Contents', 'saat')}}</h5>
+        {% for item in acf.toc %}
+          <div class="SingleMedia-documentTOCLine">
+            <p><strong>{{item.title|title}}</strong></p>
+            <p>{{item.authors}}</p>
+          </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

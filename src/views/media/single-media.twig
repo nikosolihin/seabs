@@ -1,49 +1,30 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% set cover = acf.image %}
 
-  <div class="SingleMedia container">
-    <h1 class="SingleMedia-title h2 brand">{{post.title|title}}</h1>
-    <h4 class="SingleMedia-subtitle">{{acf.subtitle}}</h4>
-    <span>Jan 20, 2016</span>
-  </div>
+  {% if media_type == 'gallery' %}
+    {% include 'media/gallery.twig' %}
+  {% endif %}
 
-  <div class="SingleMedia-custom wrapper">
-    <div class="SingleDocument container">
+  {% if media_type == 'video' or media_type == 'audio' %}
+    {% include 'media/video.twig' %}
+  {% endif %}
 
-      <div class="SingleDocument-body container">
-        {% if acf.teaser %}
-          <p>{{acf.teaser}}</p>
-        {% endif %}
-        <a href="" class="Button Button--large">
-          <svg aria-hidden="true" role="presentation" title="">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use>
-          </svg>Download
-        </a>
+  {% if media_type == 'document' %}
+    {% set cover = acf.image %}
+    {% if acf.with_toc %}
+      <div class="SingleMedia-document--withTOC">
+    {% endif %}
+    {% include 'media/document-header.twig' %}
+    {% include 'media/document.twig' %}
+    {% include 'media/document-footer.twig' %}
+    {% if acf.with_toc %}
       </div>
-      <div class="SingleDocument-cover">
-        <picture>
-          <!--[if IE 9]><video style="display: none;"><![endif]-->
-          <source media="(min-width: {{lg}})" data-srcset="{{cover[xlarge]}}">
-          <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{cover[large]}}">
-          <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{cover[medium]}}">
-          <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{cover[small]}}">
-          <!--[if IE 9]></video><![endif]-->
-          <img alt="{{post.title}}" class="lazyload" data-src="{{cover[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-        </picture>
-      </div>
-      <div class="SingleDocument-toc">
-        {% include 'components/social-share.twig' %}
-        Table of Contents
-      </div>
+    {% endif %}
+  {% endif %}
 
-    </div>
-  </div>
-
-  <div class="SingleMedia-wrapper">
-    <div class="SingleMedia-content"></div>
-    <div class="SingleMedia-sidebar"></div>
-  </div>
+  {% if media_type == 'gallery' or media_type == 'video' %}
+    {% include 'media/media-body.twig' %}
+  {% endif %}
 
 {% endblock %}

@@ -1,7 +1,5 @@
 .Gallery {
-  background-color: $gallery-bg-color;
-  padding: $spacer-single*3 0;
-
+  margin-top: $spacer-single*2;
   &-cell {
     width: 100%;
     @at-root .Gallery-body #{&} {
@@ -29,9 +27,7 @@
   }
   &-caption {
     margin: 0;
-    font-size: .9rem;
     color: $gallery-color;
-    line-height: $figure-caption-line-height;
     padding: $spacer-single*1.25 $spacer-half 0;
     h5 {
       color: $white;
@@ -44,6 +40,23 @@
     display: none;
     &--show {
       display: block;
+    }
+  }
+  &-body {
+    .flickity-prev-next-button {
+      width: $spacer-single*2.75;
+      height: $spacer-single*5;
+      background-color: $brand-highlight;
+      border-radius: 0;
+      path {
+        fill: $white;
+      }
+      &.previous {
+        left: -$spacer-single*1.25;
+      }
+      &.next {
+        right: -$spacer-single*1.25;
+      }
     }
   }
 }

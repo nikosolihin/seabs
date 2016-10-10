@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying a single event
+ * The template for news archive
  */
 $context = Timber::get_context();
 $post = new TimberPost();

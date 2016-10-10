@@ -1,0 +1,9 @@
+<div class="SingleMedia-video">
+  <div class="SingleMedia-videoHeading container">
+    <h1 class="SingleMedia-title h2 white">{{post.title|title}}</h1>
+    {% include 'components/social-share.twig' with {'color': 'brand'}%}
+  </div>
+  <div class="SingleMedia-videoWrapper container">
+    <div class="Embed">{{acf.video}}</div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<ol class="Breadcrumb">
+<ol class="{{'Breadcrumb'|modifiers("#{style}, #{trailing}")}}">
   <li class="Breadcrumb-item">
     <a class="Breadcrumb-home" href="{{site.url}}">
       <svg aria-hidden="true" role="presentation" title="{{site.title}} Homepage">
@@ -11,5 +11,5 @@
       <a class="Breadcrumb-link" href="{{item.link}}">{{item.title|title}}</a>
     </li>
   {% endfor %}
-  <li class="Breadcrumb-item"></li>
+
 </ol>
