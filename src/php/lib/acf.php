@@ -148,6 +148,13 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'edit.php?post_type=news',
 	));
 
+  // Media Settings //////////////////////
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Media Settings',
+		'menu_title'	=> 'Media Settings',
+		'parent_slug'	=> 'edit.php?post_type=media',
+	));
+
   // Services //////////////////////////////
   acf_add_options_page(array(
     'page_title' 	=> '', // No page title since acf already has

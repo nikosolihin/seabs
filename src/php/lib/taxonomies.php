@@ -123,13 +123,13 @@ function media_type_taxonomy() {
 		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                       => 'media/?utf8=✓&page=1&type=',
+		'slug'                       => 'media/?utf8=✓&page=1&types=',
 		'with_front'                 => true,
 		'hierarchical'               => false,
 	);
 	$args = array(
 		'labels'                     => $labels,
-		'hierarchical'               => true,
+		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,
@@ -137,7 +137,7 @@ function media_type_taxonomy() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => $rewrite,
     'show_in_rest'               => true,
-    'rest_base'                  => 'media/type',
+    'rest_base'                  => 'type',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'media_type', array( 'media' ), $args );
@@ -186,7 +186,7 @@ function media_category_taxonomy() {
 		'show_tagcloud'              => false,
 		'rewrite'                    => $rewrite,
     'show_in_rest'               => true,
-    'rest_base'                  => 'media/category',
+    'rest_base'                  => 'category',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
 	register_taxonomy( 'media_category', array( 'media' ), $args );

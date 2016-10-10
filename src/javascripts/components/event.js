@@ -189,7 +189,7 @@ export default class Event {
 
         // Setup Pagination
         for (let i=1; i<=totalPages; i++) {
-          let qstring = paramReplace( this.queryString, 'page', i )
+          let qstring = paramReplace( location.search, 'page', i )
           if (i == this.page) {
             this.$pagination.append(`<li class="Pagination--current"><a class="Pagination-link" href="${qstring}">${i}</a></li>`)
           } else {

@@ -68,6 +68,7 @@
 @import "objects/single-news";
 
 // Media
+@import "objects/archive-media";
 @import "objects/single-media";
 @import "objects/single-document";
 // @import "objects/front-page";
@@ -97,7 +98,6 @@
 @import "components/form";
 @import "components/tabs";
 @import "components/block";
-@import "components/media-object";
 @import "components/pill";
 @import "components/loader";
 @import "components/pagination";
@@ -106,6 +106,13 @@
 @import "components/feed";
 @import "components/toc";
 @import "components/gallery";
+@import "components/select";
+@import "components/toggle";
+
+// Mustache Templates
+@import "components/media-object";
+@import "components/card-object";
+
 // @import "components/newsletter";
 // @import "components/donate";
 // @import "components/duet";

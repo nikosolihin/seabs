@@ -38,6 +38,45 @@
             "new_lines": ""
         },
         {
+            "key": "field_57fb9e53cd930",
+            "label": "Image",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57fb9e68cd931",
+            "label": "Share Image",
+            "name": "image",
+            "type": "flickr_browser",
+            "instructions": "This image will be used on facebook and twitter share dialogs.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_n",
+                "url_z",
+                "url_l"
+            ],
+            "flickr_extras": ""
+        },
+        {
             "key": "field_57f6686f57697",
             "label": "Video",
             "name": "",
@@ -156,5 +195,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Video",
-    "modified": 1475766487
+    "modified": 1476114991
 }

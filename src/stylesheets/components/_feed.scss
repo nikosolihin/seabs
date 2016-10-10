@@ -1,6 +1,6 @@
 .Feed {
   @include normalist;
-  // font-size: $font-size-h6;
+  font-size: $font-size-h6;
   &-right {
     padding-left: $spacer-single;
     // Vertical rhythm
@@ -47,6 +47,7 @@
       }
     }
     .Feed-left {
+      // @include cover;
       width: 100%;
       height: $spacer-single*8;
       flex: 0 0 auto;

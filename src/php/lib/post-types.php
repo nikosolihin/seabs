@@ -240,7 +240,7 @@ function media_post_type() {
 		'publicly_queryable'    => true,
 		'rewrite'               => $rewrite,
 		'show_in_rest'       		=> true,
-		'rest_base'          		=> 'media',
+		'rest_base'          		=> 'medium', // 'media' is taken
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
 	register_post_type( 'media', $args );
