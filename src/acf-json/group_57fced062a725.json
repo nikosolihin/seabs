@@ -1,9 +1,9 @@
 {
-    "key": "group_57f662e0cbb21",
-    "title": "Gallery Details",
+    "key": "group_57fced062a725",
+    "title": "Audio",
     "fields": [
         {
-            "key": "field_57f662e0d8fc9",
+            "key": "field_57fced0638a15",
             "label": "Teaser",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_57f662e0d908a",
+            "key": "field_57fced0638b1f",
             "label": "Paragraph",
             "name": "teaser",
             "type": "textarea",
@@ -38,7 +38,7 @@
             "new_lines": ""
         },
         {
-            "key": "field_57fcecd96847f",
+            "key": "field_57fced0638bf8",
             "label": "Subtitle",
             "name": "",
             "type": "tab",
@@ -54,11 +54,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_57fcece768480",
+            "key": "field_57fced0638cfd",
             "label": "Subtitle",
             "name": "subtitle",
             "type": "text",
-            "instructions": "",
+            "instructions": "For long subtitles that will not fit on the title above.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -73,7 +73,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_57fbba23601cf",
+            "key": "field_57fced0638dd3",
             "label": "Image",
             "name": "",
             "type": "tab",
@@ -89,7 +89,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_57fbb9f1a6968",
+            "key": "field_57fced0638eab",
             "label": "Share Image",
             "name": "image",
             "type": "flickr_browser",
@@ -112,8 +112,8 @@
             "flickr_extras": ""
         },
         {
-            "key": "field_57f664832240f",
-            "label": "Gallery",
+            "key": "field_57fced0638fae",
+            "label": "Video",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -128,11 +128,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_57f6672d74d07",
-            "label": "Album Link",
-            "name": "album",
-            "type": "url",
-            "instructions": "This is the link visitors will go to to browse the rest of the photos within the Flickr album.",
+            "key": "field_57fced0639084",
+            "label": "Audio Embed",
+            "name": "audio",
+            "type": "oembed",
+            "instructions": "Paste the link to the audio here",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -140,36 +140,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "https:\/\/www.flickr.com\/photos\/143886964@N03\/albums\/*********"
+            "width": "",
+            "height": ""
         },
         {
-            "key": "field_57f6649622410",
-            "label": "Select Photos",
-            "name": "gallery",
-            "type": "flickr_browser",
-            "instructions": "Select photos to feature in the slideshow. The title and description fields from Flickr will be automatically pulled and will appear in the gallery.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "acf-field-flickr-browser--showlabel",
-                "id": ""
-            },
-            "flickr_api_key": "",
-            "flickr_user_id": "",
-            "flickr_limit": 9999,
-            "flickr_sizes": [
-                "url_z",
-                "url_l",
-                "url_o"
-            ],
-            "flickr_extras": [
-                "description"
-            ]
-        },
-        {
-            "key": "field_57f662e0d9862",
+            "key": "field_57fced063915a",
             "label": "Notes",
             "name": "",
             "type": "tab",
@@ -185,7 +160,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_57f662e0d9922",
+            "key": "field_57fced063925e",
             "label": "",
             "name": "note",
             "type": "textarea",
@@ -216,7 +191,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "media_type:gallery"
+                "value": "media_type:audio"
             }
         ],
         [
@@ -228,7 +203,7 @@
             {
                 "param": "post_taxonomy_ancestor",
                 "operator": "==",
-                "value": "media_type:gallery"
+                "value": "media_type:audio"
             }
         ]
     ],
@@ -254,6 +229,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "POST_TYPE : New Gallery",
-    "modified": 1476193524
+    "description": "POST_TYPE : New Audio",
+    "modified": 1476193613
 }

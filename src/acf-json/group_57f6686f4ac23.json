@@ -38,6 +38,41 @@
             "new_lines": ""
         },
         {
+            "key": "field_57fcec9898b9d",
+            "label": "Subtitle",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57fcecbc98b9e",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "For long subtitles that will not fit on the title above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_57fb9e53cd930",
             "label": "Image",
             "name": "",
@@ -195,5 +230,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Video",
-    "modified": 1476170068
+    "modified": 1476193488
 }

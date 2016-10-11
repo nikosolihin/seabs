@@ -3,7 +3,7 @@
 
     {% set authors = TimberPost(acf.authors) %}
     <div class="SingleMedia-documentAuthors">
-      <h2 class="brand">Authors</h2>
+      <h2 class="brand">{{__('Authors', 'saat')}}</h2>
       {% include 'components/feed.twig' with {data: {mode: 'manual', style: 'object-list', manual_posts: authors, type: 'person',  manual_metadata: ['photo', 'email', 'title']}} %}
     </div>
 

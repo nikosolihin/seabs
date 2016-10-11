@@ -6,6 +6,11 @@
     {# Headings #}
     <h1 class="SingleArticle-title h2 brand">{{post.title|title}}</h1>
 
+    {# Subtitle #}
+    {% if acf.subtitle %}
+      <h4 class="SingleArticle-subtitle">{{acf.subtitle}}</h4>
+    {% endif %}
+
     {# Teaser #}
     {% if acf.teaser %}
       <h3 class="SingleArticle-teaser Lead">{{acf.teaser}}</h3>
@@ -49,7 +54,7 @@
     {% endif %}
     <div class="Sidebar-section">
       <h3 class="Sidebar-sectionHeading Lead brand">
-        {{__('Share ' ~ media_type|title, 'saat')}}
+        {{__('Share Media', 'saat')}}
       </h3>
       {% include 'components/social-share.twig' %}
     </div>
