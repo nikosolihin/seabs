@@ -12,7 +12,16 @@
   }
 
   &-wrapper {
-    width: 33%;
+    width: 100%;
+    @include from(lg) {
+      width: 50%;
+    }
+    @include from(xl) {
+      width: 33%;
+    }
+    @include from(xxl) {
+      width: 25%;
+    }
     border: $spacer-threefourth solid transparent;
   }
   &-image {
