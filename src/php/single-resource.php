@@ -10,6 +10,12 @@ $context['acf'] = get_fields();
 // Get media type
 $context['media_type'] = $post->get_terms('media_type')[0]->slug;
 
+// Get media category tag
+$context['media_category'] = array(
+	'name' => $post->get_terms('media_category')[0]->name,
+	'slug' => $post->get_terms('media_category')[0]->slug
+);
+
 // // If type is gallery, audio or video, grab og:image
 // if ($context['media_type'] == 'video') {
 // 	preg_match('/src="([^"]+)"/', $context['acf']['video'], $match);

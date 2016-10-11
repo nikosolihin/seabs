@@ -71,6 +71,9 @@
       margin-right: $spacer-half;
     }
   }
+  &--withDot {
+    margin-right: 0;
+  }
 }
 
 .content-body {

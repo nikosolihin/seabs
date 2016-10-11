@@ -21,12 +21,19 @@
       <div class="meta">
         <span>{{post.date|date('j M, Y')}}</span>
       </div>
-      <div class="meta meta--icon">
+      <div class="meta meta--icon meta--withDot">
         <span class="meta-dot">•</span>
         <svg aria-hidden="true" role="presentation" title="News Date">
           <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{media_type}}"></use>
         </svg>
         <a href="{{breadcrumb|first.link ~ '/?utf8=✓&page=1&types=' ~ media_type}}" class="meta-link">{{media_type|title}}</a>
+      </div>
+      <div class="meta meta--icon meta--withDot">
+        <span class="meta-dot">•</span>
+        <svg aria-hidden="true" role="presentation" title="News Date">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tag"></use>
+        </svg>
+        <a href="{{breadcrumb|first.link ~ '/?utf8=✓&page=1&category=' ~ media_category.slug}}" class="meta-link">{{media_category.name}}</a>
       </div>
     </div>
 
