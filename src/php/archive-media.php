@@ -3,6 +3,9 @@
  * The template for media archive
  */
 $context = Timber::get_context();
+$context['wp_title'] = __('Media Library', 'saat');
+$context['empty_msg'] = __('No media found. Please try again.', 'saat');
+
 $post = new TimberPost();
 $context['post'] = $post;
 $context['ppp'] = get_field('media_listing_ppp', 'option');

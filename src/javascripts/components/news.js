@@ -29,6 +29,7 @@ export default class Event {
     this.allTopics = options.topics
     this.appID = options.appId
     this.handle = options.handle
+    this.emptyMsg = options.emptyMsg
 
     // Get filters from URL & store them
     let filters = getQueryParams()
@@ -168,7 +169,7 @@ export default class Event {
           this.renderNews(templateVars)
         })
       } else {
-        this.renderNews({ empty: "No news found. Please try again." })
+        this.renderNews({ empty: this.emptyMsg })
       }
     })
     .fail( (xhr, status, errorThrown) => {

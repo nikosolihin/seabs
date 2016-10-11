@@ -3,6 +3,9 @@
  * The template for news archive
  */
 $context = Timber::get_context();
+$context['wp_title'] = __('News', 'saat');
+$context['empty_msg'] = __('No news found. Please try again.', 'saat');
+
 $post = new TimberPost();
 $context['post'] = $post;
 $context['ppp'] = get_field('news_listing_ppp', 'option');

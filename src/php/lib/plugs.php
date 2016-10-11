@@ -7,6 +7,7 @@ add_filter( "radio-buttons-for-taxonomies-no-term-event_category", "__return_FAL
 add_filter( "radio-buttons-for-taxonomies-no-term-news_topic", "__return_FALSE" );
 add_filter( "radio-buttons-for-taxonomies-no-term-media_type", "__return_FALSE" );
 add_filter( "radio-buttons-for-taxonomies-no-term-media_category", "__return_FALSE" );
+add_filter( "radio-buttons-for-taxonomies-no-term-role", "__return_FALSE" );
 
 //==========================================================
 // Admin Columns Pro
@@ -18,7 +19,6 @@ add_filter( "radio-buttons-for-taxonomies-no-term-media_category", "__return_FAL
 //==========================================================
 add_action( 'init', 'ac_custom_column_settings_c9cc5d77' );
 function ac_custom_column_settings_c9cc5d77() {
-
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
 			array(
@@ -308,7 +308,7 @@ function ac_custom_column_settings_c9cc5d77() {
 						'label' => 'Color',
 						'width' => '',
 						'width_unit' => '%',
-						'field' => 'field_57fb61974f758',
+						'field' => 'field_57d64fab2d7a8',
 						'edit' => 'off'
 					),
 			'posts' => array(

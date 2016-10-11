@@ -36,7 +36,7 @@
         {% for item in acf.toc %}
           <div class="SingleMedia-documentTOCLine">
             <p><strong>{{item.title|title}}</strong></p>
-            <p>{{item.authors}}</p>
+            <p>{{item.authors|title}}</p>
           </div>
         {% endfor %}
       </div>
