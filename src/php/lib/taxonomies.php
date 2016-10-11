@@ -140,7 +140,7 @@ function media_type_taxonomy() {
     'rest_base'                  => 'type',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
-	register_taxonomy( 'media_type', array( 'media' ), $args );
+	register_taxonomy( 'media_type', array( 'resource' ), $args );
 }
 add_action( 'init', 'media_type_taxonomy', 0 );
 
@@ -189,7 +189,7 @@ function media_category_taxonomy() {
     'rest_base'                  => 'category',
     'rest_controller_class'      => 'WP_REST_Terms_Controller',
 	);
-	register_taxonomy( 'media_category', array( 'media' ), $args );
+	register_taxonomy( 'media_category', array( 'resource' ), $args );
 }
 add_action( 'init', 'media_category_taxonomy', 0 );
 

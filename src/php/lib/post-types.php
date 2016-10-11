@@ -277,14 +277,14 @@ function media_post_type() {
 		'slug'                  => 'media/%media_type%',
 		'with_front'            => true,
 		'pages'                 => true,
-		'feeds'                 => false,
+		'feeds'                 => true,
 	);
 	$args = array(
 		'label'                 => __( 'Media', 'text_domain' ),
 		'description'           => __( 'Custom post type for media', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title' ),
-		'taxonomies'            => array( 'media_type' ),
+		'taxonomies'            => array( 'media_type', 'media_category' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -299,10 +299,10 @@ function media_post_type() {
 		'publicly_queryable'    => true,
 		'rewrite'               => $rewrite,
 		'show_in_rest'       		=> true,
-		'rest_base'          		=> 'medium', // 'media' is taken
+		'rest_base'          		=> 'resources', // 'media' is taken
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	);
-	register_post_type( 'media', $args );
+	register_post_type( 'resource', $args );
 }
 add_action( 'init', 'media_post_type', 0 );
 
@@ -311,7 +311,7 @@ add_action( 'init', 'media_post_type', 0 );
  * http://wordpress.stackexchange.com/questions/108642/permalinks-custom-post-type-custom-taxonomy-post
  */
 function media_type_permalinks( $post_link, $post ){
-	if ( is_object( $post ) && $post->post_type == 'media' ){
+	if ( is_object( $post ) && $post->post_type == 'resource' ){
 		$terms = wp_get_object_terms( $post->ID, 'media_type' );
 		if( $terms ){
 			return str_replace( '%media_type%' , $terms[0]->slug , $post_link );
