@@ -151,7 +151,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "media"
+                "value": "resource"
             },
             {
                 "param": "post_taxonomy",
@@ -163,7 +163,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "media"
+                "value": "resource"
             },
             {
                 "param": "post_taxonomy_ancestor",
@@ -195,5 +195,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Video",
-    "modified": 1476114991
+    "modified": 1476170068
 }

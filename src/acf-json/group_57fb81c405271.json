@@ -3,22 +3,6 @@
     "title": "Media Settings",
     "fields": [
         {
-            "key": "field_57fb81c4122b6",
-            "label": "Featured Events",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
             "key": "field_57fb81c412429",
             "label": "Listing Page",
             "name": "",
@@ -75,6 +59,27 @@
             "maxlength": ""
         },
         {
+            "key": "field_57fc992a1e434",
+            "label": "Teaser Character Limit",
+            "name": "media_char_limit",
+            "type": "number",
+            "instructions": "This limits the teaser paragraph displayed on each card.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 100,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 50,
+            "max": "",
+            "step": 1
+        },
+        {
             "key": "field_57fb81c412692",
             "label": "Listing Sidebar",
             "name": "",
@@ -126,5 +131,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Media Settings",
-    "modified": 1476100819
+    "modified": 1476172229
 }

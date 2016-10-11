@@ -3,6 +3,10 @@
   @include from(lg) {
     box: horizontal space-between;
   }
+  @include from(xxl) {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
 
   .Lead {
     letter-spacing: .5px;
@@ -28,7 +32,11 @@
   //   }
   // }
   &-heading {
+    margin-top: $spacer-single*6;
     padding: 0 $spacer-single*1.75;
+    @include from(xxl) {
+      padding: 0;
+    }
   }
   &-result {
     box: horizontal wrap;
@@ -42,12 +50,15 @@
       padding: 0 $spacer-single;
     }
     @include from(lg) {
-      width: 76%;
+      // width: 76%;
+      flex: 1 1 auto;
       order: 1;
-      padding-right: $spacer-single*4;
+      padding-right: $spacer-single*2;
     }
   }
   &-sidebar {
+    position: relative;
+    top: -$spacer-single*2;
     @include to(md) {
       order: 2;
       padding: $spacer-single*1.5;
@@ -61,10 +72,16 @@
       padding: $spacer-single*1.5 $spacer-single*15;
     }
     @include from(lg) {
+      width: 23.5%;
       display: block;
-      width: 20%;
       order: 2;
       padding: 0;
+    }
+    @include from(xl) {
+      width: 20%;
+    }
+    @include from(xxl) {
+      width: 16%;
     }
   }
   &-sidebarSection {

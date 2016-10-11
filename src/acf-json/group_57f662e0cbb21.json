@@ -176,7 +176,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "media"
+                "value": "resource"
             },
             {
                 "param": "post_taxonomy",
@@ -188,7 +188,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "media"
+                "value": "resource"
             },
             {
                 "param": "post_taxonomy_ancestor",
@@ -220,5 +220,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Gallery",
-    "modified": 1476115166
+    "modified": 1476170099
 }

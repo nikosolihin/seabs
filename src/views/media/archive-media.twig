@@ -8,8 +8,7 @@
 
 {# ----------------- Media Archive ----------------- #}
 <h2 class="Lead Lead--section brand container ArchiveMedia-heading">{{__('Media Library', 'saat')}}</h2>
-
-<div class="ArchiveMedia container" data-component="media" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "label": "{{label|title}}", "types": {{types_json}}, "categories": {{categories_json}}, "locale": "{{site.language}}" }'>
+<div class="ArchiveMedia container" data-component="media" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "charLimit": "{{char_limit}}", "label": "{{label|title}}", "types": {{types_json}}, "categories": {{categories_json}}, "locale": "{{site.language}}" }'>
 
   <!-- <div class="ArchiveMedia-preferences" data-component="toc">
     <svg aria-hidden="true" role="presentation" title="Select Language">
@@ -71,7 +70,7 @@
 
     </div>
     <a href="" class="ArchiveMedia-search Button Button--block Button--large">{{__('Search', 'saat')}}</a>
-    <!-- {% include 'layout/sidebar-base.twig' %} -->
+    {# include 'layout/sidebar-base.twig' #}
   </div>
 
 </div>

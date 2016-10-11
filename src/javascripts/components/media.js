@@ -23,6 +23,7 @@ export default class Media {
     this.domain = options.domain
     this.label = options.label
     this.ppp = options.ppp
+    this.charLimit = options.charLimit
     this.allCategories = options.categories
     this.allTypes = options.types
 
@@ -58,26 +59,18 @@ export default class Media {
       this.updateQueryStrings()
       this.fetchMedia()
     })
-    // .on('click', '.Datepicker-clear', (event) => {
-    //   event.preventDefault()
-    //   this.picker.setDate(null)
-    // })
-    // .on('click', '.Pill-clear', (event) => {
-    //   event.preventDefault()
-    //   this.$sidebar.find('.Pill').addClass('Pill--inactive')
-    // })
-    // this.$pagination.on('click', '.Pagination-link', (event) => {
-    //   event.preventDefault()
-    //   window.scrollTo(0, 0)
-    //   this.handlePagination( $(event.target).text() )
-    // })
-    // $(document).keypress( (event) => {
-    //   if(event.which == 13) {
-    //     event.preventDefault()
-    //     this.updateQueryStrings()
-    //     this.fetchEvents()
-    //   }
-    // })
+    this.$pagination.on('click', '.Pagination-link', (event) => {
+      event.preventDefault()
+      window.scrollTo(0, 0)
+      this.handlePagination( $(event.target).text() )
+    })
+    $(document).keypress( (event) => {
+      if(event.which == 13) {
+        event.preventDefault()
+        this.updateQueryStrings()
+        this.fetchEvents()
+      }
+    })
   }
 
   updateQueryStrings() {
@@ -115,7 +108,7 @@ export default class Media {
     }
 
     $.ajax({
-      url: `${this.domain}/wp-json/wp/v2/medium`,
+      url: `${this.domain}/wp-json/wp/v2/resources`,
       data: dataObject,
       type: "GET",
       dataType : "json",
@@ -136,26 +129,19 @@ export default class Media {
         let totalPages = parseInt(xhr.getResponseHeader('x-wp-totalpages'))
 
         _.forEach(data, (media) => {
-          $.ajax({
-            url: `${this.domain}/wp-json/acf/v2/medium/${media.id}`,
-            type: "GET",
-            dataType : "json"
-          }).done( (data) => {
-            let acf = data.acf,
-            templateVars = {
-              title: media.title.rendered,
-              link: media.link,
-              date: moment(media.date).format('D MMM, Y'),
-              teaser: acf.teaser.substring(0, 100)+'...',
-              image: acf.image.url_n,
-              label: this.label,
-              type: this.allTypes[media['type']]['name'],
-              slug: this.allTypes[media['type']]['slug'],
-              color: this.allTypes[media['type']]['color'],
-              category: this.allCategories[media['category']]['name'],
-            }
-            this.renderMedia(templateVars)
-          })
+          let templateVars = {
+            title: media.title.rendered,
+            link: media.link,
+            date: moment(media.date).format('D MMM, Y'),
+            teaser: media.acf.teaser.substring(0, this.charLimit)+'...',
+            image: media.acf.image.url_n,
+            label: this.label,
+            type: this.allTypes[media['type']]['name'],
+            slug: this.allTypes[media['type']]['slug'],
+            color: this.allTypes[media['type']]['color'],
+            category: this.allCategories[media['category']]['name'],
+          }
+          this.renderMedia(templateVars)
         })
 
         // Setup Pagination

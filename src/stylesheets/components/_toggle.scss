@@ -7,10 +7,15 @@
     width: 40%;
     border: 1px solid #e2e2e2;
     border-radius: 2px;
-    margin-right: $spacer-single;
     margin-bottom: $spacer-single;
     transition: all .125s ease-in-out;
     cursor: pointer;
+    &:nth-child(odd) {
+      margin-right: $spacer-half;
+    }
+    &:nth-child(even) {
+      margin-left: $spacer-half;
+    }
     &:hover {
       background-color: #eee;
     }

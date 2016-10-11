@@ -152,7 +152,7 @@ if( function_exists('acf_add_options_page') ) {
   acf_add_options_sub_page(array(
 		'page_title' 	=> 'Media Settings',
 		'menu_title'	=> 'Media Settings',
-		'parent_slug'	=> 'edit.php?post_type=media',
+		'parent_slug'	=> 'edit.php?post_type=resource',
 	));
 
   // Services //////////////////////////////
