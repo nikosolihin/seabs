@@ -1,7 +1,7 @@
 {
   "root": {
     "src": "./src",
-    "dest ": "./public",
+    "dest": "./public",
     "deploy": "./htdocs/wp-content/themes/saat"
   },
 
