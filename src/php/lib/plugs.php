@@ -16,32 +16,33 @@ add_filter( "radio-buttons-for-taxonomies-no-term-media_category", "__return_FAL
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-// add_action( 'init', 'ac_custom_column_settings_5f331eb7' );
-function ac_custom_column_settings_5f331eb7() {
+add_action( 'init', 'ac_custom_column_settings_c9cc5d77' );
+function ac_custom_column_settings_c9cc5d77() {
+
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
-			array('columns' => array(
-
-			'column-order' => array(
-				'column-name' => 'column-order',
-				'type' => 'column-order',
-				'clone' => '',
-				'label' => 'Order',
-				'width' => '4',
-				'width_unit' => '%',
-				'edit' => 'on',
-				'sort' => 'on'
-			),
+			array(
+				'columns' => array(
+					'column-order' => array(
+						'column-name' => 'column-order',
+						'type' => 'column-order',
+						'clone' => '',
+						'label' => 'Order',
+						'width' => '4',
+						'width_unit' => '%',
+						'edit' => 'on',
+						'sort' => 'on'
+					),
 			'title' => array(
-				'column-name' => 'title',
-				'type' => 'title',
-				'clone' => '',
-				'label' => 'Title',
-				'width' => '20',
-				'width_unit' => '%',
-				'edit' => 'off',
-				'sort' => 'on'
-			),
+						'column-name' => 'title',
+						'type' => 'title',
+						'clone' => '',
+						'label' => 'Title',
+						'width' => '20',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'sort' => 'on'
+					),
 			'column-page_template' => array(
 						'column-name' => 'column-page_template',
 						'type' => 'column-page_template',
@@ -64,17 +65,6 @@ function ac_custom_column_settings_5f331eb7() {
 						'excerpt_length' => '15',
 						'edit' => 'off',
 						'sort' => 'on'
-					),
-			'date' => array(
-						'column-name' => 'date',
-						'type' => 'date',
-						'clone' => '',
-						'label' => 'Date',
-						'width' => '10',
-						'width_unit' => '%',
-						'edit' => 'off',
-						'filter' => 'off',
-						'sort' => 'on'
 					)
 				),
 			)
@@ -92,17 +82,17 @@ function ac_custom_column_settings_5f331eb7() {
 						'edit' => 'off',
 						'sort' => 'on'
 					),
-			'column-acf_field' => array(
-						'column-name' => 'column-acf_field',
+			'column-acf_field-1' => array(
+						'column-name' => 'column-acf_field-1',
 						'type' => 'column-acf_field',
-						'clone' => '',
+						'clone' => '1',
 						'label' => 'Description',
 						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_57715bb61788a',
 						'excerpt_length' => '15',
 						'edit' => 'off',
-						'sort' => 'on'
+						'sort' => 'off'
 					)
 				),
 			)
@@ -124,7 +114,7 @@ function ac_custom_column_settings_5f331eb7() {
 						'column-name' => 'taxonomy-event_category',
 						'type' => 'taxonomy-event_category',
 						'clone' => '',
-						'label' => 'Category',
+						'label' => 'Categories',
 						'width' => '10',
 						'width_unit' => '%'
 					),
@@ -138,6 +128,16 @@ function ac_custom_column_settings_5f331eb7() {
 						'edit' => 'off',
 						'filter' => 'off',
 						'sort' => 'on'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Advanced Custom Fields',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_57ceadbc0b1c6_57bd72f5f6804',
+						'sort' => 'on'
 					)
 				),
 			)
@@ -150,7 +150,7 @@ function ac_custom_column_settings_5f331eb7() {
 						'type' => 'title',
 						'clone' => '',
 						'label' => 'Title',
-						'width' => '20',
+						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
 						'sort' => 'on'
@@ -160,7 +160,7 @@ function ac_custom_column_settings_5f331eb7() {
 						'type' => 'taxonomy-news_topic',
 						'clone' => '',
 						'label' => 'News Topics',
-						'width' => '12',
+						'width' => '',
 						'width_unit' => '%'
 					),
 			'column-acf_field' => array(
@@ -196,8 +196,8 @@ function ac_custom_column_settings_5f331eb7() {
 						'column-name' => 'title',
 						'type' => 'title',
 						'clone' => '',
-						'label' => 'Name',
-						'width' => '20',
+						'label' => 'Title',
+						'width' => '',
 						'width_unit' => '%',
 						'edit' => 'off',
 						'sort' => 'on'
@@ -207,14 +207,14 @@ function ac_custom_column_settings_5f331eb7() {
 						'type' => 'taxonomy-role',
 						'clone' => '',
 						'label' => 'Roles',
-						'width' => '10',
+						'width' => '',
 						'width_unit' => '%'
 					),
 			'column-acf_field' => array(
 						'column-name' => 'column-acf_field',
 						'type' => 'column-acf_field',
 						'clone' => '',
-						'label' => 'Titles',
+						'label' => 'Title',
 						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_575faacb00736',
@@ -227,12 +227,203 @@ function ac_custom_column_settings_5f331eb7() {
 						'type' => 'column-acf_field',
 						'clone' => '1',
 						'label' => 'Email',
-						'width' => '25',
+						'width' => '',
 						'width_unit' => '%',
 						'field' => 'field_575faa4800735',
 						'edit' => 'off',
-						'filter' => 'on',
+						'filter' => 'off',
 						'sort' => 'on'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'resource', array(
+			array(
+				'columns' => array(
+					'title' => array(
+						'column-name' => 'title',
+						'type' => 'title',
+						'clone' => '',
+						'label' => 'Title',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'sort' => 'on'
+					),
+			'taxonomy-media_type' => array(
+						'column-name' => 'taxonomy-media_type',
+						'type' => 'taxonomy-media_type',
+						'clone' => '',
+						'label' => 'Media Type',
+						'width' => '',
+						'width_unit' => '%'
+					),
+			'taxonomy-media_category' => array(
+						'column-name' => 'taxonomy-media_category',
+						'type' => 'taxonomy-media_category',
+						'clone' => '',
+						'label' => 'Media Categories',
+						'width' => '',
+						'width_unit' => '%'
+					),
+			'date' => array(
+						'column-name' => 'date',
+						'type' => 'date',
+						'clone' => '',
+						'label' => 'Published On',
+						'width' => '10',
+						'width_unit' => '%',
+						'edit' => 'off',
+						'filter' => 'off',
+						'sort' => 'on'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_event_category', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'description' => array(
+						'column-name' => 'description',
+						'type' => 'description',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Color',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_57fb61974f758',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Count',
+						'width' => '',
+						'width_unit' => '%'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_media_type', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'description' => array(
+						'column-name' => 'description',
+						'type' => 'description',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'column-acf_field' => array(
+						'column-name' => 'column-acf_field',
+						'type' => 'column-acf_field',
+						'clone' => '',
+						'label' => 'Color',
+						'width' => '',
+						'width_unit' => '%',
+						'field' => 'field_57fb61974f758',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Count',
+						'width' => '',
+						'width_unit' => '%'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_media_category', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'description' => array(
+						'column-name' => 'description',
+						'type' => 'description',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Count',
+						'width' => '',
+						'width_unit' => '%'
+					)
+				),
+			)
+		) );
+		ac_register_columns( 'wp-taxonomy_role', array(
+			array(
+				'columns' => array(
+					'name' => array(
+						'column-name' => 'name',
+						'type' => 'name',
+						'clone' => '',
+						'label' => 'Name',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'description' => array(
+						'column-name' => 'description',
+						'type' => 'description',
+						'clone' => '',
+						'label' => 'Description',
+						'width' => '',
+						'width_unit' => '%',
+						'edit' => 'off'
+					),
+			'posts' => array(
+						'column-name' => 'posts',
+						'type' => 'posts',
+						'clone' => '',
+						'label' => 'Count',
+						'width' => '',
+						'width_unit' => '%'
 					)
 				),
 			)
