@@ -24,7 +24,7 @@ function custom_style_def_TinyMCE( $init_array ) {
 		array(
 			'title' => 'Lead Text',
 			'block' => 'p',
-			'classes' => ['Lead', 'Lead--body', 'h3']
+			'classes' => ['Lead', 'Lead--body', 'h4']
 		),
 	);
 	$init_array['style_formats'] = json_encode( $style_formats );

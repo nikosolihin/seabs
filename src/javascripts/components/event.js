@@ -32,6 +32,7 @@ export default class Event {
     this.label = options.label
     this.ppp = options.ppp
     this.allCategories = options.categories
+    this.emptyMsg = options.emptyMsg
 
     // Get filters from URL & store them
     this.queryString = location.search
@@ -209,7 +210,7 @@ export default class Event {
           }
         }
       } else {
-        this.renderEvents({ empty: "No events found. Please try again." })
+        this.renderEvents({ empty: this.emptyMsg })
         $(".Pagination").toggleClass('Pagination--hidden')
       }
     })

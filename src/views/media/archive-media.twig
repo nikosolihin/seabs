@@ -8,7 +8,7 @@
 
 {# ----------------- Media Archive ----------------- #}
 <h2 class="Lead Lead--section brand container ArchiveMedia-heading">{{__('Media Library', 'saat')}}</h2>
-<div class="ArchiveMedia container" data-component="media" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "charLimit": "{{char_limit}}", "label": "{{label|title}}", "types": {{types_json}}, "categories": {{categories_json}}, "locale": "{{site.language}}" }'>
+<div class="ArchiveMedia container" data-component="media" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "charLimit": "{{char_limit}}", "label": "{{label|title}}", "types": {{types_json}}, "categories": {{categories_json}}, "locale": "{{site.language}}", "emptyMsg": "{{empty_msg}}" }'>
 
   <!-- <div class="ArchiveMedia-preferences" data-component="toc">
     <svg aria-hidden="true" role="presentation" title="Select Language">
@@ -35,7 +35,7 @@
     </div>
   </div>
   <div class="ArchiveMedia-sidebar Sidebar">
-    <h3 class="Lead">{{__('Filter Medias', 'saat')}}</h3>
+    <h3 class="Lead">{{__('Filter Media', 'saat')}}</h3>
     <div class="ArchiveMedia-sidebarSection">
       <h5>{{__('Media Type', 'saat')}}</h5>
       <a href="" class="Button Button--utility Pill-clear">{{__('Clear All', 'saat')}}</a>

@@ -26,6 +26,7 @@ export default class Media {
     this.charLimit = options.charLimit
     this.allCategories = options.categories
     this.allTypes = options.types
+    this.emptyMsg = options.emptyMsg
 
     // Get filters from URL & store them
     this.queryString = location.search
@@ -167,7 +168,7 @@ export default class Media {
         }
       }
       else {
-        this.renderMedia({ empty: "No events found. Please try again." })
+        this.renderMedia({ empty: this.emptyMsg })
         $(".Pagination").toggleClass('Pagination--hidden')
       }
     })

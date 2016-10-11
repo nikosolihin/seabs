@@ -102,15 +102,15 @@ class StarterSite extends TimberSite {
 		}
 		// Add other post type arvhive links manually
 		array_push($context['secondary_menu'], array(
-			'title' => 'Events',
+			'title' => __('Events', 'saat'),
 			'link' => $this->url . "/events/"
 		));
 		array_push($context['secondary_menu'], array(
-			'title' => 'News',
+			'title' => __('News', 'saat'),
 			'link' => $this->url . "/news/"
 		));
 		array_push($context['secondary_menu'], array(
-			'title' => 'Media',
+			'title' => __('Media', 'saat'),
 			'link' => $this->url . "/media/"
 		));
 
@@ -188,15 +188,15 @@ class StarterSite extends TimberSite {
 		}
 		// Add post types archives to single footer list
 		array_push($context['footer']['singles'], array(
-			'title' => 'Events',
+			'title' => __('Events', 'saat'),
 			'link' => $this->url . "/events/"
 		));
 		array_push($context['footer']['singles'], array(
-			'title' => 'News',
+			'title' => __('News', 'saat'),
 			'link' => $this->url . "/news/"
 		));
 		array_push($context['footer']['singles'], array(
-			'title' => 'Media',
+			'title' => __('Media', 'saat'),
 			'link' => $this->url . "/media/"
 		));
 

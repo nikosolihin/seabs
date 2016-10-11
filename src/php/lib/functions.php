@@ -155,6 +155,49 @@ function populateList($options) {
   return $filtered_posts;
 }
 
+//================================================
+// Set default terms for each custom taxonomies based on locale
+// http://www.billerickson.net/code/default-term-for-taxonomy/
+//================================================
+function set_default_object_terms( $post_id, $post ) {
+	if ( 'publish' === $post->post_status ) {
+		$defaults = array();
+    switch (get_locale()) {
+      case "en_US":
+        $defaults = array(
+          'event_category' => array('general'),
+          'news_topic' => array('general'),
+          'media_category' => array('uncategorized'),
+          'role' => array('faculty'),
+        );
+        break;
+      case "id_ID":
+        $defaults = array(
+          'event_category' => array('umum'),
+          'news_topic' => array('umum'),
+          'media_category' => array('uncategorized'),
+          'role' => array('fakultas'),
+        );
+        break;
+      default:
+        $defaults = array(
+          'event_category' => array('general'),
+          'news_topic' => array('general'),
+          'media_category' => array('uncategorized'),
+          'role' => array('faculty'),
+        );
+    }
+		$taxonomies = get_object_taxonomies( $post->post_type );
+		foreach ( (array) $taxonomies as $taxonomy ) {
+			$terms = wp_get_post_terms( $post_id, $taxonomy );
+			if ( empty( $terms ) && array_key_exists( $taxonomy, $defaults ) ) {
+				wp_set_object_terms( $post_id, $defaults[$taxonomy], $taxonomy );
+			}
+		}
+	}
+}
+add_action( 'save_post', 'set_default_object_terms', 100, 2 );
+
 //=============================================
 // Set publish date according to
 // Google Calendar start date
@@ -182,6 +225,20 @@ function modify_event_date($post_id) {
 }
 add_action('save_post', 'modify_event_date');
 
+//=========================================================
+// Wordpress is a blogging platform, which means
+// some tweaking must be done to do upcoming future events.
+// This forces scheduled post to published status.
+// http://wordpress.stackexchange.com/a/132238
+//=========================================================
+remove_action('future_post', '_future_post_hook');
+add_filter( 'wp_insert_post_data', 'nacin_do_not_set_posts_to_future' );
+
+function nacin_do_not_set_posts_to_future( $data ) {
+    if ( $data['post_status'] == 'future' && $data['post_type'] == 'event' )
+        $data['post_status'] = 'publish';
+    return $data;
+}
 
 //=============================================
 // List Component

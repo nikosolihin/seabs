@@ -45,7 +45,8 @@
       </a>
     {% endif %}
   {% endif %}
-  {% if 'bio' in meta %}
-    <div class="bio">{{post.bio}}</div>
-  {% endif %}
 </div>
+
+{% if 'bio' in meta %}
+  <div class="bio">{{post.bio}}</div>
+{% endif %}
