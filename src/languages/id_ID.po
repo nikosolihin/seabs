@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
 "POT-Creation-Date: 2016-10-12 00:10+0700\n"
-"PO-Revision-Date: 2016-10-12 00:14+0700\n"
+"PO-Revision-Date: 2016-10-12 14:54+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -45,6 +45,7 @@ msgid "News"
 msgstr "Berita"
 
 #: php/archive-news.php:7
+#, fuzzy
 msgid "No news found. Please try again."
 msgstr "Berita tidak ditemukan. Silakan coba lagi."
 

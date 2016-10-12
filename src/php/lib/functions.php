@@ -176,7 +176,7 @@ function set_default_object_terms( $post_id, $post ) {
           'event_category' => array('umum'),
           'news_topic' => array('umum'),
           'media_category' => array('uncategorized'),
-          'role' => array('fakultas'),
+          'role' => array('staf'),
         );
         break;
       default:
