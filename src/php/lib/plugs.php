@@ -17,7 +17,7 @@ add_filter( "radio-buttons-for-taxonomies-no-term-role", "__return_FALSE" );
 // Uncoment the action before pushing to prod
 // Use the GUI on dev since if using php GUI is disabled
 //==========================================================
-// add_action( 'init', 'ac_custom_column_settings_c9cc5d77' );
+add_action( 'init', 'ac_custom_column_settings_c9cc5d77' );
 function ac_custom_column_settings_c9cc5d77() {
 	if ( function_exists( 'ac_register_columns' ) ) {
 		ac_register_columns( 'page', array(
