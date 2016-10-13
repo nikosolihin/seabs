@@ -11,11 +11,7 @@
   <h2 class="Lead Lead--section brand container">{{__('Featured Events', 'saat')}}</h2>
   <div class="FeaturedEvents-carousel" data-component="featured-events">
     {% for event in featured_events %}
-      {% if event.image[xxlarge] %}
-        <div class="FeaturedEvents-image" data-flickity-bg-lazyload="{{event.image[xxlarge]}}"></div>
-      {% else %}
-        <div class="FeaturedEvents-image" data-flickity-bg-lazyload="{{event.image[original]}}"></div>
-      {% endif %}
+      <div class="FeaturedEvents-image" data-flickity-bg-lazyload="{{event.image[xlarge]}}"></div>
     {% endfor %}
   </div>
   <div class="FeaturedEvents-body">

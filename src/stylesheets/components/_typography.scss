@@ -57,7 +57,7 @@
     padding: 0 $spacer-quarter;
     display: none;
     @include from(md) {
-      display: block;
+      display: inline-block;
     }
   }
   &-link {
