@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-10-12 00:10+0700\n"
-"PO-Revision-Date: 2016-10-12 14:54+0700\n"
+"POT-Creation-Date: 2016-10-13 17:43+0700\n"
+"PO-Revision-Date: 2016-10-13 17:43+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Poedit-SearchPath-2: php\n"
 
 #: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:105
-#: php/lib/timber.php:191
+#: php/lib/timber.php:188 php/single-event.php:119
 msgid "Events"
 msgstr "Kegiatan"
 
@@ -40,7 +40,8 @@ msgid "No media found. Please try again."
 msgstr "Media tidak ditemukan. Silakan coba lagi."
 
 #: php/archive-news.php:6 php/lib/post-types.php:129 php/lib/post-types.php:130
-#: php/lib/post-types.php:160 php/lib/timber.php:109 php/lib/timber.php:195
+#: php/lib/post-types.php:160 php/lib/timber.php:109 php/lib/timber.php:192
+#: php/single-news.php:51
 msgid "News"
 msgstr "Berita"
 
@@ -320,7 +321,7 @@ msgid "Custom post type for people"
 msgstr ""
 
 #: php/lib/post-types.php:252 php/lib/post-types.php:253
-#: php/lib/post-types.php:283 php/lib/timber.php:113 php/lib/timber.php:199
+#: php/lib/post-types.php:283 php/lib/timber.php:113 php/lib/timber.php:196
 msgid "Media"
 msgstr "Media"
 
@@ -659,9 +660,29 @@ msgstr "Hapus semua"
 msgid "Search"
 msgstr "Pencarian"
 
-#: views/event/single-event.twig:59 views/event/single-event.twig:87
+#: views/event/archive-event.twig:114
+msgid "Download Calendar"
+msgstr "Unduh Kalender"
+
+#: views/event/archive-event.twig:116
+msgid ""
+"If you use your own calendar app, click here to download and import all of "
+"our events"
+msgstr ""
+"Jika anda menggunakan aplikasi kalender sendiri, klik di sini untuk "
+"mengunduh semua kegiatan SAAT."
+
+#: views/event/archive-event.twig:119 views/media/document.twig:15
+msgid "Download"
+msgstr "Unduh"
+
+#: views/event/single-event.twig:77 views/news/single-news.twig:48
 msgid "Share this event"
 msgstr "Bagikan kegiatan ini"
+
+#: views/event/single-event.twig:115 views/news/single-news.twig:86
+msgid "Share this news"
+msgstr "Bagikan berita ini"
 
 #: views/media/archive-media.twig:38
 msgid "Filter Media"
@@ -679,27 +700,23 @@ msgstr "Kategori Media"
 msgid "Authors"
 msgstr "Penulis"
 
-#: views/media/document-header.twig:31
+#: views/media/document-header.twig:38
 msgid "Share this"
 msgstr "Bagikan"
 
-#: views/media/document-header.twig:39 views/media/media-body.twig:57
+#: views/media/document-header.twig:46 views/media/media-body.twig:64
 msgid "Share Media"
 msgstr "Bagikan"
-
-#: views/media/document.twig:15
-msgid "Download"
-msgstr "Unduh"
 
 #: views/media/document.twig:35
 msgid "Table of Contents"
 msgstr "Daftar Isi"
 
-#: views/media/media-body.twig:46
+#: views/media/media-body.twig:53
 msgid "See All Photos"
 msgstr "Lihat Semua Foto"
 
-#: views/media/media-body.twig:51
+#: views/media/media-body.twig:58
 msgid "View Album"
 msgstr "Lihat Album"
 
@@ -738,10 +755,6 @@ msgstr "Pilih berdasar topik"
 #: views/news/archive-news.twig:130
 msgid "View"
 msgstr "Lihat"
-
-#: views/news/single-news.twig:31 views/news/single-news.twig:59
-msgid "Share this news"
-msgstr "Bagikan berita ini"
 
 #: views/page/landing-page.twig:60 views/page/landing-page.twig:71
 msgid "Read More"

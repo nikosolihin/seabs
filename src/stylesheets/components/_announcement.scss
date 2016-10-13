@@ -36,10 +36,10 @@
   &-close {
     box-item: top;
     box: horizontal middle center;
+    transform: rotate(45deg);
     svg {
       margin: 0;
       size: 30px;
-      transform: rotate(45deg);
     }
   }
 

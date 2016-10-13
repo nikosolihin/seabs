@@ -3,6 +3,7 @@
   font-size: $font-size-h6;
   &-right {
     padding-left: $spacer-single;
+    width: 75%;
     // Vertical rhythm
     > * {
       margin-bottom: $spacer-half;
@@ -71,8 +72,10 @@
     .bio {
       color: #777;
       margin-top: $spacer-threefourth;
-      padding: $spacer-single $spacer-single*1.25;
-      background-color: $callout-bg;
+      @at-root .Sidebar #{&} {
+        padding: $spacer-single $spacer-single*1.25;
+        background-color: $callout-bg;
+      }
     }
     .Feed-profile {
       height: $spacer-single*8.75;

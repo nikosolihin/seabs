@@ -108,7 +108,16 @@
       </ul>
     </div>
     <a href="" class="ArchiveEvent-search Button Button--block Button--large">{{__('Search', 'saat')}}</a>
-    {% include 'layout/sidebar-base.twig' %}
+
+    {# Calendar Export #}
+    <div class="Sidebar-section Sidebar-section--center Sidebar-section--framed Sidebar-section--accent">
+      <h3 class="Sidebar-sectionHeading Lead brand">{{__('Download Calendar', 'saat')}}</h3>
+      <p style="text-align: center;">
+        {{__('If you use your own calendar app, click here to download and import all of our events', 'saat')}}
+      </p>
+      <div class="Spacer"></div>
+      <a href="{{ics}}" class="Button Button--block">{{__('Download', 'saat')}}</a>
+    </div>
   </div>
 </div>
 

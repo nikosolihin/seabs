@@ -188,34 +188,6 @@
                     "max": ""
                 },
                 {
-                    "key": "57b5e8daf5af6",
-                    "name": "people",
-                    "label": "People",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_57b5e8daf5af7",
-                            "label": "People",
-                            "name": "people",
-                            "type": "reusable_field_group_field",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "group_key": "group_574dbe6c87d19",
-                            "name_prefix": 0,
-                            "key_prefix": 1,
-                            "label_prefix": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                {
                     "key": "57b5ebd819230",
                     "name": "spacer",
                     "label": "Spacer",
@@ -319,5 +291,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Sidebar Components Parent",
-    "modified": 1474887639
+    "modified": 1476344213
 }

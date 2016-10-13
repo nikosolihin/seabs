@@ -112,4 +112,13 @@ if ($inherit) {
 	$context['sidebar_sections'] = $sidebar;
 }
 
+// Generate breadcrumb. Must be last.
+// Breadcrumb for events
+$context['breadcrumb'] = array();
+array_push( $context['breadcrumb'], array(
+	'title' => __('Events', 'saat'),
+	'link' => $context['site']->url. '/' .'events'
+));
+$context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
+
 Timber::render( 'event/single-event.twig' , $context );

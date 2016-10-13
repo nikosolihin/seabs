@@ -1,6 +1,6 @@
-{% if site.id == '1' %}
+{% if locale == 'id_ID' %}
   {% set language = 'id' %}
-{% elseif site.id == '2' %}
+{% elseif locale == 'en_US' %}
   {% set language = 'en' %}
 {% else %}
   {% set language = 'zh' %}
@@ -36,7 +36,7 @@
     {% endif %}
   {% endfor %}
   <div class="Header-languages">
-    <span class="caps brand">{{language}}</span>
+    <span class="caps brand">{{language|upper}}</span>
     <svg aria-hidden="true" role="presentation" title="Select Language">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
     </svg>

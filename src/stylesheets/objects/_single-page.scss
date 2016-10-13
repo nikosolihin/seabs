@@ -1,5 +1,6 @@
 .SinglePage {
   box: vertical;
+  overflow: hidden;
   @include at(sm) {
     // Pad sides on phablet
     padding: 0 $spacer-single*3;

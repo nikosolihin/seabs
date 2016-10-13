@@ -55,6 +55,10 @@
   &-dot {
     color: #ccc;
     padding: 0 $spacer-quarter;
+    display: none;
+    @include from(md) {
+      display: block;
+    }
   }
   &-link {
     @include hover(#777, $brand-primary);

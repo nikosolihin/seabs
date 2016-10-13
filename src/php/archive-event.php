@@ -23,24 +23,27 @@ foreach (Timber::get_terms('event_category') as $category) {
 }
 $context['categories_json'] = json_encode($context['categories']);
 
-// Get sidebar contents
-$context['sidebar_sections'] = get_field('event_sidebar_sections', 'option');
+// // Get sidebar contents
+// $context['sidebar_sections'] = get_field('event_sidebar_sections', 'option');
 
-// // Get featured events
-// $context['featured_events'] = array();
-// $featured_events = get_field('event_featured', 'option');
-// foreach (Timber::get_posts($featured_events) as $event) {
-//   $gcal = $event->get_field('gcal');
-//   array_push($context['featured_events'], array(
-//     'id'          => $gcal['id'],
-//     'title'       => $event->title,
-//     'category'    => $event->get_terms('event_category')[0]->name,
-//     'date'        => $event->date,
-//     'link'        => $event->link,
-//     'location'    => $gcal['location'],
-//     'description' => $gcal['description'],
-//     'image'       => $event->get_field('image'),
-//   ));
-// }
+// Get Downloadble .ics
+$context['ics'] = get_field('ics_url', 'option');
+
+// Get featured events
+$context['featured_events'] = array();
+$featured_events = get_field('event_featured', 'option');
+foreach (Timber::get_posts($featured_events) as $event) {
+  $gcal = $event->get_field('gcal');
+  array_push($context['featured_events'], array(
+    'id'          => $gcal['id'],
+    'title'       => $event->title,
+    'category'    => $event->get_terms('event_category')[0]->name,
+    'date'        => $event->date,
+    'link'        => $event->link,
+    'location'    => $gcal['location'],
+    'description' => $gcal['description'],
+    'image'       => $event->get_field('image'),
+  ));
+}
 
 Timber::render( 'event/archive-event.twig' , $context );

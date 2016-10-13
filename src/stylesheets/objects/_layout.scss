@@ -23,7 +23,8 @@
 
   //=== Text Containers ===
   &--text {
-    max-width: $container-text-width;
+    // max-width: $container-text-width;
+    width: $container-text-width;
   }
   &--text-max {
     @include from(lg) {
