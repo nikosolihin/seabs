@@ -44,4 +44,13 @@ if ($post->get_terms('news_topic')) {
 	);
 }
 
+// Generate breadcrumb. Must be last.
+// Breadcrumb for news
+$context['breadcrumb'] = array();
+array_push( $context['breadcrumb'], array(
+	'title' => __('News', 'saat'),
+	'link' => $context['site']->url. '/' .'news'
+));
+$context['breadcrumb'] = array_reverse( $context['breadcrumb'] );
+
 Timber::render( 'news/single-news.twig' , $context );

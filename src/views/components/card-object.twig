@@ -11,7 +11,12 @@
 {{#title}}
 <div class="Card-wrapper">
 <a href="{{link}}" class="Card">
-  <div class="Card-image lazyload" style="border-top: 4px solid {{color}};" data-bgset="{{image}}">
+  {{#top}}
+    <div class="Card-image Card-image--top lazyload" style="border-top: 4px solid {{color}};" data-bgset="{{image}}">
+  {{/top}}
+  {{^top}}
+    <div class="Card-image lazyload" style="border-top: 4px solid {{color}};" data-bgset="{{image}}">
+  {{/top}}
     <div class="Card-meta">
       <div class="caps white">
         <svg aria-hidden="true" role="presentation" title="">

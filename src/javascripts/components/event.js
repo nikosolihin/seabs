@@ -116,6 +116,7 @@ export default class Event {
 
   fetchEvents() {
     let dataObject = {}
+    dataObject.order = 'asc'
     dataObject.filter = {}
     dataObject.page = this.page
     dataObject.filter.posts_per_page = this.ppp
@@ -131,10 +132,12 @@ export default class Event {
     }
 
     // Set date filter
-    if (this.date != 'any') {
+    if (this.date != 'any' || this.date === undefined ) {
       dataObject.filter.meta_compare = 'LIKE'
       dataObject.filter.meta_key = 'id'
       dataObject.filter.meta_value = this.date
+    } else {
+      dataObject.after = moment(new Date()).format()
     }
 
     $.ajax({

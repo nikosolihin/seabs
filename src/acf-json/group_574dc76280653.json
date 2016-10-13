@@ -70,7 +70,7 @@
             "prepend": "",
             "append": "",
             "min": 1,
-            "max": 15,
+            "max": 55,
             "step": 1
         },
         {
@@ -116,5 +116,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Feed",
-    "modified": 1475646903
+    "modified": 1476344336
 }

@@ -235,9 +235,7 @@
                 "bio": "Bio",
                 "social": "Social"
             },
-            "default_value": [
-                "date"
-            ],
+            "default_value": [],
             "layout": "horizontal",
             "toggle": 0,
             "return_format": "value"
@@ -375,5 +373,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Taxonomies Selector",
-    "modified": 1474887724
+    "modified": 1476344592
 }

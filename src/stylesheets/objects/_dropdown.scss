@@ -66,7 +66,7 @@
     }
   }
   &-logo {
-    @include square;
+    box: vertical middle center;
     position: absolute;
     top: -.6875rem;
     z-index: 99999;
@@ -74,10 +74,6 @@
     border-radius: 50%;
     background-color: $white;
     svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -50%, 0);
       fill: $brand-primary;
       size: 120px;
     }

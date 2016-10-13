@@ -48,8 +48,8 @@ class StarterSite extends TimberSite {
 
 		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
+		$context['primary_menu'] = array();
 		foreach ($primary_menu as $menu) {
-			$context['primary_menu'] = array();
 			$parent = Timber::get_post($menu['parent']);
 
 			// At level 1, assume children
@@ -151,9 +151,6 @@ class StarterSite extends TimberSite {
 			'contacts' => get_field('org_contacts', 'option')
 		);
 
-		// // Newsletter Sign-up
-		// $context['newsletter'] = get_field('newsletter', 'option');
-
 		// Policy Page
 		$context['policy'] = get_field('policy', 'option');
 
@@ -220,6 +217,9 @@ class StarterSite extends TimberSite {
 			);
 		}
 
+		// Locale
+		$context['locale'] = get_locale();
+
 		// Languages
 		$context['languages']['id'] = "https://v2.seabs.ac.id/";
 		$context['languages']['en'] = "https://v2.seabs.ac.id/en";
@@ -265,6 +265,14 @@ class StarterSite extends TimberSite {
 				$classes = implode(" ", $classes);
 			}
 			return $component." ".$classes;
+		});
+		$twig->addFilter($classfilter);
+
+		//=============================================
+		// Hide youtube controls
+		//=============================================
+		$classfilter = new Twig_SimpleFilter('modest', function ($embed) {
+			return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0", $embed);
 		});
 		$twig->addFilter($classfilter);
 

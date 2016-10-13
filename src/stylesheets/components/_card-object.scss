@@ -29,6 +29,9 @@
     @include overlay(false, 'rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 50%');
     width: 100%;
     height: $spacer-single*10;
+    &--top {
+      background-position: top center;
+    }
   }
   &-meta {
     box: horizontal middle space-between;
@@ -71,18 +74,19 @@
       width: 65%;
       box: horizontal middle;
       padding: .6rem $spacer-single;
+      line-height: 1.25;
       svg {
         size: $spacer-single;
         fill: $brand-primary;
         margin-right: $spacer-half;
+        flex: 0 0 auto;
       }
     }
     &Right {
+      box: vertical center middle;
       width: 35%;
       font-weight: $font-weight-bold;
       border-left: 1px solid #eee;
-      padding: .6rem $spacer-quarter;
-      text-align: center;
       transition: all .125s ease-in-out;
     }
   }

@@ -141,6 +141,7 @@ export default class Media {
             slug: this.allTypes[media['type']]['slug'],
             color: this.allTypes[media['type']]['color'],
             category: this.allCategories[media['category']]['name'],
+            top: this.allTypes[media['type']]['slug'] == 'document' ? 'top' : false
           }
           this.renderMedia(templateVars)
         })
