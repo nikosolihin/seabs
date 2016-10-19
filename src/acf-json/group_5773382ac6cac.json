@@ -61,8 +61,8 @@
             "key": "field_57715d004646e",
             "label": "URL",
             "name": "external_url",
-            "type": "url",
-            "instructions": "A valid URL must start with \"http:\/\/\" or \"https:\/\/\"",
+            "type": "text",
+            "instructions": "A valid URL must start with \"http:\/\/\", \"https:\/\/\", or \"mailto:\"",
             "required": 0,
             "conditional_logic": [
                 [
@@ -79,7 +79,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_57716240387bb",
@@ -123,5 +126,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Link",
-    "modified": 1474887739
+    "modified": 1476886962
 }

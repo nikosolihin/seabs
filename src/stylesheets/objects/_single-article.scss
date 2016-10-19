@@ -9,6 +9,10 @@
   &-content {
     // Pad content body for comfy reading
     padding: 0;
+    margin: 0 auto;
+    @include from(md) {
+      width: $container-text-width;
+    }
     @include from(lg) {
       padding: 0 $spacer-single*2.125;
     }
@@ -32,12 +36,7 @@
     }
   }
   &-meta {
-    box: vertical;
-    @include from(md) {
-      box: horizontal;
-      // If horizontal, give more spacing
-      // padding-bottom: $spacer-quarter;
-    }
+    box: horizontal wrap;
     @include to(sm) {
       // Multiple meta lines for repeating events
       @at-root .SingleArticle-meta + #{&} {
@@ -84,6 +83,7 @@
     font-size: $font-size-h5;
     font-weight: $font-weight-medium;
     margin-bottom: $spacer-quarter;
+    margin-right: $spacer-single;
   }
   .meta-dot {
     padding: 0 $spacer-single;

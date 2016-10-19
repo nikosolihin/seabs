@@ -50,42 +50,44 @@
 
 <nav class="Dropdown" role="navigation">
   <a href="{{site.url}}" class="Dropdown-logo">
-    <svg aria-hidden="true" role="presentation" title="">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use>
-    </svg>
+    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload" data-srcset="{{logo.normal[original]}} 1x, {{logo.retina[original]}} 2x" alt="{{site.title}}" />
   </a>
   <div class="Dropdown-menu">
     {% for parent in primary_menu %}
       <div class="Dropdown-menuItem">
         {% if parent.link in current_url %}
           {% set is_active = ' is-Active' %}
+        {% else %}
+          {% set is_active = '' %}
         {% endif %}
         <a href="{{parent.link}}" class="Dropdown-link {{is_active}}">{{parent.title}}</a>
-        {% if parent.children %}
+        {% if parent.children or parent.singles %}
         <div class="Dropdown-panel">
-          <div class="Dropdown-panelLeft">
-            {% for child in parent.children %}
-              <div class="List">
-                <a href="{{child.link}}" class="caps">{{child.title}}</a>
-                {% if child.grandchildren %}
-                  <ul class="List-sublist">
-                    {% for grandchild in child.grandchildren %}
-                      <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-              </div>
-            {% endfor %}
-            {% if parent.singles %}
-            <div class="List">
-              {% for single in parent.singles %}
-                <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
+          <div class="Dropdown-panelWrapper">
+            <div class="Dropdown-panelLeft">
+              {% for child in parent.children %}
+                <div class="List">
+                  <a href="{{child.link}}" class="caps">{{child.title}}</a>
+                  {% if child.grandchildren %}
+                    <ul class="List-sublist">
+                      {% for grandchild in child.grandchildren %}
+                        <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
               {% endfor %}
+              {% if parent.singles %}
+              <div class="List">
+                {% for single in parent.singles %}
+                  <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
+                {% endfor %}
+              </div>
+              {% endif %}
             </div>
-            {% endif %}
-          </div>
-          <div class="Dropdown-panelRight">
-            {% include 'components/blocks.twig' with {'data': {'blocks': parent.blocks}} %}
+            <div class="Dropdown-panelRight">
+              {% include 'components/blocks.twig' with {'data': {'blocks': parent.blocks}} %}
+            </div>
           </div>
         </div>
         {% endif %}

@@ -74,7 +74,7 @@
         },
         {
             "key": "field_57fb9e53cd930",
-            "label": "Image",
+            "label": "Share Image",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -92,7 +92,7 @@
             "key": "field_57fb9e68cd931",
             "label": "Share Image",
             "name": "image",
-            "type": "flickr_browser",
+            "type": "reusable_field_group_field",
             "instructions": "This image will be used on facebook and twitter share dialogs.",
             "required": 0,
             "conditional_logic": 0,
@@ -101,15 +101,10 @@
                 "class": "acf-field-flickr-browser--showlabel",
                 "id": ""
             },
-            "flickr_api_key": "",
-            "flickr_user_id": "",
-            "flickr_limit": 1,
-            "flickr_sizes": [
-                "url_n",
-                "url_z",
-                "url_l"
-            ],
-            "flickr_extras": ""
+            "group_key": "group_57bd72b2e0e2c",
+            "name_prefix": 0,
+            "key_prefix": 1,
+            "label_prefix": 0
         },
         {
             "key": "field_57f6686f57697",
@@ -230,5 +225,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Video",
-    "modified": 1476193488
+    "modified": 1476772137
 }

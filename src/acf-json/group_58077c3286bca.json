@@ -1,0 +1,42 @@
+{
+    "key": "group_58077c3286bca",
+    "title": "Blocks Carousel Details",
+    "fields": [
+        {
+            "key": "field_58077c7093959",
+            "label": "Choose Blocks",
+            "name": "home_carousel",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_5799c139c255f",
+            "name_prefix": 1,
+            "key_prefix": 1,
+            "label_prefix": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-blocks-carousel"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Blocks Carousel",
+    "modified": 1476887436
+}

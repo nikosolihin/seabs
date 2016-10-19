@@ -118,9 +118,12 @@
         box: horizontal wrap;
       }
       .Feed-item {
-        box: vertical;
+        box: horizontal;
+        border-bottom: $spacer-single*1.5 solid transparent;
         @include from(sm) {
+          box: vertical;
           width: 50%;
+          border-bottom: 2.75rem solid transparent;
           &:nth-child(odd) {
             border-right: $spacer-single*1.25 solid transparent;
           }
@@ -129,12 +132,11 @@
           width: 33.333%;
           border-right: $spacer-single*2 solid transparent;
         }
-        border-bottom: 2.75rem solid transparent;
         padding: 0;
         margin: 0;
 
         .Feed-profile {
-          width: 70%;
+          width: 25%;
           @include from(sm) {
             width: 100%;
           }
@@ -144,7 +146,10 @@
           }
         }
         .Feed-contact {
-          padding-left: 0;
+          padding-left: $spacer-threefourth;
+          @include from(sm) {
+            padding-left: 0;
+          }
           font-size: $font-size-h5;
           .h5 {
             @extend .h4;

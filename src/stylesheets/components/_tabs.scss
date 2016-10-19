@@ -2,6 +2,10 @@
   padding-top: $spacer-half;
   &-list {
     @include normalist;
+    box: horizontal wrap center;
+    @include from(md) {
+      box: horizontal wrap left;
+    }
     overflow: hidden;
     position: relative;
     margin-bottom: $spacer-single*1.5;
@@ -15,6 +19,10 @@
       left: 0;
       bottom: 0;
       z-index: -99999;
+    }
+    li {
+      line-height: 1.4;
+      margin-top: $spacer-half;
     }
   }
   &-tab {

@@ -34,6 +34,9 @@
       background-size: auto 130%;
       background-position: 100% 60%;
     }
+    @at-root .home #{&} {
+      margin-top: 0;
+    }
   }
   &-heading {
     display: block;

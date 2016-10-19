@@ -55,11 +55,11 @@
             "label": "Vertical Alignment",
             "name": "alignment",
             "type": "radio",
-            "instructions": "Banner images will automatically try to span the current user's browser width. However, sometimes this process causes images to misalign vertically. Use this to correct that.",
+            "instructions": "Banner images will automatically try to span the current user's browser width. However, sometimes this process causes images to misalign vertically. Use this to correct that. <strong>NOTE: This setting applies for banner images only, not share images.<\/strong>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -123,5 +123,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Background",
-    "modified": 1474887489
+    "modified": 1476772221
 }

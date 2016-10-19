@@ -15,12 +15,12 @@ add_filter('acf/settings/google_api_key', function () {
 // Change local JSON path for load and save
 // to /src folder
 //=============================================
-// add_filter('acf/settings/save_json', 'acf_json_save_point');
+add_filter('acf/settings/save_json', 'acf_json_save_point');
 function acf_json_save_point( $path ) {
   $path = dirname(get_stylesheet_directory(), 4) . '/src/acf-json';
   return $path;
 }
-// add_filter('acf/settings/load_json', 'acf_json_load_point');
+add_filter('acf/settings/load_json', 'acf_json_load_point');
 function acf_json_load_point( $paths ) {
   unset($paths[0]);
   $paths[] = dirname(get_stylesheet_directory(), 4) . '/src/acf-json';
@@ -108,14 +108,43 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url' 		=> 'dashicons-menu'
 	));
 
-  // // Home Page //////////////////////////////
-	// acf_add_options_page(array(
-	// 	'page_title' 	=> '', // No page title since acf already has
-	// 	'menu_title'	=> 'Home Page',
-	// 	'menu_slug' 	=> 'homepage',
-	// 	'position' 		=> '201',
-	// 	'icon_url' 		=> 'dashicons-welcome-widgets-menus'
-	// ));
+  // Home Page //////////////////////////////
+	acf_add_options_page(array(
+		'page_title' 	=> '', // No page title since acf already has
+		'menu_title'	=> 'Home Page',
+		'menu_slug' 	=> 'homepage',
+		'position' 		=> '201',
+		'icon_url' 		=> 'dashicons-admin-home',
+    'redirect' 		=> true
+	));
+
+  // Hero Unit Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '',
+    'menu_title'	=> 'Hero Unit',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Prospective Students Sub Page ///////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Prospective Students Section',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Stream Section Sub Page ////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Stream',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Blocks Carousel Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Blocks Carousel',
+    'parent_slug'	=> 'homepage',
+  ));
 
   // Site Settings //////////////////////////////
   acf_add_options_page(array(

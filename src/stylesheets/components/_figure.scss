@@ -1,6 +1,7 @@
 .Figure {
   display: inline-block;
-  margin: $spacer-single*2 auto;
+  // margin: $spacer-single*2 auto;
+  margin: 0 auto; // Client asked for no margin
   width: 100%;
   picture, img {
     margin: 0 auto;

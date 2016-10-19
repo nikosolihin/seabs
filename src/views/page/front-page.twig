@@ -1,1 +1,147 @@
-<h1>Hello World</h1>
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {# ----------------- Hero Unit ----------------- #}
+  {% include 'components/hero.twig' %}
+
+  {# ----------------- Prospective Section ----------------- #}
+  {% include 'components/prospective.twig' %}
+
+  {# -------------- Welcome Section ------------ #}
+  <section class="welcome">
+    <h2 class="Lead Lead--section brand center">{{__('Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah', 'saat')}}</h2>
+    <hr>
+    <div class="container container--nopadding">
+      <div class="Twin">
+        <div class="Twin-box welcome-box">
+          <video poster="{{site.theme.uri}}/poster.jpg" class="welcome-video" preload="auto" aria-label="Welcome to SAAT" playsinline autoplay muted loop>
+            <source src="{{site.theme.uri}}/welcome.webm" type="video/webm">
+            <source src="{{site.theme.uri}}/welcome.mp4" type="video/mp4">
+          </video>
+          <div class="Twin-content welcome-content">
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use>
+            </svg>
+            <div class="welcome-quote">
+              <h4 class="center">{{welcome.quote}}</h4>
+              <p class="center caps">{{welcome.byline}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="Twin-frame Twin">
+          <div class="Twin-box lazyload" data-bgset="{{news_events.first.image[small]}} 1x, {{news_events.first.image[medium]}} 2x">
+            <div class="Twin-content">
+              <div>
+                {% if news_events.first.type == 'event' %}
+                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                {% else %}
+                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                {% endif %}
+              </div>
+              <h4 class="h3 Lead white">{{news_events.first.title}}</h4>
+              <span class="caps white">{{__('Read More', 'saat')}}</span>
+            </div>
+          </div>
+
+          <div class="Twin-box welcome-control lazyload" data-bgset="http://www.nature.org/cs/groups/webcontent/@photopublic/documents/media/migrations-map-537x448.jpg">
+            <div class="Twin-content">
+              <p class="white">{{__('Browse all of our news and events', 'saat')}}</p>
+              <a href="" class="Button Button--block Button--light">See Events</a>
+              <a href="" class="Button Button--block Button--light">See News</a>
+            </div>
+          </div>
+          {% for post in news_events.rest %}
+            <div class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
+              <div class="Twin-content">
+                <div>
+                  {% if post.type == 'event' %}
+                    <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                  {% else %}
+                    <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                  {% endif %}
+                </div>
+                <h4 class="h3 Lead white">{{post.title}}</h4>
+                <span class="caps white">{{__('Read More', 'saat')}}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    <div class="Twin">
+      <div class="Twin-frame Twin">
+        {% for post in custom_posts.first %}
+          <div class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
+            <div class="Twin-content">
+              <div>
+                {% if post.type == 'page' %}
+                  <span class="Pill">{{post.parent.title|title}}</span>
+                {% elseif post.type == 'event' %}
+                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                {% else %}
+                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                {% endif %}
+              </div>
+              <h4 class="h3 Lead white">{{post.title}}</h4>
+              <span class="caps white">{{__('Read More', 'saat')}}</span>
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="Twin-box welcome-control welcome-control--custom lazyload" data-bgset="{{control_cta.image[small]}} 1x, {{control_cta.image[medium]}} 2x">
+          <div class="Twin-content">
+            <p class="white">{{control_cta.description}}</p>
+            {% for button in control_cta.buttons %}
+              {% if button.type == "single" %}
+                {% set url = button.single_url %}
+              {% elseif button.type == "external" %}
+                {% set url = button.external_url %}
+              {% else %}
+                {% set url = button.search_url %}
+              {% endif %}
+              <a href="{{url}}" class="Button Button--block Button--light">{{button.label}}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+          <div class="Twin-box lazyload" data-bgset="{{custom_posts.last.image[small]}} 1x, {{custom_posts.last.image[medium]}} 2x">
+            <div class="Twin-content">
+              <div>
+                {% if custom_posts.last.type == 'page' %}
+                  <span class="Pill">{{custom_posts.last.parent.title|title}}</span>
+                {% elseif custom_posts.last.type == 'event' %}
+                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                {% else %}
+                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                {% endif %}
+              </div>
+              <h4 class="h3 Lead white">{{custom_posts.last.title}}</h4>
+              <span class="caps white">{{__('Read More', 'saat')}}</span>
+            </div>
+          </div>
+
+        </div>
+
+      <div class="Twin-box welcome-secondaryBox lazyload" data-bgset="{{media.image[medium]}} 1x, {{media.image[xlarge]}} 2x">
+        <div class="Twin-content">
+          <div><span class="Pill">
+            <svg aria-hidden="true" role="presentation" title="">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{media.type}}"></use>
+            </svg>
+            {{media.name}}
+          </span></div>
+          <div>
+            <h3 class="white">{{media.title}}</h3>
+            <p class="white">{{media.teaser}}</p>
+            <a href="{{media.link}}" class="Button Button--outline Button--outline-light">{{__('View Media', 'saat')}}</a>
+            <a href="{{media.archive}}" class="Button Button--light">{{__('See Media Library', 'saat')}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# ----------------- Blocks Area ----------------- #}
+  {% include 'components/home-blocks.twig' %}
+{% endblock %}

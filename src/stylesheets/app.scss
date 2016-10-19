@@ -55,6 +55,7 @@
 @import "objects/landing-page";
 @import "objects/split-page";
 @import "objects/single-page";
+@import "objects/front-page";
 
 // Article Layout
 @import "objects/single-article";
@@ -71,7 +72,7 @@
 @import "objects/archive-media";
 @import "objects/single-media";
 @import "objects/single-document";
-// @import "objects/front-page";
+
 // @import "objects/single-resource";
 // @import "objects/search-resource";
 
@@ -108,6 +109,7 @@
 @import "components/gallery";
 @import "components/select";
 @import "components/toggle";
+@import "components/hero";
 
 // Mustache Templates
 @import "components/media-object";
@@ -118,7 +120,6 @@
 // @import "components/duet";
 // @import "components/card";
 // @import "components/carousel";
-// @import "components/hero";
 // @import "components/theater";
 // @import "components/media";
 // @import "components/searchbar";

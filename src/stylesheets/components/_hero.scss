@@ -1,14 +1,35 @@
 .Hero {
-  box: horizontal wrap;
-  border-bottom: 3px solid $white;
-  &-grid {
+  @include fullwidth;
+  background-color: $white;
+  &-image {
+    @include cover;
+    position: relative;
+    width: 80%;
+    margin-right: 3px;
+    opacity: 1;
+    transition: opacity .35s ease-in-out;
+    &:not(.is-selected) {
+      opacity: .75;
+    }
+    height: $spacer-single*48; // fallback
+    height: calc(100vh - 150px);
+  }
+  &-caption {
+    box: horizontal space-between middle;
     width: 100%;
-    @include from(md) {
-      width: 33.33%;
-      border-right: 3px solid white;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: $spacer-single $spacer-single*3.5;
+    background: rgba(0,0,0,.75);
+    transform: translate3d(-50%, 0, 0);
+    * {
+      margin-bottom: 0;
     }
   }
-  .Pill {
-    margin-bottom: $spacer-half;
+  &-captionCTA {
+    box: horizontal center middle;
+    width: 15%;
+    flex: 0 0 auto;
   }
 }

@@ -7,7 +7,7 @@
 
   {% include 'components/banner.twig' %}
   <div class="container {{'SinglePage'|modifiers("#{sidebar_position}, #{slim_sidebar}")}}">
-    <div class="SinglePage-content {{'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")}} content-body">
+    <div class="SinglePage-content content-body">
       {% if acf.teaser %}
         <h3 class="Lead">{{acf.teaser}}</h3>
       {% endif %}
@@ -29,3 +29,7 @@
     {% endif %}
   </div>
 {% endblock %}
+
+{#
+'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")
+ #}

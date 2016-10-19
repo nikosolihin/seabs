@@ -1,7 +1,15 @@
+{# Google Search Console Verification #}
+<meta name="google-site-verification" content="cOKWRVC7C3sOoe9GGxYyVwIsZg9GRxqpkvAv788Nzz8" />
+
 {# https://moz.com/blog/seo-cheat-sheet #}
-<link href="https://v2.seabs.ac.id/" rel="canonical" />
+<link href="{{current_url}}" rel="canonical" />
 
 {# Annotate alternate language & region versions of content #}
+<link rel="alternate" hreflang="id" href="https://v2.seabs.ac.id" />
 <link rel="alternate" hreflang="x-default" href="https://v2.seabs.ac.id/en" />
-<link rel="alternate" hreflang="id" href="https://v2.seabs.ac.id/" />
 <link rel="alternate" hreflang="zh" href="https://v2.seabs.ac.id/zh" />
+
+{# Google Custom Search Thumbnail #}
+{% if media_type %}
+  <meta name="thumbnail" content="{{acf.image[square2x]}}" />
+{% endif %}

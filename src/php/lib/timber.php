@@ -46,6 +46,12 @@ class StarterSite extends TimberSite {
 		// Layout Modules
 		//=============================================
 
+		// Logo
+		$context['logo'] = array(
+			'normal' => get_field('logo_1x', 'option'),
+			'retina' => get_field('logo_2x', 'option')
+		);
+
 		// Primary - get 3 levels deep
 		$primary_menu = get_field('primary_menu', 'option');
 		$context['primary_menu'] = array();
@@ -87,6 +93,8 @@ class StarterSite extends TimberSite {
 				'singles' => $singles
 			));
 		}
+
+		// var_dump($context['primary_menu']);
 
 		// Secondary
 		$secondary_menu = get_field('secondary_menu', 'option');
@@ -273,6 +281,30 @@ class StarterSite extends TimberSite {
 		//=============================================
 		$classfilter = new Twig_SimpleFilter('modest', function ($embed) {
 			return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0", $embed);
+		});
+		$twig->addFilter($classfilter);
+
+		//=============================================
+		// Choose largest image for FB Share
+		//=============================================
+		$classfilter = new Twig_SimpleFilter('getLargest', function ($image) {
+			if ($image) {
+				// Get just the url addresses of images
+				$images = array();
+				foreach($image as $key => $value) {
+					if(strpos($key, 'url_') !== false) {
+						$images[$key] = $value;
+					}
+				}
+				if (array_key_exists('url_h', $images)) {
+					// If large 1600 exists, trash original and use that
+					unset($images['url_o']);
+					return $images['url_h'];
+				} else {
+					// If large 1600 doesn't exist, grab original
+					return $images['url_o'];
+				}
+			}
 		});
 		$twig->addFilter($classfilter);
 
