@@ -108,14 +108,43 @@ if( function_exists('acf_add_options_page') ) {
 		'icon_url' 		=> 'dashicons-menu'
 	));
 
-  // // Home Page //////////////////////////////
-	// acf_add_options_page(array(
-	// 	'page_title' 	=> '', // No page title since acf already has
-	// 	'menu_title'	=> 'Home Page',
-	// 	'menu_slug' 	=> 'homepage',
-	// 	'position' 		=> '201',
-	// 	'icon_url' 		=> 'dashicons-welcome-widgets-menus'
-	// ));
+  // Home Page //////////////////////////////
+	acf_add_options_page(array(
+		'page_title' 	=> '', // No page title since acf already has
+		'menu_title'	=> 'Home Page',
+		'menu_slug' 	=> 'homepage',
+		'position' 		=> '201',
+		'icon_url' 		=> 'dashicons-admin-home',
+    'redirect' 		=> true
+	));
+
+  // Hero Unit Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> '',
+    'menu_title'	=> 'Hero Unit',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Prospective Students Sub Page ///////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Prospective Students Section',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Stream Section Sub Page ////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Stream',
+    'parent_slug'	=> 'homepage',
+  ));
+
+  // Blocks Carousel Sub Page //////////////////////
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Home Page Settings',
+    'menu_title'	=> 'Blocks Carousel',
+    'parent_slug'	=> 'homepage',
+  ));
 
   // Site Settings //////////////////////////////
   acf_add_options_page(array(

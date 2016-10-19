@@ -4,6 +4,7 @@
   display: inline-block;
   padding: .82rem $spacer-single*1.5;
   background-color: $button-bg;
+  border: 1px solid $button-bg;
   text-transform: capitalize;
   transition: all .1s ease-in-out;
   text: $white 600 left none $font-size-h6 1;
@@ -22,6 +23,12 @@
   &--light {
     color: $brand-primary;
     background-color: $white;
+    border: 1px solid $white;
+    &:hover {
+      color: $white;
+      background-color: $brand-primary;
+      border: 1px solid $brand-primary;
+    }
   }
   &--outline {
     color: $button-bg;

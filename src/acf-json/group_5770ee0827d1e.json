@@ -44,7 +44,7 @@
             "label": "What?",
             "name": "org_description",
             "type": "textarea",
-            "instructions": "In a few words, explain what this organization is about.",
+            "instructions": "Explain what this site is about in the language of the sub-site. This is the HTML meta description tag. Limited to 150 characters.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -54,11 +54,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
+            "maxlength": 150,
             "rows": 4,
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
+            "new_lines": ""
         },
         {
             "key": "field_579796aae6ef9",
@@ -366,5 +364,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1475652936
+    "modified": 1476531689
 }

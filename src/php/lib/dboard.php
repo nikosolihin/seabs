@@ -4,7 +4,7 @@
 /* from including unnecessary headings
 /*=============================================*/
 function custom_format_TinyMCE( $in ) {
-  $in['block_formats'] = "Heading=h2; Sub-Heading=h4; Paragraph=p;";
+  $in['block_formats'] = "";
 	return $in;
 }
 add_filter( 'tiny_mce_before_init', 'custom_format_TinyMCE' );
@@ -19,9 +19,27 @@ function custom_style_TinyMCE($buttons) {
 }
 add_filter('mce_buttons_2', 'custom_style_TinyMCE');
 
+function myplugin_tinymce_buttons($buttons) {
+	$remove = array('formatselect','forecolor');
+	return array_diff($buttons,$remove);
+ }
+add_filter('mce_buttons_2','myplugin_tinymce_buttons');
+
 function custom_style_def_TinyMCE( $init_array ) {
 	$style_formats = array(
 		array(
+			'title' => 'Heading',
+			'block' => 'h2',
+		),
+		array(
+			'title' => 'Sub-Heading',
+			'block' => 'h4',
+		),
+		array(
+			'title' => 'Paragraph',
+			'block' => 'p',
+		),
+    array(
 			'title' => 'Lead Text',
 			'block' => 'p',
 			'classes' => ['Lead', 'Lead--body', 'h4']

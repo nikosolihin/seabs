@@ -326,6 +326,64 @@
             "name_prefix": 0,
             "key_prefix": 1,
             "label_prefix": 0
+        },
+        {
+            "key": "field_5805b801cc2af",
+            "label": "Logo",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5805b827cc2b0",
+            "label": "1x",
+            "name": "logo_1x",
+            "type": "flickr_browser",
+            "instructions": "Choose a logo for standard display. 120 x 120 px is best.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_o"
+            ],
+            "flickr_extras": ""
+        },
+        {
+            "key": "field_5805b8e4cc2b1",
+            "label": "2x",
+            "name": "logo_2x",
+            "type": "flickr_browser",
+            "instructions": "Choose a logo for retina display. 240 x 240 px is best.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_o"
+            ],
+            "flickr_extras": ""
         }
     ],
     "location": [
@@ -345,5 +403,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Header & Footer",
-    "modified": 1475592019
+    "modified": 1476770477
 }

@@ -1,0 +1,344 @@
+{
+    "key": "group_58077b78c8599",
+    "title": "Stream Details",
+    "fields": [
+        {
+            "key": "field_58077ba9968cc",
+            "label": "Welcome Video",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5807a315e856c",
+            "label": "Quote",
+            "name": "welcome_quote",
+            "type": "textarea",
+            "instructions": "Showing some profound quote might be emotionally impactful for visitors.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5807a37ce856d",
+            "label": "Byline",
+            "name": "welcome_by",
+            "type": "text",
+            "instructions": "Who's this quote by? Maybe the founder of SAAT?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5807a3ace856e",
+            "label": "Video URL",
+            "name": "welcome_video",
+            "type": "oembed",
+            "instructions": "A youtube link to the welcome video. Will open in a modal.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_5807a4b66c0a0",
+            "label": "Video Background",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The video background is a looping 10 seconds video located within the theme folder on the server. To replace the video, prepare a 10 seconds video with a resolution of 600x600 px and export it as .mp4 and .webm. You <strong>MUST<\/strong> compress and optimize the .mp4 so that file size is around 500 KB. <strong>Anything over 600 KB will probably eat too much bandwith.<\/strong> The file size of the .webm file should be about half of the .mp4 file. Name both files \"welcome\".\r\n\r\nAlso, take a snapshot of the first frame of the video and save it as \"poster.jpg\". Keep the file size of this snapshot at about 20 KB. This is the fallback for browsers not supporting native HTML5 video.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_58077bb3968cd",
+            "label": "News & Events",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5807a71f5bf0f",
+            "label": "Pick news and\/or events",
+            "name": "stream_news_events",
+            "type": "post_object",
+            "instructions": "You may choose any news and\/or events, but only the first 3 will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "event",
+                "news"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_58077bc3968ce",
+            "label": "Media",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5807a7ac254ad",
+            "label": "Pick a media item",
+            "name": "stream_media",
+            "type": "post_object",
+            "instructions": "You may choose any media items, but only the first one will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "resource"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_58077bd7968cf",
+            "label": "Custom Area",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5807a84c2e228",
+            "label": "CTA Area",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The CTA Area contains buttons and a description sentence.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5807a8fcaab28",
+            "label": "Description",
+            "name": "stream_custom_description",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5807a8952e229",
+            "label": "Buttons",
+            "name": "stream_custom_buttons",
+            "type": "repeater",
+            "instructions": "Include up to 2 buttons here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5807a8e12e22b",
+            "min": "",
+            "max": 2,
+            "layout": "block",
+            "button_label": "Add a Button",
+            "sub_fields": [
+                {
+                    "key": "field_5807a8e12e22b",
+                    "label": "Button Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5807a8bb2e22a",
+                    "label": "Button URL",
+                    "name": "url",
+                    "type": "reusable_field_group_field",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "group_key": "group_5773382ac6cac",
+                    "name_prefix": 0,
+                    "key_prefix": 1,
+                    "label_prefix": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5807abbcee603",
+            "label": "CTA Background",
+            "name": "stream_custom_bg",
+            "type": "flickr_browser",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "acf-field-flickr-browser--showlabel",
+                "id": ""
+            },
+            "flickr_api_key": "",
+            "flickr_user_id": "",
+            "flickr_limit": 1,
+            "flickr_sizes": [
+                "url_n"
+            ],
+            "flickr_extras": ""
+        },
+        {
+            "key": "field_5807acd3e2889",
+            "label": "Custom Posts",
+            "name": "stream_custom_posts",
+            "type": "post_object",
+            "instructions": "Choose any pages or posts. Only the first 3 will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "event",
+                "resource",
+                "news"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-stream"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "OPTIONS_PAGE : Stream Section",
+    "modified": 1476898072
+}

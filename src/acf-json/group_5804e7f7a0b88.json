@@ -1,0 +1,127 @@
+{
+    "key": "group_5804e7f7a0b88",
+    "title": "Hero Unit",
+    "fields": [
+        {
+            "key": "field_5804e8078a761",
+            "label": "Add Slideshow Item",
+            "name": "hero",
+            "type": "repeater",
+            "instructions": "Since the slideshow must be compatible with many screen widths and devices out there, it will automatically try to align and stretch the image in the best way possible. If the image you intend to use has a lot of texts around the edges of the image, they might be cut off on smaller screens. A good rule of thumb is to <strong><em>keep texts minimal and aligned more towards the middle of the image<\/em><\/strong>. Resizing the width of your browser is a good way to test how an image will appear on different devices.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5804e85a8a762",
+            "min": 0,
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Slideshow Item",
+            "sub_fields": [
+                {
+                    "key": "field_5804e85a8a762",
+                    "label": "Headline",
+                    "name": "headline",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5804e8648a763",
+                    "label": "Button Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5804ecd812ec9",
+                    "label": "Button URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5804e8718a764",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "flickr_browser",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "flickr_api_key": "",
+                    "flickr_user_id": "",
+                    "flickr_limit": 1,
+                    "flickr_sizes": [
+                        "url_m",
+                        "url_z",
+                        "url_c",
+                        "url_l",
+                        "url_h",
+                        "url_o"
+                    ],
+                    "flickr_extras": [
+                        "o_dims"
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-hero-unit"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476721445
+}
