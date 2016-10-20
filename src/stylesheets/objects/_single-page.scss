@@ -10,13 +10,14 @@
     padding: 0 $spacer-single*5;
   }
   @include from(lg) {
-    box: horizontal space-between;
+    box: horizontal;
   }
 
   &-sidebar {
     order: 1;
   }
   &-content {
+    width: 100%;
     order: 2;
     .Lead {
       margin-bottom: $spacer-single*2.5;
@@ -24,7 +25,7 @@
     > .container {
       padding: 0;
     }
-    @include to(lg) {
+    @include to(md) {
       margin: $spacer-single*2 auto 0;
     }
   }
@@ -37,8 +38,14 @@
       }
       .SinglePage-content {
         order: 2;
-        @include at(lg) {
-          padding-left: $spacer-single;
+        @include from(lg) {
+          padding-left: $spacer-single*3;
+        }
+        @include from(xl) {
+          padding-left: $spacer-single*4;
+        }
+        @include from(xxl) {
+          padding-left: $spacer-single*5;
         }
       }
     }
@@ -49,8 +56,14 @@
       }
       .SinglePage-content {
         order: 1;
-        @include at(lg) {
-          padding-right: $spacer-single;
+        @include from(lg) {
+          padding-right: $spacer-single*3;
+        }
+        @include from(xl) {
+          padding-right: $spacer-single*4;
+        }
+        @include from(xxl) {
+          padding-right: $spacer-single*5;
         }
       }
     }
@@ -59,7 +72,6 @@
       .SinglePage-content {
         order: 1;
         flex: 1 1 auto;
-        // max-width: none;
         padding-right: $spacer-single*3;
       }
       .SinglePage-sidebar {

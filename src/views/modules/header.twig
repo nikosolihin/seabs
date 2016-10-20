@@ -65,24 +65,30 @@
         <div class="Dropdown-panel">
           <div class="Dropdown-panelWrapper">
             <div class="Dropdown-panelLeft">
-              {% for child in parent.children %}
-                <div class="List">
-                  <a href="{{child.link}}" class="caps">{{child.title}}</a>
-                  {% if child.grandchildren %}
-                    <ul class="List-sublist">
-                      {% for grandchild in child.grandchildren %}
-                        <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </div>
-              {% endfor %}
               {% if parent.singles %}
-              <div class="List">
-                {% for single in parent.singles %}
-                  <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
-                {% endfor %}
+              <div class="Dropdown-panelContainer">
+                <div class="List Dropdown-singleLinks">
+                  {% for single in parent.singles %}
+                    <a href="{{single.link}}" class="Dropdown-singleLink caps">{{single.title}}</a>
+                  {% endfor %}
+                </div>
               </div>
+              {% endif %}
+              {% if parent.children %}
+                <div class="Dropdown-panelContainer">
+                  {% for child in parent.children %}
+                    <div class="List">
+                      <a href="{{child.link}}" class="caps">{{child.title}}</a>
+                      {% if child.grandchildren %}
+                        <ul class="List-sublist">
+                          {% for grandchild in child.grandchildren %}
+                            <li><a href="{{grandchild.link}}">{{grandchild.title}}</a></li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
               {% endif %}
             </div>
             <div class="Dropdown-panelRight">

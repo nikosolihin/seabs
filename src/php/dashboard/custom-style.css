@@ -318,6 +318,10 @@ p#backtoblog {
 	display: block;
 }
 
+#parent_id option.level-2 {
+  display: none;
+}
+
 /*=============================================*/
 /* Hide weird Network dropdown menu items
 /*=============================================*/
