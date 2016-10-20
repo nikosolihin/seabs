@@ -1,18 +1,43 @@
 .Hero {
   @include fullwidth;
   background-color: $white;
-  &-image {
-    @include cover;
+  &-cell {
     position: relative;
-    width: 80%;
     margin-right: 3px;
     opacity: 1;
+    background-color: $black;
     transition: opacity .35s ease-in-out;
     &:not(.is-selected) {
-      opacity: .75;
+      opacity: .85;
     }
-    height: $spacer-single*48; // fallback
-    height: calc(100vh - 150px);
+    width: 100%;
+    height: $spacer-single*24;
+    @include from(sm) {
+      width: 93%;
+      height: $spacer-single*28;
+    }
+    @include from(md) {
+      width: 90%;
+      height: $spacer-single*35;
+    }
+    @include from(lg) {
+      width: 86%;
+      height: $spacer-single*37;
+    }
+    @include from(xl) {
+      width: 80%;
+      height: $spacer-single*42;
+    }
+    @include from(xxl) {
+      width: 80%;
+      height: $spacer-single*48; // Fallback
+      height: calc(100vh - 150px);
+    }
+  }
+  &-image {
+    @include cover;
+    position: absolute 0 auto auto 0;
+    size: 100%;
   }
   &-caption {
     box: horizontal space-between middle;
@@ -20,16 +45,26 @@
     position: absolute;
     left: 50%;
     bottom: 0;
-    padding: $spacer-single $spacer-single*3.5;
     background: rgba(0,0,0,.75);
     transform: translate3d(-50%, 0, 0);
     * {
       margin-bottom: 0;
     }
+    padding: $spacer-single;
+    @include from(md) {
+      padding: $spacer-single $spacer-single*3.5;
+    }
   }
   &-captionCTA {
-    box: horizontal center middle;
-    width: 15%;
+    width: 17%;
     flex: 0 0 auto;
+    display: none;
+    @include from(md) {
+      box: horizontal center middle;
+      width: 20%;
+    }
+    @include from(lg) {
+      width: 17%;
+    }
   }
 }

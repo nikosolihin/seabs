@@ -94,8 +94,6 @@ class StarterSite extends TimberSite {
 			));
 		}
 
-		// var_dump($context['primary_menu']);
-
 		// Secondary
 		$secondary_menu = get_field('secondary_menu', 'option');
 		$context['secondary_menu'] = array();
@@ -232,6 +230,7 @@ class StarterSite extends TimberSite {
 		$context['languages']['id'] = "https://v2.seabs.ac.id/";
 		$context['languages']['en'] = "https://v2.seabs.ac.id/en";
 		$context['languages']['zh'] = "https://v2.seabs.ac.id/zh";
+		$context['languages']['list'] = get_field('languages', 'option');
 
 		// Current URL
 		global $wp;

@@ -1,6 +1,8 @@
 <section class="Hero" data-component="hero">
   {% for item in hero %}
-    <div class="Hero-image" data-flickity-bg-lazyload="{{item.image[xlarge]}}">
+    <div class="Hero-cell">
+      <a href="{{item.url}}" class="Hero-image" data-flickity-bg-lazyload="{{item.image[xlarge]}}">
+      </a>
       <div class="Hero-caption">
         <div class="Hero-captionBody">
           <h4 class="white">{{item.headline}}</h4>

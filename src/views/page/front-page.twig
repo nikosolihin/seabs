@@ -1,20 +1,23 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block before_content %}
+  {% include 'components/modal.twig' %}
+{% endblock %}
 
+{% block content %}
   {# ----------------- Hero Unit ----------------- #}
   {% include 'components/hero.twig' %}
 
   {# ----------------- Prospective Section ----------------- #}
   {% include 'components/prospective.twig' %}
 
-  {# -------------- Welcome Section ------------ #}
+  {# -------------- Stream Section ------------ #}
   <section class="welcome">
     <h2 class="Lead Lead--section brand center">{{__('Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah', 'saat')}}</h2>
     <hr>
     <div class="container container--nopadding">
       <div class="Twin">
-        <div class="Twin-box welcome-box">
+        <a href="#" class="Twin-box welcome-box" data-component="modal">
           <video poster="{{site.theme.uri}}/poster.jpg" class="welcome-video" preload="auto" aria-label="Welcome to SAAT" playsinline autoplay muted loop>
             <source src="{{site.theme.uri}}/welcome.webm" type="video/webm">
             <source src="{{site.theme.uri}}/welcome.mp4" type="video/mp4">
@@ -28,9 +31,10 @@
               <p class="center caps">{{welcome.byline}}</p>
             </div>
           </div>
-        </div>
+          <div class="welcome-poster lazyload" data-bgset="{{site.theme.uri}}/poster.jpg"></div>
+        </a>
         <div class="Twin-frame Twin">
-          <div class="Twin-box lazyload" data-bgset="{{news_events.first.image[small]}} 1x, {{news_events.first.image[medium]}} 2x">
+          <a href="{{news_events.first.link}}" class="Twin-box lazyload" data-bgset="{{news_events.first.image[small]}} 1x, {{news_events.first.image[medium]}} 2x">
             <div class="Twin-content">
               <div>
                 {% if news_events.first.type == 'event' %}
@@ -39,10 +43,12 @@
                   <span class="Pill">{{__('Recent News', 'saat')}}</span>
                 {% endif %}
               </div>
-              <h4 class="h3 Lead white">{{news_events.first.title}}</h4>
-              <span class="caps white">{{__('Read More', 'saat')}}</span>
+              <div>
+                <h4 class="h3 Lead white">{{news_events.first.title}}</h4>
+                <span class="caps white">{{__('Read More', 'saat')}}</span>
+              </div>
             </div>
-          </div>
+          </a>
 
           <div class="Twin-box welcome-control lazyload" data-bgset="http://www.nature.org/cs/groups/webcontent/@photopublic/documents/media/migrations-map-537x448.jpg">
             <div class="Twin-content">
@@ -51,8 +57,9 @@
               <a href="" class="Button Button--block Button--light">See News</a>
             </div>
           </div>
+
           {% for post in news_events.rest %}
-            <div class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
+            <a href="{{post.link}}" class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
               <div class="Twin-content">
                 <div>
                   {% if post.type == 'event' %}
@@ -61,18 +68,20 @@
                     <span class="Pill">{{__('Recent News', 'saat')}}</span>
                   {% endif %}
                 </div>
-                <h4 class="h3 Lead white">{{post.title}}</h4>
-                <span class="caps white">{{__('Read More', 'saat')}}</span>
+                <div>
+                  <h4 class="h3 Lead white">{{post.title}}</h4>
+                  <span class="caps white">{{__('Read More', 'saat')}}</span>
+                </div>
               </div>
-            </div>
+            </a>
           {% endfor %}
         </div>
       </div>
 
     <div class="Twin">
       <div class="Twin-frame Twin">
-        {% for post in custom_posts.first %}
-          <div class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
+        {% for post in custom_posts %}
+          <a href="{{post.link}}" class="Twin-box lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
             <div class="Twin-content">
               <div>
                 {% if post.type == 'page' %}
@@ -83,10 +92,12 @@
                   <span class="Pill">{{__('Recent News', 'saat')}}</span>
                 {% endif %}
               </div>
-              <h4 class="h3 Lead white">{{post.title}}</h4>
-              <span class="caps white">{{__('Read More', 'saat')}}</span>
+              <div>
+                <h4 class="h3 Lead white">{{post.title}}</h4>
+                <span class="caps white">{{__('Read More', 'saat')}}</span>
+              </div>
             </div>
-          </div>
+          </a>
         {% endfor %}
 
         <div class="Twin-box welcome-control welcome-control--custom lazyload" data-bgset="{{control_cta.image[small]}} 1x, {{control_cta.image[medium]}} 2x">
@@ -104,24 +115,7 @@
             {% endfor %}
           </div>
         </div>
-
-          <div class="Twin-box lazyload" data-bgset="{{custom_posts.last.image[small]}} 1x, {{custom_posts.last.image[medium]}} 2x">
-            <div class="Twin-content">
-              <div>
-                {% if custom_posts.last.type == 'page' %}
-                  <span class="Pill">{{custom_posts.last.parent.title|title}}</span>
-                {% elseif custom_posts.last.type == 'event' %}
-                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
-                {% else %}
-                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
-                {% endif %}
-              </div>
-              <h4 class="h3 Lead white">{{custom_posts.last.title}}</h4>
-              <span class="caps white">{{__('Read More', 'saat')}}</span>
-            </div>
-          </div>
-
-        </div>
+      </div>
 
       <div class="Twin-box welcome-secondaryBox lazyload" data-bgset="{{media.image[medium]}} 1x, {{media.image[xlarge]}} 2x">
         <div class="Twin-content">

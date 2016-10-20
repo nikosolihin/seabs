@@ -57,9 +57,15 @@
       </div>
       <div class="legal-languages">
         {{__('Languages', 'saat')}}:
-        <a href="{{languages.id}}" class="legal-link">ID</a>
-        <a href="{{languages.en}}" class="legal-link">EN</a>
-        <a href="{{languages.zh}}" class="legal-link">ZH</a>
+        {% if 'id' in languages.list %}
+          <a href="{{languages.id}}" class="legal-link">ID</a>
+        {% endif %}
+        {% if 'en' in languages.list %}
+          <a href="{{languages.en}}" class="legal-link">EN</a>
+        {% endif %}
+        {% if 'zh' in languages.list %}
+          <a href="{{languages.zh}}" class="legal-link">ZH</a>
+        {% endif %}
       </div>
     </div>
   </div>
