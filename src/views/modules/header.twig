@@ -41,9 +41,15 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use>
     </svg>
     <div class="Header-languagesDropdown">
-      <a href="{{languages.id}}" class="Header-languagesLink caps brand">ID</a>
-      <a href="{{languages.en}}" class="Header-languagesLink caps brand">EN</a>
-      <a href="{{languages.zh}}" class="Header-languagesLink caps brand">ZH</a>
+      {% if 'id' in languages.list %}
+        <a href="{{languages.id}}" class="Header-languagesLink caps brand">ID</a>
+      {% endif %}
+      {% if 'en' in languages.list %}
+        <a href="{{languages.en}}" class="Header-languagesLink caps brand">EN</a>
+      {% endif %}
+      {% if 'zh' in languages.list %}
+        <a href="{{languages.zh}}" class="Header-languagesLink caps brand">ZH</a>
+      {% endif %}
     </div>
   </div>
 </nav>

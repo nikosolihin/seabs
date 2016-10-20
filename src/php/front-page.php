@@ -67,8 +67,8 @@ foreach ($custom as $post) {
     'parent' => $parent,
   ));
 }
-$context['custom_posts']['first'] = array_slice($context['custom_posts'], 0, 2);
-$context['custom_posts']['last'] = array_slice($context['custom_posts'], 2, 1)[0];
+// $context['custom_posts']['first'] = array_slice($context['custom_posts'], 0, 2);
+// $context['custom_posts']['last'] = array_slice($context['custom_posts'], 2, 1)[0];
 
 // Stream Media Box
 $media = Timber::get_post(get_field('stream_media', 'option'));
