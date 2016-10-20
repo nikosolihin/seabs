@@ -61,9 +61,9 @@
     border-bottom: 1px solid #eee;
     margin-bottom: 0 !important;
     padding: $spacer-threefourth 0 !important;
-    &:first-of-type {
-      padding-top: $spacer-quarter !important;
-    }
+    // &:first-of-type {
+    //   padding-top: $spacer-quarter !important;
+    // }
   }
   &-logo {
     box: vertical middle center;

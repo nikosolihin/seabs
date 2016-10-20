@@ -1,20 +1,23 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block before_content %}
+  {% include 'components/modal.twig' %}
+{% endblock %}
 
+{% block content %}
   {# ----------------- Hero Unit ----------------- #}
   {% include 'components/hero.twig' %}
 
   {# ----------------- Prospective Section ----------------- #}
   {% include 'components/prospective.twig' %}
 
-  {# -------------- Welcome Section ------------ #}
+  {# -------------- Stream Section ------------ #}
   <section class="welcome">
     <h2 class="Lead Lead--section brand center">{{__('Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah', 'saat')}}</h2>
     <hr>
     <div class="container container--nopadding">
       <div class="Twin">
-        <a href="{{welcome.url}}" class="Twin-box welcome-box">
+        <a href="#" class="Twin-box welcome-box" data-component="modal">
           <video poster="{{site.theme.uri}}/poster.jpg" class="welcome-video" preload="auto" aria-label="Welcome to SAAT" playsinline autoplay muted loop>
             <source src="{{site.theme.uri}}/welcome.webm" type="video/webm">
             <source src="{{site.theme.uri}}/welcome.mp4" type="video/mp4">
@@ -28,6 +31,7 @@
               <p class="center caps">{{welcome.byline}}</p>
             </div>
           </div>
+          <div class="welcome-poster lazyload" data-bgset="{{site.theme.uri}}/poster.jpg"></div>
         </a>
         <div class="Twin-frame Twin">
           <a href="{{news_events.first.link}}" class="Twin-box lazyload" data-bgset="{{news_events.first.image[small]}} 1x, {{news_events.first.image[medium]}} 2x">

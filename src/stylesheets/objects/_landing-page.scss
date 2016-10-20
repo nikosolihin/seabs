@@ -23,11 +23,24 @@
   &--grid {
     margin-top: $spacer-single*7;
     margin-bottom: $spacer-single*7;
+    .Twin-box {
+      @include square(70%);
+      border-bottom: 2px solid $white;
+      @include from(sm) {
+        @include square(50%);
+      }
+      @include from(md) {
+        @include square(30%);
+      }
+    }
   }
 }
 
 .Twin {
-  box: horizontal wrap;
+  box: vertical;
+  @include from(lg) {
+    box: horizontal wrap;
+  }
 
   .Button {
     margin-top: $spacer-single;
@@ -35,44 +48,66 @@
   }
 
   &-frame, &-box {
-    width: 50%;
+    width: 100%;
+    @include from(lg) {
+      width: 50%;
+    }
   }
   &-frame .Twin-box {
     // If box has 1 item, square the item.
     &:only-child {
       flex: 1 0 auto;
     }
-    // If box has 2 items, make em horizontal
-    &:first-child:nth-last-child(2),
-    &:first-child:nth-last-child(2) ~ .Twin-box {
-      @include square(50%);
-      width: 100%;
-    }
-    // If box has 3 items, expand last item.
-    + .Twin-box + .Twin-box {
-      @include square(50%);
-      width: 100%;
-    }
-    // If box has 4 items, make square grid
-    &:first-child:nth-last-child(4),
-    &:first-child:nth-last-child(4) ~ .Twin-box {
-      @include square(100%);
-      width: 50%;
+    @include from(lg) {
+      // If box has 2 items, make em horizontal
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ .Twin-box {
+        @include square(50%);
+        width: 100%;
+      }
+      // If box has 3 items, expand last item.
+      + .Twin-box + .Twin-box {
+        @include square(50%);
+        width: 100%;
+      }
+      // If box has 4 items, make square grid
+      &:first-child:nth-last-child(4),
+      &:first-child:nth-last-child(4) ~ .Twin-box {
+        @include square(100%);
+        width: 50%;
+      }
     }
   }
   &-box {
-    @include square;
     @include overlay(true);
     @include cover;
+    @include square(60%);
+    @include from(sm) {
+      @include square(40%);
+    }
+    @include from(md) {
+      @include square(20%);
+    }
+    @include from(lg) {
+      @include square;
+    }
     position: relative;
     background-color: black;
     overflow: hidden;
     &--popout {
-      // width: 40%;
       position: relative;
-      transform: scale(1.1);
-      transform-origin: top left;
-      top: -40px;
+      @include from(lg) {
+        transform: scale(1.1);
+        transform-origin: top left;
+        top: -40px;
+      }
+      @include to(sm) {
+        .Twin-content {
+          h3 {
+            font-size: $font-size-h3;
+          }
+        }
+      }
     }
   }
   &-content {
