@@ -13,6 +13,9 @@
     }
   }
   &-content {
+    h2.brand {
+      margin-bottom: $spacer-single;
+    }
     .Lead--body {
       font-size: $font-size-h4;
       @include from(lg) {
