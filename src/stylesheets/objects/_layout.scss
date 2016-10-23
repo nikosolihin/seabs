@@ -92,6 +92,18 @@
     }
     &:last-of-type {
       border-right: 0;
+
+      // The following keep single column in their place,
+      // despite being only child
+      &.column-right {
+        margin-left: auto;
+      }
+      &.column-left {
+        margin-right: auto;
+      }
+      &.column-mid {
+        margin: 0 auto;
+      }
     }
   }
 }

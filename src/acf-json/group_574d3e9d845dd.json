@@ -120,6 +120,66 @@
                             },
                             "message": "This is a callout section (spans full width)",
                             "default_value": 0
+                        },
+                        {
+                            "key": "field_5809d53e43bdd",
+                            "label": "Theme",
+                            "name": "section_callout_theme",
+                            "type": "radio",
+                            "instructions": "Dark theme is white text over opaque black. Light theme is dark text over light fill. Red theme is white text over the school's red color. The fill will extends to the edge of the image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4779918277",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "red": "Red",
+                                "transparent": "Transparent"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5809d54443bde",
+                            "label": "Include a background?",
+                            "name": "section_callout_bg",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4779918277",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57bd72b2e0e2c",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
                         }
                     ],
                     "min": "",
@@ -200,6 +260,66 @@
                             },
                             "message": "This is a callout section (spans full width)",
                             "default_value": 0
+                        },
+                        {
+                            "key": "field_5809bc3c10fc3",
+                            "label": "Theme",
+                            "name": "section_callout_theme",
+                            "type": "radio",
+                            "instructions": "Dark theme is white text over opaque black. Light theme is dark text over light fill. Red theme is white text over the school's red color. The fill will extends to the edge of the image.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2980c85f",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "dark": "Dark",
+                                "light": "Light",
+                                "red": "Red",
+                                "transparent": "Transparent"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5809bbba10fc1",
+                            "label": "Include a background?",
+                            "name": "section_callout_bg",
+                            "type": "reusable_field_group_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57a4c2980c85f",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "group_key": "group_57bd72b2e0e2c",
+                            "name_prefix": 1,
+                            "key_prefix": 1,
+                            "label_prefix": 0
                         }
                     ],
                     "min": "",
@@ -342,5 +462,5 @@
     ],
     "active": 1,
     "description": "Landing Page Builder",
-    "modified": 1474887746
+    "modified": 1477046300
 }

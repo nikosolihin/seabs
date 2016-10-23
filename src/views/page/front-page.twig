@@ -38,23 +38,23 @@
             <div class="Twin-content">
               <div>
                 {% if news_events.first.type == 'event' %}
-                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                  <span class="Pill">{{__('Event', 'saat')}}</span>
                 {% else %}
-                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                  <span class="Pill">{{__('News', 'saat')}}</span>
                 {% endif %}
               </div>
               <div>
                 <h4 class="h3 Lead white">{{news_events.first.title}}</h4>
-                <span class="caps white">{{__('Read More', 'saat')}}</span>
+                <span class="white">{{news_events.date|date('j M Y')}}</span>
               </div>
             </div>
           </a>
 
-          <div class="Twin-box welcome-control lazyload" data-bgset="http://www.nature.org/cs/groups/webcontent/@photopublic/documents/media/migrations-map-537x448.jpg">
+          <div class="Twin-box welcome-control lazyload" data-bgset="https://c2.staticflickr.com/6/5642/30336427552_0e75356f7f.jpg">
             <div class="Twin-content">
               <p class="white">{{__('Browse all of our news and events', 'saat')}}</p>
-              <a href="" class="Button Button--block Button--light">See Events</a>
-              <a href="" class="Button Button--block Button--light">See News</a>
+              <a href="" class="Button Button--block Button--light">{{__('See Events', 'saat')}}</a>
+              <a href="" class="Button Button--block Button--light">{{__('See News', 'saat')}}</a>
             </div>
           </div>
 
@@ -63,14 +63,14 @@
               <div class="Twin-content">
                 <div>
                   {% if post.type == 'event' %}
-                    <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                    <span class="Pill">{{__('Event', 'saat')}}</span>
                   {% else %}
-                    <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                    <span class="Pill">{{__('News', 'saat')}}</span>
                   {% endif %}
                 </div>
                 <div>
                   <h4 class="h3 Lead white">{{post.title}}</h4>
-                  <span class="caps white">{{__('Read More', 'saat')}}</span>
+                  <span class="white">{{news_events.date|date('j M Y')}}</span>
                 </div>
               </div>
             </a>
@@ -87,14 +87,20 @@
                 {% if post.type == 'page' %}
                   <span class="Pill">{{post.parent.title|title}}</span>
                 {% elseif post.type == 'event' %}
-                  <span class="Pill">{{__('Upcoming Event', 'saat')}}</span>
+                  <span class="Pill">{{__('Event', 'saat')}}</span>
+                {% elseif post.type == 'media' %}
+                  <span class="Pill">{{__('Media', 'saat')}}</span>
                 {% else %}
-                  <span class="Pill">{{__('Recent News', 'saat')}}</span>
+                  <span class="Pill">{{__('News', 'saat')}}</span>
                 {% endif %}
               </div>
               <div>
                 <h4 class="h3 Lead white">{{post.title}}</h4>
-                <span class="caps white">{{__('Read More', 'saat')}}</span>
+                {% if post.type == 'page' %}
+                  <span class="white">{{__('Read More', 'saat')}}</span>
+                {% else %}
+                  <span class="white">{{news_events.date|date('j M Y')}}</span>
+                {% endif %}
               </div>
             </div>
           </a>

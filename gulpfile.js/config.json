@@ -2,7 +2,7 @@
   "root": {
     "src": "./src",
     "dest": "./public",
-    "des_t": "./htdocs/wp-content/themes/saat"
+    "de_st": "./htdocs/wp-content/themes/saat"
   },
 
   "tasks": {

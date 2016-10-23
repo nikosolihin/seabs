@@ -30,6 +30,7 @@ function custom_style_def_TinyMCE( $init_array ) {
 		array(
 			'title' => 'Heading',
 			'block' => 'h2',
+      'classes' => ['brand']
 		),
 		array(
 			'title' => 'Sub-Heading',
@@ -119,3 +120,12 @@ function remove_other_updates(){
 add_filter('pre_site_transient_update_core','remove_other_updates');
 add_filter('pre_site_transient_update_plugins','remove_other_updates');
 add_filter('pre_site_transient_update_themes','remove_other_updates');
+
+/*=============================================*/
+/* Does this fix Dashboard slowness when using
+/* many flex content fields
+/*=============================================*/
+function theme_increase_mem_limit($wp_max_mem_limit) {
+	return "512M";
+}
+add_filter('admin_memory_limit', 'theme_increase_mem_limit',10,3);

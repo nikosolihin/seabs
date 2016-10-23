@@ -15,7 +15,8 @@
   &-wrapper {
     background-repeat: no-repeat;
     background-color: $footer-bg-color;
-    margin-top: $spacer-single*8;
+    border-top: 2px solid $white;
+    // margin-top: $spacer-single*8;
     background-size: cover;
     background-position: center right;
     @include from(md) {

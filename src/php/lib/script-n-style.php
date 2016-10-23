@@ -7,6 +7,7 @@ function saat_admin_styles() {
 	wp_register_style( 'saat-admin-style', get_template_directory_uri() . '/dashboard/custom-style.css', false, '1.0.0' );
 	wp_enqueue_style( 'saat-admin-style' );
 }
+add_action( 'login_head', 'saat_admin_styles' ); // For login logo
 add_action( 'admin_enqueue_scripts', 'saat_admin_styles' );
 
 //=============================================

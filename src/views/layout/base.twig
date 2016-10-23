@@ -12,6 +12,8 @@
     {% include 'layout/columns.twig' with {
       'column': 'two',
       'landingCallout': section.is_section_callout,
+      'landingCalloutTheme': section.section_callout_theme,
+      'landingCalloutBg': section.section_callout_bg_image,
       'left': section.left_components,
       'right': section.right_components,
       'leftCallout': section.left_column_options,
@@ -22,6 +24,8 @@
     {% include 'layout/columns.twig' with {
       'column': 'three',
       'landingCallout': section.is_section_callout,
+      'landingCalloutTheme': section.section_callout_theme,
+      'landingCalloutBg': section.section_callout_bg_image,
       'left': section.left_components,
       'mid': section.mid_components,
       'right': section.right_components,

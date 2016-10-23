@@ -1,11 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-10-24 01:15+0700\n"
-"PO-Revision-Date: 2016-10-24 01:16+0700\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2016-10-22 23:00+0700\n"
+"PO-Revision-Date: 2016-10-22 23:18+0700\n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
-"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +12,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: views\n"
 "X-Poedit-SearchPath-1: php/lib\n"
 "X-Poedit-SearchPath-2: php\n"
@@ -21,35 +21,34 @@ msgstr ""
 #: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:111
 #: php/lib/timber.php:194 php/single-event.php:119
 msgid "Events"
-msgstr "Kegiatan"
+msgstr ""
 
 #: php/archive-event.php:7
 msgid "No events found. Please try again."
-msgstr "Kegiatan tidak ditemukan. Silakan coba lagi."
+msgstr ""
 
 #: php/archive-event.php:8
 msgid "Search events or keywords"
-msgstr "Cari kegiatan atau kata kunci"
+msgstr ""
 
 #: php/archive-media.php:6 views/media/archive-media.twig:10
 msgid "Media Library"
-msgstr "Pustaka Media"
+msgstr ""
 
 #: php/archive-media.php:7
 msgid "No media found. Please try again."
-msgstr "Media tidak ditemukan. Silakan coba lagi."
+msgstr ""
 
 #: php/archive-news.php:6 php/lib/post-types.php:129 php/lib/post-types.php:130
 #: php/lib/post-types.php:160 php/lib/timber.php:115 php/lib/timber.php:198
 #: php/single-news.php:51 views/page/front-page.twig:43
 #: views/page/front-page.twig:68 views/page/front-page.twig:94
 msgid "News"
-msgstr "Berita"
+msgstr "消息"
 
 #: php/archive-news.php:7
-#, fuzzy
 msgid "No news found. Please try again."
-msgstr "Berita tidak ditemukan. Silakan coba lagi."
+msgstr ""
 
 #: php/lib/post-types.php:9
 msgid "Blocks"
@@ -229,7 +228,7 @@ msgstr ""
 
 #: php/lib/post-types.php:133
 msgid "All News"
-msgstr "Semua Artikel"
+msgstr ""
 
 #: php/lib/post-types.php:134
 msgid "Add New News"
@@ -327,7 +326,7 @@ msgstr ""
 #: php/lib/post-types.php:283 php/lib/timber.php:119 php/lib/timber.php:202
 #: views/page/front-page.twig:92
 msgid "Media"
-msgstr "Media"
+msgstr ""
 
 #: php/lib/post-types.php:254
 msgid "Media Archives"
@@ -359,7 +358,7 @@ msgstr ""
 
 #: php/lib/post-types.php:262 views/page/front-page.twig:137
 msgid "View Media"
-msgstr "Lihat Media"
+msgstr ""
 
 #: php/lib/post-types.php:263
 msgid "Search Media"
@@ -384,7 +383,7 @@ msgstr ""
 #: php/lib/taxonomies.php:10 php/lib/taxonomies.php:156
 #: views/media/archive-media.twig:59 views/media/archive-media.twig:64
 msgid "All Categories"
-msgstr "Semua Kategori"
+msgstr ""
 
 #: php/lib/taxonomies.php:11 php/lib/taxonomies.php:157
 msgid "Parent Category"
@@ -454,7 +453,7 @@ msgstr ""
 #: php/lib/taxonomies.php:58 views/news/archive-news.twig:122
 #: views/news/archive-news.twig:127
 msgid "All Topics"
-msgstr "Semua Topik"
+msgstr ""
 
 #: php/lib/taxonomies.php:59
 msgid "Parent Topic"
@@ -616,194 +615,187 @@ msgstr ""
 msgid "File Library"
 msgstr ""
 
-#: php/search.php:13 views/event/archive-event.twig:106
-#: views/media/archive-media.twig:72
-msgid "Search"
-msgstr "Pencarian"
-
 #: views/event/archive-event.twig:11
 msgid "Featured Events"
-msgstr "Kegiatan pilihan"
+msgstr ""
 
 #: views/event/archive-event.twig:60
 msgid "Upcoming Events"
-msgstr "Kegiatan yang akan datang"
+msgstr "即将活动"
 
 #: views/event/archive-event.twig:66 views/media/archive-media.twig:17
 msgid "Show Filters"
-msgstr "Tunjukkan Pilihan"
+msgstr ""
 
 #: views/event/archive-event.twig:75 views/media/archive-media.twig:26
 msgid "Prev"
-msgstr "Sebelumnya"
+msgstr "上一页"
 
 #: views/event/archive-event.twig:79 views/media/archive-media.twig:30
 msgid "Next"
-msgstr "Berikutnya"
+msgstr "下一页"
 
 #: views/event/archive-event.twig:87
 msgid "Filter Events"
-msgstr "Pilih Kegiatan"
+msgstr "选择活动"
 
 #: views/event/archive-event.twig:89
 msgid "By Date"
-msgstr "Berdasar tanggal"
+msgstr "选择日期"
 
 #: views/event/archive-event.twig:90
 msgid "Clear Date"
-msgstr "Hapus tanggal"
+msgstr "删除日期"
 
 #: views/event/archive-event.twig:94
 msgid "By Keywords"
-msgstr "Berdasar kata kunci"
+msgstr "选择钥字"
 
 #: views/event/archive-event.twig:98
 msgid "By Categories"
-msgstr "Berdasar kategori"
+msgstr "选择分类"
 
 #: views/event/archive-event.twig:99 views/media/archive-media.twig:41
 msgid "Clear All"
-msgstr "Hapus semua"
+msgstr "全部删除"
+
+#: views/event/archive-event.twig:106 views/media/archive-media.twig:72
+msgid "Search"
+msgstr "查询"
 
 #: views/event/archive-event.twig:110
 msgid "Download Calendar"
-msgstr "Unduh Kalender"
+msgstr ""
 
 #: views/event/archive-event.twig:112
 msgid ""
 "If you use your own calendar app, click here to download and import all of "
 "our events"
 msgstr ""
-"Jika anda menggunakan aplikasi kalender sendiri, klik di sini untuk "
-"mengunduh semua kegiatan SAAT."
 
 #: views/event/archive-event.twig:115 views/media/document.twig:15
 msgid "Download"
-msgstr "Unduh"
+msgstr ""
 
 #: views/event/single-event.twig:77 views/news/single-news.twig:48
 msgid "Share this event"
-msgstr "Bagikan kegiatan ini"
+msgstr "分享此活动"
 
 #: views/event/single-event.twig:115 views/news/single-news.twig:86
 msgid "Share this news"
-msgstr "Bagikan berita ini"
+msgstr "分享此消息"
 
 #: views/media/archive-media.twig:38
 msgid "Filter Media"
-msgstr "Pilih Media"
+msgstr ""
 
 #: views/media/archive-media.twig:40
 msgid "Media Type"
-msgstr "Jenis Media"
+msgstr ""
 
 #: views/media/archive-media.twig:57
 msgid "Media Categories"
-msgstr "Kategori Media"
+msgstr ""
 
 #: views/media/document-footer.twig:6
 msgid "Authors"
-msgstr "Penulis"
+msgstr ""
 
 #: views/media/document-header.twig:38
 msgid "Share this"
-msgstr "Bagikan"
+msgstr ""
 
 #: views/media/document-header.twig:46 views/media/media-body.twig:64
 msgid "Share Media"
-msgstr "Bagikan"
+msgstr ""
 
 #: views/media/document.twig:35
 msgid "Table of Contents"
-msgstr "Daftar Isi"
+msgstr ""
 
 #: views/media/media-body.twig:53
 msgid "See All Photos"
-msgstr "Lihat Semua Foto"
+msgstr ""
 
 #: views/media/media-body.twig:58
 msgid "View Album"
-msgstr "Lihat Album"
+msgstr ""
 
 #: views/modules/footer.twig:53
 msgid "Privacy Policy"
-msgstr "Kebijakan Privasi"
+msgstr ""
 
 #: views/modules/footer.twig:56
 msgid "Feedback"
-msgstr "Komentar"
+msgstr ""
 
 #: views/modules/footer.twig:59
 msgid "Languages"
-msgstr "Bahasa"
-
-#: views/modules/header.twig:14
-msgid "Search events, media or keywords"
-msgstr "Cari kegiatan, media atau kata kunci"
+msgstr ""
 
 #: views/modules/header.twig:153
 msgid "Quicklinks"
-msgstr "Tautan cepat"
+msgstr ""
 
 #: views/news/archive-news.twig:11
 msgid "Featured News"
-msgstr "Berita pilihan"
+msgstr ""
 
 #: views/news/archive-news.twig:66
 msgid "Latest News"
-msgstr "Berita terbaru"
+msgstr "最新消息"
 
 #: views/news/archive-news.twig:118
 msgid "All Articles"
-msgstr "Semua artikel"
+msgstr "全部文章"
 
 #: views/news/archive-news.twig:120
 msgid "Filter News By Topic"
-msgstr "Pilih berdasar topik"
+msgstr "选择主题"
 
 #: views/news/archive-news.twig:130
 msgid "View"
-msgstr "Lihat"
+msgstr "概览"
 
 #: views/page/front-page.twig:16
 msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
-msgstr "For Christ, For the Church, For the world, For the Glory of God"
+msgstr ""
 
 #: views/page/front-page.twig:55
 msgid "Browse all of our news and events"
-msgstr "Telusuri Seluruh Kegiatan dan Berita"
+msgstr ""
 
 #: views/page/front-page.twig:56
 msgid "See Events"
-msgstr "Lihat Kegiatan"
+msgstr ""
 
 #: views/page/front-page.twig:57
 msgid "See News"
-msgstr "Lihat Berita"
+msgstr ""
 
 #: views/page/front-page.twig:100 views/page/landing-page.twig:60
 #: views/page/landing-page.twig:71
 msgid "Read More"
-msgstr "Selengkapnya"
+msgstr ""
 
 #: views/page/front-page.twig:138
 msgid "See Media Library"
-msgstr "Lihat Pustaka Media"
+msgstr ""
 
-#~ msgid "Upcoming Event"
-#~ msgstr "Kegiatan yang akan datang"
+msgid "Upcoming Event"
+msgstr "即将活动"
 
-#~ msgid "Recent News"
-#~ msgstr "Berita Terkini"
+msgid "Recent News"
+msgstr "Berita Terkini"
 
-#~ msgid "Share "
-#~ msgstr "Bagikan"
+msgid "Share "
+msgstr "Bagikan"
 
-#~ msgid "Copyright"
-#~ msgstr "Hak Cipta"
+msgid "Copyright"
+msgstr "Hak Cipta"
 
-#~ msgid "Filter Medias"
-#~ msgstr "Pilih Media"
+msgid "Filter Medias"
+msgstr "Pilih Media"
 
-#~ msgid "More News"
-#~ msgstr "Tambah Berita"
+msgid "More News"
+msgstr "Tambah Berita"
