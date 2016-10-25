@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-10-24 01:15+0700\n"
-"PO-Revision-Date: 2016-10-24 01:16+0700\n"
+"POT-Creation-Date: 2016-10-24 01:55+0700\n"
+"PO-Revision-Date: 2016-10-24 01:55+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -766,8 +766,8 @@ msgid "View"
 msgstr "Lihat"
 
 #: views/page/front-page.twig:16
-msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
-msgstr "For Christ, For the Church, For the world, For the Glory of God"
+msgid "For Christ, For the Church, For the world, For the Glory of God"
+msgstr "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
 
 #: views/page/front-page.twig:55
 msgid "Browse all of our news and events"
@@ -789,6 +789,9 @@ msgstr "Selengkapnya"
 #: views/page/front-page.twig:138
 msgid "See Media Library"
 msgstr "Lihat Pustaka Media"
+
+#~ msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
+#~ msgstr "For Christ, For the Church, For the world, For the Glory of God"
 
 #~ msgid "Upcoming Event"
 #~ msgstr "Kegiatan yang akan datang"
