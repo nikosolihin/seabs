@@ -3,7 +3,6 @@
 {% block content %}
   {% set with_sidebar = no_sidebar ? 'text-nosidebar' : '' %}
   {% set slim_sidebar = slim_sidebar ? 'slimSidebar' : '' %}
-  {# set direction = sidebar_position == 'leftSidebar' ? 'right' : 'left' #}
 
   {% include 'components/banner.twig' %}
   <div class="container {{'SinglePage'|modifiers("#{sidebar_position}, #{slim_sidebar}")}}">
@@ -29,7 +28,3 @@
     {% endif %}
   </div>
 {% endblock %}
-
-{#
-'container'|modifiers("text, #{direction}, nopadding, #{with_sidebar}")
- #}

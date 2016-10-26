@@ -21,6 +21,7 @@
   }
 
   &-head {
+    * { user-select: none }
     box: horizontal space-between;
     cursor: pointer;
     color: $brand-primary;

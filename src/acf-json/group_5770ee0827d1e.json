@@ -457,6 +457,58 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5810542f467cd",
+            "label": "Search Engine Settings",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "To set up and modify the look and feel of each search engine, head over to the Google Custom Search page. Check out the <strong><a href=\"admin.php?page=service-details\">Services Page<\/a><\/strong> for details.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5810c6d250535",
+            "label": "Result Page Sidebar",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The contents of the sidebar builder below will be shown under the search filters.",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5810c614d4699",
+            "label": "Result Page Sidebar",
+            "name": "search",
+            "type": "reusable_field_group_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "group_key": "group_574db875805e6",
+            "name_prefix": 1,
+            "key_prefix": 1,
+            "label_prefix": 0
         }
     ],
     "location": [
@@ -476,5 +528,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Site Settings",
-    "modified": 1477247159
+    "modified": 1477494548
 }

@@ -13,7 +13,7 @@
 
   {# -------------- Stream Section ------------ #}
   <section class="welcome">
-    <h2 class="Lead Lead--section brand center">{{__('Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah', 'saat')}}</h2>
+    <h2 class="Lead Lead--section brand center">{{__('For Christ, For the Church, For the world, For the Glory of God', 'saat')}}</h2>
     <hr>
     <div class="container container--nopadding">
       <div class="Twin">
@@ -88,7 +88,7 @@
                   <span class="Pill">{{post.parent.title|title}}</span>
                 {% elseif post.type == 'event' %}
                   <span class="Pill">{{__('Event', 'saat')}}</span>
-                {% elseif post.type == 'media' %}
+                {% elseif post.type == 'resource' %}
                   <span class="Pill">{{__('Media', 'saat')}}</span>
                 {% else %}
                   <span class="Pill">{{__('News', 'saat')}}</span>

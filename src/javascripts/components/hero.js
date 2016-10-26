@@ -1,4 +1,4 @@
-import Flickity from 'flickity-bg-lazyload'
+import Flickity from 'flickity'
 
 export default class Hero {
   constructor(el) {
@@ -9,7 +9,6 @@ export default class Hero {
       wrapAround: true,
       pageDots: false,
       adaptiveHeight: false,
-      bgLazyLoad: 1,
       autoPlay: 8000,
       pauseAutoPlayOnHover: true
     })

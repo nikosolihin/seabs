@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-10-24 01:15+0700\n"
-"PO-Revision-Date: 2016-10-24 01:16+0700\n"
+"POT-Creation-Date: 2016-10-26 20:29+0700\n"
+"PO-Revision-Date: 2016-10-27 00:44+0700\n"
 "Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
 "Language: id_ID\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Poedit-SearchPath-1: php/lib\n"
 "X-Poedit-SearchPath-2: php\n"
 
-#: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:111
-#: php/lib/timber.php:194 php/single-event.php:119
+#: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:112
+#: php/lib/timber.php:195 php/single-event.php:119
 msgid "Events"
 msgstr "Kegiatan"
 
@@ -40,7 +40,7 @@ msgid "No media found. Please try again."
 msgstr "Media tidak ditemukan. Silakan coba lagi."
 
 #: php/archive-news.php:6 php/lib/post-types.php:129 php/lib/post-types.php:130
-#: php/lib/post-types.php:160 php/lib/timber.php:115 php/lib/timber.php:198
+#: php/lib/post-types.php:160 php/lib/timber.php:116 php/lib/timber.php:199
 #: php/single-news.php:51 views/page/front-page.twig:43
 #: views/page/front-page.twig:68 views/page/front-page.twig:94
 msgid "News"
@@ -324,7 +324,7 @@ msgid "Custom post type for people"
 msgstr ""
 
 #: php/lib/post-types.php:252 php/lib/post-types.php:253
-#: php/lib/post-types.php:283 php/lib/timber.php:119 php/lib/timber.php:202
+#: php/lib/post-types.php:283 php/lib/timber.php:120 php/lib/timber.php:203
 #: views/page/front-page.twig:92
 msgid "Media"
 msgstr "Media"
@@ -617,7 +617,7 @@ msgid "File Library"
 msgstr ""
 
 #: php/search.php:13 views/event/archive-event.twig:106
-#: views/media/archive-media.twig:72
+#: views/media/archive-media.twig:72 views/page/search.twig:21
 msgid "Search"
 msgstr "Pencarian"
 
@@ -766,8 +766,8 @@ msgid "View"
 msgstr "Lihat"
 
 #: views/page/front-page.twig:16
-msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
-msgstr "For Christ, For the Church, For the world, For the Glory of God"
+msgid "For Christ, For the Church, For the world, For the Glory of God"
+msgstr "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
 
 #: views/page/front-page.twig:55
 msgid "Browse all of our news and events"
@@ -789,6 +789,13 @@ msgstr "Selengkapnya"
 #: views/page/front-page.twig:138
 msgid "See Media Library"
 msgstr "Lihat Pustaka Media"
+
+#: views/page/search.twig:18
+msgid "Filter Search"
+msgstr "Pilih Label Pencarian"
+
+#~ msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
+#~ msgstr "For Christ, For the Church, For the world, For the Glory of God"
 
 #~ msgid "Upcoming Event"
 #~ msgstr "Kegiatan yang akan datang"

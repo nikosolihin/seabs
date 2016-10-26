@@ -36,6 +36,7 @@ class StarterSite extends TimberSite {
 		$context['square2x'] = 'url_q';	// 150
 		$context['thumb'] = 'url_t';		// 100
 		$context['small'] = 'url_n';		// 320
+		$context['mid'] = 'url_m';		  // 500
 		$context['medium'] = 'url_z';		// 640
 		$context['large'] = 'url_c';		// 800
 		$context['xlarge'] = 'url_l';		// 1024

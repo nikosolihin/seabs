@@ -2,16 +2,16 @@
 	"name": "SAAT",
 	"icons": [
 		{
-			"src": "\/android-chrome-192x192.png?v=5A5PEM2ANQ",
+			"src": "\/android-chrome-192x192.png?v=GvJ066r8XL",
 			"sizes": "192x192",
 			"type": "image\/png"
 		},
 		{
-			"src": "\/android-chrome-512x512.png?v=5A5PEM2ANQ",
+			"src": "\/android-chrome-512x512.png?v=GvJ066r8XL",
 			"sizes": "512x512",
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#ffffff",
+	"theme_color": "#a01a1e",
 	"display": "standalone"
 }
