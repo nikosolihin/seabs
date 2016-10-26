@@ -77,12 +77,18 @@
   }
   &--of-4 {
     .column {
-      width: 25%;
+      @include from(sm) {
+        width: 50%;
+      }
+      @include from(lg) {
+        width: 25%;
+      }
     }
   }
 }
 
 .column {
+  width: 100%;
   // The column divs act as a flex child wrapper.
   @include from($desktop) {
     border-left: 1.5rem solid transparent;

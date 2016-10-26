@@ -8,7 +8,7 @@
 	height: 120px;
 }
 body.login.login-action-login {
-	background: url('https://c2.staticflickr.com/6/5751/30405449271_5a8ca632d3_o.jpg') no-repeat center center/cover;	
+	background: url('https://c2.staticflickr.com/6/5751/30405449271_5a8ca632d3_o.jpg') no-repeat center center/cover;
 }
 
 /*=============================================*/
@@ -24,9 +24,6 @@ p#backtoblog {
 /* Remove unnecessary fields from the
 /* Page Attributes box
 /*=============================================*/
-#pageparentdiv .inside p:nth-child(n+7) {
-	display: none;
-}
 #pageparentdiv .inside p:nth-child(1),
 #pageparentdiv .inside p:nth-child(4) {
 	margin-bottom: 4px;

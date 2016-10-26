@@ -17,6 +17,7 @@
 
   // Table of contents
   > .Sidebar-toc {
+    * { user-select: none }
     @include from(lg) {
       margin-bottom: $spacer-single*3;
     }

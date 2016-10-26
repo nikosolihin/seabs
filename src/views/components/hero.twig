@@ -1,7 +1,8 @@
 <section class="Hero" data-component="hero">
   {% for item in hero %}
     <div class="Hero-cell">
-      <a href="{{item.url}}" class="Hero-image" data-flickity-bg-lazyload="{{item.image[xlarge]}}">
+      {% set image = item.image %}
+      <a href="{{item.url}}" class="Hero-image lazyload" data-bgset="{{image[xlarge]}} [(min-width: {{xxl}})] | {{image[xlarge]}} [(min-width: {{lg}})] | {{image[large]}} [(min-width: {{md}})] | {{image[medium]}} [(min-width: {{sm}})] | {{image[mid]}}">
       </a>
       <div class="Hero-caption">
         <div class="Hero-captionBody">

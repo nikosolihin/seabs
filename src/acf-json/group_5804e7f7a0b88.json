@@ -49,7 +49,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -63,7 +63,7 @@
                     "key": "field_5804ecd812ec9",
                     "label": "Button URL",
                     "name": "url",
-                    "type": "url",
+                    "type": "reusable_field_group_field",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -72,8 +72,10 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
+                    "group_key": "group_5773382ac6cac",
+                    "name_prefix": 0,
+                    "key_prefix": 1,
+                    "label_prefix": 0
                 },
                 {
                     "key": "field_5804e8718a764",
@@ -92,6 +94,7 @@
                     "flickr_user_id": "",
                     "flickr_limit": 1,
                     "flickr_sizes": [
+                        "url_n",
                         "url_m",
                         "url_z",
                         "url_c",
@@ -123,5 +126,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476721445
+    "modified": 1477463529
 }

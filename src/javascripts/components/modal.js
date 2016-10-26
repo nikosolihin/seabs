@@ -13,6 +13,7 @@ export default class Modal {
       this.isOpen = true
       this.$video.get(0).pause()
       this.$modal.addClass('Modal--on')
+      $('body').addClass('noScroll')
     })
     this.$modal.on('click', (event) => {
       event.preventDefault()
@@ -21,6 +22,7 @@ export default class Modal {
           this.$modal.removeClass('Modal--on').dequeue()
           this.$modal.removeClass('Modal--close').dequeue()
         })
+        $('body').removeClass('noScroll')
         this.$video.get(0).play()
       }
     })

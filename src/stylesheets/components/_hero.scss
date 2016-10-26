@@ -38,6 +38,10 @@
     @include cover;
     position: absolute 0 auto auto 0;
     size: 100%;
+    &.lazyloading {
+      background: #f7f7f7 url(//afarkas.github.io/lazysizes/assets/imgs/loader.gif) no-repeat center;
+      min-height: 60px;
+    }
   }
   &-caption {
     box: horizontal space-between middle;

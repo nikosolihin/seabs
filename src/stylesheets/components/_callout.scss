@@ -31,22 +31,25 @@
     @include cover;
     padding: 0;
     margin-bottom: 0;
+    .column {
+      padding: $spacer-single*1.5;
+      @include from(lg) {
+        padding: $spacer-single*6.5 $spacer-single*2;
+      }
+    }
   }
   &--transparentTheme {
     .column {
-      padding: $spacer-single*6.5 $spacer-single*2;
       background-color: rgba(255,255,255,0);
     }
   }
   &--lightTheme {
     .column {
-      padding: $spacer-single*6.5 $spacer-single*2;
       background-color: rgba(255,255,255,0.87);
     }
   }
   &--darkTheme {
     .column {
-      padding: $spacer-single*6.5 $spacer-single*2;
       background-color: rgba(0,0,0,0.4);
       h2, h4, p {
         color: $white !important;
@@ -55,7 +58,6 @@
   }
   &--redTheme {
     .column {
-      padding: $spacer-single*6.5 $spacer-single*1.75;
       background-color: rgba(138,0,0,.9);
       h2, h4, p {
         color: $white !important;
