@@ -6,9 +6,11 @@
     margin-right: 3px;
     opacity: 1;
     background-color: $black;
-    transition: opacity .35s ease-in-out;
     &:not(.is-selected) {
-      opacity: .85;
+      @include overlay(true, 'rgba(0,0,0,.8)');
+      &::before {
+        z-index: 2;
+      }
     }
     width: 100%;
     height: $spacer-single*24;

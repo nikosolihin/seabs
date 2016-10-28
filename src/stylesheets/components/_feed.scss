@@ -1,218 +1,218 @@
-.Feed {
-  @include normalist;
-  font-size: $font-size-h6;
-  &-right {
-    padding-left: $spacer-single;
-    width: 75%;
-    // Vertical rhythm
-    > * {
-      margin-bottom: $spacer-half;
-    }
-  }
-  &-item {
-    box: horizontal wrap;
-    padding-bottom: $spacer-single;
-    margin-bottom: $spacer-single;
-    border-bottom: 1px solid #ddd;
-    &:last-of-type {
-      border: 0;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  // Display style
-  &--list {
-    .Feed-left {
-      display: none;
-    }
-    .Feed-right {
-      padding-left: 0;
-    }
-  }
-  &--object-list {
-    .Feed-left {
-      width: 25%;
-      flex: 0 0 auto;
-    }
-  }
-  &--card {
-    .Feed-item {
-      box: vertical;
-      border: 1px solid #eee;
-      padding-bottom: 0;
-      margin-bottom: $spacer-single*1.5;
-      transition: all .1s ease-in-out;
-      &:hover {
-        border-color: #ddd;
-      }
-    }
-    .Feed-left {
-      // @include cover;
-      width: 100%;
-      height: $spacer-single*8;
-      flex: 0 0 auto;
-    }
-    .Feed-right {
-      padding: $spacer-threefourth $spacer-single;
-      background-color: $white;
-    }
-  }
-
-  // Post types
-  &--person {
-    svg {
-      size: $spacer-single;
-      fill: $brand-primary;
-      margin: $spacer-half .375rem 0;
-      &:hover {
-        fill: $brand-primary;
-      }
-    }
-    .bio {
-      color: #777;
-      margin-top: $spacer-threefourth;
-      @at-root .Sidebar #{&} {
-        padding: $spacer-single $spacer-single*1.25;
-        background-color: $callout-bg;
-      }
-    }
-    .Feed-profile {
-      height: $spacer-single*8.75;
-      div {
-        @include square;
-        @include cover;
-        width: 38%;
-        margin: $spacer-single*1.25 auto;
-        border-radius: 50%;
-      }
-    }
-    .Feed-contact {
-      margin: 0 0 $spacer-threefourth;
-      h4, p, a {
-        margin-bottom: 0;
-      }
-    }
-    @at-root .Feed--card#{&} .Feed-item {
-      border-top: 3px solid #dedede;
-    }
-    @at-root .Feed--object-list#{&},
-    .Feed--list#{&} {
-      .Feed-profile {
-        height: auto;
-      }
-      .Feed-profile div {
-        margin: 0;
-        width: 100%;
-      }
-      .Feed-contact {
-        margin-bottom: 0;
-      }
-    }
-
-    // If we're on single page, become 2 and 3 columns, and apply
-    // extra styling
-    @at-root .SinglePage-content #{&} {
-      box: vertical;
-      @include from(sm) {
-        box: horizontal wrap;
-      }
-      .Feed-item {
-        box: horizontal;
-        border-bottom: $spacer-single*1.5 solid transparent;
-        @include from(sm) {
-          box: vertical;
-          width: 50%;
-          border-bottom: 2.75rem solid transparent;
-          border-left: .625rem solid transparent;
-          border-right: .625rem solid transparent;
-        }
-        @include from(md) {
-          width: 33.333%;
-          border-left: $spacer-single solid transparent;
-          border-right: $spacer-single solid transparent;
-        }
-        padding: 0;
-        margin: 0;
-
-        .Feed-profile {
-          width: 25%;
-          @include from(sm) {
-            width: 100%;
-          }
-          margin-bottom: $spacer-threefourth;
-          div {
-            border-radius: 0;
-          }
-        }
-        .Feed-contact {
-          padding-left: $spacer-threefourth;
-          @include from(sm) {
-            padding-left: 0;
-          }
-          font-size: $font-size-h5;
-          .h5 {
-            @extend .h4;
-          }
-          a, p {
-            line-height: 1.5;
-          }
-        }
-      }
-    }
-
-    // If we're on single media document, become 2 columns
-    @at-root .SingleMedia-documentAuthors #{&} {
-      box: vertical;
-      @include from(sm) {
-        box: horizontal wrap;
-      }
-      .Feed-item {
-        width: 50%;
-        border: 0;
-        margin-bottom: $spacer-single*1.5;
-      }
-      .Feed-contact {
-        a, p {
-          line-height: 1.45;
-        }
-      }
-    }
-  }
-
-  &--event {
-    .meta {
-      font-size: $font-size-h6;
-      svg {
-        size: $spacer-single;
-      }
-      .Pill {
-        margin-bottom: 0;
-        margin-right: $spacer-single;
-      }
-    }
-    .date {
-      @include square;
-      position: relative;
-      color: $brand-primary;
-      font-size: 1rem;
-      font-weight: $font-weight-bold;
-      div {
-        position: absolute;
-        size: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -52%, 0);
-        box: vertical center middle;
-      }
-      span {
-        line-height: 1.07;
-        &:first-of-type {
-          letter-spacing: 1.025px;
-          font-size: 1.425rem;
-        }
-      }
-    }
-
-  }
-}
+// .Feed {
+//   @include normalist;
+//   font-size: $font-size-h6;
+//   &-right {
+//     padding-left: $spacer-single;
+//     width: 75%;
+//     // Vertical rhythm
+//     > * {
+//       margin-bottom: $spacer-half;
+//     }
+//   }
+//   &-item {
+//     box: horizontal wrap;
+//     padding-bottom: $spacer-single;
+//     margin-bottom: $spacer-single;
+//     border-bottom: 1px solid #ddd;
+//     &:last-of-type {
+//       border: 0;
+//       padding-bottom: 0;
+//       margin-bottom: 0;
+//     }
+//   }
+//
+//   // Display style
+//   &--list {
+//     .Feed-left {
+//       display: none;
+//     }
+//     .Feed-right {
+//       padding-left: 0;
+//     }
+//   }
+//   &--object-list {
+//     .Feed-left {
+//       width: 25%;
+//       flex: 0 0 auto;
+//     }
+//   }
+//   &--card {
+//     .Feed-item {
+//       box: vertical;
+//       border: 1px solid #eee;
+//       padding-bottom: 0;
+//       margin-bottom: $spacer-single*1.5;
+//       transition: all .1s ease-in-out;
+//       &:hover {
+//         border-color: #ddd;
+//       }
+//     }
+//     .Feed-left {
+//       // @include cover;
+//       width: 100%;
+//       height: $spacer-single*8;
+//       flex: 0 0 auto;
+//     }
+//     .Feed-right {
+//       padding: $spacer-threefourth $spacer-single;
+//       background-color: $white;
+//     }
+//   }
+//
+//   // Post types
+//   &--person {
+//     svg {
+//       size: $spacer-single;
+//       fill: $brand-primary;
+//       margin: $spacer-half .375rem 0;
+//       &:hover {
+//         fill: $brand-primary;
+//       }
+//     }
+//     .bio {
+//       color: #777;
+//       margin-top: $spacer-threefourth;
+//       @at-root .Sidebar #{&} {
+//         padding: $spacer-single $spacer-single*1.25;
+//         background-color: $callout-bg;
+//       }
+//     }
+//     .Feed-profile {
+//       height: $spacer-single*8.75;
+//       div {
+//         @include square;
+//         @include cover;
+//         width: 38%;
+//         margin: $spacer-single*1.25 auto;
+//         border-radius: 50%;
+//       }
+//     }
+//     .Feed-contact {
+//       margin: 0 0 $spacer-threefourth;
+//       h4, p, a {
+//         margin-bottom: 0;
+//       }
+//     }
+//     @at-root .Feed--card#{&} .Feed-item {
+//       border-top: 3px solid #dedede;
+//     }
+//     @at-root .Feed--object-list#{&},
+//     .Feed--list#{&} {
+//       .Feed-profile {
+//         height: auto;
+//       }
+//       .Feed-profile div {
+//         margin: 0;
+//         width: 100%;
+//       }
+//       .Feed-contact {
+//         margin-bottom: 0;
+//       }
+//     }
+//
+//     // If we're on single page, become 2 and 3 columns, and apply
+//     // extra styling
+//     @at-root .SinglePage-content #{&} {
+//       box: vertical;
+//       @include from(sm) {
+//         box: horizontal wrap;
+//       }
+//       .Feed-item {
+//         box: horizontal;
+//         border-bottom: $spacer-single*1.5 solid transparent;
+//         @include from(sm) {
+//           box: vertical;
+//           width: 50%;
+//           border-bottom: 2.75rem solid transparent;
+//           border-left: .625rem solid transparent;
+//           border-right: .625rem solid transparent;
+//         }
+//         @include from(md) {
+//           width: 33.333%;
+//           border-left: $spacer-single solid transparent;
+//           border-right: $spacer-single solid transparent;
+//         }
+//         padding: 0;
+//         margin: 0;
+//
+//         .Feed-profile {
+//           width: 25%;
+//           @include from(sm) {
+//             width: 100%;
+//           }
+//           margin-bottom: $spacer-threefourth;
+//           div {
+//             border-radius: 0;
+//           }
+//         }
+//         .Feed-contact {
+//           padding-left: $spacer-threefourth;
+//           @include from(sm) {
+//             padding-left: 0;
+//           }
+//           font-size: $font-size-h5;
+//           .h5 {
+//             @extend .h4;
+//           }
+//           a, p {
+//             line-height: 1.5;
+//           }
+//         }
+//       }
+//     }
+//
+//     // If we're on single media document, become 2 columns
+//     @at-root .SingleMedia-documentAuthors #{&} {
+//       box: vertical;
+//       @include from(sm) {
+//         box: horizontal wrap;
+//       }
+//       .Feed-item {
+//         width: 50%;
+//         border: 0;
+//         margin-bottom: $spacer-single*1.5;
+//       }
+//       .Feed-contact {
+//         a, p {
+//           line-height: 1.45;
+//         }
+//       }
+//     }
+//   }
+//
+//   &--event {
+//     .meta {
+//       font-size: $font-size-h6;
+//       svg {
+//         size: $spacer-single;
+//       }
+//       .Pill {
+//         margin-bottom: 0;
+//         margin-right: $spacer-single;
+//       }
+//     }
+//     .date {
+//       @include square;
+//       position: relative;
+//       color: $brand-primary;
+//       font-size: 1rem;
+//       font-weight: $font-weight-bold;
+//       div {
+//         position: absolute;
+//         size: 100%;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate3d(-50%, -52%, 0);
+//         box: vertical center middle;
+//       }
+//       span {
+//         line-height: 1.07;
+//         &:first-of-type {
+//           letter-spacing: 1.025px;
+//           font-size: 1.425rem;
+//         }
+//       }
+//     }
+//
+//   }
+// }

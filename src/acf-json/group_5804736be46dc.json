@@ -211,7 +211,7 @@
                     "key": "field_580490c68cbdf",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "reusable_field_group_field",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -220,8 +220,10 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
+                    "group_key": "group_5773382ac6cac",
+                    "name_prefix": 0,
+                    "key_prefix": 1,
+                    "label_prefix": 0
                 }
             ]
         }
@@ -243,5 +245,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "OPTIONS_PAGE : Prospective Students Section",
-    "modified": 1476886012
+    "modified": 1477648628
 }

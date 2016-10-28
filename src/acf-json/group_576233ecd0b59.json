@@ -15,6 +15,27 @@
                 "class": "",
                 "id": ""
             }
+        },
+        {
+            "key": "field_58131226b9673",
+            "label": "Form Height",
+            "name": "height",
+            "type": "number",
+            "instructions": "The height of the embedded form will default to 800px. If the actual form is longer than 800px, a scrollbar will appear. If this is not desired, provide a height enough to show the embedded form.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": 1
         }
     ],
     "location": [
@@ -34,5 +55,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Form",
-    "modified": 1474887543
+    "modified": 1477647801
 }

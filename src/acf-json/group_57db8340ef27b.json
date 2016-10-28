@@ -131,6 +131,41 @@
             "multiple": 0
         },
         {
+            "key": "field_5811aa6b5243d",
+            "label": "Media Categories",
+            "name": "media_categories",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "media"
+                    },
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "media_category",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
             "key": "field_57db87f447bc1",
             "label": "News Topics",
             "name": "news_topics",
@@ -317,6 +352,44 @@
             "return_format": "value"
         },
         {
+            "key": "field_5811ab1a5243e",
+            "label": "Media Metadata",
+            "name": "media_metadata",
+            "type": "checkbox",
+            "instructions": "<strong>NOTE:<\/strong> Each teaser in a list will be limited to its first 50 characters.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57add3560dfed",
+                        "operator": "==",
+                        "value": "automatic"
+                    },
+                    {
+                        "field": "field_57db8470a16f2",
+                        "operator": "==",
+                        "value": "media"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "teaser": "Teaser",
+                "type": "Media Type",
+                "category": "Media Category"
+            },
+            "default_value": [
+                "teaser"
+            ],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
             "key": "field_57db90a21fa3a",
             "label": "Person Metadata",
             "name": "person_metadata",
@@ -373,5 +446,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Taxonomies Selector",
-    "modified": 1476344592
+    "modified": 1477567979
 }

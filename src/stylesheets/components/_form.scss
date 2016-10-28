@@ -1,5 +1,13 @@
 .Form {
+  overflow: hidden;
+  
   @include to(sm) {
     @include fullwidth;
+  }
+
+  &-embed {
+    // Help hide the annoying colored masthead
+    position: relative;
+    top: -$spacer-single*8.75;
   }
 }

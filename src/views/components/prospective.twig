@@ -25,7 +25,14 @@
         {% for column in prospective.links|batch(5) %}
         <ul class="List">
           {% for link in column %}
-            <li><a href="{{link.link}}" class="prospective-link">{{link.label}}</a></li>
+            {% if link.type == "single" %}
+              {% set url = link.single_url %}
+            {% elseif link.type == "external" %}
+              {% set url = link.external_url %}
+            {% else %}
+              {% set url = link.search_url %}
+            {% endif %}
+            <li><a href="{{url}}" class="prospective-link">{{link.label}}</a></li>
           {% endfor %}
         </ul>
         {% endfor %}

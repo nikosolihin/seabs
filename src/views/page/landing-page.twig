@@ -4,13 +4,13 @@
   {% set layout = acf.landing_layout %}
 
   {% if acf.teaser %}
-  <div class="container container--text-nosidebar landing-page-teaser">
-    <h5 class="tag brand center">{{post.title}}</h5>
-    <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
-  </div>
+    <div class="container container--text-nosidebar landing-page-teaser">
+      <h5 class="tag brand center">{{post.title}}</h5>
+      <h2 class="Lead Lead--landing center">{{acf.teaser}}</h2>
+    </div>
   {% endif %}
 
-  {% if acf.position == "before" %}
+  {% if acf.position == 'before' %}
     <div class="landing-page-content container container--spacedBottom">
       {% include 'layout/base.twig' %}
     </div>
@@ -81,7 +81,7 @@
     </section>
   {% endif %}
 
-  {% if acf.position == "after" %}
+  {% if acf.position == 'after' %}
     <div class="landing-page-content container container--spacedTop">
       {% include 'layout/base.twig' %}
     </div>

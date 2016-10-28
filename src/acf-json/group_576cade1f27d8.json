@@ -17,8 +17,7 @@
             },
             "choices": {
                 "grid": "Grid",
-                "extensive": "Extensive",
-                "custom": "Custom"
+                "extensive": "Extensive"
             },
             "default_value": [],
             "allow_null": 0,
@@ -33,7 +32,7 @@
             "label": "Exception List",
             "name": "landing_layout_exception",
             "type": "post_object",
-            "instructions": "Which children pages should be excluded? Pages set here will not be included in the Grid or Extensive layout above.",
+            "instructions": "Which children pages should be excluded? Pages set here will not be included in the Grid or Extensive layout above. Leave blank to include all.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -114,5 +113,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "TEMPLATES : Landing Page",
-    "modified": 1477419342
+    "modified": 1477649269
 }

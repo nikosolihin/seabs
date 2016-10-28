@@ -53,6 +53,11 @@ function populateList($options) {
   // Which mode are we on?
   if ($options['mode'] == 'automatic') {
 
+    // Media is actually resource, so call it that
+    if ($options['post_type'] == 'media') {
+      $options['post_type'] = 'resource';
+    }
+
     // Set up basic wp_query args
     $args = array(
       'numberposts'	=> $options['quantity'],
@@ -64,7 +69,7 @@ function populateList($options) {
       case 'event':
         $tax = 'event_category';
         $term_ids = $options['event_categories'];
-        $metadata = $options['event_metadata'];
+        // $metadata = $options['event_metadata'];
 
         // If events, get upcoming posts instead of recent
         $args['post_status'] = ['publish', 'pending', 'draft', 'auto-draft', 'future'];
@@ -82,9 +87,9 @@ function populateList($options) {
         $tax = 'news_topic';
         $term_ids = $options['news_topics'];
         break;
-      case 'media':
-        $tax = 'media_types';
-        $term_ids = $options['media_types'];
+      case 'resource':
+        $tax = 'media_category';
+        $term_ids = $options['media_categories'];
         break;
       case 'person':
         $tax = 'role';
@@ -136,21 +141,34 @@ function populateList($options) {
         ));
       }
       break;
-      case 'person':
-        foreach ($posts as $post) {
-          array_push($filtered_posts, array(
-            'name'        => $post->name,
-            'email'       => $post->get_field('email'),
-            'bio'         => $post->get_field('bio'),
-            'title'       => $post->get_field('title'),
-            'phone'       => $post->get_field('phone'),
-            'photo'       => $post->get_field('image'),
-            'facebook'    => $post->get_field('facebook'),
-            'twitter'     => $post->get_field('twitter'),
-            'instagram'   => $post->get_field('instagram'),
-          ));
-        }
-        break;
+    case 'resource':
+      foreach ($posts as $post) {
+        array_push($filtered_posts, array(
+          'title'       => $post->title,
+          'link'        => $post->link,
+          'type'        => $post->get_terms('media_type')[0]->name,
+          'icon'        => $post->get_terms('media_type')[0]->slug,
+          'category'    => $post->get_terms('media_category')[0]->name,
+          'teaser'      => $post->get_field('teaser'),
+          'image'       => $post->get_field('image'),
+        ));
+      }
+      break;
+    case 'person':
+      foreach ($posts as $post) {
+        array_push($filtered_posts, array(
+          'name'        => $post->name,
+          'email'       => $post->get_field('email'),
+          'bio'         => $post->get_field('bio'),
+          'title'       => $post->get_field('title'),
+          'phone'       => $post->get_field('phone'),
+          'photo'       => $post->get_field('image'),
+          'facebook'    => $post->get_field('facebook'),
+          'twitter'     => $post->get_field('twitter'),
+          'instagram'   => $post->get_field('instagram'),
+        ));
+      }
+      break;
   }
   return $filtered_posts;
 }

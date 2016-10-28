@@ -37,6 +37,7 @@ foreach ($news_events as $post) {
     'link' => $post->link,
     'type' => $post->type->slug,
     'image' => $post->get_field('image'),
+    'date' => $post->date
   ));
 }
 $context['news_events']['first'] = array_slice($context['news_events'], 0, 1)[0];
@@ -65,6 +66,7 @@ foreach ($custom as $post) {
     'type' => $post->type->slug,
     'image' => $post->get_field('image'),
     'parent' => $parent,
+    'date' => $post->date
   ));
 }
 
