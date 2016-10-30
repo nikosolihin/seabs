@@ -45,6 +45,11 @@ function custom_style_def_TinyMCE( $init_array ) {
 			'block' => 'p',
 			'classes' => ['Lead', 'Lead--body', 'h4']
 		),
+    array(
+			'title' => 'Caps',
+			'block' => 'span',
+			'classes' => ['caps']
+		),
 	);
 	$init_array['style_formats'] = json_encode( $style_formats );
 	return $init_array;

@@ -2,14 +2,15 @@
   "root": {
     "src": "./src",
     "de_st": "./public",
-    "dest": "./htdocs/wp-content/themes/saat"
+    "dest": "./wordpress/wp-content/themes/saat"
   },
 
   "tasks": {
     "browserSync": {
       "browser": "google chrome",
       "proxy": "saat.dev",
-      "notify": false
+      "port": 8080,
+      "notify": true
     },
 
     "static": {
