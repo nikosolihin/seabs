@@ -9,13 +9,12 @@
 {# ----------------- Media Archive ----------------- #}
 <h2 class="Lead Lead--section brand container ArchiveMedia-heading">{{__('Media Library', 'saat')}}</h2>
 <div class="ArchiveMedia container" data-component="media" data-options='{ "domain": "{{site.url}}", "ppp": "{{ppp}}", "charLimit": "{{char_limit}}", "label": "{{label|title}}", "types": {{types_json}}, "categories": {{categories_json}}, "locale": "{{site.language}}", "emptyMsg": "{{empty_msg}}" }'>
-
-  <!-- <div class="ArchiveMedia-preferences" data-component="toc">
+  <div class="ArchiveMedia-preferences" data-component="toc">
     <svg aria-hidden="true" role="presentation" title="Select Language">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#settings"></use>
     </svg>
     <span class="caps brand">{{__('Show Filters', 'saat')}}</span>
-  </div> -->
+  </div>
   <div class="ArchiveMedia-content">
     {% include 'components/loader.twig' %}
     <div class="ArchiveMedia-result"></div>

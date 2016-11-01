@@ -12,25 +12,26 @@
     letter-spacing: .5px;
   }
 
-  // &-preferences {
-  //   box: horizontal middle;
-  //   background-color: $callout-bg;
-  //   padding: $spacer-single $spacer-single*1.5;
-  //   border: 1px solid #eee;
-  //   order: 1;
-  //   cursor: pointer;
-  //   svg {
-  //     size: $spacer-single*1.25;
-  //     fill: #999;
-  //     margin-right: $spacer-single*1.25;
-  //   }
-  //   span {
-  //     font-size: .9375rem;
-  //   }
-  //   @include from(lg) {
-  //     display: none;
-  //   }
-  // }
+  &-preferences {
+    box: horizontal middle;
+    background-color: $callout-bg;
+    padding: $spacer-single $spacer-single*1.5;
+    border: 1px solid #eee;
+    order: 1;
+    cursor: pointer;
+    svg {
+      size: $spacer-single*1.25;
+      fill: #999;
+      margin-right: $spacer-single*1.25;
+    }
+    span {
+      user-select: none;
+      font-size: .9375rem;
+    }
+    @include from(lg) {
+      display: none;
+    }
+  }
   &-heading {
     margin-top: $spacer-single*6;
     padding: 0 $spacer-single*1.75;
@@ -46,6 +47,7 @@
     position: relative;
     flex: 1 0 auto;
     order: 3;
+    min-height: 100px;
     @include at(sm) {
       padding: 0 $spacer-single;
     }
@@ -57,8 +59,6 @@
     }
   }
   &-sidebar {
-    position: relative;
-    top: -$spacer-single*2;
     @include to(md) {
       order: 2;
       padding: $spacer-single*1.5;
@@ -76,6 +76,8 @@
       display: block;
       order: 2;
       padding: 0;
+      position: relative;
+      top: -$spacer-single*2;
     }
     @include from(xl) {
       width: 20%;

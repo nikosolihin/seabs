@@ -86,10 +86,17 @@ class StarterSite extends TimberSite {
 					));
 				}
 			}
+
+			// If has blocks, get them
+			if ($menu['blocks']) {
+				$blocks = $menu['blocks'];
+			} else {
+				$blocks = array();
+			}
 			array_push($context['primary_menu'], array(
 				'title' => $parent->title,
 				'link' => $parent->link,
-				'blocks' => $menu['blocks'],
+				'blocks' => $blocks,
 				'children' => $children,
 				'singles' => $singles
 			));

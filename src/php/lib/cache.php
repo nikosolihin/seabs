@@ -5,6 +5,6 @@
  */
 
 // Cache twig files (but not the data)
-// if (class_exists('Timber')){
-//   Timber::$cache = true;
-// }
+if (class_exists('Timber')){
+  Timber::$cache = true;
+}

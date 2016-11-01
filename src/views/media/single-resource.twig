@@ -23,7 +23,7 @@
     {% endif %}
   {% endif %}
 
-  {% if media_type == 'gallery' or media_type == 'video' %}
+  {% if media_type == 'gallery' or media_type == 'video' or media_type == 'audio' %}
     {% include 'media/media-body.twig' %}
   {% endif %}
 

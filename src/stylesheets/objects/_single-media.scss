@@ -9,7 +9,10 @@
     background-color: $black;
     padding: $spacer-single*3.5 0;
     &Heading {
-      box: horizontal middle space-between;
+      box: vertical;
+      @include from(md) {
+        box: horizontal middle space-between;
+      }
     }
   }
 
@@ -18,7 +21,10 @@
     background-color: $black;
     padding: $spacer-single*3.25 0;
     &Heading {
-      box: horizontal middle space-between;
+      box: vertical;
+      @include from(md) {
+        box: horizontal middle space-between;
+      }
     }
     &Wrapper {
       padding: 0 $spacer-single*1.5;

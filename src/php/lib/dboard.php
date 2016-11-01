@@ -65,6 +65,25 @@ function remove_admin_bar() {
 }
 
 /*=============================================*/
+/* Remove meta boxes in the Dashboard landing page
+/*=============================================*/
+function remove_dashboard_widgets () {
+  remove_meta_box('dashboard_quick_press','dashboard','side'); //Quick Press widget
+  remove_meta_box('dashboard_recent_drafts','dashboard','side'); //Recent Drafts
+  remove_meta_box('dashboard_primary','dashboard','side'); //WordPress.com Blog
+  remove_meta_box('dashboard_secondary','dashboard','side'); //Other WordPress News
+  remove_meta_box('dashboard_incoming_links','dashboard','normal'); //Incoming Links
+  remove_meta_box('dashboard_plugins','dashboard','normal'); //Plugins
+  remove_meta_box('dashboard_right_now','dashboard', 'normal'); //Right Now
+  remove_meta_box('rg_forms_dashboard','dashboard','normal'); //Gravity Forms
+  remove_meta_box('dashboard_recent_comments','dashboard','normal'); //Recent Comments
+  remove_meta_box('icl_dashboard_widget','dashboard','normal'); //Multi Language Plugin
+  // remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
+  remove_action('welcome_panel','wp_welcome_panel');
+}
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+/*=============================================*/
 /* Change the login logo URL.
 /* Default is wordpress.org.
 /*=============================================*/
@@ -127,10 +146,11 @@ add_filter('pre_site_transient_update_plugins','remove_other_updates');
 add_filter('pre_site_transient_update_themes','remove_other_updates');
 
 /*=============================================*/
-/* Does this fix Dashboard slowness when using
-/* many flex content fields
+/* Increase `timeout` for `api.wordpress.org` requests
 /*=============================================*/
-function theme_increase_mem_limit($wp_max_mem_limit) {
-	return "512M";
-}
-add_filter('admin_memory_limit', 'theme_increase_mem_limit',10,3);
+add_filter( 'http_request_args', function( $request, $url ) {
+  if ( strpos( $url, '://api.wordpress.org/' ) !== false ) {
+    $request[ 'timeout' ] = 15;
+  }
+  return $request;
+}, 10, 2 );
