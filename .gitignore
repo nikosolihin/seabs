@@ -7,9 +7,14 @@ Desktop.ini
 **/.htaccess
 bower_components/
 node_modules/
-**/generated/_icons.sass
+**/generated/_icons.sassf
 npm-debug.log
 src/.svn
 gulpfile.js/.svn
 composer.lock
-wordpress/
+htdocs/
+vvv-hosts
+vvv-init.sh
+vvv-nginx.conf
+wp-cli.yml
+docker/
