@@ -95,6 +95,25 @@
             "media_upload": 0
         },
         {
+            "key": "field_5819cb8e70ae0",
+            "label": "Bio Title",
+            "name": "bio_title",
+            "type": "text",
+            "instructions": "What is the bio area above about?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_575faa4100734",
             "label": "Photo",
             "name": "",
@@ -229,5 +248,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Person",
-    "modified": 1475047783
+    "modified": 1478085556
 }

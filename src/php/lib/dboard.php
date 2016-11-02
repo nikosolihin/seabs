@@ -43,12 +43,12 @@ function custom_style_def_TinyMCE( $init_array ) {
     array(
 			'title' => 'Lead Text',
 			'block' => 'p',
-			'classes' => ['Lead', 'Lead--body', 'h4']
+			'classes' => ['Lead', 'Lead--body']
 		),
     array(
 			'title' => 'Caps',
-			'block' => 'span',
-			'classes' => ['caps']
+			'block' => 'p',
+			'classes' => ['caps', 'caps--body']
 		),
 	);
 	$init_array['style_formats'] = json_encode( $style_formats );

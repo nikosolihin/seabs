@@ -35,7 +35,7 @@ foreach (Timber::get_terms('media_category') as $category) {
 }
 $context['categories_json'] = json_encode($context['categories']);
 
-// // Get sidebar contents
-// $context['sidebar_sections'] = get_field('media_sidebar_sections', 'option');
+// Get sidebar contents
+$context['sidebar_sections'] = get_field('media_sidebar_sections', 'option');
 
 Timber::render( 'media/archive-media.twig' , $context );

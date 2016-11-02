@@ -69,7 +69,11 @@
 
     </div>
     <a href="" class="ArchiveMedia-search Button Button--block Button--large">{{__('Search', 'saat')}}</a>
-    {# include 'layout/sidebar-base.twig' #}
+
+    {# Sidebar Builder #}
+    {% if sidebar_sections %}
+      {% include 'layout/sidebar-base.twig' %}
+    {% endif %}
   </div>
 
 </div>

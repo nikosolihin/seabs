@@ -14,7 +14,7 @@ $exception = $post->get_field('landing_layout_exception');
 
 foreach ($post->get_children() as $child) {
   // Skip if this page in the exception list
-  if (in_array($child->id, $exception)) {
+  if ($exception && in_array($child->id, $exception)) {
     continue;
   }
   $grandchildren = array();
@@ -36,7 +36,4 @@ foreach ($post->get_children() as $child) {
     'children' => $grandchildren
   ));
 }
-
-var_dump($exception);
-var_dump($context['children']);
-// Timber::render( 'page/landing-page.twig' , $context );
+Timber::render( 'page/landing-page.twig' , $context );
