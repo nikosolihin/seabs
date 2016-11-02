@@ -1,6 +1,8 @@
 <?php
 define( 'FLICKR_BROWSER_API_KEY', '92698b2d022c2ffe5a2bb4635db04220' );
 define( 'FLICKR_BROWSER_USER_ID', '143886964@N03' );
+
+// Google Calendar API Key
 define( 'CALENDAR_API_KEY', 'AIzaSyC-mZU83ude9XK3msUju-9_LUFbglFQ7pk' );
 
 // Define different calendar IDs depending on locale

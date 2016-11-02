@@ -3,7 +3,6 @@
  * Template Name: People Page
  * Description: Page template for people page
  */
-
  $context = Timber::get_context();
  $post = new TimberPost();
  $context['post'] = $post;

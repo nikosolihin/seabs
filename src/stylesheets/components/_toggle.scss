@@ -4,17 +4,14 @@
     @include square;
     color: #aaa;
     position: relative;
-    width: 40%;
     border: 1px solid #e2e2e2;
     border-radius: 2px;
-    margin-bottom: $spacer-single;
+    margin: 0 $spacer-half $spacer-single;
     transition: all .125s ease-in-out;
     cursor: pointer;
-    &:nth-child(odd) {
-      margin-right: $spacer-half;
-    }
-    &:nth-child(even) {
-      margin-left: $spacer-half;
+    width: 6.5625rem;
+    @include from(lg) {
+      width: 5.6875rem;
     }
     &:hover {
       background-color: #eee;

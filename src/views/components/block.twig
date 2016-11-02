@@ -53,14 +53,14 @@
       <div class="Block-head lazyload" data-bgset="{{image[medium]}} 1x, {{image[large]}} 2x"></div>
       {% if card_style %}
         <div class="Block-body" style="background-color: {{bg}};">
-          <h3 style="color: {{fg}};">{{post.title|title}}</h3>
+          <h4 style="color: {{fg}};">{{post.title|title}}</h4>
           {% if description|trim is not empty %}
             <p style="color: {{fg}};">{{description|trim}}</p>
           {% endif %}
         </div>
       {% else %}
         <div class="Block-body">
-          <h3>{{post.title|title}}</h3>
+          <h4 class="brand">{{post.title|title}}</h4>
           {% if description|trim is not empty %}
             <p>{{description|trim}}</p>
           {% endif %}
@@ -74,7 +74,7 @@
     <a href="{{url}}" class="Block-link">
     {% if not notitle %}
       <div class="Block-body">
-        <h3 class="h2">{{post.title|title}}</h3>
+        <h4>{{post.title|title}}</h4>
         {% if description|trim is not empty %}
           <p>{{description|trim}}</p>
         {% endif %}

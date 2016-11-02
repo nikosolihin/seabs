@@ -3,7 +3,8 @@
   size: $loader-size;
   position: absolute;
   left: 50%;
-  top: $spacer-single*8;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
   opacity: 0;
   z-index: -99999;
 

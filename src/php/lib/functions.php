@@ -133,10 +133,21 @@ function populateList($options) {
         array_push($filtered_posts, array(
           'title'       => $post->title,
           'link'        => $post->link,
-          'date'        => date("d M", strtotime($post->date)),
+          'date'        => $post->date,
           'term'        => $post->get_terms('event_category')[0]->name,
-          'term_color'  => $post->get_terms('event_category')[0]->category_color,
           'teaser'      => $post->get_field('gcal')['description'],
+          'image'       => $post->get_field('image'),
+        ));
+      }
+      break;
+    case 'news':
+      foreach ($posts as $post) {
+        array_push($filtered_posts, array(
+          'title'       => $post->title,
+          'link'        => $post->link,
+          'date'        => $post->date,
+          'topic'       => $post->get_terms('news_topic')[0]->name,
+          'teaser'      => $post->get_field('teaser'),
           'image'       => $post->get_field('image'),
         ));
       }
@@ -160,6 +171,7 @@ function populateList($options) {
           'name'        => $post->name,
           'email'       => $post->get_field('email'),
           'bio'         => $post->get_field('bio'),
+          'bio_title'   => $post->get_field('bio_title'),
           'title'       => $post->get_field('title'),
           'phone'       => $post->get_field('phone'),
           'photo'       => $post->get_field('image'),
@@ -224,7 +236,7 @@ global $post;
 global $wpdb;
 function modify_event_date($post_id) {
   // Limit to only event post type
-  if (get_post_type($post_id) == "event") {
+  if (get_post_type($post_id) == "event" && get_post_meta($post_id, 'gcal', true)) {
     $gcal = json_decode(get_post_meta($post_id, 'gcal', true), true);
     if (array_key_exists('dateTime', $gcal['start'])) {
       $datefield = $gcal['start']['dateTime'];

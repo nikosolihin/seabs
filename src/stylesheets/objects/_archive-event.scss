@@ -21,6 +21,7 @@
       margin-right: $spacer-single*1.25;
     }
     span {
+      user-select: none;
       font-size: .9375rem;
     }
     @include from(lg) {
@@ -32,6 +33,7 @@
     position: relative;
     flex: 1 0 auto;
     order: 3;
+    min-height: 100px;
     @include at(sm) {
       padding: 0 $spacer-single;
     }

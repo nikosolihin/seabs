@@ -30,6 +30,10 @@
 
 .caps {
   @include caps;
+  &--body {
+    color: #999;
+    margin-bottom: $spacer-quarter;
+  }
 }
 
 .center {
@@ -49,12 +53,12 @@
 
 .meta {
   color: #777;
-  font-size: $font-size-h6;
-  font-weight: $font-weight-normal;
+  font-size: .9375rem;
+  font-weight: $font-weight-medium;
   margin-bottom: 0;
   &-dot {
     color: #ccc;
-    padding: 0 $spacer-quarter;
+    padding: 0 $spacer-half;
     display: none;
     @include from(md) {
       display: inline-block;
@@ -66,7 +70,7 @@
   }
   &--icon {
     box: horizontal middle;
-    font-size: $font-size-h5;
+    font-size: .9375rem;
     font-weight: $font-weight-medium;
     margin-right: $spacer-single*2;
     svg {

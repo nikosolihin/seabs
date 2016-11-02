@@ -3,7 +3,6 @@
  * Template Name: Split Sidebar
  * Description: Page template for split sidebar page
  */
-
  $context = Timber::get_context();
  $post = new TimberPost();
  $context['post'] = $post;

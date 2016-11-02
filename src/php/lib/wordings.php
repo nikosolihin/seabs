@@ -20,6 +20,9 @@ function post_type_change_title_text( $title ){
   if( 'event' == $screen->post_type) {
     $title = "Enter event name";
   }
+  if( 'resource' == $screen->post_type) {
+    $title = "Enter media title";
+  }
   return $title;
 }
 add_filter( 'enter_title_here', 'post_type_change_title_text' );

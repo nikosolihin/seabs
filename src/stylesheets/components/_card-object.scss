@@ -13,7 +13,7 @@
 
   &-wrapper {
     width: 100%;
-    @include from(lg) {
+    @include from(md) {
       width: 50%;
     }
     @include from(xl) {

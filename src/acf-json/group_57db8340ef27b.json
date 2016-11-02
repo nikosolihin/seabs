@@ -341,8 +341,7 @@
             },
             "choices": {
                 "teaser": "Teaser",
-                "author": "Author(s)",
-                "date": "Publish Date"
+                "topic": "Topic"
             },
             "default_value": [
                 "teaser"
@@ -446,5 +445,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Taxonomies Selector",
-    "modified": 1477567979
+    "modified": 1478104958
 }
