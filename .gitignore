@@ -1,13 +1,13 @@
 .DS_Store
 .sass-cache
 .publish
-public/
+public
 Desktop.ini
 .htaccess
 **/.htaccess
 bower_components/
 node_modules/
-**/generated/_icons.sassf
+**/generated/_icons.sass
 npm-debug.log
 src/.svn
 gulpfile.js/.svn
@@ -17,4 +17,3 @@ vvv-hosts
 vvv-init.sh
 vvv-nginx.conf
 wp-cli.yml
-docker/
