@@ -33,6 +33,7 @@
           </div>
           <div class="welcome-poster lazyload" data-bgset="{{site.theme.uri}}/poster.jpg"></div>
         </a>
+
         <div class="Twin-frame Twin">
           <a href="{{news_events.first.link}}" class="Twin-box lazyload" data-bgset="{{news_events.first.image[small]}} 1x, {{news_events.first.image[medium]}} 2x">
             <div class="Twin-content">
@@ -53,8 +54,8 @@
           <div class="Twin-box welcome-control lazyload" data-bgset="https://c2.staticflickr.com/6/5642/30336427552_0e75356f7f.jpg">
             <div class="Twin-content">
               <p class="white">{{__('Browse all of our news and events', 'saat')}}</p>
-              <a href="" class="Button Button--block Button--light">{{__('See Events', 'saat')}}</a>
-              <a href="" class="Button Button--block Button--light">{{__('See News', 'saat')}}</a>
+              <a href="{{site.url}}/events/" class="Button Button--block Button--light">{{__('See Events', 'saat')}}</a>
+              <a href="{{site.url}}/news/" class="Button Button--block Button--light">{{__('See News', 'saat')}}</a>
             </div>
           </div>
 

@@ -16,7 +16,7 @@ export default class Gallery {
       pageDots: false,
       imagesLoaded: true,
       prevNextButtons: true,
-      adaptiveHeight: false,
+      adaptiveHeight: true,
       lazyLoad: 1,
       autoPlay: 8000,
       pauseAutoPlayOnHover: true

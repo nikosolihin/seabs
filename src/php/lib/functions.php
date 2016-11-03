@@ -133,7 +133,7 @@ function populateList($options) {
         array_push($filtered_posts, array(
           'title'       => $post->title,
           'link'        => $post->link,
-          'date'        => $post->date,
+          'date'        => $post->post_date,
           'term'        => $post->get_terms('event_category')[0]->name,
           'teaser'      => $post->get_field('gcal')['description'],
           'image'       => $post->get_field('image'),
@@ -145,7 +145,7 @@ function populateList($options) {
         array_push($filtered_posts, array(
           'title'       => $post->title,
           'link'        => $post->link,
-          'date'        => $post->date,
+          'date'        => $post->post_date,
           'topic'       => $post->get_terms('news_topic')[0]->name,
           'teaser'      => $post->get_field('teaser'),
           'image'       => $post->get_field('image'),
@@ -195,26 +195,34 @@ function set_default_object_terms( $post_id, $post ) {
     switch (get_locale()) {
       case "en_US":
         $defaults = array(
-          'event_category' => array('general'),
-          'news_topic' => array('general'),
+          'event_category' => array('uncategorized'),
+          'news_topic' => array('uncategorized'),
           'media_category' => array('uncategorized'),
-          'role' => array('faculty'),
+          'role' => array('uncategorized'),
         );
         break;
       case "id_ID":
         $defaults = array(
-          'event_category' => array('umum'),
-          'news_topic' => array('umum'),
+          'event_category' => array('uncategorized'),
+          'news_topic' => array('uncategorized'),
           'media_category' => array('uncategorized'),
-          'role' => array('staf'),
+          'role' => array('uncategorized'),
+        );
+        break;
+      case "id_ID":
+        $defaults = array(
+          'event_category' => array('uncategorized'),
+          'news_topic' => array('uncategorized'),
+          'media_category' => array('uncategorized'),
+          'role' => array('uncategorized'),
         );
         break;
       default:
         $defaults = array(
-          'event_category' => array('general'),
-          'news_topic' => array('general'),
+          'event_category' => array('uncategorized'),
+          'news_topic' => array('uncategorized'),
           'media_category' => array('uncategorized'),
-          'role' => array('faculty'),
+          'role' => array('uncategorized'),
         );
     }
 		$taxonomies = get_object_taxonomies( $post->post_type );

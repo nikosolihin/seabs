@@ -16,7 +16,7 @@
   <div class="Block Block--panel {% if alignment %}Block--left{% endif %}" style="background-image:linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.90)),url({{image}})">
     <a href="{{url}}" class="Block-link"></a>
     <div class="Block-body">
-      <h4 class="h3 Block-heading">{{post.title|title}}</h4>
+      <h4 class="h3 Block-heading">{{post.title}}</h4>
       {% if description|trim is not empty %}<p>{{description|trim}}</p>{% endif %}
     </div>
   </div>

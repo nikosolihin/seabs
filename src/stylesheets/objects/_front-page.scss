@@ -241,6 +241,7 @@
     transform: translateX(-50%);
   }
   &-poster {
+    @include cover;
     position: absolute;
     size: 100%;
     display: block;

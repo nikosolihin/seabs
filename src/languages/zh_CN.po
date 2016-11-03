@@ -1,9 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SAAT\n"
-"POT-Creation-Date: 2016-10-22 23:00+0700\n"
-"PO-Revision-Date: 2016-10-22 23:18+0700\n"
+"POT-Creation-Date: 2016-11-03 13:18+0700\n"
+"PO-Revision-Date: 2016-11-03 13:19+0700\n"
+"Last-Translator: \n"
 "Language-Team: Pipe & Pilcrow <hello@pipeandpilcrow.com>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,35 +14,33 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __\n"
-"Last-Translator: \n"
-"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: views\n"
 "X-Poedit-SearchPath-1: php/lib\n"
 "X-Poedit-SearchPath-2: php\n"
 
-#: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:111
-#: php/lib/timber.php:194 php/single-event.php:119
+#: php/archive-event.php:6 php/lib/post-types.php:65 php/lib/timber.php:119
+#: php/lib/timber.php:202 php/single-event.php:119
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: php/archive-event.php:7
 msgid "No events found. Please try again."
-msgstr ""
+msgstr "未找到任何活动。 请再试一次。"
 
 #: php/archive-event.php:8
 msgid "Search events or keywords"
-msgstr ""
+msgstr "搜索活动或关键字"
 
 #: php/archive-media.php:6 views/media/archive-media.twig:10
 msgid "Media Library"
-msgstr ""
+msgstr "媒体库"
 
 #: php/archive-media.php:7
 msgid "No media found. Please try again."
-msgstr ""
+msgstr "找不到媒体。 请再试一次。"
 
 #: php/archive-news.php:6 php/lib/post-types.php:129 php/lib/post-types.php:130
-#: php/lib/post-types.php:160 php/lib/timber.php:115 php/lib/timber.php:198
+#: php/lib/post-types.php:160 php/lib/timber.php:123 php/lib/timber.php:206
 #: php/single-news.php:51 views/page/front-page.twig:43
 #: views/page/front-page.twig:68 views/page/front-page.twig:94
 msgid "News"
@@ -48,7 +48,7 @@ msgstr "消息"
 
 #: php/archive-news.php:7
 msgid "No news found. Please try again."
-msgstr ""
+msgstr "未找到新闻。 请再试一次。"
 
 #: php/lib/post-types.php:9
 msgid "Blocks"
@@ -323,10 +323,10 @@ msgid "Custom post type for people"
 msgstr ""
 
 #: php/lib/post-types.php:252 php/lib/post-types.php:253
-#: php/lib/post-types.php:283 php/lib/timber.php:119 php/lib/timber.php:202
+#: php/lib/post-types.php:283 php/lib/timber.php:127 php/lib/timber.php:210
 #: views/page/front-page.twig:92
 msgid "Media"
-msgstr ""
+msgstr "媒体"
 
 #: php/lib/post-types.php:254
 msgid "Media Archives"
@@ -381,7 +381,7 @@ msgid "Categories"
 msgstr ""
 
 #: php/lib/taxonomies.php:10 php/lib/taxonomies.php:156
-#: views/media/archive-media.twig:59 views/media/archive-media.twig:64
+#: views/media/archive-media.twig:58 views/media/archive-media.twig:63
 msgid "All Categories"
 msgstr ""
 
@@ -613,25 +613,30 @@ msgstr ""
 
 #: php/lib/wordings.php:5
 msgid "File Library"
-msgstr ""
+msgstr "文件库"
+
+#: php/search.php:13 php/search.php:40 views/event/archive-event.twig:106
+#: views/media/archive-media.twig:71 views/page/search.twig:30
+msgid "Search"
+msgstr "查询"
 
 #: views/event/archive-event.twig:11
 msgid "Featured Events"
-msgstr ""
+msgstr "特色活动"
 
 #: views/event/archive-event.twig:60
 msgid "Upcoming Events"
 msgstr "即将活动"
 
-#: views/event/archive-event.twig:66 views/media/archive-media.twig:17
+#: views/event/archive-event.twig:66 views/media/archive-media.twig:16
 msgid "Show Filters"
-msgstr ""
+msgstr "显示过滤器"
 
-#: views/event/archive-event.twig:75 views/media/archive-media.twig:26
+#: views/event/archive-event.twig:75 views/media/archive-media.twig:25
 msgid "Prev"
 msgstr "上一页"
 
-#: views/event/archive-event.twig:79 views/media/archive-media.twig:30
+#: views/event/archive-event.twig:79 views/media/archive-media.twig:29
 msgid "Next"
 msgstr "下一页"
 
@@ -655,27 +660,23 @@ msgstr "选择钥字"
 msgid "By Categories"
 msgstr "选择分类"
 
-#: views/event/archive-event.twig:99 views/media/archive-media.twig:41
+#: views/event/archive-event.twig:99 views/media/archive-media.twig:40
 msgid "Clear All"
 msgstr "全部删除"
 
-#: views/event/archive-event.twig:106 views/media/archive-media.twig:72
-msgid "Search"
-msgstr "查询"
-
 #: views/event/archive-event.twig:110
 msgid "Download Calendar"
-msgstr ""
+msgstr "下载日历"
 
 #: views/event/archive-event.twig:112
 msgid ""
 "If you use your own calendar app, click here to download and import all of "
 "our events"
-msgstr ""
+msgstr "如果您使用自己的日历应用程序，请点击这里下载并导入我们所有的活动"
 
 #: views/event/archive-event.twig:115 views/media/document.twig:15
 msgid "Download"
-msgstr ""
+msgstr "下载"
 
 #: views/event/single-event.twig:77 views/news/single-news.twig:48
 msgid "Share this event"
@@ -685,61 +686,65 @@ msgstr "分享此活动"
 msgid "Share this news"
 msgstr "分享此消息"
 
-#: views/media/archive-media.twig:38
+#: views/media/archive-media.twig:37
 msgid "Filter Media"
-msgstr ""
+msgstr "过滤介质"
 
-#: views/media/archive-media.twig:40
+#: views/media/archive-media.twig:39
 msgid "Media Type"
-msgstr ""
+msgstr "媒体类型"
 
-#: views/media/archive-media.twig:57
+#: views/media/archive-media.twig:56
 msgid "Media Categories"
-msgstr ""
+msgstr "媒体类别"
 
 #: views/media/document-footer.twig:6
 msgid "Authors"
-msgstr ""
+msgstr "作者"
 
 #: views/media/document-header.twig:38
 msgid "Share this"
-msgstr ""
+msgstr "分享这个"
 
 #: views/media/document-header.twig:46 views/media/media-body.twig:64
 msgid "Share Media"
-msgstr ""
+msgstr "共享媒体"
 
 #: views/media/document.twig:35
 msgid "Table of Contents"
-msgstr ""
+msgstr "目录"
 
 #: views/media/media-body.twig:53
 msgid "See All Photos"
-msgstr ""
+msgstr "查看所有照片"
 
 #: views/media/media-body.twig:58
 msgid "View Album"
-msgstr ""
+msgstr "查看相册"
 
 #: views/modules/footer.twig:53
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隐私政策"
 
 #: views/modules/footer.twig:56
 msgid "Feedback"
-msgstr ""
+msgstr "反馈"
 
 #: views/modules/footer.twig:59
 msgid "Languages"
-msgstr ""
+msgstr "语言"
 
-#: views/modules/header.twig:153
+#: views/modules/header.twig:14
+msgid "Search events, media or keywords"
+msgstr "搜索活动，媒体或关键字"
+
+#: views/modules/header.twig:155
 msgid "Quicklinks"
-msgstr ""
+msgstr "快速链接"
 
 #: views/news/archive-news.twig:11
 msgid "Featured News"
-msgstr ""
+msgstr "特色新闻"
 
 #: views/news/archive-news.twig:66
 msgid "Latest News"
@@ -758,44 +763,48 @@ msgid "View"
 msgstr "概览"
 
 #: views/page/front-page.twig:16
-msgid "Bagi Kristus, Bagi Gereja, Bagi Dunia, Bagi Kemuliaan Allah"
-msgstr ""
+msgid "For Christ, For the Church, For the world, For the Glory of God"
+msgstr "为基督，为教会，为世界，为神的荣耀"
 
 #: views/page/front-page.twig:55
 msgid "Browse all of our news and events"
-msgstr ""
+msgstr "浏览我们的所有新闻和活动"
 
 #: views/page/front-page.twig:56
 msgid "See Events"
-msgstr ""
+msgstr "见事件"
 
 #: views/page/front-page.twig:57
 msgid "See News"
-msgstr ""
+msgstr "见新闻"
 
 #: views/page/front-page.twig:100 views/page/landing-page.twig:60
 #: views/page/landing-page.twig:71
 msgid "Read More"
-msgstr ""
+msgstr "阅读更多"
 
 #: views/page/front-page.twig:138
 msgid "See Media Library"
-msgstr ""
+msgstr "请参阅媒体库"
 
-msgid "Upcoming Event"
-msgstr "即将活动"
+#: views/page/search.twig:18
+msgid "Filter Search"
+msgstr "过滤器搜索"
 
-msgid "Recent News"
-msgstr "Berita Terkini"
+#~ msgid "Upcoming Event"
+#~ msgstr "即将活动"
 
-msgid "Share "
-msgstr "Bagikan"
+#~ msgid "Recent News"
+#~ msgstr "Berita Terkini"
 
-msgid "Copyright"
-msgstr "Hak Cipta"
+#~ msgid "Share "
+#~ msgstr "Bagikan"
 
-msgid "Filter Medias"
-msgstr "Pilih Media"
+#~ msgid "Copyright"
+#~ msgstr "Hak Cipta"
 
-msgid "More News"
-msgstr "Tambah Berita"
+#~ msgid "Filter Medias"
+#~ msgstr "Pilih Media"
+
+#~ msgid "More News"
+#~ msgstr "Tambah Berita"

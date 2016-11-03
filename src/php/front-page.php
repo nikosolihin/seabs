@@ -29,58 +29,64 @@ $context['welcome'] = array(
 
 // News & Events
 $news_events = Timber::get_posts(get_field('stream_news_events', 'option'));
-$news_events = array_slice($news_events, 0, 3);
-$context['news_events'] = array();
-foreach ($news_events as $post) {
-  array_push($context['news_events'], array(
-    'title' => $post->title,
-    'link' => $post->link,
-    'type' => $post->type->slug,
-    'image' => $post->get_field('image'),
-    'date' => $post->date
-  ));
+if ($news_events) {
+  $news_events = array_slice($news_events, 0, 3);
+  $context['news_events'] = array();
+  foreach ($news_events as $post) {
+    array_push($context['news_events'], array(
+      'title' => $post->title,
+      'link' => $post->link,
+      'type' => $post->type->slug,
+      'image' => $post->get_field('image'),
+      'date' => $post->post_date
+    ));
+  }
+  $context['news_events']['first'] = array_slice($context['news_events'], 0, 1)[0];
+  $context['news_events']['rest'] = array_slice($context['news_events'], 1, 2);
 }
-$context['news_events']['first'] = array_slice($context['news_events'], 0, 1)[0];
-$context['news_events']['rest'] = array_slice($context['news_events'], 1, 2);
 
 // Custom Posts
 $custom = Timber::get_posts(get_field('stream_custom_posts', 'option'));
-$custom = array_slice($custom, 0, 3);
-$context['custom_posts'] = array();
-foreach ($custom as $post) {
-  // If of page post type, get root parent's name
-  $parent = array();
-  if ($post->type->slug == 'page') {
-    $clone = $post;
-    while( $clone->get_parent ) {
-    	$clone = $clone->get_parent();
-    	array_push( $parent, array(
-        'title' => $clone->title
-      ));
+if ($custom) {
+  $custom = array_slice($custom, 0, 3);
+  $context['custom_posts'] = array();
+  foreach ($custom as $post) {
+    // If of page post type, get root parent's name
+    $parent = array();
+    if ($post->type->slug == 'page') {
+      $clone = $post;
+      while( $clone->get_parent ) {
+      	$clone = $clone->get_parent();
+      	array_push( $parent, array(
+          'title' => $clone->title
+        ));
+      }
+      $parent = array_reverse($parent)[0];
     }
-    $parent = array_reverse($parent)[0];
+    array_push($context['custom_posts'], array(
+      'title' => $post->title,
+      'link' => $post->link,
+      'type' => $post->type->slug,
+      'image' => $post->get_field('image'),
+      'parent' => $parent,
+      'date' => $post->post_date
+    ));
   }
-  array_push($context['custom_posts'], array(
-    'title' => $post->title,
-    'link' => $post->link,
-    'type' => $post->type->slug,
-    'image' => $post->get_field('image'),
-    'parent' => $parent,
-    'date' => $post->date
-  ));
 }
 
 // Stream Media Box
 $media = Timber::get_post(get_field('stream_media', 'option'));
-$context['media'] = array(
-  'title' => $media->title,
-  'link' => $media->link,
-  'type' => $media->get_terms('media_type')[0]->slug,
-  'name' => $media->get_terms('media_type')[0]->name,
-  'archive' => $context['site']->url. '/' .'media',
-  'teaser' => $media->get_field('teaser'),
-  'image' => $media->get_field('image'),
-);
+if ($media) {
+  $context['media'] = array(
+    'title' => $media->title,
+    'link' => $media->link,
+    'type' => $media->get_terms('media_type')[0]->slug,
+    'name' => $media->get_terms('media_type')[0]->name,
+    'archive' => $context['site']->url. '/' .'media',
+    'teaser' => $media->get_field('teaser'),
+    'image' => $media->get_field('image'),
+  );
+}
 
 // Custom Control Area
 $context['control_cta'] = array(
