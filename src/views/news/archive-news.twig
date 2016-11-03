@@ -84,7 +84,7 @@
         {% for post in news %}
           {% if loop.first %}
             <a href="{{post.link}}" class="CarouselNews-image lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
-              <h3>{{post.title|title}}</h3>
+              <h3>{{post.title}}</h3>
               {% if post.authors %}
                 <span>{{post.date|date('j M, Y')}}</span>
               {% endif %}
@@ -94,7 +94,7 @@
               <div class="CarouselNews-body">
             {% endif %}
             <article>
-              <h5><a href="{{post.link}}">{{post.title|title}}</a></h5>
+              <h5><a href="{{post.link}}">{{post.title}}</a></h5>
               <p class="meta meta--dot">
                 <span>{{post.date|date('j M, Y')}}</span>
                 {% if post.authors %}

@@ -8,7 +8,7 @@
     {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
 
     {# Headings #}
-    <h1 class="SingleArticle-title h2 brand">{{post.title|title}}</h1>
+    <h1 class="SingleArticle-title h2 brand">{{post.title}}</h1>
 
     {# Subtitle #}
     {% if acf.subtitle %}

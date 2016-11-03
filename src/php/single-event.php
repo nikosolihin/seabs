@@ -9,8 +9,6 @@ $context['acf'] = get_fields();
 $context['sections'] = $context['acf']['sections'];
 $gcal = $context['acf']['gcal'];
 
-var_dump($gcal);
-
 // For event, gcal description is the teaser
 $context['acf']['teaser'] = $gcal['description'];
 

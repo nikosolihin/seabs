@@ -10,9 +10,15 @@
     fill: #888;
     size: .6rem;
   }
-  // @include to(md) {
-  //   flex: 1 0 auto;
-  // }
+  &-item {
+    @include hover($body-color, $brand-primary);
+    display: block;
+    text-transform: capitalize;
+    font-size: $font-size-h6;
+    letter-spacing: 0;
+    padding: .8rem $spacer-single*1.25;
+    border-top: 1px solid #eee;
+  }
   &-dropdown {
     display: none;
     position: absolute;
@@ -23,15 +29,10 @@
     text-align: left;
     &--show {
       display: block;
+      z-index: $zindex-modal;
+      .Select-item {
+        z-index: $zindex-modal !important;
+      }
     }
-  }
-  &-item {
-    @include hover($body-color, $brand-primary);
-    display: block;
-    text-transform: capitalize;
-    font-size: $font-size-h6;
-    letter-spacing: 0;
-    padding: .8rem $spacer-single*1.25;
-    border-top: 1px solid #eee;
   }
 }

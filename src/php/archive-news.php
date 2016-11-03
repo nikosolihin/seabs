@@ -37,7 +37,7 @@ foreach (Timber::get_posts($featured_news) as $news) {
     'link'        => $news->link,
     'topic'       => $news->get_terms('news_topic')[0]->name,
     'authors'     => implode(", ", $authors),
-    'date'        => $news->date,
+    'date'        => $news->post_date,
     'image'       => $news->get_field('image'),
   ));
 }
@@ -71,7 +71,7 @@ foreach (Timber::get_terms('news_topic', array('hide_empty' => true)) as $topic)
       'title'   => $post->title,
       'link'    => $post->link,
       'authors' => implode(", ", $authors),
-      'date'    => $post->date,
+      'date'    => $post->post_date,
       'image'   => $post->get_field('image')
     ));
   }

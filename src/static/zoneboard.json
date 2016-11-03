@@ -1,47 +1,114 @@
 {
-    "logo_url": "http://0.0.0.0/wp-content/themes/saat/zoneboard.svg",
-    "message": "What is this?",
-    "bricks": [{
-        "label": "Home Page",
-        "icon": "fa-home",
-        "links": [{
-            "label": "Manage 'highlights'",
-            "url": "/wp-admin/admin.php?page=acf-options-homepage#acf-highlights"
-        }, {
-            "label": "Homepage Logo Pond",
-            "url": "/wp-admin/admin.php?page=acf-options-homepage"
-        }]
-    }, {
-        "label": "Site-Wide",
-        "icon": "fa-sitemap",
-        "links": [{
-            "label": "Main Menu",
-            "url": "/wp-admin/nav-menus.php"
-        }, {
-            "label": "Site Info",
-            "url": "/wp-admin/admin.php?page=acf-options-site-info"
-        }]
-    }, {
-        "label": "Portfolio Page",
-        "icon": "dashicons-portfolio",
-        "callback": "zoneboard_hello_world"
-    }, {
-        "label": "Tech Info",
-        "icon": "fa-github-alt",
-        "links": [{
-            "label": "GitHub Repo",
-            "url": "https://github.com/upstatement/blades/"
-        }]
-    }, {
-        "label": "Links, Etc.",
-        "icon": "fa-link",
-        "links": [{
-            "label": "Manage redirects",
-            "url": "/wp-admin/edit.php?post_type=redirect_rule"
-        }, {
-            "label": "Create a new redirect",
-            "url": "/wp-admin/post-new.php?post_type=redirect_rule"
-        }]
-    }]
-
+  "logo_url":"https://v2.seabs.ac.id/wp-content/themes/saat/zoneboard.svg",
+  "message":"",
+  "bricks":[
+    {
+      "label":"Home Page",
+      "icon":"fa-home",
+      "links":[
+        {
+          "label":"Hero ",
+          "url":"/wp-admin/"
+        },
+        {
+          "label":"",
+          "url":"/wp-admin/admin.php?page=acf-options-homepage"
+        }
+      ]
+    },
+    {
+      "label":"Site-Wide",
+      "icon":"fa-sitemap",
+      "links":[
+        {
+          "label":"Main Menu",
+          "url":"/wp-admin/nav-menus.php"
+        },
+        {
+          "label":"Site Info",
+          "url":"/wp-admin/admin.php?page=acf-options-site-info"
+        }
+      ]
+    },
+    {
+      "label":"Events Page",
+      "icon":"fa-calendar",
+      "links":[
+        {
+          "label":"Add New Event",
+          "url":"/wp-admin/post-new.php?post_type=event"
+        },
+        {
+          "label":"Add a Category",
+          "url":"/wp-admin/edit-tags.php?taxonomy=event_category&post_type=event"
+        },
+        {
+          "label":"Feature an Event",
+          "url":"/wp-admin/edit.php?post_type=event&page=acf-options-event-settings#featured-events"
+        },
+        {
+          "label":"Change Listing Page Options",
+          "url":"/wp-admin/edit.php?post_type=event&page=acf-options-event-settings#listing-page"
+        },
+        {
+          "label":"Create a Sidebar for Event Items",
+          "url":"/wp-admin/edit.php?post_type=event&page=acf-options-event-settings#inheritable-sidebar"
+        },
+        {
+          "label":"Add a Calendar File",
+          "url":"/wp-admin/edit.php?post_type=event&page=acf-options-event-settings#google-calendar"
+        }
+      ]
+    },
+    {
+      "label":"News Page",
+      "icon":"fa-bullhorn",
+      "links":[
+        {
+          "label":"Add New News",
+          "url":"/wp-admin/post-new.php?post_type=news"
+        },
+        {
+          "label":"Add a Topic",
+          "url":"/wp-admin/edit-tags.php?taxonomy=news_topic&post_type=news"
+        },
+        {
+          "label":"Feature a News",
+          "url":"/wp-admin/edit.php?post_type=news&page=acf-options-news-settings#featured-news"
+        },
+        {
+          "label":"Change Latest News Options",
+          "url":"/wp-admin/edit.php?post_type=news&page=acf-options-news-settings#latest-news"
+        },
+        {
+          "label":"Change Listing Page Options",
+          "url":"/wp-admin/edit.php?post_type=news&page=acf-options-news-settings#listing-page"
+        },
+        {
+          "label":"Create a Sidebar for News Items",
+          "url":"/wp-admin/edit.php?post_type=news&page=acf-options-news-settings#inheritable-sidebar"
+        }
+      ]
+    },
+    {
+      "label":"Media Page",
+      "icon":"fa-folder-open",
+      "links":[
+        {
+          "label":"See Service Details",
+          "url":"/wp-admin/admin.php?page=service-details"
+        }
+      ]
+    },
+    {
+      "label":"Tech Info",
+      "icon":"fa-key",
+      "links":[
+        {
+          "label":"See Service Details",
+          "url":"/wp-admin/admin.php?page=service-details"
+        }
+      ]
+    }
+  ]
 }

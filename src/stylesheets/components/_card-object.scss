@@ -38,6 +38,7 @@
     padding-top: .35rem;
     width: 100%;
     position: absolute 0 auto auto 0;
+    z-index: 0;
     > :nth-child(odd) {
       box: horizontal middle;
       padding-left: $spacer-single;

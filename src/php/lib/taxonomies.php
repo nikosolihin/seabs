@@ -74,7 +74,7 @@ function news_topic_taxonomy() {
 		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                       => 'news/?utf8=✓&page=1&topics=',
+		'slug'                       => 'news/?utf8=✓&page=1&topic=',
 		'with_front'                 => true,
 		'hierarchical'               => false,
 	);
