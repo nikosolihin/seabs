@@ -87,9 +87,9 @@
                 "id": ""
             },
             "choices": {
-                "list": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/list.png\"><p>List<\/p>",
-                "object-list": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/object-list.png\"><p>Media Object<\/p>",
-                "card": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>"
+                "list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/list.png\"><p>List<\/p>",
+                "object-list": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/object-list.png\"><p>Media Object<\/p>",
+                "card": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>"
             },
             "allow_null": 0,
             "other_choice": 0,

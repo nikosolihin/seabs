@@ -1,6 +1,10 @@
 .SingleMedia {
   &-title {
     font-weight: $font-weight-bold;
+    text-align: center;
+    @include from(md) {
+      text-align: left;
+    }
   }
 
   // Media Types

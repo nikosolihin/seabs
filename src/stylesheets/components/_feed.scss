@@ -1,11 +1,6 @@
 .Feed {
   @include normalist;
 
-  // Reduce font size if we're within Sidebar
-  @at-root .Sidebar-section #{&} {
-    font-size: $font-size-h6;
-  }
-
   // Components
   &-item { // Display Style
     padding-bottom: $spacer-single*1.125;
@@ -55,7 +50,7 @@
 
   // Classes
   .meta--icon {
-    margin-right: $spacer-quarter;
+    margin-right: $spacer-half;
   }
 
   // Display Style
@@ -114,6 +109,17 @@
       .Feed-item {
         width: 100%;
       }
+    }
+  }
+
+  // Reduce font size if we're within Sidebar
+  @at-root .Sidebar-section #{&} {
+    font-size: $font-size-h6;
+    h4 {
+      font-size: 1.125rem;
+    }
+    .Feed-item {
+      width: 100%;
     }
   }
 }

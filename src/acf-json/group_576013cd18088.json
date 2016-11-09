@@ -21,13 +21,18 @@
             "flickr_sizes": [
                 "url_q",
                 "url_t",
+                "url_s",
                 "url_n",
+                "url_m",
                 "url_z",
                 "url_c",
                 "url_l",
-                "url_h"
+                "url_h",
+                "url_o"
             ],
-            "flickr_extras": ""
+            "flickr_extras": [
+                "o_dims"
+            ]
         },
         {
             "key": "field_576019289e04a",
@@ -93,5 +98,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "COMPONENTS : Image",
-    "modified": 1476783324
+    "modified": 1478245337
 }

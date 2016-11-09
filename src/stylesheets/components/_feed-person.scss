@@ -73,12 +73,29 @@
   }
   .Feed-bio {
     @at-root .Sidebar #{&} {
-      padding: $spacer-single $spacer-single*1.25;
-      background-color: $callout-bg;
+      display: none;
     }
     p {
       color: #777;
       font-size: .90625rem;
+    }
+  }
+
+  @at-root .Sidebar-section #{&} {
+    .Feed-item {
+      box: horizontal wrap;
+    }
+    .Feed-image {
+      width: 25%;
+      &Link {
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
+    .Feed-bioFull {
+      display: block;
+      padding: $spacer-single $spacer-single*1.25;
+      background-color: $callout-bg;
     }
   }
 }

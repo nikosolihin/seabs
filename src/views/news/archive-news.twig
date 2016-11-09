@@ -86,7 +86,7 @@
             <a href="{{post.link}}" class="CarouselNews-image lazyload" data-bgset="{{post.image[small]}} 1x, {{post.image[medium]}} 2x">
               <h3>{{post.title}}</h3>
               {% if post.authors %}
-                <span>{{post.date|date('j M, Y')}}</span>
+                <span>{{post.post_date|date('j M, Y')}}</span>
               {% endif %}
             </a>
           {% else %}
@@ -96,7 +96,7 @@
             <article>
               <h5><a href="{{post.link}}">{{post.title}}</a></h5>
               <p class="meta meta--dot">
-                <span>{{post.date|date('j M, Y')}}</span>
+                <span>{{post.post_date|date('j M, Y')}}</span>
                 {% if post.authors %}
                   <span class="meta-dot">&#8226;</span>
                   <span>{{post.authors}}</span>

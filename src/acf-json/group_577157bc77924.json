@@ -32,10 +32,10 @@
                 "id": ""
             },
             "choices": {
-                "panel": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
-                "bookmark": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
-                "card": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>",
-                "download": "<img src=\"https:\/\/v2.seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/download.png\"><p>Download<\/p>"
+                "panel": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/panel.png\"><p>Panel<\/p>",
+                "bookmark": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/long-panel.png\"><p>Bookmark<\/p>",
+                "card": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/card.png\"><p>Card<\/p>",
+                "download": "<img src=\"https:\/\/seabs.ac.id\/wp\/wp-content\/themes\/saat\/dashboard\/images\/download.png\"><p>Download<\/p>"
             },
             "allow_null": 0,
             "other_choice": 0,

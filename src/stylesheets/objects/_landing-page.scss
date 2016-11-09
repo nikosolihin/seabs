@@ -8,7 +8,7 @@
     .Lead {
       font-size: $font-size-h3;
       @include from(md) {
-        font-size: $font-size-h2;
+        font-size: 1.8rem;
       }
     }
   }

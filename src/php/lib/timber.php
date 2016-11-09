@@ -36,7 +36,7 @@ class StarterSite extends TimberSite {
 		$context['square2x'] = 'url_q';	// 150
 		$context['thumb'] = 'url_t';		// 100
 		$context['small'] = 'url_n';		// 320
-		$context['mid'] = 'url_m';		  // 500
+		$context['middle'] = 'url_m';		// 500
 		$context['medium'] = 'url_z';		// 640
 		$context['large'] = 'url_c';		// 800
 		$context['xlarge'] = 'url_l';		// 1024
@@ -235,9 +235,9 @@ class StarterSite extends TimberSite {
 		$context['locale'] = get_locale();
 
 		// Languages
-		$context['languages']['id'] = "https://v2.seabs.ac.id/";
-		$context['languages']['en'] = "https://v2.seabs.ac.id/en";
-		$context['languages']['zh'] = "https://v2.seabs.ac.id/zh";
+		$context['languages']['id'] = "https://seabs.ac.id/";
+		$context['languages']['en'] = "https://seabs.ac.id/en";
+		$context['languages']['zh'] = "https://seabs.ac.id/zh";
 		$context['languages']['list'] = get_field('languages', 'option');
 
 		// Current URL
