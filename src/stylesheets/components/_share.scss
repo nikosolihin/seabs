@@ -1,13 +1,20 @@
 .Share {
-  box: horizontal;
+  box: horizontal center;
+  @include from(md) {
+    box: horizontal left;
+  }
 
   &-button {
     box: vertical middle center;
     display: block;
-    size: 55px;
     background-color: #eee;
+    border-radius: 2px;
     margin-right: 10px;
     transition: all .08s ease-in-out;
+    size: 45px;
+    @include from(md) {
+      size: 55px;
+    }
     &:hover {
       background-color: $brand-secondary;
       svg {
@@ -23,7 +30,10 @@
   }
   svg {
     fill: #444;
-    size: $spacer-single;
+    size: .9rem;
+    @include from(md) {
+      size: $spacer-single;
+    }
     transition: all .05s ease-in-out;
   }
 

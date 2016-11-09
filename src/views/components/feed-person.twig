@@ -60,3 +60,10 @@
   </div>
   {% endif %}
 </div>
+
+{% if 'bio' in meta %}
+  <div class="Feed-bioFull">
+    <h5>{{post.bio_title}}</h5>
+    {{post.bio}}
+  </div>
+{% endif %}

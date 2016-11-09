@@ -273,10 +273,19 @@ remove_action('future_post', '_future_post_hook');
 add_filter( 'wp_insert_post_data', 'nacin_do_not_set_posts_to_future' );
 
 function nacin_do_not_set_posts_to_future( $data ) {
-    if ( $data['post_status'] == 'future' && $data['post_type'] == 'event' )
-        $data['post_status'] = 'publish';
-    return $data;
+  if ( $data['post_status'] == 'future' && $data['post_type'] == 'event' )
+    $data['post_status'] = 'publish';
+  return $data;
 }
+
+//=============================================
+// Remove the meta tag showing WP version
+// Source: https://kinsta.com/blog/wordpress-security/
+//=============================================
+function wpversion_remove_version() {
+  return '';
+}
+add_filter('the_generator', 'wpversion_remove_version');
 
 //=============================================
 // List Component
