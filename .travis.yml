@@ -2,7 +2,9 @@ language: node_js
 node_js:
 - '5.11'
 addons:
-  ssh_known_hosts: seabs.ac.id
+  ssh_known_hosts:
+  - seabs.ac.id
+  - 188.166.198.34
 before_install:
 - bash _travis/install.sh
 script:
