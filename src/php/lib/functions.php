@@ -191,40 +191,12 @@ function populateList($options) {
 //================================================
 function set_default_object_terms( $post_id, $post ) {
 	if ( 'publish' === $post->post_status ) {
-		$defaults = array();
-    switch (get_locale()) {
-      case "en_US":
-        $defaults = array(
-          'event_category' => array('uncategorized'),
-          'news_topic' => array('uncategorized'),
-          'media_category' => array('uncategorized'),
-          'role' => array('uncategorized'),
-        );
-        break;
-      case "id_ID":
-        $defaults = array(
-          'event_category' => array('uncategorized'),
-          'news_topic' => array('uncategorized'),
-          'media_category' => array('uncategorized'),
-          'role' => array('uncategorized'),
-        );
-        break;
-      case "id_ID":
-        $defaults = array(
-          'event_category' => array('uncategorized'),
-          'news_topic' => array('uncategorized'),
-          'media_category' => array('uncategorized'),
-          'role' => array('uncategorized'),
-        );
-        break;
-      default:
-        $defaults = array(
-          'event_category' => array('uncategorized'),
-          'news_topic' => array('uncategorized'),
-          'media_category' => array('uncategorized'),
-          'role' => array('uncategorized'),
-        );
-    }
+    $defaults = array(
+      'event_category' => array('uncategorized'),
+      'news_topic' => array('uncategorized'),
+      'media_category' => array('uncategorized'),
+      'role' => array('uncategorized'),
+    );
 		$taxonomies = get_object_taxonomies( $post->post_type );
 		foreach ( (array) $taxonomies as $taxonomy ) {
 			$terms = wp_get_post_terms( $post_id, $taxonomy );
