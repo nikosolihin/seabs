@@ -128,7 +128,7 @@
   }
 
   &-box {
-    @include overlay(true, 'rgba(0,0,0,.45)');
+    @include overlay(true, 'rgba(0,0,0,.5)');
     border-right: 1px solid $white;
     border-top: 1px solid $white;
     &::before {

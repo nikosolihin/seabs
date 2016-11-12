@@ -80,6 +80,9 @@
       font-size: .90625rem;
     }
   }
+  .Feed-bioFull {
+    display: none;
+  }
 
   @at-root .Sidebar-section #{&} {
     .Feed-item {
@@ -96,6 +99,14 @@
       display: block;
       padding: $spacer-single $spacer-single*1.25;
       background-color: $callout-bg;
+    }
+  }
+
+  // Authors of document media
+  @at-root .single-resource .SingleArticle-content #{&} {
+    &.Feed--object-list .Feed-imageLink {
+      position: absolute;
+      border-radius: 50%;
     }
   }
 }

@@ -16,8 +16,10 @@
   }
   &-result {
     position: relative;
-    padding-left: $spacer-single*4;
-    padding-right: $spacer-single*4;
+    @include from(md) {
+      padding-left: $spacer-single*4;
+      padding-right: $spacer-single*4;
+    }
   }
   .Breadcrumb {
     margin-bottom: $spacer-single*1.75;
@@ -36,19 +38,34 @@
   .gsc-clear-button {
     display: none !important;
   }
+  .gsc-above-wrapper-area {
+    @include to(md) {
+      margin-bottom: $spacer-single*4.5;
+    }
+  }
   .gsc-refinementsArea {
-    position: absolute;
-    left: -$spacer-single*19.75;
-    top: $spacer-single*6.5;
-    width: 250px;
     padding: 0;
     margin: 0;
     border: 0;
+    width: 100%;
+    position: absolute;
+    top: $spacer-single*15.5;
+    // left: -$spacer-single*16.75;
+    @include from(lg) {
+      width: 250px;
+      top: $spacer-single*6.5;
+      left: -$spacer-single*16.75;
+    }
+    @include from(xl) {
+      left: -$spacer-single*19.75;
+    }
     div {
-      box: horizontal wrap space-between;
+      box: horizontal;
+      @include from(lg) {
+        box: horizontal wrap space-between;
+      }
     }
     .gsc-refinementHeader {
-      width: 47%;
       line-height: 1;
       text-decoration: none !important;
       font-size: $font-size-h6;
@@ -56,6 +73,11 @@
       padding: $spacer-half $spacer-threefourth !important;
       margin-bottom: $spacer-half;
       border-radius: 3px;
+      margin-right: $spacer-threefourth;
+      @include from(lg) {
+        width: 47%;
+        margin-right: 0;
+      }
       &.gsc-refinementhInactive {
         color: #555 !important;
         background-color: #eee;
@@ -141,7 +163,7 @@
   }
 
   .gsc-expansionArea>.gsc-result {
-    margin-top: $spacer-single*1.25;
+    margin-top: $spacer-single*1.5;
   }
 
   .gs-per-result-labels {

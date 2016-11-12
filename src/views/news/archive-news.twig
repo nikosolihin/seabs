@@ -17,7 +17,7 @@
       <a href="{{news.link}}" class="FeaturedNews-image" data-flickity-bg-lazyload="{{news.image[original]}}">
       {% endif %}
         <div class="FeaturedNews-caption container--text">
-          <h2>{{news.title|title}}</h2>
+          <h2>{{news.title}}</h2>
           <p class="meta">
             <span>{{news.date|date('j M, Y')}}</span>
             {% if news.authors %}
@@ -47,7 +47,7 @@
       <div class="news-bar">
         <h5 class="tag brand">{{news.topic}}</h5>
       </div>
-      <h5><a href="{{news.link}}">{{news.title|title}}</a></h5>
+      <h5><a href="{{news.link}}">{{news.title}}</a></h5>
       <p class="meta">
         <span>{{news.date|date('j M, Y')}}</span>
         {% if news.authors %}

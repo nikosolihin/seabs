@@ -30,7 +30,7 @@
     {% for event in featured_events %}
       <div class="FeaturedEvents-content" data-content-id="{{loop.index0}}">
         <h5 class="tag">{{event.category|upper}}</h5>
-        <h3 class="brand">{{event.title|title}}</h3>
+        <h3 class="brand">{{event.title}}</h3>
         <div class="FeaturedEvents-meta">
           <div class="meta meta--icon">
             <svg aria-hidden="true" role="presentation" title="Event Date">
@@ -43,7 +43,7 @@
               <svg aria-hidden="true" role="presentation" title="Event Date">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#location"></use>
               </svg>
-              <span>{{event.location|title}}</span>
+              <span>{{event.location}}</span>
             </div>
           {% endif %}
         </div>
