@@ -137,44 +137,6 @@
             }
         },
         {
-            "key": "field_57f604435250e",
-            "label": "Authors",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_57f604545250f",
-            "label": "Choose authors",
-            "name": "authors",
-            "type": "post_object",
-            "instructions": "Basic info of the authors will be shown on the page, under the resource itself. Leave blank if you don't want to display authors.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "person"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_57f600be9311d",
             "label": "Table of Contents",
             "name": "",
@@ -360,5 +322,5 @@
     ],
     "active": 1,
     "description": "POST_TYPE : New Document",
-    "modified": 1476170087
+    "modified": 1478965630
 }

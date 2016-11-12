@@ -1,5 +1,5 @@
 <div class="SingleArticle container">
-  <div class="SingleArticle-content {{'container'|modifiers("text-max")}}">
+  <div class="SingleArticle-content">
     {# Breadcrumb #}
     {% include 'components/breadcrumb.twig' with {data: breadcrumb, style: 'brand', trailing: 'noTrail'} %}
 
@@ -40,6 +40,7 @@
       {% include 'components/social-share.twig' %}
     </div>
   </div>
+
   <div class="SingleArticle-sidebar Sidebar">
     <div class="Sidebar-section">
       <h3 class="Sidebar-sectionHeading Lead brand">

@@ -10,6 +10,8 @@
     // Pad content body for comfy reading
     padding: 0;
     margin: 0 auto;
+    // If we dont have teaser text on mobile, make it span 100%
+    width: 100%;
     @include from(md) {
       width: $container-text-width;
     }
@@ -83,10 +85,12 @@
     font-size: $font-size-h5;
     font-weight: $font-weight-medium;
     margin-bottom: $spacer-quarter;
-    margin-right: $spacer-single;
   }
   .meta-dot {
-    padding: 0 $spacer-single;
+    padding: 0 $spacer-half;
+    @include from(md) {
+      padding: 0 $spacer-single;
+    }
   }
   .content-body {
     margin-top: $spacer-single;

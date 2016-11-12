@@ -44,12 +44,27 @@
     padding: $spacer-single*2 0;
     margin-top: $spacer-single*3;
     &Body {
-      width: 70%;
+      @include to(sm) {
+        order: 2;
+        box: vertical center wrap;
+      }
+      @include from(md) {
+        width: 70%;
+        padding-right: $spacer-single;
+      }
     }
     &Cover {
-      width: 30%;
       position: relative;
-      left: $spacer-single*2.125;
+      @include at(xs) {
+        width: 70%;
+      }
+      @include to(sm) {
+        order: 1;
+        top: -$spacer-threefourth;
+      }
+      @include from(md) {
+        width: 30%;
+      }
     }
     &Frame {
       border: 1px solid #ddd;
@@ -88,7 +103,10 @@
       margin-top: 0;
     }
     .SingleArticle-content {
-      box: horizontal;
+      box: vertical center wrap;
+      @include from(md) {
+        box: horizontal;
+      }
     }
     .SingleArticle-teaser {
       line-height: 1.6875;
