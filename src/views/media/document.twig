@@ -16,17 +16,7 @@
         </a>
       </div>
       <div class="SingleMedia-documentCover">
-        <div class="SingleMedia-documentFrame">
-          <picture>
-            <!--[if IE 9]><video style="display: none;"><![endif]-->
-            <source media="(min-width: {{lg}})" data-srcset="{{cover[xlarge]}}">
-            <source media="(min-width: {{md}}) and (min-height: {{tall}})" data-srcset="{{cover[large]}}">
-            <source media="(min-width: {{sm}}) and (max-height: {{tall}})" data-srcset="{{cover[medium]}}">
-            <source media="(max-width: {{sm}}) and (max-height: {{short}})" data-srcset="{{cover[small]}}">
-            <!--[if IE 9]></video><![endif]-->
-            <img alt="{{post.title}}" class="lazyload" data-src="{{cover[medium]}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          </picture>
-        </div>
+        <div class="SingleMedia-documentFrame lazyload" data-bgset="{{cover[small]}}"></div>
       </div>
     </div>
     <div class="SingleArticle-sidebar Sidebar">
