@@ -22,6 +22,9 @@
       @include square;
       height: auto;
     }
+    .Feed-image {
+      max-width: $spacer-single*6.5;
+    }
   }
   &.Feed--card {
     .Feed-item {
@@ -47,6 +50,9 @@
     margin-bottom: $spacer-quarter;
     h4, p {
       margin-bottom: 0;
+    }
+    h4 {
+      font-size: $spacer-single*1.125;
     }
     p {
       color: #555;

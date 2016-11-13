@@ -55,9 +55,7 @@
     }
     &Cover {
       position: relative;
-      @include at(xs) {
-        width: 70%;
-      }
+      width: $spacer-single*16.5625;
       @include to(sm) {
         order: 1;
         top: -$spacer-threefourth;
@@ -67,6 +65,11 @@
       }
     }
     &Frame {
+      @include cover;
+      height: $spacer-single*24;
+      @include from(lg) {
+        height: $spacer-single*20;
+      }
       border: 1px solid #ddd;
       box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.1);
     }
@@ -83,8 +86,8 @@
       border: 1px solid #ddd;
       border-radius: 2px;
       padding: $spacer-single*1.25 $spacer-single*1.5;
-      position: relative;
-      top: -$spacer-single*3.5;
+      position: absolute;
+      top: -$spacer-single*4;
     }
     &TOCLine {
       padding: $spacer-threefourth 0;
