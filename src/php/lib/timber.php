@@ -287,9 +287,9 @@ class StarterSite extends TimberSite {
 		// Hide youtube controls
 		//=============================================
 		$classfilter = new Twig_SimpleFilter('modest', function ($embed) {
-			return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0", $embed);
+			return preg_replace('/oembed/', "oembed&modestbranding=1&controls=0&rel=0", $embed);
 		});
-		$twig->addFilter($classfilter);	
+		$twig->addFilter($classfilter);
 
 		//=============================================
 		// Choose largest image for FB Share

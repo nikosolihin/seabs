@@ -44,7 +44,7 @@ export default class FeaturedEvents {
   }
 
   showFirstCell() {
-    $('.FeaturedEvents-content[data-content-id="0"').addClass('FeaturedEvents-content--show')
+    $('.FeaturedEvents-content[data-content-id="0"]').addClass('FeaturedEvents-content--show')
   }
 
   displayContent( index ) {

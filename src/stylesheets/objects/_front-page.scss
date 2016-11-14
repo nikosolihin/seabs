@@ -134,7 +134,7 @@
     &::before {
       z-index: 2;
     }
-    @include square(90%);
+    @include square;
     @include from(sm) {
       @include square(60%);
     }
